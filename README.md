@@ -10,6 +10,20 @@ Chrome开发者工具中文手册
 
 如果能够顺带提高chrome devtools的使用率，改变firebug一统天下的局面，那是本项目无毒无害的副作用。
 
+## 参与项目
+
+* 登录 https://github.com
+ 
+* Fork `git@github.com:CN-Chrome-DevTools/CN-Chrome-DevTools.git`
+ 
+* 创建您的特性分支 (git checkout -b new-feature)
+ 
+* 提交您的改动 (git commit -m 'Added some features or fixed a bug or change a text')
+ 
+* 将您的改动记录提交到远程 git 仓库 (git push origin new-feature)
+
+* 然后到 github 网站的该 git 远程仓库的 new-feature 分支下发起 Pull Request
+
 ##目录
 
 
