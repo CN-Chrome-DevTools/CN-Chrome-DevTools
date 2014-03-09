@@ -10,7 +10,26 @@ Chrome开发者工具中文手册
 
 如果能够顺带提高chrome devtools的使用率，改变firebug一统天下的局面，那是本项目无毒无害的副作用。
 
+## 翻译思路
+
+* 第一阶段先将[chrome devtools](https://developers.google.com/chrome-developer-tools/)的内容按现有的目录结构翻译成中文
+ 
+	* 文章正文内容均放在`md`目录下，采用`md`格式，文件名为[chrome devtools](https://developers.google.com/chrome-developer-tools/)每篇文章url`/docs/`后的部分，比如现有的`authoring-development-workflow.md` 对应的是`https://developers.google.com/chrome-developer-tools/docs/authoring-development-workflow`文章
+ 
+	* 文章中所用到的图片资源暂时先用现有英文手册的原始链接，后续图片资源会统一托管到[七牛云存储](http://www.qiniu.com/)
+	
+	* 如果您英语水平一般，但也想参与项目，将对应的文档做成md格式提交 Pull Request 即可，后续的人可以在您提交的`md`文档中继续工作。善莫大焉。
+ 
+* 第二阶段会做一个手册的展示站，现在考虑的是github page。
+
+
 ## 参与项目
+
+您的参与是对本项目的最大支持，一个个commit堆积起来就是一个了不起的repo，欢迎您提交 Pull Request，哪怕是改正一个错别字、修正一个病句。
+
+如有兴趣或疑问，随时和我联系，邮箱 dengchenhua@gmail.com ，qq 422282420。
+
+参与方法如下：
 
 * 登录 https://github.com
  
@@ -24,7 +43,8 @@ Chrome开发者工具中文手册
 
 * 然后到 github 网站的该 git 远程仓库的 new-feature 分支下发起 Pull Request
 
-##目录
+
+##目录（未链接，期待翻译）
 
 
 * Authoring and Development Workflow
