@@ -10,6 +10,8 @@ Chrome开发者工具中文手册
 
 如果能够顺带提高chrome devtools的使用率，改变firebug一统天下的局面，那是本项目无毒无害的副作用。
 
+官方文档链接：[https://developers.google.com/chrome-developer-tools/](https://developers.google.com/chrome-developer-tools/)
+
 ## 参与项目
 
 * 登录 https://github.com
