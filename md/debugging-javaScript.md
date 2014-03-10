@@ -2,9 +2,11 @@ Debugging JavaScript
 
 As the complexity of JavaScript applications increase, developers need powerful debugging tools to help quickly discover the cause of an issue and fix it efficiently. The Chrome DevTools include a number of useful tools to help make debugging JavaScript less painful.
 
-
+随着越来越多复杂的JavaScript 项目产生，开发者需要更加强大的调试工具以快速的解决问题和修复bug。Chrome DevTools附带了一大批有用的工具去减轻开发者调试JavaScript的痛苦。
 
 In this section, we will walk through how to use these tools by debugging the Google Closure hovercard demo and other dynamic examples in this page.
+
+在这一章节，你将通过调试google的demo和其他的样例。
 
 Note: If you are a Web Developer and want to get the latest version of DevTools, you should use Chrome Canary.
 
