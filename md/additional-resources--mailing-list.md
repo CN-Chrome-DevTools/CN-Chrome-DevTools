@@ -1,1 +1,0 @@
-https://groups.google.com/forum/?fromgroups#!forum/google-chrome-developer-tools
