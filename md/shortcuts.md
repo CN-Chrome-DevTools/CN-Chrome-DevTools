@@ -31,30 +31,31 @@ Open Developer Tools and bring focus to the console | Ctrl + Shift + J   | Cmd +
 Inspect the Inspector (undock first one and press)  | Ctrl + Shift + J   | Cmd + Opt + J
 
 
-Windows / Linux  Mac
-       
-           Cmd + Opt + J
     
 To open up the General Settings dialog type ? or F1 when the Developer Tools window is open. Press Esc to close the settings dialog.
 
 All Panels
+---
 
-Windows / Linux  Mac
-Show General Settings dialog    ?, F1   ?
-Next panel  Ctrl + ]    Cmd + ]
-Previous panel  Ctrl + [    Cmd + [
-Backward in panel History   Ctrl + Alt + [  Cmd + Alt + [
-Forward in panel history    Ctrl + Alt + ]  Cmd + Alt + ]
-Jump to panel 1-9 (when enabled in General Settings)    Ctrl + 1-9  Cmd + 1-9
-Toggle Console / close settings dialog when open    Esc Esc
-Refresh the page    F5, Ctrl + R    Cmd + R
-Refresh the page ignoring cached content    Ctrl + F5, Ctrl + Shift + R Cmd + Shift + R
-Text search within current file or panel    Ctrl + F    Cmd + F
-Text search across all sources  Ctrl + Shift + F    Cmd + Alt + F
-Search by filename (except on Timeline) Ctrl + O, Ctrl + O  Cmd + O, Cmd + O
-Restore default text size   Ctrl + 0    Shift + 0
-Zoom in Ctrl + +    Shift + +
-Zoom out    Ctrl + -    Shift + -
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
+Show General Settings dialog   |  ?, F1  |  ?
+Next panel |  Ctrl + ]  |   Cmd + ]
+Previous panel |  Ctrl + [  |   Cmd + [
+Backward in panel History    |  Ctrl + Alt + [    | Cmd + Alt + [
+Forward in panel history    |   Ctrl + Alt + ]    | Cmd + Alt + ]
+Jump to panel 1-9 (when enabled in General Settings)    |   Ctrl + 1-9    | Cmd + 1-9
+Toggle Console / close settings dialog when open    |   Esc  |  Esc
+Refresh the page     |  F5, Ctrl + R     |  Cmd + R
+Refresh the page ignoring cached content    |   Ctrl + F5, Ctrl + Shift + R   | Cmd + Shift + R
+Text search within current file or panel    |   Ctrl + F  |     Cmd + F
+Text search across all sources   |  Ctrl + Shift + F    |   Cmd + Alt + F
+Search by filename (except on Timeline)  |  Ctrl + O, Ctrl + O  |   Cmd + O, Cmd + O
+Restore default text size  |    Ctrl + 0   |    Shift + 0
+Zoom in  |  Ctrl + +     |  Shift + +
+Zoom out   |    Ctrl + -     |  Shift + -
+
+
 Elements Panel
 
 Windows / Linux  Mac
