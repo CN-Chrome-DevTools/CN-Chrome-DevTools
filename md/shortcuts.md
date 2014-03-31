@@ -138,30 +138,36 @@ Save timeline data |  Ctrl + S  |   Cmd + S
 Load timeline data | Ctrl + O   |  Cmd + O
 
 Profiles Panel
+---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Start / stop recording  Ctrl + E    Cmd + E
+Start / stop recording |  Ctrl + E  |   Cmd + E
+
 Console
+---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Next suggestion Tab Tab
-Previous suggestion Shift + Tab Shift + Tab
-Accept suggestion   Right   Right
-Previous command / line Up  Up
-Next command / line Down    Down
-Clear Console   Ctrl + L    Cmd + K, Opt + L
-Multi-line entry    Shift + Enter   Ctrl + Return
-Execute Enter   Return
+Next suggestion | Tab | Tab
+Previous suggestion | Shift + Tab | Shift + Tab
+Accept suggestion  |  Right |   Right
+Previous command / line | Up |  Up
+Next command / line | Down  |   Down
+Clear Console   | Ctrl + L   |  Cmd + K, Opt + L
+Multi-line entry   |  Shift + Enter  |  Ctrl + Return
+Execute|  Enter  |  Return
+
 Right-clicking on console:
 
-XMLHTTPRequest logging: Turn on to view the XHR log
-Preserve log upon navigation
-Filter: Hide and unhide messages from script files
-Clear console: Clear all console messages
-Screencasting
+*	XMLHTTPRequest logging: Turn on to view the XHR log
+*	Preserve log upon navigation
+*	Filter: Hide and unhide messages from script files
+*	Clear console: Clear all console messages
 
+
+Screencasting
+---
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
 Pinch zoom in and out   Alt + Scroll,Ctrl + Cick and drag with two fingers  Opt + Scroll, Cmd + Cick and drag with two fingers
