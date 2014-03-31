@@ -170,28 +170,31 @@ Screencasting
 ---
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Pinch zoom in and out   Alt + Scroll,Ctrl + Cick and drag with two fingers  Opt + Scroll, Cmd + Cick and drag with two fingers
-Inspect element tool    Ctrl + Shift + C    Cmd + Shift + C
+Pinch zoom in and out | Alt + Scroll,Ctrl + Cick and drag with two fingers  |Opt + Scroll, Cmd + Cick and drag with two fingers
+Inspect element tool  |  Ctrl + Shift + C   | Cmd + Shift + C
+
 Emulation
+---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Pinch zoom in and out   Shift + Scroll  Shift + Scroll
+Pinch zoom in and out  | Shift + Scroll | Shift + Scroll
+
 Other Chrome Shortcuts
+---
 
 Here are some additional Chrome shortcuts which are useful for general use within the browser not specific to the DevTools. View all Chrome shortcuts for Windows, Mac, and Linux.
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Find next   Ctrl + G    Cmd + G
-Find previous   Ctrl + Shift + G    Cmd + Shift + G
-Open a new window in Incognito mode Ctrl + Shift + N    Cmd + Shift + N
-Toggle Bookmarks bar on and off Ctrl + Shift + B    Cmd + Shift + B
-View the History page   Ctrl + H    Cmd + Y
-View the Downloads page Ctrl + J    Cmd + Shift + J
-View the Task Manager   Shift + ESC Shift + ESC
-Next page in a tabs browsing history    Alt + Right Alt + Right
-Previous page in a tabs browsing history    Backspace, Alt + Left   Backspace, Alt + Left
-Highlight content in the web address area   F6, Ctrl + L, Alt + D   Cmd + L, Alt + D
-Places a ? in the address bar for performing a keyword
-search using your default search engine Ctrl + K, Ctrl + E  Cmd + K, Cmd + E
+Find next   |Ctrl + G    |Cmd + G
+Find previous  | Ctrl + Shift + G  |  Cmd + Shift + G
+Open a new window in Incognito mode |Ctrl + Shift + N   | Cmd + Shift + N
+Toggle Bookmarks bar on and off |Ctrl + Shift + B  |  Cmd + Shift + B
+View the History page   |Ctrl + H   | Cmd + Y
+View the Downloads page |Ctrl + J  |  Cmd + Shift + J
+View the Task Manager   |Shift + ESC |Shift + ESC
+Next page in a tabs browsing history  |  Alt + Right |Alt + Right
+Previous page in a tabs browsing history  |  Backspace, Alt + Left   |Backspace, Alt + Left
+Highlight content in the web address area  | F6, Ctrl + L, Alt + D  | Cmd + L, Alt + D
+Places a ? in the address bar for performing a keyword search using your default search engine |Ctrl + K, Ctrl + E  |Cmd + K, Cmd + E
