@@ -12,17 +12,29 @@ Sources Panel
 Timeline Panel
 Console
 Other Chrome Shortcuts
-Opening DevTools
 
-To access the DevTools, on any web page or app in Google Chrome you can use one of these options:
 
-Open the Chrome menu  Chrome menu at the top-right of your browser window, then select Tools > Developer Tools.
-Right-click on any page element and select Inspect Element.
+打开DevTools
+---
+
+
+在Google Chrome的任何页面或者应用中，你可以通过以下的方式打开 DevTools:
+
+*	打开浏览器窗口右上方的 Chrome 菜单 img，选择**工具 > 开发者工具(Tools > Developer Tools)**.
+*	在任意的页面元素中鼠标右键，选择**审查元素(Inspect Element)**.
+
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
+Open Developer Tools          | F12, Ctrl + Shift + I   | Cmd + Opt + I
+Open / switch from inspect element mode and browser window   | Ctrl + Shift + C   | Cmd + Shift + C
+Open Developer Tools and bring focus to the console | Ctrl + Shift + J   | Cmd + Opt + J
+Inspect the Inspector (undock first one and press)  | Ctrl + Shift + J   | Cmd + Opt + J
+
+
 Windows / Linux  Mac
-Open Developer Tools    F12, Ctrl + Shift + I   Cmd + Opt + I
-Open / switch from inspect element mode and browser window  Ctrl + Shift + C    Cmd + Shift + C
-Open Developer Tools and bring focus to the console Ctrl + Shift + J    Cmd + Opt + J
-Inspect the Inspector (undock first one and press)  Ctrl + Shift + J    Cmd + Opt + J
+       
+           Cmd + Opt + J
+    
 To open up the General Settings dialog type ? or F1 when the Developer Tools window is open. Press Esc to close the settings dialog.
 
 All Panels
