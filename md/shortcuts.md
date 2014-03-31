@@ -72,12 +72,14 @@ Toggle edit as HTML|  F2|
 
 Right-clicking an element you can:
 
-Force element psuedo states: (:active, :hover, :focus, :visited)
-Set breakpoints on the elements: (Subtree modifications, Attribute modification, Node removal)
-Clear console
-Styles Sidebar
+*	Force element psuedo states: (:active, :hover, :focus, :visited)
+*	Set breakpoints on the elements: (Subtree modifications, Attribute modification, Node removal)
+*	Clear console
 
-Windows / Linux  Mac
+Styles Sidebar
+---
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Edit rule   Single-click    Single-click
 Insert new property Single-click on whitespace  Single-click on whitespace
 Go to line of style rule property declaration in source Ctrl + Click on property    Cmd + Click on property
@@ -97,7 +99,8 @@ Adding style selectors Add new style selectors
 
 Sources Panel
 
-Windows / Linux  Mac
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Pause / resume script execution F8, Ctrl + \    F8, Cmd + \
 Step over next function call    F10, Ctrl + '   F10, Cmd + '
 Step into next function call    F11, Ctrl + ;   F11, Cmd + ;
@@ -124,17 +127,20 @@ Pause on Uncaught Exceptions Pause on uncaught exceptions (usually the one you w
 
 Timeline Panel
 
-Windows / Linux  Mac
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Start / stop recording  Ctrl + E    Cmd + E
 Save timeline data  Ctrl + S    Cmd + S
 Load timeline data  Ctrl + O    Cmd + O
 Profiles Panel
 
-Windows / Linux  Mac
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Start / stop recording  Ctrl + E    Cmd + E
 Console
 
-Windows / Linux  Mac
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Next suggestion Tab Tab
 Previous suggestion Shift + Tab Shift + Tab
 Accept suggestion   Right   Right
@@ -151,18 +157,21 @@ Filter: Hide and unhide messages from script files
 Clear console: Clear all console messages
 Screencasting
 
-Windows / Linux  Mac
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Pinch zoom in and out   Alt + Scroll,Ctrl + Cick and drag with two fingers  Opt + Scroll, Cmd + Cick and drag with two fingers
 Inspect element tool    Ctrl + Shift + C    Cmd + Shift + C
 Emulation
 
-Windows / Linux  Mac
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Pinch zoom in and out   Shift + Scroll  Shift + Scroll
 Other Chrome Shortcuts
 
 Here are some additional Chrome shortcuts which are useful for general use within the browser not specific to the DevTools. View all Chrome shortcuts for Windows, Mac, and Linux.
 
-Windows / Linux  Mac
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
 Find next   Ctrl + G    Cmd + G
 Find previous   Ctrl + Shift + G    Cmd + Shift + G
 Open a new window in Incognito mode Ctrl + Shift + N    Cmd + Shift + N
