@@ -57,16 +57,19 @@ Zoom out   |    Ctrl + -     |  Shift + -
 
 
 Elements Panel
+---
 
-Windows / Linux  Mac
-Undo change Ctrl + Z    Cmd + Z
-Redo change Ctrl + Y    Cmd + Y, Cmd + Shift + Z
-Navigate    Up, Down    Up, Down
-Expand / collapse node  Right, Left Right, Left
-Expand node Single-click on tag Single-click on tag
-Edit attribute  Enter, Double-click on attribute    Enter, Double-click on attribute
-Hide element    H   H
-Toggle edit as HTML F2
+功能       | Windows / Linux | Mac
+:------------- | :--- | :-------------------------------------
+Undo change | Ctrl + Z    | Cmd + Z
+Redo change | Ctrl + Y    | Cmd + Y, Cmd + Shift + Z
+Navigate    |  Up, Down   |  Up, Down
+Expand / collapse node  | Right, Left | Right, Left
+Expand node | Single-click on tag | Single-click on tag
+Edit attribute|   Enter, Double-click on attribute  |   Enter, Double-click on attribute
+Hide element   |  H |   H
+Toggle edit as HTML|  F2| 
+
 Right-clicking an element you can:
 
 Force element psuedo states: (:active, :hover, :focus, :visited)
