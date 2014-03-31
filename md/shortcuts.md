@@ -80,19 +80,20 @@ Styles Sidebar
 ---
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Edit rule   Single-click    Single-click
-Insert new property Single-click on whitespace  Single-click on whitespace
-Go to line of style rule property declaration in source Ctrl + Click on property    Cmd + Click on property
-Go to line of property value declaration in source  Ctrl + Click on property value  Cmd + Click on property value
-Go to line of style rule property declaration in source Ctrl + Click on property    Cmd + Click on property
-Go to line of property value declaration in source  Ctrl + Click on property value  Cmd + Click on property value
-View auto-complete suggestions  Ctrl + Space    Cmd + Space
-Edit next / previous property   Tab, Shift + Tab    Tab, Shift + Tab
-Increment / decrement value Up, Down    Up, Down
-Increment / decrement value by 10   Shift + Up, Shift + Down    Shift + Up, Shift + Down
-Increment / decrement value by 10   PgUp, PgDown    PgUp, PgDown
-Increment / decrement value by 100  Shift + PgUp, Shift + PgDown    Shift + PgUp, Shift + PgDown
-Increment / decrement value by 0.1  Alt + Up, Alt + Down    Opt + Up, Opt + Down
+Edit rule   | Single-click  |   Single-click
+Insert new property|  Single-click on whitespace  | Single-click on whitespace
+Go to line of style rule property declaration in source|  Ctrl + Click on property  |   Cmd + Click on property
+Go to line of property value declaration in source |  Ctrl + Click on property value |  Cmd + Click on property value
+Go to line of style rule property declaration in source|  Ctrl + Click on property  |   Cmd + Click on property
+Go to line of property value declaration in source  | Ctrl + Click on property value  | Cmd + Click on property value
+View auto-complete suggestions |  Ctrl + Space  |   Cmd + Space
+Edit next / previous property  |  Tab, Shift + Tab  |   Tab, Shift + Tab
+Increment / decrement value | Up, Down   |  Up, Down
+Increment / decrement value by 10  |  Shift + Up, Shift + Down  |   Shift + Up, Shift + Down
+Increment / decrement value by 10  |  PgUp, PgDown  |   PgUp, PgDown
+Increment / decrement value by 100  | Shift + PgUp, Shift + PgDown    | Shift + PgUp, Shift + PgDown
+Increment / decrement value by 0.1  | Alt + Up, Alt + Down  |   Opt + Up, Opt + Down
+
 Element Pseudostates Emulate an element's pseudo state (:active, :hover, :focus, :visited)
 
 Adding style selectors Add new style selectors
