@@ -129,12 +129,14 @@ Pause on All Exceptions Pause on All exceptions (including those caught within t
 Pause on Uncaught Exceptions Pause on uncaught exceptions (usually the one you want)
 
 Timeline Panel
+---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Start / stop recording  Ctrl + E    Cmd + E
-Save timeline data  Ctrl + S    Cmd + S
-Load timeline data  Ctrl + O    Cmd + O
+Start / stop recording |  Ctrl + E  |   Cmd + E
+Save timeline data |  Ctrl + S  |   Cmd + S
+Load timeline data | Ctrl + O   |  Cmd + O
+
 Profiles Panel
 
 功能       | Windows / Linux | Mac
