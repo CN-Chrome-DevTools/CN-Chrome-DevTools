@@ -99,27 +99,29 @@ Element Pseudostates Emulate an element's pseudo state (:active, :hover, :focus,
 Adding style selectors Add new style selectors
 
 Sources Panel
+---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Pause / resume script execution F8, Ctrl + \    F8, Cmd + \
-Step over next function call    F10, Ctrl + '   F10, Cmd + '
-Step into next function call    F11, Ctrl + ;   F11, Cmd + ;
-Step out of current function    Shift + F11, Ctrl + Shift + ;   Shift + F11, Cmd + Shift + ;
-Select next call frame  Ctrl + .    Opt + .
-Select previous call frame  Ctrl + ,    Opt + ,
-Toggle breakpoint condition Click on line number, Ctrl + B  Click on line number, Cmd + B
-Edit breakpoint condition   Right-click on line number  Right-click on line number
-Delete individual words Alt + Delete    Opt + Delete
-Delete individual words Alt + Delete    Opt + Delete
-Save changes to local modifications Ctrl + S    Cmd + S
-Go to line  Ctrl + G    Ctrl + G
-Search by filename  Ctrl + O    Cmd + O
-Jump to line number Ctrl + P + :<number>    Cmd + P + :<number>
-Go to member    Ctrl + Shift + O    Cmd + Shift + O
-Toggle console and evaluate code selected in Sources panel  Ctrl + Shift + E    Cmd + Shift + E
-Run snippet Ctrl + Enter    Cmd + Enter
-Toggle comment  Ctrl + /    Cmd + /
+Pause / resume script execution | F8, Ctrl + \    | F8, Cmd + \
+Step over next function call    | F10, Ctrl + '   | F10, Cmd + '
+Step into next function call    | F11, Ctrl + ;   | F11, Cmd + ;
+Step out of current function    | Shift + F11, Ctrl + Shift + ; |   Shift + F11, Cmd + Shift + ;
+Select next call frame |  Ctrl + .  |   Opt + .
+Select previous call frame |  Ctrl + ,  |   Opt + ,
+Toggle breakpoint condition | Click on line number, Ctrl + B |  Click on line number, Cmd + B
+Edit breakpoint condition  |  Right-click on line number |  Right-click on line number
+Delete individual words | Alt + Delete  |   Opt + Delete
+Delete individual words | Alt + Delete  |   Opt + Delete
+Save changes to local modifications | Ctrl + S  |   Cmd + S
+Go to line |  Ctrl + G  |   Ctrl + G
+Search by filename |  Ctrl + O  |   Cmd + O
+Jump to line number | Ctrl + P + :<number>   |  Cmd + P + :<number>
+Go to member  |   Ctrl + Shift + O  |   Cmd + Shift + O
+Toggle console and evaluate code selected in Sources panel |  Ctrl + Shift + E   |  Cmd + Shift + E
+Run snippet | Ctrl + Enter   |  Cmd + Enter
+Toggle comment  | Ctrl + /   |  Cmd + /
+
 Pause on Exception Button Don't pause on exceptions
 
 Pause on All Exceptions Pause on All exceptions (including those caught within try/catch blocks)
