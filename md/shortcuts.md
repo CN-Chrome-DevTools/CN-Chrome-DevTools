@@ -180,19 +180,18 @@ Emulation
 :------------- | :--- | :-------------------------------------
 Pinch zoom in and out  | Shift + Scroll | Shift + Scroll
 
-Other Chrome Shortcuts
+其他 Chrome 快捷键
 ---
-
-Here are some additional Chrome shortcuts which are useful for general use within the browser not specific to the DevTools. View all Chrome shortcuts for Windows, Mac, and Linux.
+以下的 Chrome 快捷键在日常使用中非常有用，它并不是特意为 DevTools开发的，[查看所有的 Chrome 快捷键](https://support.google.com/chrome/answer/157179?hl=en&topic=25799&rd=1).
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Find next   |Ctrl + G    |Cmd + G
-Find previous  | Ctrl + Shift + G  |  Cmd + Shift + G
-Open a new window in Incognito mode |Ctrl + Shift + N   | Cmd + Shift + N
-Toggle Bookmarks bar on and off |Ctrl + Shift + B  |  Cmd + Shift + B
-View the History page   |Ctrl + H   | Cmd + Y
-View the Downloads page |Ctrl + J  |  Cmd + Shift + J
+寻找下一个   |Ctrl + G    |Cmd + G
+寻找前一个  | Ctrl + Shift + G  |  Cmd + Shift + G
+在隐身模式下打开一个新窗口|Ctrl + Shift + N   | Cmd + Shift + N
+开启或关闭书签栏|Ctrl + Shift + B  |  Cmd + Shift + B
+查看历史记录   |Ctrl + H   | Cmd + Y
+查看下载记录 |Ctrl + J  |  Cmd + Shift + J
 View the Task Manager   |Shift + ESC |Shift + ESC
 Next page in a tabs browsing history  |  Alt + Right |Alt + Right
 Previous page in a tabs browsing history  |  Backspace, Alt + Left   |Backspace, Alt + Left
