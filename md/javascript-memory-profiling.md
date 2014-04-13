@@ -19,44 +19,46 @@
 
 * **我的页面垃圾强制回收有多频繁?** - 如果你的页面垃圾回收很频繁，那说明你的页面可能内存使用分配太频繁了。[Timeline内存查看工具(Timeline memory view)](#heading=h.3gfl4k8caz0k) 能够帮助你发现感兴趣的停顿。
 
-![图片0](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_0.png)
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_0.png)
 
 **目录**
 
 [[TOC]]
 
-## 术语和基础
+## 术语和基本概念
 
-This section describes common terms used in **memory analysis**, and is applicable to a variety of memory profiling tools for different languages. The terms and notions described here are used in the Heap Profiler UI and the corresponding documentation.
+本小节介绍在**内存分析**时使用的常用术语，这些术语在为其它语言做内存分析的工具中也适用。这里的术语和概念用在了堆分析仪(Heap Profiler)UI工具和相关的文档中。
 
-It helps to become familiar with these to use the tool effectively. If you have ever worked with either the Java, .NET, or some other memory profiler then this may be a refresher.
+这些能够帮助我们熟悉如何有效的使用内存分析工具。如果你以前从来没有了解过像Java，.NET等语言的内存分析的话，那么本节介绍的术语对你来说可能就是些全新的概念了。
 
-### Object sizes
+### 对象大小(Object sizes)
 
-Think of memory as a graph with primitive types (like numbers and strings) and objects (associative arrays). It might visually be represented as a graph with a number of interconnected points as follows:
+把内存想象成一个包含基本类型(像数字和字符串)和对象(类似数组)的图表。它可能看起来像下面这幅一系列相关联的点组成的图。
 
-<img src="memory-profiling-files/thinkgraph.png"/>
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/thinkgraph.png)
 
-An object can hold memory in two ways:
+一个对象有两种使用内存的方法：
 
-* Directly by the object itself
+* 对象自身直接使用
 
-* Implicitly by holding references to other objects, and therefore preventing those objects from being automatically disposed by a garbage collector (**GC** for short).
+* 隐含的保持对其它对象的引用，这种方式会阻止垃圾回收(简称GC)对这些对象的自动回收处理。
 
-When working with the Heap Profiler in DevTools (a tool for investigating memory issues found under "Profiles"), you will likely find yourself looking at a few different columns of information. Two that stand out are <strong>Shallow Size</strong> and <strong>Retained Size</strong>, but what do these represent?
+当你使用DevTools中的堆分析仪(Heap Profiler，用来分析内存问题的工具，在DelTools的"Profile"标签下)时，你可能会惊喜的发现一些显示各种信息的栏目。其中有两项是：**表面大小(Shallow Size)**和**保留大小(Retained Size)**，那它们是什么意思呢？
 
-![](memory-profiling-files/image_1.png)
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_1.png)
 
 
-#### Shallow size
+#### 表面大小(Shallow Size)
 
-This is the size of memory that is held by the object itself.
+这个是对象本身占用的内存。
 
-Typical JavaScript objects have some memory reserved for their description and for storing immediate values. Usually, only arrays and strings can have a significant shallow size. However, strings and external arrays often have their main storage in renderer memory, exposing only a small wrapper object on the JavaScript heap.
+典型的JavaScript对象都会有保留内存用来描述这个对象和存储它的直接值。一般，只有数组和字符串会有明显的表面大小(Shallow Size)。但字符串和数组常常会在渲染器内存中存储主要数据部分，仅仅在JavaScript对象栈中暴露一个很小的包装对象。
 
-Renderer memory is all memory of the process where an inspected page is rendered: native memory + JS heap memory of the page + JS heap memory of all dedicated workers started by the page. Nevertheless, even a small object can hold a large amount of memory indirectly, by preventing other objects from being disposed of by the automatic garbage collection process.
+渲染器内存指你分析的页面在渲染的过程中所用到的所有内存：页面本身的内存 + 页面中的JS堆栈用到的内存 + 页面触发的相关工作进程(workers)中的JS堆栈用到的内存。然而，通过阻止垃圾自动回收别的对象，一个小对象都有可能间接占用大量的内存。
 
-#### Retained size
+#### 保留大小(Retained Size)
+
+
 
 This is the size of memory that is freed once the object itself is deleted along with its dependent objects that were made unreachable from **GC roots**.
 
