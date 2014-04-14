@@ -13,7 +13,7 @@
 
 总体来说，当你觉得你遇到了内存泄漏问题时，你需要思考三个问题：
 
-* **我的页面是否占用了过多的内存?** - [Timeline内存查看工具(Timeline memory view)](#heading=h.3gfl4k8caz0k) 和 [Chrome任务管理(Chrome task manager)](http://#heading=h.uhgze3ab3kb2%20) 能帮助你确认你是否使用了过多的内存。Memory view 能跟踪页面渲染过程中DOM节点计数，documents文档计数和JS事件监听计数。开了时作为一个经验法则：避免对不再需要用到的DOM元素的引用，移除不需要的事件监听并且在存储你可以不会用到的大块数据时要留意。
+* **我的页面是否占用了过多的内存?** - [Timeline内存查看工具(Timeline memory view)](#heading=h.3gfl4k8caz0k) 和 [Chrome任务管理(Chrome task manager)](http://#heading=h.uhgze3ab3kb2%20) 能帮助你确认你是否使用了过多的内存。Memory view 能跟踪页面渲染过程中DOM节点计数，documents文档计数和JS事件监听计数。作为一个经验法则：避免对不再需要用到的DOM元素的引用，移除不需要的事件监听并且在存储你可能不会用到的大块数据时要留意。
 
 * **我的页面有没有内存泄漏?** - [对象分配跟踪(Object allocation tracker)](#heading=h.8yjlf68i8qix)通过实时查看JS对象的分配来帮助你定位泄漏。你也可以使用[堆分析仪(Heap Profiler)](#heading=h.g0yxr1o33gky)生成JS堆快照，通过分析内存图和比较快照之间的差异，来找出没有被垃圾回收清理掉的对象。
 
@@ -21,9 +21,6 @@
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_0.png)
 
-**目录**
-
-[[TOC]]
 
 ## 术语和基本概念
 
