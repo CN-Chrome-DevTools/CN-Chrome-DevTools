@@ -1,18 +1,19 @@
-Using the Console
+使用 Console
 ==
 
-The JavaScript Console provides two primary functions for developers  testing web pages and applications:
+JavaScript Console 为开发者们测试网页和应用提供了两个主要的功能：
 
-*   A place to log diagnostic information using methods provided by the [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api), such as [console.log()](https://developers.google.com/chrome-developer-tools/docs/console-api#consolelogobject_object), or [console.profile()](https://developers.google.com/chrome-developer-tools/docs/console-api#consoleprofilelabel).
-*   A shell prompt where you can enter commands and interact with the document and the Chrome DevTools. You can evaluate expressions directly in the Console, and can also use the methods provided by the [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api), such as [$()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#selector) command for selecting elements, or [profile()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#profile) to start the CPU profiler.
+* 使用 [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api) 来输出一段调试信息，例如使用 [console.log()](https://developers.google.com/chrome-developer-tools/docs/console-api#consolelogobject_object)，或者 [console.profile()](https://developers.google.com/chrome-developer-tools/docs/console-api#consoleprofilelabel) 。
+* 一个实时的 Shell ，让你可以输入命令，并且通过 Chrome DevTools 操作 document。你可以直接在 Console 里面执行表达式，也可以执行 [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api) 里面提供的一些方法，例如执行 [$()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#selector) 命令来选择所有元素，或者执行 [profile()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#profile) 命令来启动一个 CPU 测评器（profiler）。
 
-This documentation provides an overview and common uses of these two APIs. You can also browse the [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api) and [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api) reference guides.
+这个文档提供了这两个 API 的功能介绍和常用用法。你也可以去查看 [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api) 和 [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api) 两个入门参考文档。
 
-1.  [Basic operation](#basic_operation)
-    1.  [Opening the Console](#opening_the_console)
-    2.  [Clearing the console history](#clearing_the_console_history)
-    3.  [Console settings](#console_settings)
-2.  [Using the Console API](#using_the_console_api)
+
+1.  [基础操作](#basic_operation)
+    1.  [打开 Console](#opening_the_console)
+    2.  [清空 Console 结果](#clearing_the_console_history)
+    3.  [Console 设置](#console_settings)
+2.  [使用 Console API](#using_the_console_api)
     1.  [Writing to the console](#writing_to_the_console)
     2.  [Errors and warnings](#errors_and_warnings)
     3.  [Assertions](#assertions)
@@ -32,16 +33,16 @@ This documentation provides an overview and common uses of these two APIs. You c
     5.  [Monitoring events](#monitoring_events)
     6.  [Controlling the CPU profiler](#controlling_the_cpu_profiler)
 
-## Basic operation
+## 基础操作
 
-### Opening the Console
+### 打开 Console
 
-The JavaScript Console is available in two modes within Chrome DevTools: the primary Console tab, or as a split-view you can display while on another tab (such as Elements or Sources).
+在 Chrome DevTools 中，JavaScript Console 有两种模式：Console 标签或者在其他标签（例如 Elements 或者 Sources 标签）下的一个分裂视图。
 
-To open the Console tab, do one of the following:
+可以使用下面几种方法之一打开 Console 标签：
 
-*   Use the keyboard shortcut **Command - Option - J** (Mac) or **Control -Shift -J** (Windows/Linux).
-*   Select **View &gt; Developer &gt; JavaScript Console**.
+* 使用快捷键 **Command - Option - J** (Mac) 或者 **Control -Shift -J** (Windows/Linux)。
+* 选择菜单栏中的 **视图 &gt; 开发者 &gt; JavaScript 控制台**。
 
 ![Console panel view](https://developers.google.com/chrome-developer-tools/docs/console-files/console1.png)
 
