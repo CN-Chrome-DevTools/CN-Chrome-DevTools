@@ -134,32 +134,31 @@
 
 * 外部的**渲染器内存**中。这时会创建一个包装对象用来访问存储的位置，比如，Web页面包存的脚本资源和其它内容，而不是直接复制至VM堆中。
 
+新创建的JavaScript对象会被在JavaScript堆上(或**VM堆**)分配内存。这些对象由V8的垃圾回收器管理，只要还有一个强引用他们就会在内存中保留。
 
-Memory for new JavaScript objects is allocated from a dedicated JavaScript heap (or **VM heap**).These objects are managed by V8's garbage collector and therefore, will stay alive as long as there is at least one strong reference to them.
+**本地对象**是所有不在JavaScript堆中的对象，与堆对象不同的是，在它们的生命周期中，不会被V8垃圾加收器处理，只能通过JavaScript包装对象引用。
 
-**Native objects **are everything else which is not in the JavaScript heap. Native object, in contrast to heap object, is not managed by the V8 garbage collector throughout it’s lifetime, and can only be accessed from JavaScript using its JavaScript wrapper object.
+**连接字符串**是由一对字符串合并成的对象，是合并后的结果。**连接字符串**只在有需要时合并。像一连接字符串的子字符串需要被构建时。
 
-**Cons string **is an object that consists of pairs of strings stored then joined, and is a result of concatenation. The joining of the *cons string* contents occurs only as needed. An example would be when a substring of a joined string needs to be constructed.
+比如：如果你连接**a**和**b**，你得到字符串(a, b)这用来表示连接的结果。如果你之后要再把这个结果与**d**连接，你就得到了另一个连接字符串((a, b), d)。
 
-For example, if you concatenate **a** and **b**, you get a string (a, b) which represents the result of concatenation. If you later concatenated **d** with that result, you get another cons string ((a, b), d).
+**数组(Arrays)** - 数组是数字类型键的对象。它们在V8引擎中存储大数据量的数据时被广泛的使用。像字典这种有键-值对的对象就是用数组实现的。
 
-**Arrays** - An Array is an Objectwith numeric keys. They are used extensively in the V8 VM for storing large amounts of data. Sets of key-value pairs used like dictionaries are backed up by arrays.
+一个典型的JavaScript对象可以通过两种数组类型之一的方式来存储：
 
-A typical JavaScript object can be one of two array types used for storing:
+* 命名属性，和
 
-* named properties, and
+* 数字化的元素
 
-* numeric elements
+如果只有少量的属性，它们会被直接存储在JavaScript对象本身中。
 
-In cases where there is a very small number of properties, they can be stored internally in the JavaScript object itself.
+**Map** - 一种用来描述对象类型和它的结构的对象。比如，maps会被用来描述对象的结构以实现对对象属性的[快速访问](https://developers.google.com/v8/design.html#prop_access)
 
-**Map** - an object that describes the kind of object and its layout. For example, maps are used to describe implicit object hierarchies for [fast property access](https://developers.google.com/v8/design.html#prop_access).
+#### 对象组
 
-#### Object Groups
+每个本地对象组都是由一组之间相互关联的对象组成的。比如一个DOM子树，每个节点都有访问到它的父元素，下一个子元素和下一个兄弟元素，它们构成了一个关联图。需要注意的是本地元素没有在JavaScript堆中表现－这就是它们的大小是零的原因，而它的包装对象被创建了。
 
-Each native objects group is made up from objects that hold mutual references to each other. Consider for example a DOM subtree, where every node has a link to its parent and links to the next child and next sibling, thus forming a connected graph. Note that native objects are not represented in the JavaScript heap — that's why they have zero size. Instead, wrapper objects are created.
-
-Each wrapper object holds a reference to the corresponding native object, for redirecting commands to it. In its own turn, an object group holds wrapper objects. However, this doesn't create an uncollectable cycle, as GC is smart enough to release object groups whose wrappers are no longer referenced. But forgetting to release a single wrapper will hold the whole group and associated wrappers.
+每个包装对象都会有一个到本地对象的引用，用来传递对这些本地对象的操作。这些本地对象也有到包装对象的引用。但这并不会创造无法收回的循环，GC是足够智能的，能够分辨出那些已经没有引用包装对象的本地对象并释放它们的。但如果有一个包装对象没有被释放那它将会保留所有对象组和相关的包装对象。
 
 ## Prerequisites and helpful tips
 
