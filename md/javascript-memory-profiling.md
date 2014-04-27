@@ -40,100 +40,100 @@
 
 * 隐含的保持对其它对象的引用，这种方式会阻止垃圾回收(简称GC)对这些对象的自动回收处理。
 
-当你使用DevTools中的堆分析仪(Heap Profiler，用来分析内存问题的工具，在DelTools的"Profile"标签下)时，你可能会惊喜的发现一些显示各种信息的栏目。其中有两项是：**表面大小(Shallow Size)**和**保留大小(Retained Size)**，那它们是什么意思呢？
+当你使用DevTools中的堆分析仪(Heap Profiler，用来分析内存问题的工具，在DelTools的"Profile"标签下)时，你可能会惊喜的发现一些显示各种信息的栏目。其中有两项是：**直接占用内存(Shallow Size)**和**占用总内存(Retained Size)**，那它们是什么意思呢？
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_1.png)
 
 
-#### 表面大小(Shallow Size)
+#### 直接占用内存(Shallow Size，不包括引用的对象占用的内存)
 
 这个是对象本身占用的内存。
 
-典型的JavaScript对象都会有保留内存用来描述这个对象和存储它的直接值。一般，只有数组和字符串会有明显的表面大小(Shallow Size)。但字符串和数组常常会在渲染器内存中存储主要数据部分，仅仅在JavaScript对象栈中暴露一个很小的包装对象。
+典型的JavaScript对象都会有保留内存用来描述这个对象和存储它的直接值。一般，只有数组和字符串会有明显的直接占用内存(Shallow Size)。但字符串和数组常常会在渲染器内存中存储主要数据部分，仅仅在JavaScript对象栈中暴露一个很小的包装对象。
 
-渲染器内存指你分析的页面在渲染的过程中所用到的所有内存：页面本身的内存 + 页面中的JS堆栈用到的内存 + 页面触发的相关工作进程(workers)中的JS堆栈用到的内存。然而，通过阻止垃圾自动回收别的对象，一个小对象都有可能间接占用大量的内存。
+渲染器内存指你分析的页面在渲染的过程中所用到的所有内存：页面本身的内存 + 页面中的JS堆用到的内存 + 页面触发的相关工作进程(workers)中的JS堆用到的内存。然而，通过阻止垃圾自动回收别的对象，一个小对象都有可能间接占用大量的内存。
 
-#### 保留大小(Retained Size)
+#### 占用总内存(Retained Size，包括引用的对象所占用的内存)
 
+一个对象一但删除后它引用的依赖对象就不能被**GC根(GC root)**引用到，它们所占用的内存就会被释放，一个对象占用总内存包括这些依赖对象所占用的内存。
 
+**GC根**是由*控制器(handles)*组成的，这些控制器(不论是局部还是全局)是在建立由build-in函数(native code)到V8引擎之外的JavaScript对象的引用时创建的。所有这些控制器都能够在堆快照的**GC roots(GC根)** > **Handle scope** 和 **GC roots** > **Global handlers**中找到。如果不深入了解浏览器的实现原理，在这篇文章中介绍这些控制器可能会让人不能理解。GC根和控制器你都不需要过多关心。
 
-This is the size of memory that is freed once the object itself is deleted along with its dependent objects that were made unreachable from **GC roots**.
+有很多内部的GC根对用户来说都是不重要的。从应用的角度来说有下面几种情况：
 
-**GC roots** are made up of *handles* that are created (either local or global) when making a reference from native code to a JavaScript object outside of V8. All such handles can be found within a heap snapshot under **GC roots** > **Handle scope** and **GC roots** > **Global handles**. Describing the handles in this documentation without diving into details of the browser implementation may be confusing. Both GC roots and the handles are not something you need to worry about.
+* Window 全局对象 (所有iframe中的)。在堆快照中有一个distance字段，它是从window对象到达对应对象的最短路径长度。
 
-There are lots of internal GC roots most of which are not interesting for the users. From the applications standpoint there are following kinds of roots:
+* 由所有document能够遍历到的DOM节点组成的文档DOM树。不是所有节点都会被对应的JS引用，但有JS引用的节点在document存在的情况下都会被保留。
 
-* Window global object (in each iframe). There is a distance field in the heap snapshots which is the number of property references on the shortest retaining path from the window.
+* 有很多对象可能是在调试代码时或者DevTools console中(比如：console中的一些代码执行结束后)创建出来的。
 
-* Document DOM tree consisting of all native DOM nodes reachable by traversing the document. Not all of them may have JS wrappers but if they have the wrappers will be alive while the document is alive.
+**注意：**我们推荐用户在创建堆快照时，不要在console中执行代码也，不要启用调试断点。
 
-* Sometimes objects may be retained by debugger context and DevTools console (e.g. after console evaluation).
+内存图由一个根部开始，可能是浏览器的`window`对象或Node.js模块`Global`对象。这些对象如何被内存回收不受用户的控制。
 
-<p class="note"><strong>Note:</strong> We recommend users to do heap snapshots with clear console and no active breakpoints in the debugger.</p>
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/dontcontrol.png)
 
-The memory graph starts with a root, which may be the `window` object of the browser or the `Global` object of a Node.js module. You don't control how this root object is GC'd.
+不能被GC根遍历到的对象都将被内存回收。
 
-<img src="memory-profiling-files/dontcontrol.png"/>
+**注意：**直接占用内存和占用总内存字段中的数据是用字节表示的。
 
-Whatever is not reachable from the root gets GC.
+### 对象的占用总内存树
 
-<p class="note"><strong>Note:</strong> Both the Shallow and Retained size columns represent data in bytes.</p>
+之前我们已经了解到，堆是由各种互相关联的对象组成的网状结构。在数字领域，这种结构被称为*图*或内存图。图是由*边缘(edges)*连接着的*节点(nodes)*组成的，他们都被贴了标签。
 
-### Object's Retaining Tree
+* **节点(Nodes)** (*或对象*) 节点的标签是由创建他们的*构造(constructor)*函数的名称确定
 
-As we introduced earlier, the heap is a network of interconnected objects. In the mathematical world, this structure is called a *graph* or memory graph. A graph is constructed from *nodes* connected by means of *edges*, both of which are given labels.
+* **边缘(Edges)** 标签名就是属性名
 
-* **Nodes** (*or objects*) are labelled using the name of the *constructor *function that was used to build them
+本文档的后面你将了解到如何使用堆分析仪生成快照。从下图的堆分析仪生成的快照中，我们能看到距离(distance)这个字段：是指对象到GC根的距离。如果同一个类型的所有对象的距离都一样，而有一小部分的距离却比较大，那么就可能出了些你需要进行调查的问题了。
 
-* **Edges** are labelled using the names of *properties*.
+![](memory-profiling-files/image_2.pn://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_2.png)
 
-Later in this guide you will learn how to record a profile using the Heap Profiler. Some of the eye-catching things we can see in the Heap Profiler recording below include distance: the distance from the GC root. If almost all the objects of the same type are at the same distance, and a few are at a bigger distance, that's something worth investigating.
+### 支配对象(Dominators)
 
-![](memory-profiling-files/image_2.png)
+支配对象就像一个树结构，因为每个对象都有一个支配者。一个对象的支配者可能不会直接引用它支配的对象，就是说，支配对象树结构不是图中的生成树。
 
-### Dominators
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/dominatorsspanning.png)
 
-Dominator objects are comprised of a tree structure because each object has exactly one dominator. A dominator of an object may lack direct references to an object it dominates, that is, the dominators tree is not a spanning tree of the graph.
+在上图中：
 
-<img src="memory-profiling-files/dominatorsspanning.png"/>
+* 节点1支配节点2
+* 节点2支配节点3，4和6
+* 节点3支配节点5
+* 节点5支配节点8
+* 节点6支配节点7
 
-In the diagram above:
+在下图的例子中，节点`#3`是`#10`的支配者，但`#7`也在每个从GC到`#10`的路经中都出现了。像这样，如果B对象在每个从根节点到A对象的路经中都出现，那么B对象就是A对象的支配对象。
 
-* Node 1 dominates node 2
-* Node 2 dominates nodes 3, 4 and 6
-* Node 3 dominates node 5
-* Node 5 dominates node 8
-* Node 6 dominates node 7
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/dominators.gif)
 
-In the example below, node `#3` is the dominator of `#10`, but `#7` also exists in every simple path from GC to `#10`. Therefore, an object B is a dominator of an object A if B exists in every simple path from the root to the object A.
+### V8介绍
 
-<img src="memory-profiling-files/dominators.gif" width="550px"/>
+在本节，我们将描述一些内存相关的概念，这些概念是和**V8 JavaScript虚拟机**(V8 VM 或VM)有关的。当分析内存时，了解这些概念对理解堆快照是有帮助的。
 
-### V8 Specifics
+#### JavaScript对象描述
 
-In this section we describe some memory-related topics that correspond specifically to the **V8 JavaScript virtual machine **(V8 VM or VM). When profiling memory, it is helpful to understand why heap snapshots look this way.
+有三个原始类型：
 
-#### JavaScript Object Representation
+* 数字(Numbers) (如 3.14159..)
+* 布尔值(Booleans) (true或false)
+* 字符型(Strings) (如 'Werner Heisenberg')
 
-There are three primitive types:
+它们不会引用别的值，它们只会是叶子节点或终止节点。
 
-* Numbers (e.g 3.14159..)
-* Booleans (true or false)
-* Strings (e.g 'Werner Heisenberg')
-
-They cannot reference other values and are always leafs or terminating nodes.
-
-**Numbers** can be stored as either:
+**数字(Numbers)**以下面两种方式之一被存储：
 
 * an immediate 31-bit integer values called **small integers** (*SMIs*), or
+* 31位整数直接值，称做：**小整数**(*SMIs*)，或
 
-* heap objects, referred to as **heap numbers**. Heap numbers are used for storing values that do not fit into the SMI form, such as *doubles*, or when a value needs to be *boxed*, such as setting properties on it.
+* 堆对象，引用为**堆值**。堆值是用来存储不适合用SMI形式存储的数据，像*双精度数(doubles)*，或者当一个值需要被*打包(boxed)*时，如给这个值再设置属性值。
 
-**Strings** can be stored in either:
+**字符型**数据会以下面两种方式存储：
 
-* the **VM heap**, or
+* **VM堆**，或
 
-* externally in the **renderer’s memory**. A *wrapper object* is created and used for accessing external storage where, for example, script sources and other content that is received from the Web is stored, rather than copied onto the VM heap.
+* 外部的**渲染器内存**中。这时会创建一个包装对象用来访问存储的位置，比如，Web页面包存的脚本资源和其它内容，而不是直接复制至VM堆中。
+
 
 Memory for new JavaScript objects is allocated from a dedicated JavaScript heap (or **VM heap**).These objects are managed by V8's garbage collector and therefore, will stay alive as long as there is at least one strong reference to them.
 
