@@ -87,7 +87,7 @@
 
 本文档的后面你将了解到如何使用堆分析仪生成快照。从下图的堆分析仪生成的快照中，我们能看到距离(distance)这个字段：是指对象到GC根的距离。如果同一个类型的所有对象的距离都一样，而有一小部分的距离却比较大，那么就可能出了些你需要进行调查的问题了。
 
-![](memory-profiling-files/image_2.pn://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_2.png)
+![](http://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_2.png)
 
 ### 支配对象(Dominators)
 
@@ -159,22 +159,24 @@
 
 每个包装对象都会有一个到本地对象的引用，用来传递对这些本地对象的操作。这些本地对象也有到包装对象的引用。但这并不会创造无法收回的循环，GC是足够智能的，能够分辨出那些已经没有引用包装对象的本地对象并释放它们的。但如果有一个包装对象没有被释放那它将会保留所有对象组和相关的包装对象。
 
-## Prerequisites and helpful tips
+## 先决条件和有用提示
 
-### Chrome Task Manager
+### Chrome 任务管理器
 
-<p class="note"><strong>Note:</strong> When profiling memory issues in Chrome, it is a good idea to setup a <a href="https://developers.google.com/chrome-developer-tools/docs/clean-testing-environment">clean-room testing environment</a>.</p>
+**注意：** 当使用Chrome做内存分析时，最好设置一个[洁净的测试环境](https://developers.google.com/chrome-developer-tools/docs/clean-testing-environment)
 
-Using the Chrome Task Manager you can quickly see if a page is consuming a lot of memory by monitoring the memory columns while performing actions that may be causing this to happen. The Task Manager is accessed from the Chrome menu > Tools or by pressing <span class="kbd">Shift</span> + <span class="kbd">Esc</span>.
+打开Chrome的内存管理器，观察内存字段，在一个页面上做相关的操作，你可以很快定位这个操作是否会导致页面占用很多内存。你可以从Chrome菜单 > 工具或按Shift + Esc，找到内存管理器。
 
-<img src="memory-profiling-files/image_5.png"  style="max-width:900px"/>
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_5.png)
 
-Once open, right-click on the heading area of the columns and enable the JavaScript memory column.
+打开后，在标头右击选用 JavasScript使用的内存 这项。
 
-### Identifying a Memory Problem with the DevTools Timeline
+### 通过DevTools Timeline来定位内存问题
 
+解决问题的第一步就是要能够证明问题存在。这就需要创建一个可重现的测试来做为问题的基准度量。没有可再现的程序，就不能可靠的度量问题。换句话说如果没有基准来做为对比，就无法知道是哪些改变使问题出现的。
 The first step in solving any performance problem is having the ability to show proof that the problem exists. This means being able to create a reproducible test that can be used to take a baseline measurement of the problem. Without a reproducible program, you cannot reliably measure the problem. Further, without a baseline measurement, there is no way of knowing that any changes made are improving performance.
 
+**时间轴面版(Timeline panel)**对于发现程序什么时候出了问题很用帮助。
 The **Timeline panel** is helpful for determining when a problem exists. It gives a complete overview of where time is spent when loading and interacting with your web app or page. All events, from loading resources to parsing JavaScript, calculating styles, garbage collection pauses, and repainting are plotted on a timeline.
 
 When investigating memory issues, the Timeline panel’s **Memory view** can be used for tracking:
