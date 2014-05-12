@@ -174,38 +174,32 @@
 ### 通过DevTools Timeline来定位内存问题
 
 解决问题的第一步就是要能够证明问题存在。这就需要创建一个可重现的测试来做为问题的基准度量。没有可再现的程序，就不能可靠的度量问题。换句话说如果没有基准来做为对比，就无法知道是哪些改变使问题出现的。
-The first step in solving any performance problem is having the ability to show proof that the problem exists. This means being able to create a reproducible test that can be used to take a baseline measurement of the problem. Without a reproducible program, you cannot reliably measure the problem. Further, without a baseline measurement, there is no way of knowing that any changes made are improving performance.
 
-**时间轴面版(Timeline panel)**对于发现程序什么时候出了问题很用帮助。
-The **Timeline panel** is helpful for determining when a problem exists. It gives a complete overview of where time is spent when loading and interacting with your web app or page. All events, from loading resources to parsing JavaScript, calculating styles, garbage collection pauses, and repainting are plotted on a timeline.
+**时间轴面版(Timeline panel)**对于发现程序什么时候出了问题很用帮助。它展示了你的web应用或网站加载和交互的时刻。所有的事件：从加载资源到解JavaScript，样式计算，垃圾回收停顿和页面重绘。都在时间轴上表示出来了。
 
-When investigating memory issues, the Timeline panel’s **Memory view** can be used for tracking:
+当分析内存问题时，时间轴面版上的**内存视图(Memory view)**能用来观察：
 
-* total allocated memory - is memory usage growing?
+* 使用的总内存 - 内存使用增长了么?
 
-* number of DOM nodes
+* DOM节点数
 
-* number of documents and
+* 文档(documents)数
 
-* the number of event listeners allocated.
+* 注册的事件监听器(event listeners)数
 
-![](memory-profiling-files/image_6.png)
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_6.png)
 
-<div class="drop-shadow extdoc">
+更多的关于在内存分析时，定位内存泄漏的方法，请阅Zack Grossbart的![Memory profiling with the Chrome DevTools](http://coding.smashingmagazine.com/2012/06/12/javascript-profiling-chrome-developer-tools/)
 
-<p>To read more about how to isolate problems that might be causing leaks during your memory profiling sessions, see <a href="http://coding.smashingmagazine.com/2012/06/12/javascript-profiling-chrome-developer-tools/">Memory profiling with the Chrome DevTools</a> by Zack Grossbart.</p>
+#### **证明一个问题的存在**
 
-</div>
+首先要做的事情是找出你认为可能导致内存泄漏的一些动作。可以是发生在页面上的任何事件，鼠标移入，点击，或其它可能会导致页面性能下降的交互。
 
-#### **Proving a Problem Exists**
+在时间轴面版上开始记录(Ctrl+E 或 Cmd+E)然后做你想要测试的动作。想要强制进行垃圾回收点面版上的垃圾筒图标(![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_8.png))。
 
-The first thing to do is identify a sequence of actions you suspect is leaking memory. This could be anything from navigating around a site, hovering, clicking, or otherwise somehow interacting with page in a way that seems to negatively impact performance more over time.
+下面是一个内存泄漏的例子，有些点没有被垃圾回收：
 
-On the Timeline panel start recording (<span class="kbd">Ctrl</span> + <span class="kbd">E</span> or <span class="kbd">Cmd</span> + <span class="kbd">E</span>) and perform the sequence of actions you want to test. To force a full garbage collection click the trash icon (![](memory-profiling-files/image_8.png)) at the bottom.
-
-Below we see a memory leak pattern, where some nodes are not being collected:
-
-<img src="memory-profiling-files/nodescollected.png"/>
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/nodescollected.png)
 
 If after a few iterations you see a [sawtooth](http://en.wikipedia.org/wiki/Sawtooth_wave) shaped graph (in the memory pane at the top), you are allocating lots of shortly lived objects. But if the sequence of actions is not expected to result in any retained memory, and the DOM node count does not drop down back to the baseline where you began, you have good reason to suspect there is a leak.
 
