@@ -189,7 +189,7 @@
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_6.png)
 
-更多的关于在内存分析时，定位内存泄漏的方法，请阅Zack Grossbart的![Memory profiling with the Chrome DevTools](http://coding.smashingmagazine.com/2012/06/12/javascript-profiling-chrome-developer-tools/)
+更多的关于在内存分析时，定位内存泄漏的方法，请阅Zack Grossbart的[Memory profiling with the Chrome DevTools](http://coding.smashingmagazine.com/2012/06/12/javascript-profiling-chrome-developer-tools/)
 
 #### **证明一个问题的存在**
 
