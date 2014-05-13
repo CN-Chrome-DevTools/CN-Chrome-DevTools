@@ -4,7 +4,7 @@
 
 尽管JavaScript使用垃圾回收做自动内存管理，但[有效的(effective)](http://www.html5rocks.com/en/tutorials/memory/effectivemanagement/)内存处理依然很重要。在这篇文章中我们将探讨分析JavaScript web应用中的内存问题。在学习有关特性时请确保尝试一下[相关案例](#supporting_demos)以提高你对这些工具在实践中如何工作的认识。
 
-请阅读[内存 101(Memory 101)](chrome-developer-tools/docs/memory-analysis-101)页面来帮助你熟悉这篇文章中用到的术语。
+请阅读[内存 101(Memory 101)](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101)页面来帮助你熟悉这篇文章中用到的术语。
 
 **注意：**我们将要用到的有些特性目前仅在[Chrome Canary版](http://www.google.com/intl/en/chrome/browser/canary.html)浏览器中有。我们推荐使用这个版本来获得最佳的工具，以分析你的应用程序的内存问题。
 
@@ -13,7 +13,7 @@
 
 总体来说，当你觉得你遇到了内存泄漏问题时，你需要思考三个问题：
 
-* **我的页面是否占用了过多的内存?** - [Timeline内存查看工具(Timeline memory view)](#heading=h.3gfl4k8caz0k) 和 [Chrome任务管理(Chrome task manager)](http://#heading=h.uhgze3ab3kb2%20) 能帮助你确认你是否使用了过多的内存。Memory view 能跟踪页面渲染过程中DOM节点计数，documents文档计数和JS事件监听计数。作为一个经验法则：避免对不再需要用到的DOM元素的引用，移除不需要的事件监听并且在存储你可能不会用到的大块数据时要留意。
+* **我的页面是否占用了过多的内存?** - [Timeline内存查看工具(Timeline memory view)](#heading=h.3gfl4k8caz0k) 和 [Chrome任务管理(Chrome task manager)](#chrome-任务管理器) 能帮助你确认你是否使用了过多的内存。Memory view 能跟踪页面渲染过程中DOM节点计数，documents文档计数和JS事件监听计数。作为一个经验法则：避免对不再需要用到的DOM元素的引用，移除不需要的事件监听并且在存储你可能不会用到的大块数据时要留意。
 
 * **我的页面有没有内存泄漏?** - [对象分配跟踪(Object allocation tracker)](#heading=h.8yjlf68i8qix)通过实时查看JS对象的分配来帮助你定位泄漏。你也可以使用[堆分析仪(Heap Profiler)](#heading=h.g0yxr1o33gky)生成JS堆快照，通过分析内存图和比较快照之间的差异，来找出没有被垃圾回收清理掉的对象。
 
@@ -201,66 +201,64 @@
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/nodescollected.png)
 
-If after a few iterations you see a [sawtooth](http://en.wikipedia.org/wiki/Sawtooth_wave) shaped graph (in the memory pane at the top), you are allocating lots of shortly lived objects. But if the sequence of actions is not expected to result in any retained memory, and the DOM node count does not drop down back to the baseline where you began, you have good reason to suspect there is a leak.
+如果经过一些反复测试后，你看到的是[锯齿](http://en.wikipedia.org/wiki/Sawtooth_wave)状的图形(在内存面版的上方)，说明你的程序中有很多短时存在的对象。而如果一系列的动作没有让内存保持在一定的范围，并且DOM节点数没有返回到开始时的数目，你就可以怀疑有内存泄漏了。
 
-<img src="memory-profiling-files/image_10.png"  style="max-width:900px"/>
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_10.png)
 
-Once you’ve confirmed that the problem exists, you can get help identifying the source of the problem using the **heap profiler **on the **Profiles panel**.
+一旦确定了存在内存上的问题，你就可以使用**分析面板(Profiles panel)**上的**堆分析仪(heap profiler)**来定位问题的来源。
 
-<p class="note">
-    <strong>Example:</strong>
-    Try out this example of <a href="/chrome-developer-tools/docs/demos/memory/example1.html">memory growth</a> where you can practice how to effectively use Timeline memory mode.
-</p>
+例子: 尝试一下[memory growth](https://developers.google.com/chrome-developer-tools/docs/demos/memory/example1.html)的例子，能帮助你有效的练习通过时间轴分析内存问题。
 
+### 内存回收
 
-### Garbage Collection
+*内存回收器*(像V8中的)需要能够定位哪些对象是*活的(live)*，而那些被认为是*死的*(垃圾*)*的对象是*无法引用到的(unreachable)*。
 
-A *garbage collector* (such as the one in V8) needs to be able to locate objects in your application which are *live*, as well as, those which are considered *dead* (garbage*)* and are *unreachable*.
+如果**垃圾回收** (GC)因为JavaScript执行时有逻辑错误而没有能够回收到垃圾对象，这些垃圾对象就无法再被重新回收了。像这样的情况最终会让你的应用越来越慢。
 
-If **garbage collection** (GC) misses any dead objects due to logical errors in your JavaScript then the memory consumed by these objects cannot be reclaimed. Situations like this can end up slowing down your application over time.
+比如你在写代码时，有的变量和事件监听器已经用不到了，但是却仍然被有些代码引用。只要引用还存在，那被引用的对象就无法被GC正确的回收。
 
-This often happens when you’ve written your code in such a way that variables and event listeners you don’t require are still referenced by some code. While these references are maintained, the objects cannot be correctly cleaned up by GC.
+当你的应用程序在运行中，有些DOM对象可能已经更新/移除了，要记住检查引用了DOM对象的变量并将其设null。检查可能会引用到其它对象(或其它DOM元素)的对象属性。双眼要盯着可能会越来越增长的变量缓存。
 
-Remember to check and nullify variables that contain references to DOM elements which may be getting updated/destroyed during the lifecycle of your app. Check object properties which may reference other objects (or other DOM elements). Be sure to keep an eye on variable caches which may accumulate over time.
+## 堆分析仪
 
-## Heap Profiler
+### 拍一个快照
 
-### Taking a snapshot
+在Profiles面板中，选择** *Take Heap Snapshot* **，然后点击**Start**或者按Cmd + E或者Ctrl + E：
 
-On the Profiles panel, choose ** *Take Heap Snapshot* **, then click **Start** or press <span class="kbd">Cmd</span> + <span class="kbd">E</span> or <span class="kbd">Ctrl</span> + <span class="kbd">E</span>:
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_11.png)
 
-![](memory-profiling-files/image_11.png)
+快照最初是保存在渲染器进程内存中的。它们被按需导入到了DevTools中，当你点击快照按钮后就可以看到它们了。当快照被载入DevTools中显示后，快照标题下面的数字显示了[能够被引用到的(reachable)](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#retaining_paths)JavaScript对象占有内存总数。
 
-**
-**Snapshots are initially stored in the renderer process memory. They are transferred to the DevTools on demand, when you click on the snapshot icon to view it. After the snapshot has been loaded into DevTools and has been parsed, the number below the snapshot title appears and shows the total size of the [reachable](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#retaining_paths) JavaScript objects:
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_12.png)
 
-![](memory-profiling-files/image_12.png)
+例子：尝试一下[garbage collection in action](https://developers.google.com/chrome-developer-tools/docs/demos/memory/example2.html)的例子，在时间轴(Timeline)面板中监控内存的使用。
 
-<p class="note">
-    <strong>Example:</strong>
-    Try out this example of <a href="/chrome-developer-tools/docs/demos/memory/example2.html">garbage collection in action</a> and monitor memory usage in the Timeline.
-</p>
+### 清除快照
 
-### Clearing snapshots
+点击Clear all按钮图标(![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_14.png))，就能清除掉所有快照：
 
-Snapshots can be removed (both from DevTools and renderers memory) by pressing the Clear all profiles icon (![](memory-profiling-files/image_14.png)):
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_15.png)
 
-![](memory-profiling-files/image_15.png)
+**注意：**关闭DevTools窗口并不能从渲染内存中删除掉收集的快照。当重新打开DevTools后，之前的快照列表还在。
 
-<p class="note"><strong>Note:</strong> Closing the DevTools window will not delete collected profiles from the renderers memory. When reopening DevTools, all previously taken snapshots will reappear in the list of snapshots.</p>
+记住我们之前提到的，当你生成快照时你可以强制执行在DevTools中GC。当我们拍快照时，GC是自动执行的。在时间轴(Timeline)中点击垃圾桶(垃圾回收)按钮(![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_8.png))就可以轻松的执行垃圾回收了。
 
-Remember that we mentioned earlier you can force GC from the DevTools as part of your snapshot workflow. When taking a Heap Snapshot, it is automatically forced. In Timeline it can be very convenient to force a GC by clicking on the trash can (Collect Garbage) button (<img src="memory-profiling-files/image_8.png"/>).
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/force.png)
 
-<img src="memory-profiling-files/force.png"/>
+例子：尝试一下[scattered objects](https://developers.google.com/chrome-developer-tools/docs/demos/memory/example3.html)并用堆分析仪(Heap Profiler)分析它。你可以看到(对象)项目的集合。
 
-<p class="note"><strong>Example:</strong> Try out this example of <a href="/chrome-developer-tools/docs/demos/memory/example3.html">scattered objects</a> and profile it using the Heap Profiler. You should see a number of (object) item allocations.</p>
+### 切换快照视图
 
-### Switching between snapshot views
+一个快照可以根据不同的任务切换视图。可以通过如图的选择框切换：
 
-A snapshot can be viewed from different perspectives for different tasks. To switch between views, use the selector at the bottom of the view:
+![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_17.png)
 
-![](memory-profiling-files/image_17.png)**
-**
+下面是三个默认视图：
+* **Summary(概要) - **通过构造函数名分类显示对象;
+* **Comparison(对照) - **显示两个快照间对象的差异;
+* **Containment(控制) - **可用来探测堆内容;
+
+**Dominators(支配者)**视图可以在Settings面板中开启 **- **显示[dominators tree.](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#dominators) 可以用来找到增长点。
 
 There are three default views:
 
