@@ -424,13 +424,13 @@ DOM内存泄漏可能会超出你的想象。看下下面的例子 - #tree对象
 对象跟踪器不间断的记录堆快照(频率达到了每50毫秒！)，结束时记录最后一个快照。该堆分配分析器显示对象在哪被创建并定位它的保留路径。
 
 ![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_26.png)
+
 **开启并使用对象分析器**
-**Enabling and using the Object Tracker**
 
 开始使用对象分析器：
 1. 确认你使用的是最新版的[Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)。
 
-2. 打开DeveTools并点击齿轮图标，启用Show advanced heap snapshot properties。
+2. 打开DeveTools并点击齿轮图标(译者：没明白这步有什么用)。
 
 3. 现在，打开Profiler面板，你就能看到"Record Heap Allocations"的选项。
 
