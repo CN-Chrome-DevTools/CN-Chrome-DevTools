@@ -40,7 +40,7 @@
 
 * 隐含的保持对其它对象的引用，这种方式会阻止垃圾回收(简称GC)对这些对象的自动回收处理。
 
-当你使用DevTools中的堆分析仪(Heap Profiler，用来分析内存问题的工具，在DelTools的"Profile"标签下)时，你可能会惊喜的发现一些显示各种信息的栏目。其中有两项是：**直接占用内存(Shallow Size)**和**占用总内存(Retained Size)**，那它们是什么意思呢？
+当你使用DevTools中的堆分析仪(Heap Profiler，用来分析内存问题的工具，在DevTools的"Profile"标签下)时，你可能会惊喜的发现一些显示各种信息的栏目。其中有两项是：**直接占用内存(Shallow Size)**和**占用总内存(Retained Size)**，那它们是什么意思呢？
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_1.png)
 
@@ -254,36 +254,26 @@
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_17.png)
 
 下面是三个默认视图：
-* **Summary(概要) - **通过构造函数名分类显示对象;
-* **Comparison(对照) - **显示两个快照间对象的差异;
-* **Containment(控制) - **可用来探测堆内容;
+* **Summary(概要) - **通过构造函数名分类显示对象；
+* **Comparison(对照) - **显示两个快照间对象的差异；
+* **Containment(控制) - **可用来探测堆内容；
 
-**Dominators(支配者)**视图可以在Settings面板中开启 **- **显示[dominators tree.](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#dominators) 可以用来找到增长点。
+**Dominators(支配者)**视图可以在Settings面板中开启 **- **显示[dominators tree.](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#dominators) 可以用来找到内存增长点。
 
-There are three default views:
+### 通过不同颜色区分对象
 
-* **Summary — **shows objects grouped by the constructor name;
+对象的属性和属性值有不同的类型并自动的通过颜么进行了区分。每个属性都是以下四种之一：
 
-* **Comparison — **displays difference between two snapshots;
+* **a:property —**通过名称索引的普通属性，由.(点)操作符，或\[\](中括号)引用，如\["foo bar"\]；
 
-* **Containment — **allows exploration of heap contents;
+* **0:element -**通过数字索引的普通属性，由\[\](中括号)引用；
 
-The **Dominators **view, which can be enabled via the Settings panel **— **shows the [dominators tree.](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#dominators) and can be useful to find accumulation points.
+* **a:****context var - **函数内的属性，在函数上下文内，通过名称引用；
 
-### Looking up color coding
+* **a:****system prop - **由JavaScript VM 添加的属性，JavaScript代码不能访问。
 
-Properties and property values of objects have different types and are colored accordingly. **
-**Each property has one of four types:
 
-* **a: property — **a regular property with a name, accessed via the . (dot) operator, or via [ ] (brackets) notation, e.g. ["foo bar"];
-
-* **0: element — **a regular property with a numeric index, accessed via [ ] (brackets) notation;
-
-* **a:**** context var — **a variable in a function context, accessible by its name from inside a function closure;
-
-* **a:**** system prop — **property added by the JavaScript VM, not accessible from JavaScript code.
-
-Objects designated as `System `do not have a corresponding JavaScript type. They are part of JavaScript VM's object system implementation. V8 allocates most of its internal objects in the same heap as the user's JS objects. So these are just v8 internals.
+命名为`System `的对象没有对应的JavaScript类型。它们是JavaScript VM对象系统内置的。V8将大多数内置对象和用户JS对象放在同一个堆中。但它们只是V8的内部对象。
 
 ## Views in detail
 
