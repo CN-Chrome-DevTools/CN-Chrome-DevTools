@@ -275,75 +275,73 @@
 
 命名为`System `的对象没有对应的JavaScript类型。它们是JavaScript VM对象系统内置的。V8将大多数内置对象和用户JS对象放在同一个堆中。但它们只是V8的内部对象。
 
-## Views in detail
+## 视图详解
+### Summary view(概要视图)
 
-### Summary view
-
+打开一个快照，默认是以概要视图显示的，显示了对象总数，可以展开显示具体内容：
 Initially, a snapshot opens in the Summary view, displaying object totals, which can be expanded to show instances:
 
-![](memory-profiling-files/image_19.png)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_19.png)
 
-Top-level entries are "total" lines. They display:
+第一层级是"总体"行，它们显示了：
 
-* the **Constructor represents **all objects created using this constructor
+* **Constructor(构造函数)**表示所有通过该构造函数生成的对象
 
-* the **number of object instances** is displayed in the # column
+* **对象的实例数**在Objects Count列上显示
 
-* the **Shallow size** column displays the sum of [shallow sizes](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#object_sizes) of all objects created by a certain constructor function
+* **Shallow size**列显示了由对应构造函数生成的对象的[shallow sizes(直接占用内存)](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#object_sizes)总数
 
-* the **Retained size** column displays the maximum retained size among the same set of objects
+* **Retained size**列展示了对应对象所占用的最大内存
 
-* the **Distance **displays the distance to the root using the shortest simple path of nodes.
+* **Distance**列显示的是对象到达GC根的最短距离
 
-After expanding a total line in the upper view, all of its instances are displayed. For each instance, its shallow and retained sizes are displayed in the corresponding columns. The number after the @ character is the objects’ unique ID, allowing you to compare heap snapshots on per-object basis.
+展开一个总体行后，会显示所有的对象实例。没一个实例的直接占用内存和占用总内存都被相应显示。@符号后的数字不对象的唯一ID，有了它你就可以逐个对象的在不同快照间作对比。
 
-<p class="note"><strong>Example:</strong> Try this <a href="https://developers.google.com/chrome-developer-tools/docs/heap-profiling-summary">demo page</a> (opens in a new tab) to understand how the Summary view can be used.</p>
+例子：尝试这个[例子](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-summary)(在新tab标签中打开)来了解如何使用概要视图。
 
-Remember that yellow objects have JavaScript references on them and red objects are detached nodes which are referenced from one with a yellow background.
+记住黄色的对象被JavaScript引用，而红色的对象是由黄色背景色引用被分离了的节点。
 
-### Comparison view
+### Comparison view(对照视图)
 
-This view is used to compare multiple snapshots to each other so that you can see what the difference between them are in order to find leaked objects. To verify that a certain application operation doesn't create leaks (e.g. usually a pair of direct and reverse operations, like opening a document, and then closing it, should not leave any garbage), you may follow the scenario below:
+该视图用来对照不同的快照来找到快照之间的差异，来发现有内存泄漏的对象。来证明对应用的某个操作没有造成泄漏(比如：一般一对操作和撤消的动作，像找开一个document，然后关闭，这样是不会造成泄漏的)，你可以按以下的步骤尝试：
 
-1. Take a heap snapshot before performing an operation;
+1. 在操作前拍一个堆快照；
 
-2. Perform an operation (interact with a page in some way that you believe to be causing a leak);
+2. 执行一个操作(做你认为会造成泄漏的动作)；
 
-3. Perform a reverse operation (do the opposite interaction and repeat it a few times);
+3. 撤消之前的操作(上一个操作相反的操作，多重复几次)；
 
-4. Take a second heap snapshot and change the view of this one to Comparison, comparing it to snapshot 1.
+4. 拍第二个快照，将视图切换成对照视图，并同快照1进行对比。
 
-In the Comparison view, the difference between two snapshots is displayed. When expanding a total entry, added and deleted object instances are shown:
+在对照视图下，两个快照之间的不同就会展现出来了。当展开一个总类目后，增加和删除了的对象就显示出来了：
 
-![](memory-profiling-files/image_21.png)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_21.png)
 
-<p class="note"><strong>Example:</strong> Try this <a href="https://developers.google.com/chrome-developer-tools/docs/heap-profiling-comparison">demo page</a> (opens in a new tab) to get an idea how to use snapshot comparison for detecting leaks.</p>
+例子：尝试[例子](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-comparison)(在新tab标签中打开)来了解如何使用对照视图来定位内存泄漏。
 
-### Containment view
+### Containment view(控制视图)
 
-The Containment view is essentially a "bird's eye view" of your application's objects structure. It allows you to peek inside function closures, to observe VM internal objects that together make up your JavaScript objects, and to understand how much memory your application uses at a very low level.
+控制视图可以称作对你的应用的对象结构的"鸟瞰视图(bird's eys view)"。它能让你查看function内部，跟你的JavaScript对象一样的观察VM内部对象，能让你在你的应用的非常低层的内存使用情况。
 
-The view provides several entry points:
+该视图提供了几个进入点：
 
-* **DOMWindow**** objects** — these are objects considered as "global" objects for JavaScript code;
+* **DOMWindow**** 对象** - 这些对象是JavaScript代码的"全局"对象；
 
-* **GC roots** — actual GC roots used by VM's garbage collector;
+* **GC根** - VM的垃圾回收器真正的GC根；
 
-* **Native objects** — browser objects that are "pushed" inside the JavaScript virtual machine to allow automation, e.g. DOM nodes, CSS rules (see the next section for more details.)
+* **Native对象** - 浏览器对象对"推入"JavaScript虚拟机中来进行自动操作，如：DOM节点，CSS规则(下一节会有详细介绍。)
 
-Below is the example of a populated Containment view:
+下图是一个典型的控制视图：
 
-![](memory-profiling-files/image_22.png)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_22.png)
 
-<p class="note">
-  <strong>Example:</strong> Try this <a href="https://developers.google.com/chrome-developer-tools/docs/heap-profiling-containment">demo page</a> (opens in a new tab) for finding out how to explore closures and event handlers using the view.
-</p>
+例子：尝试[例子](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-containment)(在新tab标签中打开)来了解如何使用控制视图来查看闭包内部和事件处理。
 
-<strong>A tip about closures</strong>
+**关于闭包的建议**
 
-It helps a lot to name the functions so you can easily distinguish between closures in the snapshot. For example, this example does not use named functions:
+给函数命名对你在快照中的闭包函数间作出区分会很用帮助。如：下面的例子中没有给函数命名：
 
-<pre>
+```
 function createLargeClosure() {
   var largeStr = new Array(1000000).join('x');
 
@@ -353,11 +351,10 @@ function createLargeClosure() {
 
   return lC;
 }
-</pre>
+```
+而下面这个有给函数命名：
 
-Whilst this example does:
-
-<pre>
+```
 function createLargeClosure() {
   var largeStr = new Array(1000000).join('x');
 
@@ -367,22 +364,18 @@ function createLargeClosure() {
 
   return lC;
 }
-</pre>
+```
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/domleaks.png)
 
-<img src="memory-profiling-files/domleaks.png"/></a>
+例子：尝试这个例子[why eval is evil](https://developer.chrome.com/devtools/docs/demos/memory/example7.html)来分析内存中闭包的影响。你可能也对尝试下面这个例子，记录[heap allocations(堆分配)](https://developer.chrome.com/devtools/docs/demos/memory/example8.html)有兴趣。
 
-<p class="note">
-    <strong>Examples:</strong>
-    Try out this example of <a href="/chrome-developer-tools/docs/demos/memory/example7.html">why eval is evil</a> to analyze the impact of closures on memory. You may also be interested in following it up with this example that takes you through recording <a href="/chrome-developer-tools/docs/demos/memory/example8.html">heap allocations</a>.
-</p>
+### 揭露DOM内存泄漏
 
-### Uncovering DOM leaks
+这个工具独一无二的一点是展示了浏览器原生对象(DOM节点，CSS规则)和JavaScript对象之间的双向引用。这能帮助你发现因为忘记解除引用游离的DOM子节点而导致的难以发觉的内存泄漏。
 
-A unique ability of the tool is to reflect bidirectional dependencies between browser native objects (DOM nodes, CSS rules) and JavaScript objects. This helps to discover otherwise invisible leaks happening due to forgotten detached DOM subtrees floating around.
+DOM内存泄漏可能会超出你的想象。看下下面的例子 - #tree对象什么时候被GC呢？
 
-DOM leaks can be bigger than you think. Consider the following sample - when is the #tree GC?
-
-<pre>
+```
   var select = document.querySelector;
   var treeRef = select("#tree");
   var leafRef = select("#leaf");
@@ -398,44 +391,31 @@ DOM leaks can be bigger than you think. Consider the following sample - when is 
 
   leafRef = null;
   //#NOW can be #tree GC
-</pre>
+```
 
-<code>#leaf</code> maintains a reference to it's parent (parentNode) and recursively up to <code>#tree</code>, so only when leafRef is nullified is the WHOLE tree under <code>#tree</code> a candidate for GC.
+`#leaf`代表了对它的父节点的引用(parentNode)它递归引用到了`#tree`，所以，只有当leafRef被nullified后`#tree`代表的整个树结构才会被GC回收。
 
-<img src="memory-profiling-files/treegc.png"/>
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/treegc.png)
 
-<p class="note">
-    <strong>Examples:</strong>
-    Try out this example of <a href="/chrome-developer-tools/docs/demos/memory/example6.html">leaking DOM nodes</a> to understand where DOM nodes can leak and how to detect them. You can follow it up by also looking at this example of <a href="/chrome-developer-tools/docs/demos/memory/example9.html">DOM leaks being bigger than expected</a>.
-</p>
+例子：尝试[leaking DOM nodes](https://developer.chrome.com/devtools/docs/demos/memory/example6.html)来了解哪里DOM节点会内存泄漏并如何定位。你也可以看一下这个例子：[DOM leaks being bigger than expected](https://developer.chrome.com/devtools/docs/demos/memory/example9.html)。
 
-<div class="drop-shadow extdoc">
+查看Gonzalo Ruiz de Villa的文章[Finding and debugging memory leaks with the Chrome DevTools](http://slid.es/gruizdevilla/memory)来阅读更多关于DOM内存泄漏和内存分析的基础。
 
-<p>To read more about DOM leaks and memory analysis fundamentals checkout <a href="http://slid.es/gruizdevilla/memory">Finding and debugging memory leaks with the Chrome DevTools</a> by Gonzalo Ruiz de Villa.</p>
+原生对象在Summary和Containment视呼中更容易找到 - 有它们专门的类目：
 
-</div>
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_24.png)
 
-Native objects are most easily accessible from Summary and Containment views — there are dedicated entry nodes for them:
+例子：尝试下这个[例子](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-dom-leaks)(在新tab标签中打开)来了解如何将DOM树分离。
 
-![](memory-profiling-files/image_24.png)
+### 支配者视图(Dominators view)
 
-<p class="note">
-    <strong>Example:</strong>
-    Try this <a href="https://developers.google.com/chrome-developer-tools/docs/heap-profiling-dom-leaks">demo</a> (opens in a new tab) to play with detached DOM trees.
-</p>
+支配者视图显示了堆图的支配者树。支配者视图跟控制(Containment)视图很像，但是没有属性名。这是因为支配者可能会是一个没有直接引用的对象，就是说这个支配者树不是堆图的生成树。但这是个有用的视图能帮助我们很快的定位内存增长点。
 
-### Dominators view
+注意：在Chrome Canary中，支配者视图能够在DevTools中的Settings > Show advanced heap snapshot properties 开启，重启DevTools生效。
 
-The Dominators view shows the dominators tree for the heap graph. The Dominators view looks similar to the Containment view, but lacks property names. This is because a dominator of an object may lack direct references to it, that is, the dominators tree is not a spanning tree of the graph. But this only serves for good, as helps us to identify memory accumulation points quickly.
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_25.png)
 
-<p class="note"><strong>Note:</strong> In Chrome Canary, Dominators view can be enabled by going to Settings > Show advanced heap snapshot properties and restarting the DevTools.</p>
-
-![](memory-profiling-files/image_25.png)
-
-<p class="note">
-    <strong>Examples:</strong>
-    Try this <a href="https://developers.google.com/chrome-developer-tools/docs/heap-profiling-dominators">demo</a> (opens in a new tab) to train yourself in finding accumulation points. Follow it up with this example of running into <a href="/chrome-developer-tools/docs/demos/memory/example10.html">retaining paths and dominators</a>.
-</p>
+例子：尝试这个[例子](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-dominators)(在新tab标签中打开)来练习如何找到内存增长点。可以进一步尝试下一个例子[retaining paths and dominators](https://developer.chrome.com/devtools/docs/demos/memory/example10.html)。
 
 ## Object allocation tracker
 
