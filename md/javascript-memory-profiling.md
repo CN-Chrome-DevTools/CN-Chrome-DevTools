@@ -417,35 +417,34 @@ DOM内存泄漏可能会超出你的想象。看下下面的例子 - #tree对象
 
 例子：尝试这个[例子](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-dominators)(在新tab标签中打开)来练习如何找到内存增长点。可以进一步尝试下一个例子[retaining paths and dominators](https://developer.chrome.com/devtools/docs/demos/memory/example10.html)。
 
-## Object allocation tracker
+## 对象分配跟踪器
 
-The **object tracker** combines the detailed snapshot information of the [heap profiler](#heading=h.xfxcns9xlif4) with the incremental updating and tracking of the Timeline panel. Similar to these tools, tracking objects’ heap allocation involves starting a recording, performing a sequence of actions, then stop the recording for analysis.
+**对象跟踪器**整合了[heap profiler](https://developer.chrome.com/devtools/docs/javascript-memory-profiling#heap_profiler)的快照增量更新分析和Timeline面板的记录。跟其它工具一样，记录对象的堆配置需要启动记录，执行一系列操作，然后停止记录然后进行分析。
 
-The object tracker takes heap snapshots periodically throughout the recording (as frequently as every 50 ms!) and one final snapshot at the end of the recording. The heap allocation profile shows where objects are being created and identifies the retaining path.
+对象跟踪器不间断的记录堆快照(频率达到了每50毫秒！)，结束时记录最后一个快照。该堆分配分析器显示对象在哪被创建并定位它的保留路径。
 
-![](memory-profiling-files/image_26.png)
-
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_26.png)
+**开启并使用对象分析器**
 **Enabling and using the Object Tracker**
 
-To begin using the Object Tracker:
+开始使用对象分析器：
+1. 确认你使用的是最新版的[Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)。
 
-1. Make sure you have the latest [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html).
+2. 打开DeveTools并点击齿轮图标，启用Show advanced heap snapshot properties。
 
-2. Open the Developer Tools and click on the gear icon in the lower right.
+3. 现在，打开Profiler面板，你就能看到"Record Heap Allocations"的选项。
 
-3. Now, open the Profiler panel, you should see a profile called "Record Heap Allocations"
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_27.png)
 
-![](memory-profiling-files/image_27.png)
+上面的柱条表示在堆中生成的新对象。高度就对应了相应对象的大小，它的颜色表示了这个对象是否在最后拍的那个快照中还在：蓝色柱表示在timeline最后这个对象还在，灰色柱表示这个对象在timeline中生成，但结束前已经被内存回收了。
 
-The bars at the top indicate when new objects are found in the heap.  The height of each bar corresponds to the size of the recently allocated objects, and the color of the bars indicate whether or not those objects are still live in the final heap snapshot: blue bars indicate objects that are still live at the end of the timeline, gray bars indicate objects that were allocated during the timeline, but have since been garbage collected.
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/collected.png)
 
-<img src="memory-profiling-files/collected.png"/></a>
+上面的例子中，一个动作执行了10次。同一个程序保留了5个对象，所以最后5个蓝色柱条被保留了。但这最后留下的柱存在潜在的问题。你可以用timeline上的滑动条缩小到那个特定的快照并找到这个分配的对象。
 
-In the example above, an action was performed 10 times.  The sample program caches five objects, so the last five blue bars are expected.  But the leftmost blue bar indicates a potential problem. You can then use the sliders in the timeline above to zoom in on that particular snapshot and see the objects that were recently allocated at that point.
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_29.png)
 
-![](memory-profiling-files/image_29.png)
-
-Clicking on a specific object in the heap will show its retaining tree in the bottom portion of the heap snapshot. Examining the retaining path to the object should give you enough information to understand why the object was not collected, and you can make the necessary code changes to remove the unnecessary reference.
+点击一个堆中的对象就能在堆快照的下面部分显示它的保留总内存树。检查这个对象的保留总内存树能够给你足够的信息来了解为什么这个对象没有被回收，然后你就能对代码做相应的修改来去掉不必要的引用。
 
 ## Memory Profiling FAQ
 
