@@ -11,7 +11,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 ###第一阶段
 
 先将 [Chrome DevTools](https://developers.google.com/chrome-developer-tools/) 的内容按现有的目录结构翻译成中文，其中：
- 
+
 - 文章正文内容均放在 `md` 目录下，采用 `md` 格式。
 - 文章中所用到的图片资源暂时先用现有英文手册的原始链接，后续图片资源会统一托管到[七牛云存储](http://www.qiniu.com/)
 
@@ -30,7 +30,6 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 根据翻译文档，制作成类似在线手册或者与官方文档类似的网站，方便大家参阅。
 
-
 ## 参与项目
 
 欢迎你参与翻译本项目，在翻译的过程中，可以锻炼你的英语能力和 Chrome DevTools 的实际应用能力，同时还为他人提供方便，何乐而不为？
@@ -39,21 +38,29 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 参与方法和步骤如下：
 
-* 登录 github
- 
+* 登录 https://github.com
+
 * Fork `git@github.com:CN-Chrome-DevTools/CN-Chrome-DevTools.git`
- 
-* 创建特性分支 (git checkout -b new-feature)
- 
-* 提交改动 (git commit -m 'Added some features or fixed a bug or change a text')
- 
-* 将改动记录提交到远程 git 仓库 (git push origin new-feature)
+
+* 创建您的特性分支 (git checkout -b new-feature)
+
+* 提交您的改动 (git commit -m 'Added some features or fixed a bug or change a text')
+
+* 将您的改动记录提交到远程 git 仓库 (git push origin new-feature)
 
 * 然后到 github 网站的该 git 远程仓库的 new-feature 分支下发起 Pull Request
 
 如果你有任何疑问或者建议、技巧，欢迎加入 Chrome DevTools QQ 讨论群：365161310
 
-## 项目翻译情况
+## 正在翻译文章
+
+* JavaScript Memory Profiling
+* Using the Console
+	* Console API Reference
+	* Command Line API Reference
+* Keyboard Shortcuts
+
+## 项目翻译目录
 
 * Authoring and Development Workflow
 * Editing Styles And The DOM
@@ -73,7 +80,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 		* Finding Accumulation Points
 * Mobile Emulation
 * Using the Console
-	* Console API Reference 
+	* Console API Reference
 	* Command Line API Reference
 * Keyboard Shortcuts
 * Tips and Tricks
@@ -102,6 +109,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 - [SunLn](https://github.com/SunLn)
 - [JiangShui Yu](https://github.com/yujiangshui)
+- [DestinyXie](https://github.com/DestinyXie)
 - 你
 
 （Fork 之后自行添加到最后）
