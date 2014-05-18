@@ -446,173 +446,164 @@ DOM内存泄漏可能会超出你的想象。看下下面的例子 - #tree对象
 
 点击一个堆中的对象就能在堆快照的下面部分显示它的保留总内存树。检查这个对象的保留总内存树能够给你足够的信息来了解为什么这个对象没有被回收，然后你就能对代码做相应的修改来去掉不必要的引用。
 
-## Memory Profiling FAQ
+## 内存分析FAQ
 
-**Q: I don't see all the properties of objects, I don't see non-string values for them! Why?**
+**问：我不能看到对象的所有属性，我也看到它们的非字符串值！为什么？**
 
-Not all properties are actually stored on the JavaScript heap. Some of them are implemented using getters that execute native code. Such properties are not captured in heap snapshots in order to avoid the cost of calling getters and to avoid possible program state changes if getters are not "pure" functions. Also, non-string values such as numbers are not captured in an attempt to reduce snapshot size.
+并非所有属性都完整的保存在JavaScript堆中。其中有些是通过执行原生代码的getters方法来获取的。这些属性没有在堆快照中捕获，是为了防止对getters方法的调用和避免程序状态的改变，如果这些getters方法不是"纯(pure)"的functions。同样，非字符串的值，如数字，没有被捕获是为了减少快照的大小。
 
-**Q: What does the number after the ****@**** char mean — is this an address or an ID? Is the ID value really unique?**
+**问：****@****符号后面的数字是什么意思 - 是地址还是ID呢？这个ID值真的是唯一的么？**
 
-This is an object ID. Displaying an object's address makes no sense, as objects are moved during garbage collections. Those object IDs are real IDs — that means, they persist among multiple snapshots taken and are unique. This allows precise comparison between heap states. Maintaining those IDs adds an overhead to GC cycles, but it is only initiated after the first heap snapshot was taken — no overhead if heap profiles aren't used.
+这是对象ID。显示对象的地址没有意义，因为一个对象会在垃圾回收的时候被移除。这些对象IDs是真正的IDs - 就是说，它们在不同的快照间是唯一表示的。这样就可以的堆状态间进行精确的对比。维持这些IDs会给GC流程增加额外的开支，但这仅在记录第一次堆快照时分配 - 如果堆分析仪没有用到，就不会有额外的开支。
 
-**Q: Are "dead" (unreachable) objects included in snapshots?**
+**问："死"(无法引用到的)对象被包含在快照中了么？**
 
-No. Only reachable objects are included in snapshots. Also, taking a snapshot always starts with doing a GC.
+没有，只有可以引用到的对象才会显示在快照中。而且，拍快照前都会先自动执行GC操作。
 
-<p class="note"><strong>Note:</strong>At the time of writing, we are planning on avoiding this GC to reduce the drop in used heap size when taking heap snapshots. This has yet to be implemented but garbage would still be out of the snapshot.</p>
+**注意：**在写这篇文章的时候，我们计划在拍快照的时候不再GC，防止堆尺寸的减少。现在已经是这样了，但垃圾对象依然显示在快照之外。
 
-**Q: What comprises GC roots?**
+**问：GC根是由什么组成的？**
 
-Many things:
+由很多部分组成：
 
-* built-in object maps;
+* 原生对象图；
 
-* symbol table;
+* 符号表；
 
-* stacks of VM threads;
+* VM线程中的栈；
 
-* compilation cache;
+* 编辑缓存；
 
-* handle scopes;
+* 控制器上下文；
 
-* global handles.
+* 全局控制器。
 
-![](memory-profiling-files/image_30.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_30.jpg)
 
-**Q: I’ve been told to use the Heap Profiler and Timeline Memory view for detecting memory leaks. What tool should be used first?**
+**问：我得知可以使用Heap Profiler和Timeline Memory view来检测内存泄漏。但我应该先用哪个工具呢？**
 
-The Timeline. Use it to diagnose excessive memory usage when you first notice your page has slowed down after extended use. Slowdown was once a classic symptom of a memory leak but it could also be something else – maybe you have a paint or network bottleneck in your page, so make sure to fix the real issue in your page.
+Timeline面版，是在你第一次使用你的页面发现速度变慢了时用来论断过多的内存使用。网站变慢是比较典型的内存泄漏的信号，但也可能是其它的原因 - 可能是有渲染或网络传输方面的瓶颈，所以要确保解决你网页的真正问题。
 
-To diagnose whether memory is the issue, go to the Timeline panel and Memory view. Hit the record button and interact with your application, repeating any steps you feel may be causing a leak. Stop the recording. The graph you see will display the memory allocated to your application. If it happens to be consuming an increasing amount of this over time (without ever dropping), it’s an indication you may have a memory leak.
+论断是否是内存问题，就打开Timeline面板和Memory标签。点击record按钮，然后在你的应用上重复几次你认为可能导致内存泄漏的操作。停止记录。你应用的内存使用图就生成出来了。如果内存的使用一直在增长(而没有相应的下降)，这就表明你的应用可能有内存泄漏了。
 
-The profile for a healthy application should look more like a sawtooth curve as memory is allocated then freed when the garbage collector comes in. There’s nothing to worry about here – there’s always going to be a cost of doing business in JavaScript and even an empty `requestAnimationFrame` will cause this type of sawtooth, you can’t avoid it. Just ensure it’s not sharp as that’s an indication a lot of allocations are being made, which can equate to a lot of garbage on the other side.
+一般一个正常的应用的内存使用图形是锯齿状的，因为内存使用后又会被垃圾回收器回收。不用担心这种锯齿形 - 因为总是会因为JavaScript而有内存的消耗，甚至一个空的`requestAnimationFrame`也会造成这种锯齿形，这是无法避免的。只要不是那种分配了持续很多内存的形状，那就表明生成了很多内存垃圾。
 
-![](memory-profiling-files/image_31.png)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_31.png)
 
-It's the rate of increase in the steepness of this curve that you need to keep an eye on.There is also a DOM node counter, Document counter and Event listener count in the Memory view which can be useful during diagnosis. DOM nodes use native memory and do not directly affect the JavaScript memory graph.
+上图的增长线是需要你警惕的。在诊断分析的时候Memory标签中的DOM node counter，Document counter和Event listener count也是很有用的。DOM节点数是使用的原生内存不会影响JavaScript内存图。
 
-![](memory-profiling-files/image_32.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_32.jpg)
 
-Once you suspect you have a memory leak, the Heap profiler can be used to discover the source of the leak.
+一旦你确认你的应用有内存泄漏，堆分析仪就可以用来找到内存泄漏的地方。
 
-**Q: I noticed a number of DOM nodes in the heap snapshot where some are highlighted in red and indicated as a "Detached DOM tree" whilst others are yellow. What does this mean?
-**
+**问：我发现堆快照中有的DOM节点的数字是用红色标记为"Detached DOM tree"，而其它的是黄色的，这是什么意思呢？**
 
-You'll notice nodes of a few different colors. Red nodes (which have a darker background) do not have direct references from JavaScript to them, but are alive because they’re part of a detached DOM tree. There may be a node in the tree referenced from JavaScript (maybe as a closure or variable) but is coincidentally preventing the entire DOM tree from being garbage collected.
+你会发现有不同的颜色。红色的节点(有着深色的背景)没有从JavaScript到它们的直接的引用，但它们是分离出来的DOM结构的一部分，所以他们还是在内存中保留了。有可能有一个节点被JavaScript引用到了(可能是在闭包中或者一个变量)，这个引用会阻止整个DOM树被内存回收。
 
-![](memory-profiling-files/image_33.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_33.jpg)
 
-Yellow nodes (with a yellow background) however do have direct references from JavaScript. Look for yellow nodes in the same detached DOM tree to locate references from your JavaScript. There should be a chain of properties leading from the DOM window to the element (e.g `window.foo.bar[2].baz`).
+黄色节点(黄色背景)有JavaScript的直接引用。在同一个分离的DOM树中查看一个黄色的节点来定位你的JavaScript的引用。就可能看到从DOM window到那个节点的属性引用链(如：`window.foo.bar[2].baz`)。
 
-An animation of where detached nodes fit into the overall picture can be seen below:
+下面的动态图显示了分离节点的处理过程：
 
-<img src="memory-profiling-files/detached-nodes.gif" style="max-width:900px"/>
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/detached-nodes.gif)
 
-<p class="note">
-    <strong>Example:</strong>
-    Try out this example of <a href="/chrome-developer-tools/docs/demos/memory/example4.html">detached nodes</a> where you can watch node evolution in the Timeline then take heap snapshots to find detached nodes.
-</p>
+**例子**：尝试这个例子[detached nodes](https://developer.chrome.com/devtools/docs/demos/memory/example4.html)你可以查看节点在Timeline中的生命周期，然后拍堆快照来找到分离的节点。
 
-**Q: What do the Shallow and Retained Size columns represent and what are the differences between them?**
+**问：直接占用内存(Shallow Size)和占用总内存(Retained Size)分别代表什么，它们的区别是什么？**
 
-So, objects can be kept in memory (be alive) in two different ways – either directly by another alive object (window and document are always alive objects) or implicitly by holding references from native part of the renderer (like DOM objects). The latter is what ends up preventing these objects from being disposed by GC automatically, causing leaks. The size of memory held by an object itself is known as the shallow size (generally, arrays and strings have larger shallow sizes).
+是这样的，对象可以在内存中以两种方式存在(be alive) - 直接的被别一个可访问的(alive)对象保留(window和document对象总是可访问的)或被原生对象(象DOM对象)隐含的包留引用。后一种方式会因为阻止对象被GC自动回收，而有导制内存泄泥漏的可能。对象自身占用的内存被称为直接占用内存(通常来说，数组和字符串会保留更多的直接占用内存(shallow size))。
 
-![](memory-profiling-files/image_36.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_36.jpg)
 
-An object of any size can hold a ton of memory if it prevents other objects from being disposed. The size of memory that can be freed once an object is deleted (and this its dependents made no longer reachable) is called the retained size.
+一个任意大小的对象可以通过阻止其它对象内存被回收在保留很大的内存使用。当一个对象被删除后(它造成的一些依赖就无法被引用了)能够释放的内存的大小被称有占用总内存(retained size)。
 
-**Q: There's a lot of data in the constructor and retained views. Where should I start digging into to discover if I have a leak?**
+**问：constructor和retained字段下有很多的数据。我应该从哪开始调查我是的否遇到了内存泄漏呢？**
 
-It's generally a good idea to begin investigation from the first object retained in your tree as retainers are sorted by distance (well, distance to the window).
+一般来说最好是从通过retainers排序的第一个对象开始，retainers之间是通过距离排序的(是指到window对象的距离)。
 
-![](memory-profiling-files/image_37.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_37.jpg)
 
-The object retained with the shortest distance is usually your first candidate for causing a memory leak.
+距离最短的对象有可能是首选的可能导致内存泄漏的对象。
 
-**Q: What's the difference between the different Summary, Comparison, Dominators and Containment views?**
+**问：Summary, Comparison, Dominators 和 Containment这些视图之间的不同是什么？**
 
-You may get some mileage by switching between the different data views available at the bottom of the screen.
+你可以通过切换视图来体验它们的区别。
 
-![](memory-profiling-files/image_38.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_38.jpg)
 
-* Summary view helps you hunt down objects (and their memory use) based on type grouped by constructor name. This view is particularly helpful for tracking down DOM leaks.
+* Summary(概要)视图能帮你通过构造函数分组寻找对象(和对象的内存使用)。该视图对找出DOM内存泄漏很有帮助。
 
-* Comparison view helps you track down memory leaks, by displaying which objects have been correctly cleaned up by the garbage collector. Generally used to record and compare two (or more) memory snapshots of before and after an operation. The idea is that inspecting the delta in freed memory and reference count lets you confirm the presence and cause of a memory leak.
+* Comparison(对照)视图能够通过显示哪些对象内存被正确的回收了来搜寻内存泄漏。通常在一个操作前后记录两个(或更多)的内存使用快照。它是通过察看释放的内存和引用数目的差导来察看是否有内存泄漏，并找到原因。
 
-* Containment view provides a better view of object structure, helping us analyse objects referenced in the global namespace (i.e. window) to find out what is keeping them around. It lets you analyse closures and dive into your objects at a low level.
+* Containment(控制)视图对对象结构有更好的展示，帮助我们分析全局作用域(如 window)中对象引用情况来找到是什么保留了这些对象。它能让你分析闭包并深入到对象更深层去查看。
 
+* Dominators(支配者)视图能用来帮助我们确认没有出乎意料的对象引用还挂在某个位置(如那些很好的包含了的)，和确认对象的删除/垃圾回收真正发挥了作用。
 * Dominators view helps confirm that no unexpected references to objects are still hanging around (i.e that they are well contained) and that deletion/garbage collection is actually working.
 
-**Q: What do the various constructor (group) entries in the Heap profiler correspond to?****
-**
+** 问：堆分析仪中的constructor(一组)内容代表什么？**
 
-![](memory-profiling-files/image_39.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_39.jpg)
 
-* **(global property)** – intermediate objects between a global object (like 'window') and an object referenced by it. If an object is created using a constructor Person and is held by a global object, the retaining path would look like [global] > (global property) > Person. This contrasts with the norm, where objects directly reference each other. We have intermediate objects for performance reasons. Globals are modified regularly and property access optimisations do a good job for non-global objects aren't applicable for globals.
+* **(global property)** - 全局对象(像 'window')和引用它的对象之间的中间对象。如果一个对象由构造函数Person生成并被全局对象引用，那么引用路径就是这样的：[global] > (global property) > Person。这跟一般的直接引用彼此的对象不一样。我们用中间对象是有性能方面的原因，全局对象改变会很频繁，非全局变量的属性访问优化对全局变量来说并不适用。
 
+* **(roots)** - 保留树中root对象是引用了选中的对象的对象。它们也可以因为自身的目地而由引擎创建后被引用。这个引擎有引用。。。
 * **(roots)** – The root entries in the retaining tree view are the entities that have references to the selected object. These can also be references created by the engine for its own purposes. The engine has caches which reference objects, but all such references are weak and won't prevent an object from being collected given that there are no truly strong references.
 
-* **(closure)** – a count of references to a group of objects through function closures
+* **(closure)** - 一些函数闭包中的一组对象的引用
 
-* **(array, string, number, regexp)** – a list of object types with properties which reference an Array, String, Number or regular expression
+* **(array, string, number, regexp)** - 一组属性引用了Array,String,Number或正则表达式的对象类型
 
+* **(compiled code)** - 简单来说，所有东西都与compoled code有关。Script像一个函数，但其实对应了&lt;script&gt;的内容。SharedFunctionInfos (SFI)是函数和compiled code之间的对象。函数通常有内容，而SFIS没有(什么鸟意思)。
 * **(compiled code)** – simply, everything related to compiled code. Script is similar to a function but corresponds to a &lt;script&gt; body. SharedFunctionInfos (SFI) are objects standing between functions and compiled code. Functions are usually have a context, while SFIs do not.
 
-* **HTMLDivElement**, **HTMLAnchorElement**, **DocumentFragment** etc – references to elements or document objects of a particular type referenced by your code.
+* **HTMLDivElement**, **HTMLAnchorElement**, **DocumentFragment** 等 - 你代码中对elements或document对象的引用。
 
-Many of the other objects you may see were likely generated during the lifecycle of your code and can include event listeners as well as custom objects, like the controllers below:
+在你的程序的生命周期中生成的很多其它的对象，包括事件监听器或自定义对象，可以在下面的controllers中找到：
 
-![](memory-profiling-files/image_40.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_40.jpg)
 
-**Q: Is there anything I should be turning off in Chrome that might be influencing my figures?**
+** 问：我在做内存分析时需要关闭Chrome里可能会产生影响的什么功能么？**
 
-When performing any type of profiling using the Chrome DevTools, it is recommended that you either run in incognito mode with all extensions disabled or start Chrome with a [custom](http://www.chromium.org/developers/how-tos/run-chromium-with-flags) user data directory (`--user-data-dir=""`).
+我们建议在用Chrome DevTools做内存分析时，你可以使用所有扩展功能都关闭了的隐身模式，或[设置](http://www.chromium.org/developers/how-tos/run-chromium-with-flags)用户文件夹为(`--user-data-dir=""`)后再打开Chrome。
 
-![](memory-profiling-files/image_41.jpg)
+![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_41.jpg)
 
-Apps, extensions and even console logging can have an implicit impact on your figures and you want to keep them as reliable as possible.
+应用，扩展甚至console中的记录都会对你的分析有潜在的影响，如果你想让你的分析可靠的话，禁用这些吧。
 
-**Closing remarks**
+**写在最后的话**
 
-The JavaScript engines of today are highly capable of automatically cleaning garbage generated by our code in a number of situations. That said, they can only go so far and our applications are still prone to memory leaks caused by logical errors. Use the tools available to find out your bottlenecks and remember, don't guess it - test it.
+今天的JavaScript引擎已经有很强的自动回收我们的代码产生的内存垃圾的能力了。就是说，它们只能做到这样了，但我们的应用仍然被证明了会因为逻辑错误而产生内存泄漏。使用相应的工具来找到你的应用的瓶颈，记住，不要靠猜 - 测试它。
 
-## Supporting Demos
+## 帮助实例
 
-### Debugging Memory Leaks
+### 诊断内存泄漏
 
-Although we've mentioned them throughout this guide, a good set of end-to-end examples for testing various memory issues, ranging from growing memory leaking DOM nodes can be found summarized below. You may wish to experiment with them before attempting to use the tooling on your own more complex page or application.
+尽管很多内容在本文章中已经提到了，但一系列测试内存相关的问题的例子还是很有用的，下面是一组DOM节点内存泄漏的例子。你可能希望在测试你的更复杂的页面或应用前先用这些例子做试验。
 
-<ul>
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example1.html">Example 1: Growing memory</a></li>
+* [Example 1: Growing memory](https://developer.chrome.com/devtools/docs/demos/memory/example1.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example2.html">Example 2: Garbage collection in
-action</a></li>
+* [Example 2: Garbage collection in action](https://developer.chrome.com/devtools/docs/demos/memory/example2.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example3.html">Example 3: Scattered objects</a></li>
+* [Example 3: Scattered objects](https://developer.chrome.com/devtools/docs/demos/memory/example3.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example4.html">Example 4: Detached nodes</a></li>
+* [Example 4: Detached nodes](https://developer.chrome.com/devtools/docs/demos/memory/example4.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example5.html">Example 5: Memory and hidden
-classes</a></li>
+* [Example 5: Memory and hidden classes](https://developer.chrome.com/devtools/docs/demos/memory/example5.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example6.html">Example 6: Leaking DOM nodes</a></li>
+* [Example 6: Leaking DOM nodes](https://developer.chrome.com/devtools/docs/demos/memory/example6.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example7.html">Example 7: Eval is evil (almost
-always)</a></li>
+* [Example 7: Eval is evil (almost always)](https://developer.chrome.com/devtools/docs/demos/memory/example7.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example8.html">Example 8: Recording heap
-allocations</a></li>
+* [Example 8: Recording heap allocations](https://developer.chrome.com/devtools/docs/demos/memory/example8.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example9.html">Example 9: DOM leaks bigger than
-expected</a></li>
+* [Example 9: DOM leaks bigger than expected](https://developer.chrome.com/devtools/docs/demos/memory/example9.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example10.html">Example 10: Retaining path</a></li>
+* [Example 10: Retaining path](https://developer.chrome.com/devtools/docs/demos/memory/example10.html)
 
-<li><a target="_blank" href="/chrome-developer-tools/docs/demos/memory/example11.html">Example 11: Last exercise</a></li>
-</ul>
+* [Example 11: Last exercise](https://developer.chrome.com/devtools/docs/demos/memory/example11.html)
 
-Additional demos are available for:
+**更多例子：**
 
 * [Gathering scattered objects](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-summary)
 
@@ -625,9 +616,9 @@ Additional demos are available for:
 * [Finding accumulation points](https://developers.google.com/chrome-developer-tools/docs/heap-profiling-dominators)
 
 
-## Community Resources
+## 社区资源
 
-There are a number of excellent resources written by the community on finding and fixing memory issues in web apps using the Chrome DevTools. Below are a selection of some you may find useful:
+有很多社区写的杰出的资源关于用Chrome DevTools来定位和解决web apps内存问题。下面的一组资源可能对你有帮助：
 
 * [Finding and debugging memory leaks with the Chrome DevTools](http://slid.es/gruizdevilla/memory)
 
