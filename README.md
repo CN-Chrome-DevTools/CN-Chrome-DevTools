@@ -59,6 +59,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 	* Console API Reference
 	* Command Line API Reference
 * Keyboard Shortcuts
+* Authoring and Development Workflow
 
 ## 项目翻译目录
 
