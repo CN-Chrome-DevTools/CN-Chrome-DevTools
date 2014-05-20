@@ -547,14 +547,14 @@ Timeline面版，是在你第一次使用你的页面发现速度变慢了时用
 
 * **(global property)** - 全局对象(像 'window')和引用它的对象之间的中间对象。如果一个对象由构造函数Person生成并被全局对象引用，那么引用路径就是这样的：[global] > (global property) > Person。这跟一般的直接引用彼此的对象不一样。我们用中间对象是有性能方面的原因，全局对象改变会很频繁，非全局变量的属性访问优化对全局变量来说并不适用。
 
-* **(roots)** - 保留树中root对象是引用了选中的对象的对象。它们也可以因为自身的目地而由引擎创建后被引用。这个引擎有引用。。。
+* **(roots)** - constructor中roots的内容引用它所选中的对象。它们也可以是由引擎自主创建的一些引用。这个引擎有用于引用对象的缓存，但是这些引用不会阻止引用对象被回收，所以它们不是真正的强引用(FIXME)。
 * **(roots)** – The root entries in the retaining tree view are the entities that have references to the selected object. These can also be references created by the engine for its own purposes. The engine has caches which reference objects, but all such references are weak and won't prevent an object from being collected given that there are no truly strong references.
 
 * **(closure)** - 一些函数闭包中的一组对象的引用
 
 * **(array, string, number, regexp)** - 一组属性引用了Array,String,Number或正则表达式的对象类型
 
-* **(compiled code)** - 简单来说，所有东西都与compoled code有关。Script像一个函数，但其实对应了&lt;script&gt;的内容。SharedFunctionInfos (SFI)是函数和compiled code之间的对象。函数通常有内容，而SFIS没有(什么鸟意思)。
+* **(compiled code)** - 简单来说，所有东西都与compoled code有关。Script像一个函数，但其实对应了&lt;script&gt;的内容。SharedFunctionInfos (SFI)是函数和compiled code之间的对象。函数通常有内容，而SFIS没有(FIXME)。
 * **(compiled code)** – simply, everything related to compiled code. Script is similar to a function but corresponds to a &lt;script&gt; body. SharedFunctionInfos (SFI) are objects standing between functions and compiled code. Functions are usually have a context, while SFIs do not.
 
 * **HTMLDivElement**, **HTMLAnchorElement**, **DocumentFragment** 等 - 你代码中对elements或document对象的引用。
