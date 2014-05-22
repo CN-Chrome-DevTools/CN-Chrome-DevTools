@@ -52,16 +52,17 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 ![Console 分裂视图](https://developer.chrome.com/devtools/docs/console-files/console-split-view.png)
 
-### Clearing the console history
+### 清空 console 记录
 
-To clear the console's history, do one of the following:
+使用下面任意一种方法就可以清理 console 的历史：
 
-*   Right-click or Ctrl-click anywhere in the Console and choose **Clear Console** from the context menu that appears.
-*   Enter the [**clear()**](commandline-api#clear) Command Line API at the shell prompt.
-*   Invoke [**console.clear()**](console-api#consoleclear) Console API from JavaScript.
-*   Use the keyboard shortcut **⌘K** or **⌃L** (Mac) **Control - L** (Windows and Linux).
+* 在 console 的任意地方右击或者摁下 Ctrl 同时点击即可弹出包含 **Clear Console** 菜单。
+* 在 shell 输入行中输入命令行 API [**clear()**](commandline-api#clear) 并回车。
+* 调用 JavaScript 的 [**console.clear()**](console-api#consoleclear) 这个 Console API。
+* 使用快捷键 **⌘K** 或者 **⌃L** (Mac) **Control - L** (Windows and Linux).
 
-By default, the console history is cleared when you navigate to another page. You can change this behavior by enabling **Preserve log upon navigation** in the Console area of the Settings dialog (see [Console preferences](#consolepreferences)).
+默认的情况下，当你打开其他页面的时候，console 的记录就会被清理。你可以在 Settings 对话框里面的 Console 设置区域中启用 **Preserve log upon navigation** 选项来避免清理。（详情 [Console preferences](#consolepreferences) ）。
+
 
 ### Console settings
 
