@@ -64,16 +64,18 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 默认的情况下，当你打开其他页面的时候，console 的记录就会被清理。你可以在 Settings 对话框里面的 Console 设置区域中启用 **Preserve log upon navigation** 选项来避免清理。（详情 [Console preferences](#consolepreferences) ）。
 
 
-### Console settings
+### Console 设置
 
-The Console has two global settings you can modify in the General tab of the DevTools Settings dialog:
+你可以在 DevTools Settings 对话框中的 General 标签下修改 Console 的两个全局选项：
 
-*   **Log XMLHTTPRequests**&mdash;determines if each XMLHTTPRequest is logged to the Console panel.
-*   **Preserve log upon navigation**&mdash;determines if console history for the current page is preserved when you navigate to another page. By default, both of these settings are disabled.
 
-You can also change these settings by right-clicking anywhere in the Console to bring up the context menu.
+* **Log XMLHTTPRequests**&mdash;决定每个 XMLHTTPRequest 是否都显示在 Console 面板上。
+* **Preserve log upon navigation**&mdash;决定你在当前页面中 console 的记录是否会因为你跳转到其他页面而被清空。这两个选项默认都是禁用的。
 
-![Console panel view](https://developers.google.com/chrome-developer-tools/docs/console-files/console-context-menu.png)
+你也可以在 console 的任意地方右击，通过选择出现的菜单来改变这两个选项。
+
+
+![Console 面板右击菜单视图](https://developer.chrome.com/devtools/docs/console-files/console-context-menu.png)
 
 ## Using the Console API
 
