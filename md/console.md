@@ -46,9 +46,11 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 ![Console panel view](https://developers.google.com/chrome-developer-tools/docs/console-files/console1.png)
 
-To toggle a split-view of the Console on another tab, press the **Esc** key on your keyboard, or click the **Show/Hide Console** button in the bottom left corner of the Chrome DevTools window. In the following screenshot the Console split-view is shown with the Elements panel.
+可以通过摁下 **Esc** 键快速切换 Console 面板的分裂视图，或者点击 Chrome DevTools 窗口左下角的
+**Show/Hide Console** 按钮。下面的截图中就是在 Elements 面板下的 Console 分裂视图。
 
-![Console split-view](https://developers.google.com/chrome-developer-tools/docs/console-files/console-split-view.png)
+
+![Console 分裂视图](https://developer.chrome.com/devtools/docs/console-files/console-split-view.png)
 
 ### Clearing the console history
 
