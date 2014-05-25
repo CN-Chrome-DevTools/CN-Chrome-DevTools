@@ -81,23 +81,23 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
 
-### Writing to the console
+### 输出信息到 console
 
-The [console.log()](console-api#consolelogobject_object) method takes one or more expressions as parameters and writes their current values to the console. For example:
+[console.log()](console-api#consolelogobject_object) 方法可以把一个或者多个语句当作参数传递进去然后把它们当前的值输出到 console。例如：
 
     var a = document.createElement('p');
     a.appendChild(document.createTextNode('foo'));
     a.appendChild(document.createTextNode('bar'));
     console.log("Node count: " + a.childNodes.length);
 
-![Console log output](https://developers.google.com/chrome-developer-tools/docs/console-files/log-basic.png)
+![Console 信息输出](https://developer.chrome.com/devtools/docs/console-files/log-basic.png)
 
-Instead of concatenating expressions together with the "+" operator (as shown above), you can put each in its own method parameter and they will be joined together in a space-delimited line.
+如果不想使用 “＋” 这个表达式连接符（像上图那样），you can put each in its own method parameter and they will be joined together in a space-delimited line.
 
 	console.log("Node count:", a.childNodes.length, "and the current time is:", Date.now());
 
 
-![Console log output](https://developers.google.com/chrome-developer-tools/docs/console-files/log-multiple.png)
+![Console 信息输出](https://developer.chrome.com/devtools/docs/console-files/log-multiple.png)
 
 ### Errors and warnings
 
