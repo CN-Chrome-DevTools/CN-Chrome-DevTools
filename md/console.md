@@ -77,9 +77,9 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 ![Console 面板右击菜单视图](https://developer.chrome.com/devtools/docs/console-files/console-context-menu.png)
 
-## Using the Console API
+## 使用 Console API
 
-The Console API is collection of methods provided by the global `console` object defined by DevTools. One of the API's main purposes is to [log information](#writing_to_the_console) (such as a property value, or an entire objects or DOM element) to the console while your application is running. You can also group output visually in the console to reduce visual clutter.
+Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
 
 ### Writing to the console
 
