@@ -99,25 +99,26 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ![Console 信息输出](https://developer.chrome.com/devtools/docs/console-files/log-multiple.png)
 
-### Errors and warnings
+### 错误和警告
 
-The [console.error()](console-api#consoleerrorobject_object) method displays a red icon along with the message text, which is colored red.
+[console.error()](console-api#consoleerrorobject_object) 方法会显示一个红色图标和一段红色信息文本。
 
     function connectToServer() {
         console.error("Error: %s (%i)", "Server is  not responding",500);
     }
     connectToServer();
     
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/error-server-not-resp.png)
+![](https://developer.chrome.com/devtools/docs/console-files/error-server-not-resp.png)
 
-The [console.warn()](console-api#consolewarnobject_object) method displays a yellow warning icon with the message text.
+[console.warn()](console-api#consolewarnobject_object) 方法会显示一个黄色图标和一段信息文本。
 
     if(a.childNodes.length &lt; 3 ) {
         console.warn('Warning! Too few nodes (%d)', a.childNodes.length);
     }
-![Example of console.warn()](https://developers.google.com/chrome-developer-tools/docs/console-files/warning-too-few-nodes.png)
+    
+![Example of console.warn()](https://developer.chrome.com/devtools/docs/console-files/warning-too-few-nodes.png)
 
-### Assertions
+### 断言（Assertions）
 
 The [console.assert()](console-api#consoleassertexpression_object) method conditionally displays an error string (its second parameter) only if its first parameter evaluates to `false`. For instance, in the following example an error message is written to the console only if the number of child nodes belonging to the `list` element is greater than 500.
 
