@@ -108,7 +108,7 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
     }
     connectToServer();
     
-![](https://developer.chrome.com/devtools/docs/console-files/error-server-not-resp.png)
+![console.error() 的例子](https://developer.chrome.com/devtools/docs/console-files/error-server-not-resp.png)
 
 [console.warn()](console-api#consolewarnobject_object) 方法会显示一个黄色图标和一段信息文本。
 
@@ -116,15 +116,16 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
         console.warn('Warning! Too few nodes (%d)', a.childNodes.length);
     }
     
-![Example of console.warn()](https://developer.chrome.com/devtools/docs/console-files/warning-too-few-nodes.png)
+![console.warn() 的例子](https://developer.chrome.com/devtools/docs/console-files/warning-too-few-nodes.png)
 
 ### 断言（Assertions）
 
-The [console.assert()](console-api#consoleassertexpression_object) method conditionally displays an error string (its second parameter) only if its first parameter evaluates to `false`. For instance, in the following example an error message is written to the console only if the number of child nodes belonging to the `list` element is greater than 500.
+[console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数得结果为 false 得时候会显示一段错误信息（第二个参数是错误信息）。举个例子，下面得这个例子就是只有当 `list` 元素得子结点数目大于 500 得时候输出这段错误信息。
+
 
     console.assert(list.childNodes.length &lt; 500, "Node count is &gt; 500");
 
-![Example of console.assert()](https://developers.google.com/chrome-developer-tools/docs/console-files/assert-failed.png)
+![console.assert() 的例子](https://developer.chrome.com/devtools/docs/console-files/assert-failed.png)
 
 ### Filtering console output
 
