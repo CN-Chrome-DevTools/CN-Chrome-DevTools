@@ -127,23 +127,25 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ![console.assert() 的例子](https://developer.chrome.com/devtools/docs/console-files/assert-failed.png)
 
-### Filtering console output
+### 筛选 console 输出信息
 
-You can quickly filter console output by its severity level--errors, warning, or standard log statements--by selecting one of the filter options. Click on the filter funnel (as shown below) and then select which filter you want to use.
+你可以通过选中筛选选项来快速筛选 console 输出的信息级别，例如错误、警告或者正常的输出信息。点击筛选漏斗图标（如下图）然后就可以选择你需要的筛选选项。
 
-![Only show console.error() output](https://developers.google.com/chrome-developer-tools/docs/console-files/filter-errors.png)
 
-Filter options:
+![仅仅显示 console.warn() 输出信息](https://developer.chrome.com/devtools/docs/console-files/filter-errors.png)
 
-*   **All**&mdash;Shows all console output.
-*   **Errors**&mdash;Only show output from `console.error()`
-*   **Warnings**&mdash;Only show output from `console.warn()`
-*   **Logs**&mdash;Only show output from `console.log()`, `console.info()` and `console.debug()`.
-*   **Debug**&mdash;Only show output from `console.timeEnd()` and other console output.
+筛选选项：
 
-### Grouping output
+*   **All**&mdash;显示所有输出在 console 的信息
+*   **Errors**&mdash;只显示 `console.error()` 输出的信息
+*   **Warnings**&mdash;只显示 `console.warn()` 输出的信息
+*   **Logs**&mdash;只显示 `console.log()`， `console.info()` 以及 `console.debug()` 输出的信息
+*   **Debug**&mdash;只显示 `console.timeEnd()`  and other console output.
 
-You can visually group related console output statements together in the console with the [`console.group()`](console-api#consolegroupobject_object) and [`groupEnd()`](console-api#consolegroupend) commands.
+### 分组输出
+
+你也可以使用 [`console.group()`](console-api#consolegroupobject_object) 和 [`groupEnd()`](console-api#consolegroupend) 命令来把想要输出到 console 的语句放在一起形成一组。
+
 
     var user = "jsmith", authenticated = false;
     console.group("Authentication phase");
@@ -155,9 +157,10 @@ You can visually group related console output statements together in the console
     console.groupEnd();
     
 
-![Logging group example](https://developers.google.com/chrome-developer-tools/docs/console-files/group.png)
+![分组输出示例](https://developer.chrome.com/devtools/docs/console-files/group.png)
 
-You can also nest logging groups. In the following example a logging group is created for the authentication phase of a login process. If the user is authenticated, a nested group is created for the authorization phase.
+你也可以输出嵌套分组。下面的例子是一个登录过程中的验证阶段演示。如果用户验证通过，就会在验证阶段里面输出一个嵌套分组信息。
+
 
     var user = "jsmith", authenticated = true, authorized = true;
     // Top-level group
@@ -176,9 +179,9 @@ You can also nest logging groups. In the following example a logging group is cr
     console.groupEnd();
     console.log("A group-less log trace.");
 
-![Nested logging group example](https://developers.google.com/chrome-developer-tools/docs/console-files/nestedgroup.png)
+![输出嵌套分组信息示例](https://developer.chrome.com/devtools/docs/console-files/nestedgroup.png)
 
-To create a group that is initially collapsed, use [`console.groupCollapsed()`](console-api#consolegroupcollapsed) instead of `console.group()`, as shown below:
+你也可以使用 [`console.groupCollapsed()`](console-api#consolegroupcollapsed) 代替 `console.group()` 来输出一个初始折叠起来的分组信息。
 
     console.groupCollapsed("Authenticating user '%s'", user);
     if (authenticated) {
@@ -186,7 +189,7 @@ To create a group that is initially collapsed, use [`console.groupCollapsed()`](
     }
     
 
-![Initially collapsed group](https://developers.google.com/chrome-developer-tools/docs/console-files/groupcollapsed.png)
+![初始折叠起来的分组信息](https://developer.chrome.com/devtools/docs/console-files/groupcollapsed.png)
 
 ### String substitution and formatting
 
