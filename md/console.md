@@ -218,33 +218,33 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
     
 ![使用格式声明符](https://developer.chrome.com/devtools/docs/console-files/format-substitution.png)
 
-### Formatting DOM elements as JavaScript objects
+### 将 DOM 元素格式化为 JavaScript 对象
 
+默认的，当你在 console 输出一个 DOM 元素时，它会以 XML 的格式显示，就像在 Elements 面板中那样：
 
-By default, when you log a DOM element to the console it's displayed in an XML format, as in the Elements panel:
 
     console.log(document.body.firstElementChild)
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/log-element.png)
+![](https://developer.chrome.com/devtools/docs/console-files/log-element.png)
 
-You can also log an element's JavaScript representation with the `console.dir()` method:
+你也可以使用 `console.dir()` 方法来输出一个元素的 JavaScript 描述：
 
 	console.dir(document.body.firstElementChild);
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/dir-element.png)
+![](https://developer.chrome.com/devtools/docs/console-files/dir-element.png)
 
-Equivalently, you can us the `%O` [format specifier](#string_substitution_and_formatting) with `console.log()`:
+当然，你也可以使用 `console.log()` 配合 `%O` [格式声明符](#string_substitution_and_formatting) 来格式化输出信息：
 
     console.log("%O", document.body.firstElementChild);
 
 
-### Styling console output with CSS
+### 使用 CSS 对输出信息添加样式
 
-You use the `%c` format specifier to apply custom CSS rules to any string you write to the Console with[`console.log()`](#writingtotheconsole) or related methods.
+在使用 [`console.log()`](#writingtotheconsole) 或者其他有关方法的时候，你可以使用 `%c` 格式声明符来对输出的字符串赋予一些样式。
 
 	console.log("%cThis will be formatted with large, blue text", "color: blue; font-size: x-large");
    
-![Styling console output with CSS](https://developers.google.com/chrome-developer-tools/docs/console-files/format-string.png)
+![使用 CSS 为输出信息进行美化](https://developer.chrome.com/devtools/docs/console-files/format-string.png)
 
 ### Measuring how long something takes
 
