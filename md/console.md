@@ -191,58 +191,32 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ![初始折叠起来的分组信息](https://developer.chrome.com/devtools/docs/console-files/groupcollapsed.png)
 
-### String substitution and formatting
+### 字符串替换和格式化
 
-The first parameter you pass to any of the console's logging methods (`log()` or `error()`, for example) may contain one or more _format specifiers_. A format specifier consists of a **`%`** symbol followed by a letter that indicates the formatting that should be applied to the inserted value (`%s` for strings, for example). The format specifier identifies where to substitute a value provided by a subsequent parameter value.
+你传递到 console 的输出信息方法（例如 `log()` 或者 `error()`）的第一个参数里面，可能会包含一个或者多个 _格式声明符（format specifier）_ 。格式声明符通常以 **`%`** 符号为开头然后紧跟一个表示将要插入值的类型的字母（例如 `%s` 表示这里要输出一个字符串）。格式声明符表示在当前位置将会被替换成某个传递进去的值。
 
-The following example using the `%s` (string) and `%d` (integer) formatters to insert values into the output string.
+下面的这个例子将会把值以 `%s`（字符串）和 `%d` （数字）格式插入并输出。
 
     console.log("%s has %d points", "Sam", "100");
+    
+执行后，console 中将会输出 “Sam has 100 points”。
 
-This would result in "Sam has 100 points" being logged to the console.
+下面的这个列表是支持的格式声明符以及对应格式：
 
-The following table lists the supported format specifiers and the formatting they apply:
+格式声明符 | 描述
+---- | ----
+`%s` | 将值格式化为字符串。
+`%d` 或者 `%i` | 将值格式化为数值。
+`%f` | 将目标格式化为浮点型值。
+`%o` | 将值格式化为一个可张开的 DOM 对象（类似 Elements 面板）。
+`%O` | 将值格式化为一个可张开的 JavaScript 对象。
+`%c` | 将第二个参数传递进去的 CSS 样式应用在输出的字符串上。
 
-<table>
-<thead>
-<tr>
-<th>Format specifier</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>`%s`</td>
-<td>Formats the value as a string.</td>
-</tr>
-<tr>
-<td>`%d` or `%i`</td>
-<td>Formats the value as an integer.</td>
-</tr>
-<tr>
-<td>`%f`</td>
-<td>Formats the object as a floating point value.</td>
-</tr>
-<tr>
-<td>`%o`</td>
-<td>Formats the value as an expandable DOM element (as in the Elements panel).</td>
-</tr>
-<tr>
-<td>`%O`</td>
-<td>Formats the value as an expandable JavaScript object.</td>
-</tr>
-<tr>
-<td>`%c`</td>
-<td>Applies CSS style rules to output string specified by the second parameter.</td>
-</tr>
-</tbody>
-</table>
-
-In the following example the `%d` format specifier is substituted with the value of `document.childNodes.length` and formatted as an integer; the `%f` format specifier is substituted with the value returned by `Date.now()`, which is formatted as a floating point number.
+在下面的例子中 `%d` 格式声明符将会被 `document.childNodes.length` 的数值格式替换；`%f`格式声明符将会替换为被格式化成浮点型数值的 `Date.now()` 值。
 
     console.log("Node count: %d, and the time is %f.", document.childNodes.length, Date.now());
     
-![Using format specifiers](https://developers.google.com/chrome-developer-tools/docs/console-files/format-substitution.png)
+![使用格式声明符](https://developer.chrome.com/devtools/docs/console-files/format-substitution.png)
 
 ### Formatting DOM elements as JavaScript objects
 
