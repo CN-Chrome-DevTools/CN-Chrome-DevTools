@@ -1,17 +1,18 @@
 #Authoring & development workflow
 
-开发者的工作流程中通常会涉及到一些步骤来完成某件事情。当使用“开发者工具”进行开发时，我们可以对其进行优化，以便更加快速地完成常见任务，例如定位文件或函数、即时编辑脚本与样式、保存常用的代码片段，或者仅仅是为了使用方便而进行简单的布局调整。
+开发者的工作流程中通常会涉及到一些步骤来完成某个任务。当使用“开发者工具”进行开发时，我们可以对其进行优化，以便更加快速地完成常见任务，例如定位文件或函数、即时编辑脚本与样式、保存常用的代码片段，或者为了使用方便而进行简单的布局调整。
 
 在这一部分里，我们将会展现一些技巧，它们可以让你对“开发者工具”的使用更加高效。
 
-##将工具栏垂直拆分至右侧
+##将工具栏垂直拆分至窗口右侧
 
-你也许感觉位于窗口底部的“开发者工具”区域足够宽，但不够高。此时可以选择将工具栏移动并固定至窗口右边，以便于在左侧观察页面，同时在右侧进行调试。
+你也许感觉位于窗口底部的“开发者工具”区域足够宽，但不够高，则此时可以选择将工具栏移动并固定至窗口右侧，以便在左侧查看页面，同时在右侧进行调试。
 
-这在以下情况尤为有用：
+这种做法在以下情况尤为有用：
+
 - 想充分利用宽屏显示器的空间来查看与调试代码；
 - 使分离区域的宽度小于400px（目前Chrome的最小宽度）来测试窗口大小改变时的布局；
-- 横向空间更加便于调试较长的脚本。
+- 纵向空间更便于调试较长的脚本。
 
 打开需要调试的页面，然后通过**长按**“开发者工具”左下角的布局图标来进行切换。
 
@@ -25,15 +26,15 @@
 
 > **注意**：每个标签页中的“开发者工具”可以有其各自的位置。这意味着一个标签页中的“开发者工具”可以在右侧，同时在另一个标签页中位于底部。
 
-#快速拖动至右侧
+##快速拖动至右侧
 
-也可以按住并拖动“开发者工具”的工具栏来改变其位置，就像下面动画里展示的那样。
+也可以按住并拖动“开发者工具”的工具栏来改变其位置，就像下面动画里所展示的那样。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/devtools-drag-to-right.gif)
 
-对于前一种按住布局按钮进行切换的方法，这种方法可以作为一个有用的替代，因为它仅需一个步骤。
+相对于前一种通过布局按钮进行切换的方法，这种方法可以作为一个有用的替代，因为它仅需一个步骤。
 
-##搜索、导航与过滤
+##搜索、定位与过滤
 
 ###通过文件名过滤查找一个脚本、样式或代码片段
 
@@ -42,7 +43,7 @@
 - `Ctrl + O (Windows, Linux)`
 - `Cmd + O (Mac OSX)`
 
-这些快捷键无论在哪个面板中都会生效。例如[Todo app](http://todomvc.com/architecture-examples/angularjs/#/)，上面的快捷键将会打开“Source”面板，并展现一个显示了所有可用文件的搜索框。
+这些快捷键无论在哪个面板中都会生效。例如对于这个[Todo app](http://todomvc.com/architecture-examples/angularjs/#/)，上面的快捷键将会打开“Source”面板，并展现一个显示了所有可用文件的搜索框。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_filter.jpg)
 
@@ -50,7 +51,7 @@
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_basefind.jpg)
 
-> **注意**：我们在所有的对话框中都支持驼峰式匹配。例如需要打开`FooBarScript.js`，为节省时间只需输入`FBaSc`。
+> **注意**：我们在所有的对话框中都支持驼峰式匹配。例如需要打开`FooBarScript.js`，为节省时间只需输入`FBaSc`即可。
 
 ###在当前文件中查找文本
 
@@ -59,7 +60,7 @@
 - `Ctrl + F (Windows, Linux)`
 - `Cmd + F (Mac OSX)`
 
-在搜索框中输入关键词后，按回车移动到第一项匹配的结果。接着按回车会跳到下一个匹配结果，同时可以用上下箭头键在结果间进行切换，如下图所示。
+在搜索框中输入关键词后，按回车跳至第一项匹配的结果。接着按回车会跳到下一个匹配结果，同时可以用上下箭头键在结果间进行切换，如下图所示。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_findone.jpg)
 
@@ -93,6 +94,7 @@
 如果需要更细粒度的操作，也可以根据函数名或CSS规则在文件中定位或者查找。
 
 打开一个页面并切换至Sources面板，然后用下面的快捷键打开函数/选择器搜索框。
+
 - `Ctrl + Shift + O (Windows, Linux)`
 - `Cmd + Shift + O (Mac OSX)`
 
@@ -122,13 +124,13 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_select.jpg)
 
-2.或者在“Sources”面板里的“Sources”子面板选择一个文件名：
+2.或者在“Sources”面板里的“Sources”子面板中选择一个文件名：
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_sources.jpg)
 
-这会在右侧打开一个新的标签显示语法高亮后的源码。
+这将会在右侧打开一个新的标签显示语法高亮后的源代码。
 
-改变的脚本仅在evaluation time执行，这意味着对于不在页面载入完成后执行的代码的修改将不会起作用。对于之后将会执行的代码的修改可以直接进行测试，例如鼠标移过或者点击时的回调函数。
+修改的脚本仅在evaluation time执行，这意味着对于不在页面载入完成后执行的代码的修改将不会起作用（原文表述似乎有误，应该是对于在页面载入完成后立即执行的代码的修改不会生效）。对于之后将会执行的代码的修改可以直接进行测试，例如鼠标移过或者点击时的回调函数。
 
 关于在“Sources”面板中调试JavaScript的更多信息，请阅读这篇相关文章：[JavaScript Debugging](https://developer.chrome.com/devtools/docs/javascript-debugging.html).
 
@@ -136,13 +138,13 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 ###样式
 
-与编辑脚本类似，打开“开发者工具”并切换至Elements面板，在右边可以看到包括“样式”在内的一些子面板。检查页面中元素的时候，将会在“样式”子面板里显示由选择器分组的应用到当前节点的属性列表。
+与编辑脚本类似，打开“开发者工具”并切换至Elements面板，在右边可以看到包括“样式”在内的一些子面板。查看页面中元素的时候，将会在“样式”子面板里显示由选择器分组的应用到当前节点的属性列表。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_inspect.jpg)
 
-“element.style”部分显示的是会通过style属性设置在页面标记里的属性。
+“element.style”部分显示的是会通过style属性设置在页面标记里的样式。
 
-下一个部分是“匹配的CSS规则(Matched CSS Rules)”，显示了匹配到选中节点的选择器、它们的属性与值，和定义规则的文件名与具体行数。匹配节点的规则呈黑色显示，其它则是灰色。这样做很大的好处是使得在阅读的时候更容易进行区分。
+下面是“匹配的CSS规则(Matched CSS Rules)”，显示了匹配到选中节点的选择器、它们的属性与值，和定义规则的文件名与具体行数。匹配节点的规则呈黑色显示，其它则是灰色。这样做很大的好处是使得在阅读的时候更容易进行区分。
 
 在子面板中改变任何CSS属性均会立即生效并在浏览器主窗口中显示，比如元素的边框或尺寸。
 
@@ -154,7 +156,7 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 在这里可以像在一个普通的文本编辑器中一样做出修改，同时改变将会立即生效。
 
-##另存为
+##另存
 
 修改妥当后，可以将修改后的文件保存下来。
 
@@ -206,12 +208,12 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 一些可以用得上“代码片段(Snippets)”的场景：
 
-- **书签** - 所有的书签都可以被存储为代码片段，尤其是那些你希望编辑的；
-- **工具** - 一些在当前页面使用的调试代码可以保存起来并被调试。一个由社区维护的列表提供了这样一些工具。
+- **Bookmarklets** - 所有的Bookmarklets都可以被存储为代码片段，尤其是那些你希望编辑的；
+- **工具** - 一些在当前页面使用的调试代码可以保存起来并用作调试。一个由社区维护的[列表](https://github.com/paulirish/devtools-addons/wiki/Snippets)提供了这样一些工具。
 - **调试** - “代码片段”提供一个可以代码高亮和保存代码的多行编辑的控制台，使其调试多行代码时更加方便。
 - **动态修改代码(Monkey-patching code)** - 可以通过“代码片段”在运行时修改代码，虽然大多数时候可以在Sources标签里动态编辑。
 
-Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools-snippets)维护了一些有用的代码片段可供开发者使用.
+Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools-snippets)维护了一些有用的代码片段可供开发者使用。
 
 ###开始使用
 
@@ -273,7 +275,7 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 如源(Sources)一样，代码片段(Snippets)同样支持查看对文件做出的本地修改，也可以在历史记录里选择还原至某一次编辑。
 
-在编辑器内单击右键，然后选择“本地修改(Local modifications)”，在保存了一些本地编辑后就可以使用这些功能。
+在编辑器内单击右键，然后选择“本地修改(Local modifications)”，在保存了一些本地编辑后便可以使用该功能。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_local.png)
 
@@ -293,7 +295,7 @@ Sources面板中的一些功能同样也可以在代码片段(Snippets)中使用
 
 这里“保存(Save)”将会保存修改至现存的代码片段文件，而“另存为(Save as)”允许你将代码片段保存为一个新的文件至所选择的地方。
 
-> 注意：代码片段保存在“开发者工具”的本地存储内。保存/另存后，可将代码片段绑定至应被保存的文件位置，就像其它脚本一样。
+> 注意：代码片段保存在“开发者工具”的本地存储内。保存/另存后，可将代码片段绑定至其应被保存的位置，就像其它脚本一样。
 
 ###定位代码片段
 
