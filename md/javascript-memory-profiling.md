@@ -2,7 +2,7 @@
 
 **内存泄漏**是指计算机可用内存的逐渐流失。当程序持续无法释放其使用的临时内存时就会发生。JavaScript的web应用也会经常遇到在原生应用程序中出现的内存相关的问题，像**泄漏**和溢出，web应用也需要应对**垃圾回收停顿**。
 
-尽管JavaScript使用垃圾回收做自动内存管理，但[有效的(effective)](http://www.html5rocks.com/en/tutorials/memory/effectivemanagement/)内存处理依然很重要。在这篇文章中我们将探讨分析JavaScript web应用中的内存问题。在学习有关特性时请确保尝试一下[相关案例](#supporting_demos)以提高你对这些工具在实践中如何工作的认识。
+尽管JavaScript使用垃圾回收做自动内存管理，但[有效的(effective)](http://www.html5rocks.com/en/tutorials/memory/effectivemanagement/)内存管理依然很重要。在这篇文章中我们将探讨分析JavaScript web应用中的内存问题。在学习有关特性时请确保尝试一下[相关案例](#supporting_demos)以提高你对这些工具在实践中如何工作的认识。
 
 请阅读[内存 101(Memory 101)](chrome-developer-tools/docs/memory-analysis-101)页面来帮助你熟悉这篇文章中用到的术语。
 
