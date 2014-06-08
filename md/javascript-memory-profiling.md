@@ -1,19 +1,19 @@
 # JavaScript内存分析
 
-**内存泄漏**是指计算机可用内存的逐渐流失。当程序持续无法释放其使用的临时内存时就会发生。JavaScript的web应用也会经常遇到在原生应用程序中出现的内存相关的问题，像**泄漏**和溢出，web应用也需要应对**垃圾回收停顿**。
+**内存泄漏**是指计算机可用内存的逐渐减少。当程序持续无法释放其使用的临时内存时就会发生。JavaScript的web应用也会经常遇到在原生应用程序中出现的内存相关的问题，如**泄漏**和溢出，web应用也需要应对**垃圾回收停顿**。
 
-尽管JavaScript使用垃圾回收做自动内存管理，但[有效的(effective)](http://www.html5rocks.com/en/tutorials/memory/effectivemanagement/)内存处理依然很重要。在这篇文章中我们将探讨分析JavaScript web应用中的内存问题。在学习有关特性时请确保尝试一下[相关案例](#supporting_demos)以提高你对这些工具在实践中如何工作的认识。
+尽管JavaScript使用垃圾回收进行自动内存管理，但[有效的(effective)](http://www.html5rocks.com/en/tutorials/memory/effectivemanagement/)内存管理依然很重要。在这篇文章中我们将探讨分析JavaScript web应用中的内存问题。在学习有关特性时请确保尝试一下[相关案例](#supporting_demos)以提高你对这些工具在实践中如何工作的认识。
 
 请阅读[内存 101(Memory 101)](chrome-developer-tools/docs/memory-analysis-101)页面来帮助你熟悉这篇文章中用到的术语。
 
-**注意：**我们将要用到的有些特性目前仅在[Chrome Canary版](http://www.google.com/intl/en/chrome/browser/canary.html)浏览器中有。我们推荐使用这个版本来获得最佳的工具，以分析你的应用程序的内存问题。
+**注意：**我们将要用到的某些特性目前仅对[Chrome Canary版](http://www.google.com/intl/en/chrome/browser/canary.html)浏览器可用。我们推荐使用这个版本来获得最佳的工具，以分析你的应用程序的内存问题。
 
 
 ## 你需要思考的问题
 
 总体来说，当你觉得你遇到了内存泄漏问题时，你需要思考三个问题：
 
-* **我的页面是否占用了过多的内存?** - [Timeline内存查看工具(Timeline memory view)](#heading=h.3gfl4k8caz0k) 和 [Chrome任务管理(Chrome task manager)](http://#heading=h.uhgze3ab3kb2%20) 能帮助你确认你是否使用了过多的内存。Memory view 能跟踪页面渲染过程中DOM节点计数，documents文档计数和JS事件监听计数。作为一个经验法则：避免对不再需要用到的DOM元素的引用，移除不需要的事件监听并且在存储你可能不会用到的大块数据时要留意。
+* **我的页面是否占用了过多的内存?** - [Timeline内存查看工具(Timeline memory view)](#heading=h.3gfl4k8caz0k) 和 [Chrome任务管理(Chrome task manager)](http://#heading=h.uhgze3ab3kb2%20) 能帮助你确认你是否使用了过多的内存。Memory view 能跟踪页面渲染过程中DOM节点计数，documents文档计数和JS事件监听计数。作为一个经验法则：避免保留对不再需要用到的DOM元素的引用，移除不需要的事件监听并且在存储你可能不会用到的大块数据时要留意。
 
 * **我的页面有没有内存泄漏?** - [对象分配跟踪(Object allocation tracker)](#heading=h.8yjlf68i8qix)通过实时查看JS对象的分配来帮助你定位泄漏。你也可以使用[堆分析仪(Heap Profiler)](#heading=h.g0yxr1o33gky)生成JS堆快照，通过分析内存图和比较快照之间的差异，来找出没有被垃圾回收清理掉的对象。
 
@@ -26,11 +26,11 @@
 
 本小节介绍在**内存分析**时使用的常用术语，这些术语在为其它语言做内存分析的工具中也适用。这里的术语和概念用在了堆分析仪(Heap Profiler)UI工具和相关的文档中。
 
-这些能够帮助我们熟悉如何有效的使用内存分析工具。如果你以前从来没有了解过像Java，.NET等语言的内存分析的话，那么本节介绍的术语对你来说可能就是些全新的概念了。
+这些能够帮助我们熟悉如何有效的使用内存分析工具。如果你曾用过像Java、.NET等语言的内存分析工具的话，那么这将是一个复习。
 
 ### 对象大小(Object sizes)
 
-把内存想象成一个包含基本类型(像数字和字符串)和对象(类似数组)的图表。它可能看起来像下面这幅一系列相关联的点组成的图。
+把内存想象成一个包含基本类型(像数字和字符串)和对象(关联数组)的图表。它可能看起来像下面这幅一系列相关联的点组成的图。
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/thinkgraph.png)
 
@@ -38,7 +38,7 @@
 
 * 对象自身直接使用
 
-* 隐含的保持对其它对象的引用，这种方式会阻止垃圾回收(简称GC)对这些对象的自动回收处理。
+* 隐含的保持对其它对象的引用，这种方式会阻止垃圾回收(简称GC)对那些对象的自动回收处理。
 
 当你使用DevTools中的堆分析仪(Heap Profiler，用来分析内存问题的工具，在DelTools的"Profile"标签下)时，你可能会惊喜的发现一些显示各种信息的栏目。其中有两项是：**表面大小(Shallow Size)**和**保留大小(Retained Size)**，那它们是什么意思呢？
 
