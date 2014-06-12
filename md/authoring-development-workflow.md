@@ -1,12 +1,12 @@
-#Authoring & development workflow
+#开发工作流程
 
 开发者的工作流程中通常会涉及到一些步骤来完成某个任务。当使用“开发者工具”进行开发时，我们可以对其进行优化，以便更加快速地完成常见任务，例如定位文件或函数、即时编辑脚本与样式、保存常用的代码片段，或者为了使用方便而进行简单的布局调整。
 
-在这一部分里，我们将会展现一些技巧，它们可以让你对“开发者工具”的使用更加高效。
+在这一章节里，我们将探索一些技巧，它们将使你更高效地使用“开发者工具”。
 
 ##将工具栏垂直拆分至窗口右侧
 
-你也许感觉位于窗口底部的“开发者工具”区域足够宽，但不够高，则此时可以选择将工具栏移动并固定至窗口右侧，以便在左侧查看页面，同时在右侧进行调试。
+你也许感觉位于窗口底部的“开发者工具”区域足够宽，但不够高，则此时可以选择将工具栏对齐并固定至窗口右侧，以便在左侧审查当前页面，同时在右侧进行调试。
 
 这种做法在以下情况尤为有用：
 
@@ -60,7 +60,7 @@
 - `Ctrl + F (Windows, Linux)`
 - `Cmd + F (Mac OSX)`
 
-在搜索框中输入关键词后，按回车跳至第一项匹配的结果。接着按回车会跳到下一个匹配结果，同时可以用上下箭头键在结果间进行切换，如下图所示。
+在搜索框中输入关键词后，按回车跳至第一项匹配的结果。接着按回车会跳到下一个匹配结果，同时可以点击（搜索框右侧的）上下箭头在结果间进行切换，如下图所示。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_findone.jpg)
 
@@ -72,7 +72,7 @@
 
 ###在所有文件中查找文本
 
-如果希望在该页面中加载的所有文件里查找特定字符串，可以用下面的快捷键来打开搜索面板：
+如果希望在该页面已加载的所有文件中查找特定字符串，可以用下面的快捷键来打开搜索面板：
 
 - `Ctrl + Shift + F (Windows, Linux)`
 - `Cmd + Opt + F (Max OSX)`
@@ -130,31 +130,31 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 这将会在右侧打开一个新的标签显示语法高亮后的源代码。
 
-修改的脚本仅在evaluation time执行，这意味着对于不在页面载入完成后执行的代码的修改将不会起作用（原文表述似乎有误，应该是对于在页面载入完成后立即执行的代码的修改不会生效）。对于之后将会执行的代码的修改可以直接进行测试，例如鼠标移过或者点击时的回调函数。
+修改的脚本仅在evaluation time执行，这意味着修改页面加载前或加载过程中执行的代码将没有效果。对于之后将会执行的代码的修改可以直接进行测试，例如鼠标移过或者点击时的回调函数。
 
-关于在“Sources”面板中调试JavaScript的更多信息，请阅读这篇相关文章：[JavaScript Debugging](https://developer.chrome.com/devtools/docs/javascript-debugging.html).
+想了解在“Sources”面板中调试JavaScript的更多信息，请阅读这篇相关文章：[JavaScript Debugging](https://developer.chrome.com/devtools/docs/javascript-debugging.html).
 
-> 注意：同样也可以对本地文件的编辑进行保存，阅读[更多](https://developer.chrome.com/devtools/docs/workspaces.html)。
+> 注意：Workspaces 功能允许持久地编辑（保存）本地文件，阅读[更多](https://developer.chrome.com/devtools/docs/workspaces.html)。
 
 ###样式
 
-与编辑脚本类似，打开“开发者工具”并切换至Elements面板，在右边可以看到包括“样式”在内的一些子面板。查看页面中元素的时候，将会在“样式”子面板里显示由选择器分组的应用到当前节点的属性列表。
+与编辑脚本类似，打开“开发者工具”并切换至Elements面板，在右边可以看到包括“Styles”在内的一些子面板。查看页面中元素的时候，将会在“Styles”子面板里显示由选择器分组的应用到当前节点的属性列表。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_inspect.jpg)
 
-“element.style”部分显示的是会通过style属性设置在页面标记里的样式。
+“element.style”部分显示的是通过style属性设置在页面标记里的样式。
 
-下面是“匹配的CSS规则(Matched CSS Rules)”，显示了匹配到选中节点的选择器、它们的属性与值，和定义规则的文件名与具体行数。匹配节点的规则呈黑色显示，其它则是灰色。这样做很大的好处是使得在阅读的时候更容易进行区分。
+下面是“匹配的CSS规则(Matched CSS Rules)”，显示了匹配到选中节点的选择器、它们的属性与值，和定义规则的文件名与具体行数。匹配到选中节点的选择器会显示黑色，未匹配的则是灰色。这样做很大的好处是使得在阅读的时候更容易进行区分。
 
 在子面板中改变任何CSS属性均会立即生效并在浏览器主窗口中显示，比如元素的边框或尺寸。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_edit.png)
 
-回到“匹配的CSS规则(Matched CSS Rules)”面板，点击规则旁样式文件的链接将会转至“Source”面板，这里显示了完整的样式并会定位到相关CSS规则的行数。
+回到“匹配的CSS规则(Matched CSS Rules)”面板，点击规则旁边的样式文件链接将会转至“Source”面板，这里显示了完整的样式并会定位到相关CSS规则的行数。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/matched_css.png)
 
-在这里可以像在一个普通的文本编辑器中一样做出修改，同时改变将会立即生效。
+在这里可以像在一个普通的文本编辑器中一样做出修改，但区别是修改会立即生效。
 
 ##另存
 
@@ -168,11 +168,11 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/matched.png)
 
-下一步，在文件名或者文本编辑器内单击右键，选择“另存为”，这时候将会弹出一个对话框允许你覆盖存在的文件。
+下一步，在文件名或者文本编辑器内单击右键，选择“另存为(Save as)”，这时候将会弹出一个对话框允许你覆盖存在的文件。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_saveas.jpg)
 
-后续的保存（从相同菜单中选择保存，或使用`Ctrl/Cmd + S`快捷键）将保存在相同的位置。
+后续的保存（从相同菜单中选择“保存(Save)”，或使用`Ctrl/Cmd + S`快捷键）将保存在相同的位置。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_save.jpg)
 
@@ -186,7 +186,7 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 - 修改内容的差异；
 - 修改的时间；
-- 修改的文件名和一些链接。
+- 修改的文件名和一些操作链接。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_history.jpg)
 
@@ -227,11 +227,11 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 ###创建代码片段
 
-代码片段有两部分面板，左边的（类似Sources标签）是文件列表，当选中文件的时候会在右侧的编辑器中打开。这与在Sources标签中的操作十分类似。
+代码片段有两部分面板，左边的（类似Sources面板）是文件列表，当选中文件的时候会在右侧的编辑器中打开。这与在Sources面板中选择样式表和脚本的操作十分类似。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_creating.jpg)
 
-在文件列表单击右键，选择“新建”将会创建一个新的代码片段文件。
+在文件列表单击右键，选择“新建(New)”将会创建一个新的代码片段文件。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_new.png)
 
@@ -241,7 +241,7 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_filename.png)
 
-如希望重命名，则可以在文件上单击右键，然后选择“重命名”。如果需要的话，也可以选择“删除”代码片段。
+如希望重命名，则可以在文件上单击右键，然后选择“重命名(Rename)”。如果需要的话，也可以选择“删除(Remove)”代码片段。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_remove.png)
 
