@@ -111,6 +111,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 - [SunLn](https://github.com/SunLn)
 - [JiangShui Yu](https://github.com/yujiangshui)
 - [DestinyXie](https://github.com/DestinyXie)
+- [He--He](https://github.com/He--He)
 - 你
 
 （Fork 之后自行添加到最后）
