@@ -246,9 +246,9 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
    
 ![使用 CSS 为输出信息进行美化](https://developer.chrome.com/devtools/docs/console-files/format-string.png)
 
-### Measuring how long something takes
+### 测量某项任务所用时间
 
-You can use the [`console.time()`](console-api#consoletimelabel) and [`console.timeEnd()`](console-api#consoletimeendlabel) methods to measure how long a function or operation in your code takes to complete. You call `console.time()` at the point in your code where you want to start the timer and `console.timeEnd()` to stop the timer. The elapsed time between these two calls is displayed in the console.
+你可以使用 [`console.time()`](console-api#consoletimelabel) 和 [`console.timeEnd()`](console-api#consoletimeendlabel) 这两个方法来测量你代码里某个函数或者运算的完成所需时间。在你代码需要计时的地方调用 `console.time()` 方法，然后使用 `console.timeEnd()` 结束这个计时钟（timer）。console 中将会输出调用这两个方法之间经过的时间。
 
     console.time("Array initialize");
     var array= new Array(1000000);
@@ -258,9 +258,9 @@ You can use the [`console.time()`](console-api#consoletimelabel) and [`console.t
     console.timeEnd("Array initialize");
 
 
-![Example of using console.time() and timeEnd()](console-files/time-duration.png)
+![ console.time() 和 timeEnd() 的实例](https://developer.chrome.com/devtools/docs/console-files/time-duration.png)
 
->**Note:** You must pass the same string to `console.time()` and `timeEnd()` for the timer to finish as expected.
+>**注意：** 你必须向 `console.time()` 和 `timeEnd()` 中传递相同的字符串，这样计时钟才能按照预期的工作。
 
 ### Marking the Timeline
 
