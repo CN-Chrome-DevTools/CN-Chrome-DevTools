@@ -286,9 +286,9 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ![时间线中显示时间戳](https://developer.chrome.com/devtools/docs/console-files/timestamp2.png)
 
-### Setting breakpoints in JavaScript
+### 在 JavaScript 中设置断点
 
-You can start a debugging session from your JavaScript code by calling the [`debugger`](console-api#debugger) command. For instance, in the following example the JavaScript debugger is opened when an object's `brightness()` function is invoked:
+你可以调用 [`debugger`](console-api#debugger) 命令来对你的 JavaScript 代码开启调试模式。例如下面的例子中，当 `brightness()` 函数执行的时候，javaScript 调试器（debugger）将会开启：
 
     brightness : function() {
         debugger;
@@ -298,10 +298,10 @@ You can start a debugging session from your JavaScript code by calling the [`deb
         return (r * 77 + g * 150 + b * 29) &gt;&gt; 8;
     }
 
-![Example of using debugger command](https://developers.google.com/chrome-developer-tools/docs/console-files/debugger.png)
+![使用 debugger 命令的示例](https://developer.chrome.com/devtools/docs/console-files/debugger.png)
 
+在 [Breakpoint Actions in JavaScript](http://www.randomthink.net/blog/2012/11/breakpoint-actions-in-javascript/) 中， Brian Arnold 发现了一种根据条件断点的有趣的用法。
 
->An interesting technique of using conditional breakpoints was explored by Brian Arnold in [Breakpoint Actions in JavaScript](http://www.randomthink.net/blog/2012/11/breakpoint-actions-in-javascript/).
 
 
 ## Using the Command Line API
