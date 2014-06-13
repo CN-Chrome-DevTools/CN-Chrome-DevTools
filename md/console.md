@@ -315,15 +315,15 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 * 查看注册在对象上的事件监听器
 
 
-### Evaluating expressions
+### 执行表达式
 
-The Console attempts to evaluate any JavaScript expression you enter at the shell prompt, upon pressing the Return or Enter key. The Console provides auto-completion and tab-completion. As you type expressions, property names are automatically suggested. If there are multiple properties with the same prefix, pressing the Tab key cycles through them. Pressing the right arrow key accepts the current suggestion. The current suggestion is also accepted by pressing the Tab key if there is only one matched property.
+在实时 shell 中，当你摁下 Retun 或者 Enter 键时，会试图执行计算你输入的 JavaScript 表达式。Console 提供了自动完成和 tab 键完成。当你输入表达式的时候，建议属性名会自动弹出来。如果这些属性有相同的前缀，摁下 Tab 键会补全它们。摁下右方向键接受当前推荐选项。如果建议选项只有一条匹配属性时，摁下 Tab 键就会自动接受补全该选项。
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/evaluate-expressions.png)
+![](https://developer.chrome.com/devtools/docs/console-files/evaluate-expressions.png)
 
-To enter a multi-line expression at the shell prompt (such as a function definition) press Shift+Enter between lines.
+如果想要在实时 shell 中一次输入多行表达式（例如一个 function 函数定义），你需要摁下 Shift＋Enter 来换行。
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/multiline-expression.png)
+![](https://developer.chrome.com/devtools/docs/console-files/multiline-expression.png)
 
 ### Selecting elements
 
