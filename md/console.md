@@ -304,15 +304,17 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 
 
-## Using the Command Line API
+## 使用命令行 API
 
-In addition to being a place where you can log information from your application, the Console is also a shell prompt where you can directly evaluate expressions or issue commands provided by the [Command Line API](commandline-api). This API provides the following features:
+为了方便让你的应用输出信息到 console 中，console 同时也可以作为一个实时的 shell 来执行表达式或者 [Command Line API](commandline-api) 提供的一堆命令。这些 API 提供了下面这些特性：
 
-*   Convenience functions for selecting DOM elements
-*   Methods for controlling the CPU profiler
-*   Aliases for a number of Console API methods
-*   Monitoring events
-*   View event listeners registered on objects
+* 一些方便选择 DOM 元素的函数
+* 控制 CPU 分析器的函数
+* 一些 Console API  方法也可以执行
+* 监测事件
+* 查看注册在对象上的事件监听器
+
+
 ### Evaluating expressions
 
 The Console attempts to evaluate any JavaScript expression you enter at the shell prompt, upon pressing the Return or Enter key. The Console provides auto-completion and tab-completion. As you type expressions, property names are automatically suggested. If there are multiple properties with the same prefix, pressing the Tab key cycles through them. Pressing the right arrow key accepts the current suggestion. The current suggestion is also accepted by pressing the Tab key if there is only one matched property.
