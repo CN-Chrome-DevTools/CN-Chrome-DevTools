@@ -262,13 +262,15 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 >**注意：** 你必须向 `console.time()` 和 `timeEnd()` 中传递相同的字符串，这样计时钟才能按照预期的工作。
 
-### Marking the Timeline
+### 生成时间线（Timeline）
 
-The [Timeline panel](timeline) gives you a complete overview of where time is spent when loading and using your web app or page. The [`console.timeStamp()`](console-api#consoletimestamplabel) method marks the Timeline at the moment it was executed. This provides an easy way to correlate events in your application with other browser-related events, such as layout or paints.
+[时间线](https://developer.chrome.com/devtools/docs/timeline.md) 展示了你的 web app 或者网页加载时在哪里花费了时间。[`console.timeStamp()`](console-api#consoletimestamplabel) 方法会在执行它的时候，在时间线上做一个标记。它提供了一种简单的方法来关联与其他浏览器相关的事件，如布局（layout）或者描绘（paints）。
 
->**Note:** The `console.timeStamp()` method only functions while a Timeline recording is in progress.
 
-In the following example the Timeline is marked when the application enters the `AddResult()` function's implementation.
+>**注意** `console.timeStamp()` 方法只有在时间线录制的时候起作用。
+
+下面的例子中，当应用执行 `AddResult()` 函数时会在时间线上标记一下。
+
 
     function AddResult(name, result) {
       console.timeStamp("Adding result");
@@ -277,12 +279,12 @@ In the following example the Timeline is marked when the application enters the 
       results.innerHTML += (text + "&lt;br&gt;");
     }
 
-As shown in the following screenshot, the `timeStamp()` command annotates the Timeline in the following places:
+正如下面截图所示，`timeStamp()` 命令在下面几个地方为时间线标注；
 
-*   A yellow vertical line in the Timeline's summary and detail views.
-*   A record is added to the list of recorded events.
+* 在时间线摘要和细节区域（detail views）中的那一条黄色的垂直线
+* 在左边事件记录列表中的一条记录
 
-    ![Timeline showing custom timestamp](https://developers.google.com/chrome-developer-tools/docs/console-files/timestamp2.png)
+![时间线中显示时间戳](https://developer.chrome.com/devtools/docs/console-files/timestamp2.png)
 
 ### Setting breakpoints in JavaScript
 
