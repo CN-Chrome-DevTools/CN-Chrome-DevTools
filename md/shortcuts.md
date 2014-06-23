@@ -25,35 +25,37 @@ Other Chrome Shortcuts
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Open Developer Tools          | F12, Ctrl + Shift + I   | Cmd + Opt + I
+打开 Chrome DevTools          | F12, Ctrl + Shift + I   | Cmd + Opt + I
 Open / switch from inspect element mode and browser window   | Ctrl + Shift + C   | Cmd + Shift + C
-Open Developer Tools and bring focus to the console | Ctrl + Shift + J   | Cmd + Opt + J
+打开 Chrome DevTools ,并聚焦在 console 上 | Ctrl + Shift + J   | Cmd + Opt + J
 Inspect the Inspector (undock first one and press)  | Ctrl + Shift + J   | Cmd + Opt + J
 
 
-    
+
 To open up the General Settings dialog type ? or F1 when the Developer Tools window is open. Press Esc to close the settings dialog.
+
+在Chrome DevTools 窗口是打开的状态下，按下“?”或者“F1”键可以打开设置对话框。按下“Esc”可以关闭设置对话框。
 
 All Panels
 ---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Show General Settings dialog   |  ?, F1  |  ?
-Next panel |  Ctrl + ]  |   Cmd + ]
-Previous panel |  Ctrl + [  |   Cmd + [
+打开 General Settings 对话框   |  ?, F1  |  ?
+下一个 panel |  Ctrl + ]  |   Cmd + ]
+上一个 panel |  Ctrl + [  |   Cmd + [
 Backward in panel History    |  Ctrl + Alt + [    | Cmd + Alt + [
 Forward in panel history    |   Ctrl + Alt + ]    | Cmd + Alt + ]
-Jump to panel 1-9 (when enabled in General Settings)    |   Ctrl + 1-9    | Cmd + 1-9
-Toggle Console / close settings dialog when open    |   Esc  |  Esc
-Refresh the page     |  F5, Ctrl + R     |  Cmd + R
-Refresh the page ignoring cached content    |   Ctrl + F5, Ctrl + Shift + R   | Cmd + Shift + R
-Text search within current file or panel    |   Ctrl + F  |     Cmd + F
-Text search across all sources   |  Ctrl + Shift + F    |   Cmd + Alt + F
-Search by filename (except on Timeline)  |  Ctrl + O, Ctrl + O  |   Cmd + O, Cmd + O
-Restore default text size  |    Ctrl + 0   |    Shift + 0
-Zoom in  |  Ctrl + +     |  Shift + +
-Zoom out   |    Ctrl + -     |  Shift + -
+跳转至panel 1-9 (需要在设置对话框中开启服务)    |   Ctrl + 1-9    | Cmd + 1-9
+打开/关闭 Console / 关闭设置对话框   |   Esc  |  Esc
+刷新页面     |  F5, Ctrl + R     |  Cmd + R
+强制刷新页面，清除缓存内容    |   Ctrl + F5, Ctrl + Shift + R   | Cmd + Shift + R
+当前文件或 panel 搜索文字   |   Ctrl + F  |     Cmd + F
+所有资源中搜索文字 |  Ctrl + Shift + F    |   Cmd + Alt + F
+搜索文件(除了 Timeline)  |  Ctrl + O, Ctrl + O  |   Cmd + O, Cmd + O
+恢复默认字体大小  |    Ctrl + 0   |    Shift + 0
+放大  |  Ctrl + +     |  Shift + +
+说下   |    Ctrl + -     |  Shift + -
 
 
 Elements Panel
@@ -68,7 +70,7 @@ Expand / collapse node  | Right, Left | Right, Left
 Expand node | Single-click on tag | Single-click on tag
 Edit attribute|   Enter, Double-click on attribute  |   Enter, Double-click on attribute
 Hide element   |  H |   H
-Toggle edit as HTML|  F2| 
+Toggle edit as HTML|  F2|
 
 Right-clicking an element you can:
 
@@ -133,30 +135,30 @@ Timeline Panel
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Start / stop recording |  Ctrl + E  |   Cmd + E
-Save timeline data |  Ctrl + S  |   Cmd + S
-Load timeline data | Ctrl + O   |  Cmd + O
+开启/停止   记录 |  Ctrl + E  |   Cmd + E
+保存时间轴数据 |  Ctrl + S  |   Cmd + S
+加载时间轴数据 | Ctrl + O   |  Cmd + O
 
 Profiles Panel
 ---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Start / stop recording |  Ctrl + E  |   Cmd + E
+开启/停止   记录 |  Ctrl + E  |   Cmd + E
 
 Console
 ---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Next suggestion | Tab | Tab
-Previous suggestion | Shift + Tab | Shift + Tab
-Accept suggestion  |  Right |   Right
-Previous command / line | Up |  Up
-Next command / line | Down  |   Down
-Clear Console   | Ctrl + L   |  Cmd + K, Opt + L
-Multi-line entry   |  Shift + Enter  |  Ctrl + Return
-Execute|  Enter  |  Return
+下一个建议| Tab | Tab
+上一个建议 | Shift + Tab | Shift + Tab
+接受建议 |  Right |   Right
+上一个命令/行 | Up |  Up
+下一个命令/行 | Down  |   Down
+清除控制台记录   | Ctrl + L   |  Cmd + K, Opt + L
+多行输入   |  Shift + Enter  |  Ctrl + Return
+执行|  Enter  |  Return
 
 Right-clicking on console:
 
@@ -180,19 +182,18 @@ Emulation
 :------------- | :--- | :-------------------------------------
 Pinch zoom in and out  | Shift + Scroll | Shift + Scroll
 
-Other Chrome Shortcuts
+其他 Chrome 快捷键
 ---
-
-Here are some additional Chrome shortcuts which are useful for general use within the browser not specific to the DevTools. View all Chrome shortcuts for Windows, Mac, and Linux.
+以下的 Chrome 快捷键在日常使用中非常有用，它并不是特意为 DevTools开发的，[查看所有的 Chrome 快捷键](https://support.google.com/chrome/answer/157179?hl=en&topic=25799&rd=1).
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Find next   |Ctrl + G    |Cmd + G
-Find previous  | Ctrl + Shift + G  |  Cmd + Shift + G
-Open a new window in Incognito mode |Ctrl + Shift + N   | Cmd + Shift + N
-Toggle Bookmarks bar on and off |Ctrl + Shift + B  |  Cmd + Shift + B
-View the History page   |Ctrl + H   | Cmd + Y
-View the Downloads page |Ctrl + J  |  Cmd + Shift + J
+寻找下一个   |Ctrl + G    |Cmd + G
+寻找前一个  | Ctrl + Shift + G  |  Cmd + Shift + G
+在隐身模式下打开一个新窗口|Ctrl + Shift + N   | Cmd + Shift + N
+开启或关闭书签栏|Ctrl + Shift + B  |  Cmd + Shift + B
+查看历史记录   |Ctrl + H   | Cmd + Y
+查看下载记录 |Ctrl + J  |  Cmd + Shift + J
 View the Task Manager   |Shift + ESC |Shift + ESC
 Next page in a tabs browsing history  |  Alt + Right |Alt + Right
 Previous page in a tabs browsing history  |  Backspace, Alt + Left   |Backspace, Alt + Left

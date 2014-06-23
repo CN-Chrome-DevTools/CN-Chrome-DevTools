@@ -1,301 +1,311 @@
-Authoring & development workflow
+#开发工作流程
 
-Developer workflow typically involves a number of steps used to achieve a goal. While authoring with the DevTools, it's possible to optimize this workflow to save time achieving common tasks, such as locating files or functions, persisting edits to scripts or stylesheets, saving commonly used snippets or simply rearranging the layout to better suit your needs.
+开发者的工作流程中通常会涉及到一些步骤来完成某个任务。当使用“开发者工具”进行开发时，我们可以对其进行优化，以便更加快速地完成常见任务，例如定位文件或函数、即时编辑脚本与样式、保存常用的代码片段，或者为了使用方便而进行简单的布局调整。
 
-In this section, we'll explore a number of tips to make your workflow in the DevTools more efficient.
+在这一章节里，我们将探索一些技巧，它们将使你更高效地使用“开发者工具”。
 
-Contents
+##将工具栏垂直拆分至窗口右侧
 
-Dock-To-Right For Vertical-Split Editing
-Drag-To-Right For Quicker Dock-Positioning
-Search, Navigate And Filter
-Filter For A Script, Stylesheet Or Snippet By Filename
-Text Search Within The Current File
-Replace Text Within The Current File
-Text Search Across All Files
-Search Using A Regular Expression
-Filter For A Function Or Selector Within A File
-Jump To Line Number
-Live Editing Scripts & Styles
-Scripts
-Styles
-Save As
-Local Modifications
-Custom JavaScript Snippets
-Getting Started
-Creating Snippets
-Snippet Filenames
-Editing And Executing Snippets
-Local Modifications
-Breakpoints, Watch Expressions And More
-Saving Snippets
-Navigating Snippets
-Resources
-Dock-To-Right For Vertical-Split Editing
+你也许感觉位于窗口底部的“开发者工具”区域足够宽，但不够高，则此时可以选择将工具栏对齐并固定至窗口右侧，以便在左侧审查当前页面，同时在右侧进行调试。
 
-You may find that docking the DevTools to the bottom of the window provides a lot of horizontal space, but less space vertically. Dock to right allows you to align the DevTools to the right-hand side of a window whilst keeping it attached. This enables you to inspect the current page on the left, whilst debugging on the right.
+这种做法在以下情况尤为有用：
 
-This is useful as:
+- 想充分利用宽屏显示器的空间来查看与调试代码；
+- 使分离区域的宽度小于400px（目前Chrome的最小宽度）来测试窗口大小改变时的布局；
+- 纵向空间更便于调试较长的脚本。
 
-You may be on a widescreen monitor, wishing to maximize the space available to inspect and debug your code
-You can change the split to be less than 400px (the current minimum width of Chrome) to test resizing layouts
-Longer scripts are easier to debug with vertical space
-Navigate to a URL you wish to debug then toggle between dock-to-right and dock-to-window by clicking and long-holding on the layout icon  at the bottom left-hand corner of the DevTools.
+打开需要调试的页面，然后通过**长按**“开发者工具”左下角的布局图标来进行切换。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/chrome_docktomain.jpg)
 
-Note: The DevTools will remember your last choice, so you can go back and forth between the two most common options.
+> **注意**：“开发者工具”会记住你上一次的选择，所以你可以在最常用的两项间来回切换。
 
-This will expand to display the available layout options. Once you've selected a preference, the layout will change immediately to reflect the change.
+长按图标会显示可选的布局方式，选择后布局将会立即改变生效。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/chrome_docktoright.jpg)
 
-Note: Each tab can have it's own custom layout arrangement for the DevTools. This means it is possible to have one tab's Tools docked to right whilst another's is docked to the bottom of the window.
+> **注意**：每个标签页中的“开发者工具”可以有其各自的位置。这意味着一个标签页中的“开发者工具”可以在右侧，同时在另一个标签页中位于底部。
 
-Drag-To-Right For Quicker Dock-Positioning
+##快速拖动至右侧
 
-It is also possible to hold down and drag the DevTools toolbar to move its docking position, as demonstrated in the animation below.
+也可以按住并拖动“开发者工具”的工具栏来改变其位置，就像下面动画里所展示的那样。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/devtools-drag-to-right.gif)
 
-This can be a useful alternative to holding down the layout button to select your desired docking position as it only takes one step to toggle between dock-to-right and dock-to-window.
+相对于前一种通过布局按钮进行切换的方法，这种方法可以作为一个有用的替代，因为它仅需一个步骤。
 
-Back to top
+##搜索、定位与过滤
 
-Search, Navigate And Filter
+###通过文件名过滤查找一个脚本、样式或代码片段
 
-Filter For A Script, Stylesheet Or Snippet By Filename
+快速定位文件对开发者来说是个基础的功能。“开发者工具”允许你在所有的脚本、样式以及代码片段中用下面的快捷键进行查找：
 
-The ability to quickly locate a specific file can be essential to a developer's workflow. The DevTools allow you to search across all script, stylesheet and snippet files using the following shortcuts:
+- `Ctrl + O (Windows, Linux)`
+- `Cmd + O (Mac OSX)`
 
-Ctrl + O (Windows, Linux)
-Cmd + O (Mac OSX)
-which will work regardless of the panel you are currently in. For this Todo app, using one of these shortcuts will take us to the Sources panel and present us with a search box listing all inspectable files.
+这些快捷键无论在哪个面板中都会生效。例如对于这个[Todo app](http://todomvc.com/architecture-examples/angularjs/#/)，上面的快捷键将会打开“Source”面板，并展现一个显示了所有可用文件的搜索框。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_filter.jpg)
 
-From there, we can filter down to specific files (e.g files with the word 'script' in their name) or select a file to view or edit.
+我们还可以定位到更具体的文件（例如文件名中包含“script”）或者选择一个文件来查看或编辑。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_basefind.jpg)
 
-Note: We support camel-case matching in all of our dialogs. e.g: to open FooBarScript.js, you could just type FBaSc, which could save time.
+> **注意**：我们在所有的对话框中都支持驼峰式匹配。例如需要打开`FooBarScript.js`，为节省时间只需输入`FBaSc`即可。
 
-Text Search Within The Current File
+###在当前文件中查找文本
 
-Searching for a specific string within the current file can be done using the following shortcut:
+在当前文件中查找特定字符串可以用下面的快捷键完成：
 
-Ctrl + F (Windows, Linux)
-Cmd + F (Mac OSX)
-Once a keyword has been entered into the search field, hit return to move to the first matched result. Subsequent returns will take you to the next result and you can also move between results using the up and down arrow keys as displayed below.
+- `Ctrl + F (Windows, Linux)`
+- `Cmd + F (Mac OSX)`
 
+在搜索框中输入关键词后，按回车跳至第一项匹配的结果。接着按回车会跳到下一个匹配结果，同时可以点击（搜索框右侧的）上下箭头在结果间进行切换，如下图所示。
 
-Replace Text Within The Current File
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_findone.jpg)
 
-In addition to supporting locating text within the current file, the DevTools also support replacing both individual and all instances of text with a new value. Checking "Replace" will display a second input field allowing you to specify the replacement text.
+###在当前文件中替换文本
 
+除了支持在当前文件中查找文本，“开发者工具”也支持对单个匹配项或所有匹配项进行替换。选中“Replace”将会出现第二个文本框以便输入替换的内容。
 
-Text Search Across All Files
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_find.jpg)
 
-If you wish to search across all of the files loaded for a page for a particular string, you can load up the search pane using the following shortcut:
+###在所有文件中查找文本
 
-Ctrl + Shift + F (Windows, Linux)
-Cmd + Opt + F (Max OSX)
-This supports both regular expressions and case sensitive search.
+如果希望在该页面已加载的所有文件中查找特定字符串，可以用下面的快捷键来打开搜索面板：
 
+- `Ctrl + Shift + F (Windows, Linux)`
+- `Cmd + Opt + F (Max OSX)`
 
-Search Using A Regular Expression
+这里支持正则表达式以及区分大小写的搜索。
 
-To search using a regular expression, simply type in the expression in the Search sources field, check "Regular expression" and hit return.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_findall.jpg)
 
+###用正则表达式进行搜索
 
-Above we can see an example of how this can be done to find all results matching content within <div></div> tags.
+如需用正则表达式进行搜索，仅需在搜索框中输入表达式，并勾选“正则表达式(Regular expression)”然后回车。
 
-Filter For A Function Or Selector Within A File
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_regex.jpg)
 
-Should you require further granularity it is also possible to navigate to (or search for) specific JavaScript functions or CSS rules within a file.
+上图是一个查找所有匹配在`<div></div>`标签内容中的例子。
 
-Navigate to a page of your choosing then go to the Sources panel. You can now use the following shortcuts to bring up a function/selector-specific search box:
+###根据函数或选择器在文件内查找
 
-Ctrl + Shift + O (Windows, Linux)
-Cmd + Shift + O (Mac OSX)
+如果需要更细粒度的操作，也可以根据函数名或CSS规则在文件中定位或者查找。
 
-Depending on the type of file selected you will either see all of the available JavaScript functions or CSS declarations. Start typing in the name of a function or declaration to filter down the list of results or simply select a result be taken directly to where it is defined in the current file.
+打开一个页面并切换至Sources面板，然后用下面的快捷键打开函数/选择器搜索框。
 
-Jump To Line Number
+- `Ctrl + Shift + O (Windows, Linux)`
+- `Cmd + Shift + O (Mac OSX)`
 
-The tools also support jumping to a specific line-number within the editor. To launch the line number dialog, simply select a file for editing then use one of the following keyboard shortcuts to display the line picker:
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/function_filter.png)
 
-Ctrl + L (Windows)
-Cmd + L (Mac OSX)
-Ctrl + G (Linux)
+根据选择的文件类型，将会看到所有可用的JavaScript函数或者CSS声明。输入函数名或声明来过滤结果列表，或仅是选择一个结果来定位到其在文件中定义的位置。
 
-Back to top
+###跳至行号
 
-Live Editing Scripts & Styles
+工具同样支持在编辑器内跳到指定行号。打开一个文件至编辑状态， 然后用下面的快捷键显示行号跳转框。
 
-The DevTools support editing both styles and scripts live, without the need for a full page refresh. This helps when testing design changes, prototyping JavaScript functions or snippets.
+- `Ctrl + L (Windows)`
+- `Cmd + L (Mac OSX)`
+- `Ctrl + G (Linux)`
 
-Scripts
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_line.jpg)
 
-JavaScript can be directly edited in the DevTools via the Sources panel. To open up a specific script for editing, either:
+##即时编辑脚本与样式
 
-1. Click the link to the script (e.g <script src="app.js"></script>) in the markup view of the Elements panel:
+“开发者工具”支持即时编辑样式与脚本，并且不需要刷新整个页面。这在测试设计改变、调试脚本或代码片段时很有用。
 
+###脚本
 
-2. Or select the filename of the script from Sources sub-panel under Sources:
+JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。要打开一个脚本进行编辑可以：
 
+1.点击“Elements”面板中结构视图里的脚本链接（例如`<script src="app.js"></script>`）：
 
-This will display the syntax-highlighted source to the file in a new tab to the right-hand side of the panel.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_select.jpg)
 
-Changes to scripts are only executed at evaluation time, meaning that modifications to code that is not running after the page loads will not have an effect. Changes to code executed at a later stage, such as mouseover handlers or click-event callbacks can however be changed and tested on the fly.
+2.或者在“Sources”面板里的“Sources”子面板中选择一个文件名：
 
-For more information about debugging JavaScript in the Sources panel, read our related documentation on JavaScript Debugging.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_sources.jpg)
 
-Note: A Workspaces feature for persistent editing of local files is also available. Read more.
+这将会在右侧打开一个新的标签显示语法高亮后的源代码。
 
-Back to top
+修改的脚本仅在evaluation time执行，这意味着修改页面加载前或加载过程中执行的代码将没有效果。对于之后将会执行的代码的修改可以直接进行测试，例如鼠标移过或者点击时的回调函数。
 
-Styles
+想了解在“Sources”面板中调试JavaScript的更多信息，请阅读这篇相关文章：[JavaScript Debugging](https://developer.chrome.com/devtools/docs/javascript-debugging.html).
 
-There is a similar workflow for editing styles. Open the DevTools and switch to the Elements panel. On the right-hand side, a number of sub-panels will be visible including Styles. Inspecting an element in the page will display the list of properties in Styles that have been applied to the current node, grouped by selector.
+> 注意：Workspaces 功能允许持久地编辑（保存）本地文件，阅读[更多](https://developer.chrome.com/devtools/docs/workspaces.html)。
 
+###样式
 
-The "element.style" section displays properties that were set through the style attribute in the page's markup.
+与编辑脚本类似，打开“开发者工具”并切换至Elements面板，在右边可以看到包括“Styles”在内的一些子面板。查看页面中元素的时候，将会在“Styles”子面板里显示由选择器分组的应用到当前节点的属性列表。
 
-The next section is "Matched CSS Rules", which displays the selectors matching the selected node, their properties and values as well as the filename the rule originated from and the line number it was read from. The selector that matches the node will be colored black whilst the others will be gray. This is of great benefit as it makes the selectors more easily separable while reading.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_inspect.jpg)
 
-Changing any CSS property in one of the sub-panels, such as the border or dimensions for an element, will result in the change being instantly applied and visible in the main browser window.
+“element.style”部分显示的是通过style属性设置在页面标记里的样式。
 
+下面是“匹配的CSS规则(Matched CSS Rules)”，显示了匹配到选中节点的选择器、它们的属性与值，和定义规则的文件名与具体行数。匹配到选中节点的选择器会显示黑色，未匹配的则是灰色。这样做很大的好处是使得在阅读的时候更容易进行区分。
 
+在子面板中改变任何CSS属性均会立即生效并在浏览器主窗口中显示，比如元素的边框或尺寸。
 
-Going back to the "Matched CSS Rules" panel, clicking on the link to the stylesheet next to a rule will also take you to the Sources panel. The will display the complete stylesheet and take you to the line number where the relevant CSS rule exists.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/styles_edit.png)
 
+回到“匹配的CSS规则(Matched CSS Rules)”面板，点击规则旁边的样式文件链接将会转至“Source”面板，这里显示了完整的样式并会定位到相关CSS规则的行数。
 
-From here, you can make changes to the file in the same way you would a regular text editor, except changes you make are displayed in real time.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/matched_css.png)
 
-Save As
+在这里可以像在一个普通的文本编辑器中一样做出修改，但区别是修改会立即生效。
 
-Once you are happy with the changes made to your files, you can save them.
+##另存
 
-To do this, first make sure you are in the text editor view for the file you modified by either locating the file manually in the left-hand sidebar under the Sources tab:
+修改妥当后，可以将修改后的文件保存下来。
 
+如果需要这样做，首先确定正处在所修改文件的文本编辑视图，无论是通过在Sources选项下左边栏手动定位文件，
 
-or clicking on the filename (e.g styles.css) in the "Elements -> Styles panel" (for SASS/CSS):
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_select.jpg)
 
+还是在Elements的Style面板里点击文件名（比如styles.css，仅限SASS/CSS）。
 
-Next, right-click on either the filename or inside the text editor and click "Save As". This will bring up a context menu allowing you to overwrite your existing file.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/matched.png)
 
+下一步，在文件名或者文本编辑器内单击右键，选择“另存为(Save as)”，这时候将会弹出一个对话框允许你覆盖存在的文件。
 
-Subsequent saves (using Save from the same menu or the Ctrl/Cmd + S shortcut) will save to the same location.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_saveas.jpg)
 
+后续的保存（从相同菜单中选择“保存(Save)”，或使用`Ctrl/Cmd + S`快捷键）将保存在相同的位置。
 
-Local Modifications
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_save.jpg)
 
-The DevTools also maintains a revision history of all changes made to local files. If you've edited a script or stylesheet and saved changes using the Tools, you can right-click on a filename in Sources (or within the source area) and select "Local modifications" to view this history.
+##本地修改
 
+“开发者工具”也会保存本地文件的所有修改记录。如果你编辑了一个脚本或者样式并进行了保存，那么可以在Sources面板里的文件名上单击右键（或者在源代码区域），然后选择“本地修改(Local modifications)”来查看历史记录。
 
-A Local modifications panel will appear displaying:
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_localmodifications.jpg)
 
-A diff of the changes
-The time the change was made at
-The domain under which a file was changed
+出现的本地修改(Local modifications)面板将会显示：
 
-in addition to a number of links. The revert link will revert all of the changes made to the file back to its original state, removing the revision history.
+- 修改内容的差异；
+- 修改的时间；
+- 修改的文件名和一些操作链接。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_history.jpg)
 
-Apply original content will effectively do the same action, but will maintain the revision history in view in case you wish to go back to a specific changeset.
+“还原(revert)”链接将会还原所有对文件的修改至初始状态，并删除历史记录。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_changed.jpg)
 
-Finally, apply revision content will apply the changes for a specific revision at a set time.
+“恢复原始内容(apply original content)”将会完成相同的动作，但是会在视图里保留历史记录，以便于还原某个特定的修改。
 
-Back to top
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_changed.jpg)
 
-Custom JavaScript Snippets
+最后，“应用修改的内容(apply revision content)”将会使在某个时间发生的修改生效。
 
-Sometimes you want to be able to save smaller scripts, bookmarklets and utilities so that you’ve always got them available to you while debugging in the browser. Snippets is a new DevTools feature enabling this workflow, allowing you to create, store and run JavaScript within the Sources tab. It is currently available in Chrome Canary.
+##自定义JavaScript片段
 
+有时候你可能想保存一些小脚本、书签和工具，以便在浏览器中调试的时候使用。代码片段(Snippets)是“开发者工具”中实现这些操作的一个新功能，它允许你在Sources标签页下创建、存储和运行脚本。目前在[Chrome Canary](https://tools.google.com/dlpage/chromesxs)中可用。
 
-Some of the use-cases Snippets can help with are:
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_hero.jpg)
 
-Bookmarklets - all of your bookmarklets could be stored as snippets, especially those you may wish to edit.
-Utilities - debugging helpers for interacting with the current page can be stored and debugged. A community-curated list of such utilities is available.
-Debugging - Snippets offer a multi-line console with syntax-highlighting and persistance, making it convenience for debugging code that is more than a one-liner.
-Monkey-patching code - code you wish to patch at runtime can be done through Snippets, although many times you can just live-edit code in the Sources tab.
-Brian Grinstead maintains a repository of useful Snippets for developers at bgrins.github.io/devtools-snippets.
-Getting Started
+一些可以用得上“代码片段(Snippets)”的场景：
 
-To get started with Snippets, navigate to the Sources tab. If you haven't been doing any other work in this tab, you will be presented with the default layout shown below.
+- **Bookmarklets** - 所有的Bookmarklets都可以被存储为代码片段，尤其是那些你希望编辑的；
+- **工具** - 一些在当前页面使用的调试代码可以保存起来并用作调试。一个由社区维护的[列表](https://github.com/paulirish/devtools-addons/wiki/Snippets)提供了这样一些工具。
+- **调试** - “代码片段”提供一个可以代码高亮和保存代码的多行编辑的控制台，使其调试多行代码时更加方便。
+- **动态修改代码(Monkey-patching code)** - 可以通过“代码片段”在运行时修改代码，虽然大多数时候可以在Sources标签里动态编辑。
 
+Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools-snippets)维护了一些有用的代码片段可供开发者使用。
 
-Click the layout toggle in the top left-hand corner to display extended panels. Here you should now see Sources, Content scripts and a new tab, Snippets. Click on it to go into Snippets.
+###开始使用
 
+定位到Sources标签以开始使用“代码片段”。如果此时还未在此标签页里做其它事情，你会看到如下所示的默认界面。
 
-Creating Snippets
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_default.jpg)
 
-Snippets work across two panels. The panel to the left (similar to Sources) is the file-list, whilst selecting a snippet file will open it in the editor to your right. This is a very similar experience to selecting a script or stylesheet for editing in the Sources tab.
+点击左上角的布局切换显示扩展的面板。现在应该可以看到源码(Sources)、内容脚本(Content Scripts)和一个新的标签——代码片段(Snippets)，点击进入。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_expand.jpg)
 
-A new snippet file can be created by right-clicking inside the file-list and selecting "New".
+###创建代码片段
 
+代码片段有两部分面板，左边的（类似Sources面板）是文件列表，当选中文件的时候会在右侧的编辑器中打开。这与在Sources面板中选择样式表和脚本的操作十分类似。
 
-Snippet Filenames
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_creating.jpg)
 
-Snippet filenames are automatically generated, but you also have the option of customizing these filenames as soon as your snippet has been created.
+在文件列表单击右键，选择“新建(New)”将会创建一个新的代码片段文件。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_new.png)
 
-Should you wish to rename the file at any time after this, simply right-click it again in the file-list and select 'Rename'. You can also 'Remove' the snippet should you need to.
+###代码片段的文件名
 
+代码片段的文件名是自动生成的，但当代码片段创建后你可以选择自定义文件名。
 
-Editing And Executing Snippets
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_filename.png)
 
-Selecting a snippet file from the file-list opens it up in the built-in editor to your right. Here you can write or paste any JavaScript code (i.e your snippet) including functions and expressions.
+如希望重命名，则可以在文件上单击右键，然后选择“重命名(Rename)”。如果需要的话，也可以选择“删除(Remove)”代码片段。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_remove.png)
 
-If a filename is preceded by a *, this means that the snippet is modified and not yet saved.
+###编辑与执行代码片段
 
-To run a snippet, right-click on it's filename in the file-list and select "Run". Alternatively, you can hit the Run (>) button.
+在文件列表中选择一个文件在右侧内建的编辑器中打开。这里你可以输入或粘贴任何JavaScript代码（例如你的代码片段），包括函数与表达式。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_editor.png)
 
-If the snippet is expected to have any console output, this will be displayed in the console below the editor.
+如果一个文件名以“*”开头，意味着这个文件已被修改但并未保存。
 
-Note: A keyboard shortcut is also available for easily executing a snippet - just select your snippet then use Ctrl/Cmd + Enter to run it. This replicates the behavior of the Run (>) button - currently in the Sources console, but which will be moving into the debugger control in the near future.
+如需运行一个代码片段，在列表里的文件名上单击右键然后选择“运行”。或者点击Run(>)按钮。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_run.png)
 
-If you instead wish to evaluate specific lines of your snippet in the console, you can simply select these within the editor, right-click over your selection and choose the "Evaluate in Console" option to execute. The keyboard shortcut for this is: Ctrl + Shift + E.
+如果有任何控制台输出，则会显示在编辑器下方的控制台中。
 
+> **注意**：也可以使用快捷键来快速执行代码片段，选择后按Ctrl/Cmd + Enter来运行。这与点击Run(>)按钮（目前在Sources控制台中，但将来会移至调试控制中）的作用相同。
 
-As with "Run", output of the expression can be viewed in the console below the editor.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_console.png)
 
+如果只想运行代码片段的其中几行，可以选择需要运行的部分，然后单击右键选择“在控制台中运行(Evaluate in Console)”选项来执行。快捷键是`Ctrl + Shift + E`。
 
-Local Modifications
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_evaluate.png)
 
-As per Sources, Snippets also support viewing local modifications made to files with the ability to revert back to specific edit points in a revision history.
+与“运行(Run)”一样，表达式的输出可以在编辑器下方的控制台中查看。
 
-Right-clicking within the editor window and selecting "Local modifications..." after saving any changes locally will provide access to this functionality.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_evaluated.png)
 
+###本地修改
 
-Breakpoints, Watch Expressions And More
+如源(Sources)一样，代码片段(Snippets)同样支持查看对文件做出的本地修改，也可以在历史记录里选择还原至某一次编辑。
 
-Other features you're used to in the Sources panel, such as adding watch expressions, breakpoints, scoping variables and saving files are also available for use with Snippets.
+在编辑器内单击右键，然后选择“本地修改(Local modifications)”，在保存了一些本地编辑后便可以使用该功能。
 
-Read the relevant documentation on the Sources panel for further information about how these features may be used.
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_local.png)
 
+###断点、监视表达式以及更多
 
-Saving Snippets
+Sources面板中的一些功能同样也可以在代码片段(Snippets)中使用，比如添加表达式监视、断点、局部变量与保存文件。
 
-Snippets can either be saved and later accessed via the Snippets tab in the DevTools or exported to a new file on your system. To display save options for a Snippet, right-click within the text editor to display the editor menu.
+您可以阅读关于Sources面板的文档来了解更多关于这些功能如何使用的信息。
 
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_breakpoints.jpg)
 
-Save will persist changes to your existing snippet file, whilst Save As will allow you to save the snippet to a new file in a location of your choice.
+###保存代码片段
 
-Note: Snippets are stored in the DevTools localStorage. When performing a Save/Save As, you can bind the snippet to the file where it should be saved like any other script.
+代码片段保存后可以通过“开发者工具”的代码片段(Snippets)标签来查看，或者导出为一个新的文件。如需显示保存选项，在文本编辑器内单击右键显示编辑菜单。
 
-Navigating Snippets
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_contextmenu.png)
 
-Similar to scripts and stylesheets in Sources, Snippets also supports navigating to specific snippet files, functions or line-numbers using the same keyboard shortcuts we mentioned earlier.
+这里“保存(Save)”将会保存修改至现存的代码片段文件，而“另存为(Save as)”允许你将代码片段保存为一个新的文件至所选择的地方。
 
+> 注意：代码片段保存在“开发者工具”的本地存储内。保存/另存后，可将代码片段绑定至其应被保存的位置，就像其它脚本一样。
 
-Back to top
+###定位代码片段
 
-Resources
+与Sources面板中的脚本和样式类似，代码片段同样支持定位到某个特定的文件、函数或者行号，快捷键与之前提到的相同。
 
-My workflow: Never having to leave the DevTools | remy sharp
-The Breakpoint With Addy Osmani And Paul Lewis - Snippets | youtube
-Chrome Dev Tools: JavaScript and Performance | nettuts
-Iterating with the Chrome DevTools | jeremey kahn
-Back to top
+![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippet_filter.png)
+
+##参考资料
+- [Chrome DevTools Revolutions 2013: Workspaces](http://www.html5rocks.com/en/tutorials/developertools/revolutions2013/#toc-workspaces)
+- [My workflow: Never having to leave the DevTools | remy sharp](http://remysharp.com/2012/12/21/my-workflow-never-having-to-leave-devtools/)
+- [The Breakpoint With Addy Osmani And Paul Lewis - Snippets | youtube](http://www.youtube.com/watch?feature=player_detailpage&v=ktwJ-EDiZoU#t=553s)
+- [Chrome Dev Tools: JavaScript and Performance | nettuts](http://net.tutsplus.com/tutorials/tools-and-tips/chrome-dev-tools-javascript-and-performance/)
+- [Iterating with the Chrome DevTools | jeremey kahn](http://www.youtube.com/watch?v=Phw6edMppKg)
