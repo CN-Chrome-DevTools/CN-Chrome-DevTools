@@ -54,7 +54,7 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 ## 使用 Console API
 
-Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
+Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
 
 ### 输出信息到 console
 
@@ -95,7 +95,7 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ### 断言（Assertions）
 
-[console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数得结果为 false 的时候会显示一段错误信息（第二个参数是错误信息）。比如下面得这个例子就是只有当 `list` 元素得子结点数目大于 500 得时候输出这段错误信息。
+[console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数的结果为 false 的时候会显示一段错误信息（第二个参数是错误信息）。比如下面的这个例子就是只有当 `list` 元素的子结点数目大于 500 的时候输出这段错误信息。
 
 
     console.assert(list.childNodes.length &lt; 500, "Node count is &gt; 500");
@@ -115,7 +115,8 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 *   **Errors**&mdash;只显示 `console.error()` 输出的信息
 *   **Warnings**&mdash;只显示 `console.warn()` 输出的信息
 *   **Logs**&mdash;只显示 `console.log()`， `console.info()` 以及 `console.debug()` 输出的信息
-*   **Debug**&mdash;只显示 `console.timeEnd()`  and other console output.
+*   **Debug**&mdash;只显示 `console.timeEnd()`  和其他 console 输出的信息
+
 
 ### 分组输出
 
