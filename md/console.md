@@ -8,31 +8,6 @@ JavaScript Console 为开发者们测试网页和应用提供了两个主要的�
 
 这个文档提供了这两个 API 的功能介绍和常用用法。你也可以去查看 [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api) 和 [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api) 两个入门参考文档。
 
-
-1.  [基础操作](#basic_operation)
-    1.  [打开 Console](#opening_the_console)
-    2.  [清空 Console 结果](#clearing_the_console_history)
-    3.  [Console 设置](#console_settings)
-2.  [使用 Console API](#using_the_console_api)
-    1.  [Writing to the console](#writing_to_the_console)
-    2.  [Errors and warnings](#errors_and_warnings)
-    3.  [Assertions](#assertions)
-    4.  [Filtering console output](#filtering_console_output)
-    5.  [Grouping output](#grouping_output)
-    6.  [String substitution and formatting](#string_substitution_and_formatting)
-    7.  [Formatting DOM elements as JavaScript objects](#formatting_dom_elements_as_javascript_objects)
-    8.  [Styling console output with CSS](#styling_console_output_with_css)
-    9.  [Measuring how long something takes](#measuring_how_long_something_takes)
-    10.  [Marking the Timeline](#marking_the_timeline)
-    11.  [Setting breakpoints in JavaScript](#setting_breakpoints_in_javascript)
-3.  [Using the Command Line API](#using_the_command_line_api)
-    1.  [Evaluating expressions](#evaluating_expressions)
-    2.  [Selecting elements](#selecting_elements)
-    3.  [Inspecting DOM elements and JavaScript heap objects](#inspecting_dom_elements_and_javascript_heap_objects)
-    4.  [Accessing recently selected elements and objects](#accessing_recently_selected_elements_and_objects)
-    5.  [Monitoring events](#monitoring_events)
-    6.  [Controlling the CPU profiler](#controlling_the_cpu_profiler)
-
 ## 基础操作
 
 ### 打开 Console
@@ -92,7 +67,7 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ![Console 信息输出](https://developer.chrome.com/devtools/docs/console-files/log-basic.png)
 
-如果不想使用 “＋” 这个表达式连接符（像上图那样），you can put each in its own method parameter and they will be joined together in a space-delimited line.
+如果不想使用 “＋” 这个表达式连接符（像上图那样）合并输出字符串，你可以把每个要输出的内容当作参数传递进去（用逗号分割），它们会被用空格作为间隔连接成一行字符串输出。
 
 	console.log("Node count:", a.childNodes.length, "and the current time is:", Date.now());
 
@@ -110,7 +85,7 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
     
 ![console.error() 的例子](https://developer.chrome.com/devtools/docs/console-files/error-server-not-resp.png)
 
-[console.warn()](console-api#consolewarnobject_object) 方法会显示一个黄色图标和一段信息文本。
+[console.warn()](console-api#consolewarnobject_object) 方法会显示一个黄色警示图标和一段信息文本。
 
     if(a.childNodes.length &lt; 3 ) {
         console.warn('Warning! Too few nodes (%d)', a.childNodes.length);
@@ -120,7 +95,7 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ### 断言（Assertions）
 
-[console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数得结果为 false 得时候会显示一段错误信息（第二个参数是错误信息）。举个例子，下面得这个例子就是只有当 `list` 元素得子结点数目大于 500 得时候输出这段错误信息。
+[console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数得结果为 false 的时候会显示一段错误信息（第二个参数是错误信息）。比如下面得这个例子就是只有当 `list` 元素得子结点数目大于 500 得时候输出这段错误信息。
 
 
     console.assert(list.childNodes.length &lt; 500, "Node count is &gt; 500");
@@ -206,13 +181,13 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 格式声明符 | 描述
 ---- | ----
 `%s` | 将值格式化为字符串。
-`%d` 或者 `%i` | 将值格式化为数值。
+`%d` 或者 `%i` | 将值格式化为整型。
 `%f` | 将目标格式化为浮点型值。
 `%o` | 将值格式化为一个可张开的 DOM 对象（类似 Elements 面板）。
 `%O` | 将值格式化为一个可张开的 JavaScript 对象。
 `%c` | 将第二个参数传递进去的 CSS 样式应用在输出的字符串上。
 
-在下面的例子中 `%d` 格式声明符将会被 `document.childNodes.length` 的数值格式替换；`%f`格式声明符将会替换为被格式化成浮点型数值的 `Date.now()` 值。
+在下面的例子中 `%d` 格式声明符将会被 `document.childNodes.length` 的数值以整型格式替换；`%f`格式声明符将会替换为被格式化成浮点型数值的 `Date.now()` 值。
 
     console.log("Node count: %d, and the time is %f.", document.childNodes.length, Date.now());
     
@@ -240,7 +215,7 @@ Console API 是 DevTools 定义得全局对象 console 的方法集合。API 的
 
 ### 使用 CSS 对输出信息添加样式
 
-在使用 [`console.log()`](#writingtotheconsole) 或者其他有关方法的时候，你可以使用 `%c` 格式声明符来对输出的字符串赋予一些样式。
+在使用 [`console.log()`](#writingtotheconsole) 或者其他相关方法的时候，你可以使用 `%c` 格式声明符来对输出的字符串赋予一些样式。
 
 	console.log("%cThis will be formatted with large, blue text", "color: blue; font-size: x-large");
    
