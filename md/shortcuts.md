@@ -2,17 +2,7 @@ Keyboard Shortcuts
 
 The DevTools has several built-in shortcut keys that developers can use to save time in their day to day workflow. Outlined below is each shortcut and the corresponding key for each on Windows/Linux and Mac. While some shortcuts are globally available across all of the DevTools, others are specific to a single panel, and are broken up based on where it can be used.
 
-Contents
-
-Opening DevTools
-All Panels
-Elements Panel
-Styles Sidebar
-Sources Panel
-Timeline Panel
-Console
-Other Chrome Shortcuts
-
+DevTools具有一些内建的快捷键，开发者可以在日常的开发过程中使用它们以节约时间。以下列举的是每个快捷方式在Windows / Linux和Mac下相应的快捷键。有些快捷键是在全局有效的，而有些只是在某一个标签栏生效，and are broken up based on where it can be used.
 
 打开DevTools
 ---
@@ -26,17 +16,13 @@ Other Chrome Shortcuts
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
 打开 Chrome DevTools          | F12, Ctrl + Shift + I   | Cmd + Opt + I
-Open / switch from inspect element mode and browser window   | Ctrl + Shift + C   | Cmd + Shift + C
+打开／切换 审查元素模式和浏览模式   | Ctrl + Shift + C   | Cmd + Shift + C
 打开 Chrome DevTools ,并聚焦在 console 上 | Ctrl + Shift + J   | Cmd + Opt + J
-Inspect the Inspector (undock first one and press)  | Ctrl + Shift + J   | Cmd + Opt + J
+审查审查器 (取消第一个审查器的停靠后再按键)  | Ctrl + Shift + J   | Cmd + Opt + J
 
+在Chrome DevTools 窗口是打开时，按下“?”或者“F1”键可以打开设置对话（General Settings）框。按下“Esc”可以关闭设置对话框。
 
-
-To open up the General Settings dialog type ? or F1 when the Developer Tools window is open. Press Esc to close the settings dialog.
-
-在Chrome DevTools 窗口是打开的状态下，按下“?”或者“F1”键可以打开设置对话框。按下“Esc”可以关闭设置对话框。
-
-All Panels
+全部标签栏
 ---
 
 功能       | Windows / Linux | Mac
@@ -44,31 +30,31 @@ All Panels
 打开 General Settings 对话框   |  ?, F1  |  ?
 下一个 panel |  Ctrl + ]  |   Cmd + ]
 上一个 panel |  Ctrl + [  |   Cmd + [
-Backward in panel History    |  Ctrl + Alt + [    | Cmd + Alt + [
-Forward in panel history    |   Ctrl + Alt + ]    | Cmd + Alt + ]
+标签栏历史中后退    |  Ctrl + Alt + [    | Cmd + Alt + [
+标签栏历史中前进    |   Ctrl + Alt + ]    | Cmd + Alt + ]
 跳转至panel 1-9 (需要在设置对话框中开启服务)    |   Ctrl + 1-9    | Cmd + 1-9
-打开/关闭 Console / 关闭设置对话框   |   Esc  |  Esc
+打开/关闭 Console 或  关闭设置对话框   |   Esc  |  Esc
 刷新页面     |  F5, Ctrl + R     |  Cmd + R
 强制刷新页面，清除缓存内容    |   Ctrl + F5, Ctrl + Shift + R   | Cmd + Shift + R
 当前文件或 panel 搜索文字   |   Ctrl + F  |     Cmd + F
 所有资源中搜索文字 |  Ctrl + Shift + F    |   Cmd + Alt + F
-搜索文件(除了 Timeline)  |  Ctrl + O, Ctrl + O  |   Cmd + O, Cmd + O
+搜索文件(除了 Timeline标签栏)  |  Ctrl + O, Ctrl + O  |   Cmd + O, Cmd + O
 恢复默认字体大小  |    Ctrl + 0   |    Shift + 0
 放大  |  Ctrl + +     |  Shift + +
-说下   |    Ctrl + -     |  Shift + -
+缩小   |    Ctrl + -     |  Shift + -
 
 
-Elements Panel
+Elements 标签栏
 ---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Undo change | Ctrl + Z    | Cmd + Z
-Redo change | Ctrl + Y    | Cmd + Y, Cmd + Shift + Z
-Navigate    |  Up, Down   |  Up, Down
-Expand / collapse node  | Right, Left | Right, Left
-Expand node | Single-click on tag | Single-click on tag
-Edit attribute|   Enter, Double-click on attribute  |   Enter, Double-click on attribute
+撤销改动 | Ctrl + Z    | Cmd + Z
+恢复改动 | Ctrl + Y    | Cmd + Y, Cmd + Shift + Z
+导航    |  Up, Down   |  Up, Down
+伸缩展开元素  | Right, Left | Right, Left
+展开元素 | 单击某个html标签 | 单击某个html标签
+编辑元素属性|   Enter, 双击属性 |   Enter, 双击属性
 Hide element   |  H |   H
 Toggle edit as HTML|  F2|
 
