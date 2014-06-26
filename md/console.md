@@ -1,141 +1,127 @@
-Using the Console
+使用 Console
 ==
 
-The JavaScript Console provides two primary functions for developers  testing web pages and applications:
+JavaScript Console 为开发者们测试网页和应用提供了两个主要的功能：
 
-*   A place to log diagnostic information using methods provided by the [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api), such as [console.log()](https://developers.google.com/chrome-developer-tools/docs/console-api#consolelogobject_object), or [console.profile()](https://developers.google.com/chrome-developer-tools/docs/console-api#consoleprofilelabel).
-*   A shell prompt where you can enter commands and interact with the document and the Chrome DevTools. You can evaluate expressions directly in the Console, and can also use the methods provided by the [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api), such as [$()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#selector) command for selecting elements, or [profile()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#profile) to start the CPU profiler.
+* 使用 [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api) 来输出一段调试信息，例如使用 [console.log()](https://developers.google.com/chrome-developer-tools/docs/console-api#consolelogobject_object)，或者 [console.profile()](https://developers.google.com/chrome-developer-tools/docs/console-api#consoleprofilelabel) 。
+* 一个实时的 Shell ，让你可以输入命令，并且通过 Chrome DevTools 操作 document。你可以直接在 Console 里面执行表达式，也可以执行 [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api) 里面提供的一些方法，例如执行 [$()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#selector) 命令来选择所有元素，或者执行 [profile()](https://developers.google.com/chrome-developer-tools/docs/commandline-api#profile) 命令来启动一个 CPU 测评器（profiler）。
 
-This documentation provides an overview and common uses of these two APIs. You can also browse the [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api) and [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api) reference guides.
+这个文档提供了这两个 API 的功能介绍和常用用法。你也可以去查看 [Console API](https://developers.google.com/chrome-developer-tools/docs/console-api) 和 [Command Line API](https://developers.google.com/chrome-developer-tools/docs/commandline-api) 两个入门参考文档。
 
-1.  [Basic operation](#basic_operation)
-    1.  [Opening the Console](#opening_the_console)
-    2.  [Clearing the console history](#clearing_the_console_history)
-    3.  [Console settings](#console_settings)
-2.  [Using the Console API](#using_the_console_api)
-    1.  [Writing to the console](#writing_to_the_console)
-    2.  [Errors and warnings](#errors_and_warnings)
-    3.  [Assertions](#assertions)
-    4.  [Filtering console output](#filtering_console_output)
-    5.  [Grouping output](#grouping_output)
-    6.  [String substitution and formatting](#string_substitution_and_formatting)
-    7.  [Formatting DOM elements as JavaScript objects](#formatting_dom_elements_as_javascript_objects)
-    8.  [Styling console output with CSS](#styling_console_output_with_css)
-    9.  [Measuring how long something takes](#measuring_how_long_something_takes)
-    10.  [Marking the Timeline](#marking_the_timeline)
-    11.  [Setting breakpoints in JavaScript](#setting_breakpoints_in_javascript)
-3.  [Using the Command Line API](#using_the_command_line_api)
-    1.  [Evaluating expressions](#evaluating_expressions)
-    2.  [Selecting elements](#selecting_elements)
-    3.  [Inspecting DOM elements and JavaScript heap objects](#inspecting_dom_elements_and_javascript_heap_objects)
-    4.  [Accessing recently selected elements and objects](#accessing_recently_selected_elements_and_objects)
-    5.  [Monitoring events](#monitoring_events)
-    6.  [Controlling the CPU profiler](#controlling_the_cpu_profiler)
+## 基础操作
 
-## Basic operation
+### 打开 Console
 
-### Opening the Console
+在 Chrome DevTools 中，JavaScript Console 有两种模式：Console 标签或者在其他标签（例如 Elements 或者 Sources 标签）下的一个分裂视图。
 
-The JavaScript Console is available in two modes within Chrome DevTools: the primary Console tab, or as a split-view you can display while on another tab (such as Elements or Sources).
+可以使用下面几种方法之一打开 Console 标签：
 
-To open the Console tab, do one of the following:
-
-*   Use the keyboard shortcut **Command - Option - J** (Mac) or **Control -Shift -J** (Windows/Linux).
-*   Select **View &gt; Developer &gt; JavaScript Console**.
+* 使用快捷键 **Command - Option - J** (Mac) 或者 **Control -Shift -J** (Windows/Linux)。
+* 选择菜单栏中的 **视图 &gt; 开发者 &gt; JavaScript 控制台**。
 
 ![Console panel view](https://developers.google.com/chrome-developer-tools/docs/console-files/console1.png)
 
-To toggle a split-view of the Console on another tab, press the **Esc** key on your keyboard, or click the **Show/Hide Console** button in the bottom left corner of the Chrome DevTools window. In the following screenshot the Console split-view is shown with the Elements panel.
+可以通过摁下 **Esc** 键快速切换 Console 面板的分裂视图，或者点击 Chrome DevTools 窗口左下角的
+**Show/Hide Console** 按钮。下面的截图中就是在 Elements 面板下的 Console 分裂视图。
 
-![Console split-view](https://developers.google.com/chrome-developer-tools/docs/console-files/console-split-view.png)
 
-### Clearing the console history
+![Console 分裂视图](https://developer.chrome.com/devtools/docs/console-files/console-split-view.png)
 
-To clear the console's history, do one of the following:
+### 清空 console 记录
 
-*   Right-click or Ctrl-click anywhere in the Console and choose **Clear Console** from the context menu that appears.
-*   Enter the [**clear()**](commandline-api#clear) Command Line API at the shell prompt.
-*   Invoke [**console.clear()**](console-api#consoleclear) Console API from JavaScript.
-*   Use the keyboard shortcut **⌘K** or **⌃L** (Mac) **Control - L** (Windows and Linux).
+使用下面任意一种方法就可以清理 console 的历史：
 
-By default, the console history is cleared when you navigate to another page. You can change this behavior by enabling **Preserve log upon navigation** in the Console area of the Settings dialog (see [Console preferences](#consolepreferences)).
+* 在 console 的任意地方右击或者摁下 Ctrl 同时点击即可弹出包含 **Clear Console** 菜单。
+* 在 shell 输入行中输入命令行 API [**clear()**](commandline-api#clear) 并回车。
+* 调用 JavaScript 的 [**console.clear()**](console-api#consoleclear) 这个 Console API。
+* 使用快捷键 **⌘K** 或者 **⌃L** (Mac) **Control - L** (Windows and Linux).
 
-### Console settings
+默认的情况下，当你打开其他页面的时候，console 的记录就会被清理。你可以在 Settings 对话框里面的 Console 设置区域中启用 **Preserve log upon navigation** 选项来避免清理。（详情 [Console preferences](#consolepreferences) ）。
 
-The Console has two global settings you can modify in the General tab of the DevTools Settings dialog:
 
-*   **Log XMLHTTPRequests**&mdash;determines if each XMLHTTPRequest is logged to the Console panel.
-*   **Preserve log upon navigation**&mdash;determines if console history for the current page is preserved when you navigate to another page. By default, both of these settings are disabled.
+### Console 设置
 
-You can also change these settings by right-clicking anywhere in the Console to bring up the context menu.
+你可以在 DevTools Settings 对话框中的 General 标签下修改 Console 的两个全局选项：
 
-![Console panel view](https://developers.google.com/chrome-developer-tools/docs/console-files/console-context-menu.png)
 
-## Using the Console API
+* **Log XMLHTTPRequests**&mdash;决定每个 XMLHTTPRequest 是否都显示在 Console 面板上。
+* **Preserve log upon navigation**&mdash;决定你在当前页面中 console 的记录是否会因为你跳转到其他页面而被清空。这两个选项默认都是禁用的。
 
-The Console API is collection of methods provided by the global `console` object defined by DevTools. One of the API's main purposes is to [log information](#writing_to_the_console) (such as a property value, or an entire objects or DOM element) to the console while your application is running. You can also group output visually in the console to reduce visual clutter.
+你也可以在 console 的任意地方右击，通过选择出现的菜单来改变这两个选项。
 
-### Writing to the console
 
-The [console.log()](console-api#consolelogobject_object) method takes one or more expressions as parameters and writes their current values to the console. For example:
+![Console 面板右击菜单视图](https://developer.chrome.com/devtools/docs/console-files/console-context-menu.png)
+
+## 使用 Console API
+
+Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的主要目的是在你应用运行的时候[显示信息](#writing_to_the_console)（例如显示一个属性值，或者一整个对象或者 DOM 对象）到 console 上。为了避免 console 中的视觉混乱，你也可以成组的输出信息。
+
+### 输出信息到 console
+
+[console.log()](console-api#consolelogobject_object) 方法可以把一个或者多个语句当作参数传递进去然后把它们当前的值输出到 console。例如：
 
     var a = document.createElement('p');
     a.appendChild(document.createTextNode('foo'));
     a.appendChild(document.createTextNode('bar'));
     console.log("Node count: " + a.childNodes.length);
 
-![Console log output](https://developers.google.com/chrome-developer-tools/docs/console-files/log-basic.png)
+![Console 信息输出](https://developer.chrome.com/devtools/docs/console-files/log-basic.png)
 
-Instead of concatenating expressions together with the "+" operator (as shown above), you can put each in its own method parameter and they will be joined together in a space-delimited line.
+如果不想使用 “＋” 这个表达式连接符（像上图那样）合并输出字符串，你可以把每个要输出的内容当作参数传递进去（用逗号分割），它们会被用空格作为间隔连接成一行字符串输出。
 
 	console.log("Node count:", a.childNodes.length, "and the current time is:", Date.now());
 
 
-![Console log output](https://developers.google.com/chrome-developer-tools/docs/console-files/log-multiple.png)
+![Console 信息输出](https://developer.chrome.com/devtools/docs/console-files/log-multiple.png)
 
-### Errors and warnings
+### 错误和警告
 
-The [console.error()](console-api#consoleerrorobject_object) method displays a red icon along with the message text, which is colored red.
+[console.error()](console-api#consoleerrorobject_object) 方法会显示一个红色图标和一段红色信息文本。
 
     function connectToServer() {
         console.error("Error: %s (%i)", "Server is  not responding",500);
     }
     connectToServer();
     
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/error-server-not-resp.png)
+![console.error() 的例子](https://developer.chrome.com/devtools/docs/console-files/error-server-not-resp.png)
 
-The [console.warn()](console-api#consolewarnobject_object) method displays a yellow warning icon with the message text.
+[console.warn()](console-api#consolewarnobject_object) 方法会显示一个黄色警示图标和一段信息文本。
 
     if(a.childNodes.length &lt; 3 ) {
         console.warn('Warning! Too few nodes (%d)', a.childNodes.length);
     }
-![Example of console.warn()](https://developers.google.com/chrome-developer-tools/docs/console-files/warning-too-few-nodes.png)
+    
+![console.warn() 的例子](https://developer.chrome.com/devtools/docs/console-files/warning-too-few-nodes.png)
 
-### Assertions
+### 断言（Assertions）
 
-The [console.assert()](console-api#consoleassertexpression_object) method conditionally displays an error string (its second parameter) only if its first parameter evaluates to `false`. For instance, in the following example an error message is written to the console only if the number of child nodes belonging to the `list` element is greater than 500.
+[console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数的结果为 false 的时候会显示一段错误信息（第二个参数是错误信息）。比如下面的这个例子就是只有当 `list` 元素的子结点数目大于 500 的时候输出这段错误信息。
+
 
     console.assert(list.childNodes.length &lt; 500, "Node count is &gt; 500");
 
-![Example of console.assert()](https://developers.google.com/chrome-developer-tools/docs/console-files/assert-failed.png)
+![console.assert() 的例子](https://developer.chrome.com/devtools/docs/console-files/assert-failed.png)
 
-### Filtering console output
+### 筛选 console 输出信息
 
-You can quickly filter console output by its severity level--errors, warning, or standard log statements--by selecting one of the filter options. Click on the filter funnel (as shown below) and then select which filter you want to use.
+你可以通过选中筛选选项来快速筛选 console 输出的信息级别，例如错误、警告或者正常的输出信息。点击筛选漏斗图标（如下图）然后就可以选择你需要的筛选选项。
 
-![Only show console.error() output](https://developers.google.com/chrome-developer-tools/docs/console-files/filter-errors.png)
 
-Filter options:
+![仅仅显示 console.warn() 输出信息](https://developer.chrome.com/devtools/docs/console-files/filter-errors.png)
 
-*   **All**&mdash;Shows all console output.
-*   **Errors**&mdash;Only show output from `console.error()`
-*   **Warnings**&mdash;Only show output from `console.warn()`
-*   **Logs**&mdash;Only show output from `console.log()`, `console.info()` and `console.debug()`.
-*   **Debug**&mdash;Only show output from `console.timeEnd()` and other console output.
+筛选选项：
 
-### Grouping output
+*   **All**&mdash;显示所有输出在 console 的信息
+*   **Errors**&mdash;只显示 `console.error()` 输出的信息
+*   **Warnings**&mdash;只显示 `console.warn()` 输出的信息
+*   **Logs**&mdash;只显示 `console.log()`， `console.info()` 以及 `console.debug()` 输出的信息
+*   **Debug**&mdash;只显示 `console.timeEnd()`  和其他 console 输出的信息
 
-You can visually group related console output statements together in the console with the [`console.group()`](console-api#consolegroupobject_object) and [`groupEnd()`](console-api#consolegroupend) commands.
+
+### 分组输出
+
+你也可以使用 [`console.group()`](console-api#consolegroupobject_object) 和 [`groupEnd()`](console-api#consolegroupend) 命令来把想要输出到 console 的语句放在一起形成一组。
+
 
     var user = "jsmith", authenticated = false;
     console.group("Authentication phase");
@@ -147,9 +133,10 @@ You can visually group related console output statements together in the console
     console.groupEnd();
     
 
-![Logging group example](https://developers.google.com/chrome-developer-tools/docs/console-files/group.png)
+![分组输出示例](https://developer.chrome.com/devtools/docs/console-files/group.png)
 
-You can also nest logging groups. In the following example a logging group is created for the authentication phase of a login process. If the user is authenticated, a nested group is created for the authorization phase.
+你也可以输出嵌套分组。下面的例子是一个登录过程中的验证阶段演示。如果用户验证通过，就会在验证阶段里面输出一个嵌套分组信息。
+
 
     var user = "jsmith", authenticated = true, authorized = true;
     // Top-level group
@@ -168,9 +155,9 @@ You can also nest logging groups. In the following example a logging group is cr
     console.groupEnd();
     console.log("A group-less log trace.");
 
-![Nested logging group example](https://developers.google.com/chrome-developer-tools/docs/console-files/nestedgroup.png)
+![输出嵌套分组信息示例](https://developer.chrome.com/devtools/docs/console-files/nestedgroup.png)
 
-To create a group that is initially collapsed, use [`console.groupCollapsed()`](console-api#consolegroupcollapsed) instead of `console.group()`, as shown below:
+你也可以使用 [`console.groupCollapsed()`](console-api#consolegroupcollapsed) 代替 `console.group()` 来输出一个初始折叠起来的分组信息。
 
     console.groupCollapsed("Authenticating user '%s'", user);
     if (authenticated) {
@@ -178,92 +165,66 @@ To create a group that is initially collapsed, use [`console.groupCollapsed()`](
     }
     
 
-![Initially collapsed group](https://developers.google.com/chrome-developer-tools/docs/console-files/groupcollapsed.png)
+![初始折叠起来的分组信息](https://developer.chrome.com/devtools/docs/console-files/groupcollapsed.png)
 
-### String substitution and formatting
+### 字符串替换和格式化
 
-The first parameter you pass to any of the console's logging methods (`log()` or `error()`, for example) may contain one or more _format specifiers_. A format specifier consists of a **`%`** symbol followed by a letter that indicates the formatting that should be applied to the inserted value (`%s` for strings, for example). The format specifier identifies where to substitute a value provided by a subsequent parameter value.
+你传递到 console 的输出信息方法（例如 `log()` 或者 `error()`）的第一个参数里面，可能会包含一个或者多个 _格式声明符（format specifier）_ 。格式声明符通常以 **`%`** 符号为开头然后紧跟一个表示将要插入值的类型的字母（例如 `%s` 表示这里要输出一个字符串）。格式声明符表示在当前位置将会被替换成某个传递进去的值。
 
-The following example using the `%s` (string) and `%d` (integer) formatters to insert values into the output string.
+下面的这个例子将会把值以 `%s`（字符串）和 `%d` （数字）格式插入并输出。
 
     console.log("%s has %d points", "Sam", "100");
+    
+执行后，console 中将会输出 “Sam has 100 points”。
 
-This would result in "Sam has 100 points" being logged to the console.
+下面的这个列表是支持的格式声明符以及对应格式：
 
-The following table lists the supported format specifiers and the formatting they apply:
+格式声明符 | 描述
+---- | ----
+`%s` | 将值格式化为字符串。
+`%d` 或者 `%i` | 将值格式化为整型。
+`%f` | 将目标格式化为浮点型值。
+`%o` | 将值格式化为一个可张开的 DOM 对象（类似 Elements 面板）。
+`%O` | 将值格式化为一个可张开的 JavaScript 对象。
+`%c` | 将第二个参数传递进去的 CSS 样式应用在输出的字符串上。
 
-<table>
-<thead>
-<tr>
-<th>Format specifier</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>`%s`</td>
-<td>Formats the value as a string.</td>
-</tr>
-<tr>
-<td>`%d` or `%i`</td>
-<td>Formats the value as an integer.</td>
-</tr>
-<tr>
-<td>`%f`</td>
-<td>Formats the object as a floating point value.</td>
-</tr>
-<tr>
-<td>`%o`</td>
-<td>Formats the value as an expandable DOM element (as in the Elements panel).</td>
-</tr>
-<tr>
-<td>`%O`</td>
-<td>Formats the value as an expandable JavaScript object.</td>
-</tr>
-<tr>
-<td>`%c`</td>
-<td>Applies CSS style rules to output string specified by the second parameter.</td>
-</tr>
-</tbody>
-</table>
-
-In the following example the `%d` format specifier is substituted with the value of `document.childNodes.length` and formatted as an integer; the `%f` format specifier is substituted with the value returned by `Date.now()`, which is formatted as a floating point number.
+在下面的例子中 `%d` 格式声明符将会被 `document.childNodes.length` 的数值以整型格式替换；`%f`格式声明符将会替换为被格式化成浮点型数值的 `Date.now()` 值。
 
     console.log("Node count: %d, and the time is %f.", document.childNodes.length, Date.now());
     
-![Using format specifiers](https://developers.google.com/chrome-developer-tools/docs/console-files/format-substitution.png)
+![使用格式声明符](https://developer.chrome.com/devtools/docs/console-files/format-substitution.png)
 
-### Formatting DOM elements as JavaScript objects
+### 将 DOM 元素格式化为 JavaScript 对象
 
+默认的，当你在 console 输出一个 DOM 元素时，它会以 XML 的格式显示，就像在 Elements 面板中那样：
 
-By default, when you log a DOM element to the console it's displayed in an XML format, as in the Elements panel:
 
     console.log(document.body.firstElementChild)
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/log-element.png)
+![](https://developer.chrome.com/devtools/docs/console-files/log-element.png)
 
-You can also log an element's JavaScript representation with the `console.dir()` method:
+你也可以使用 `console.dir()` 方法来输出一个元素的 JavaScript 描述：
 
 	console.dir(document.body.firstElementChild);
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/dir-element.png)
+![](https://developer.chrome.com/devtools/docs/console-files/dir-element.png)
 
-Equivalently, you can us the `%O` [format specifier](#string_substitution_and_formatting) with `console.log()`:
+当然，你也可以使用 `console.log()` 配合 `%O` [格式声明符](#string_substitution_and_formatting) 来格式化输出信息：
 
     console.log("%O", document.body.firstElementChild);
 
 
-### Styling console output with CSS
+### 使用 CSS 对输出信息添加样式
 
-You use the `%c` format specifier to apply custom CSS rules to any string you write to the Console with[`console.log()`](#writingtotheconsole) or related methods.
+在使用 [`console.log()`](#writingtotheconsole) 或者其他相关方法的时候，你可以使用 `%c` 格式声明符来对输出的字符串赋予一些样式。
 
 	console.log("%cThis will be formatted with large, blue text", "color: blue; font-size: x-large");
    
-![Styling console output with CSS](https://developers.google.com/chrome-developer-tools/docs/console-files/format-string.png)
+![使用 CSS 为输出信息进行美化](https://developer.chrome.com/devtools/docs/console-files/format-string.png)
 
-### Measuring how long something takes
+### 测量某项任务所用时间
 
-You can use the [`console.time()`](console-api#consoletimelabel) and [`console.timeEnd()`](console-api#consoletimeendlabel) methods to measure how long a function or operation in your code takes to complete. You call `console.time()` at the point in your code where you want to start the timer and `console.timeEnd()` to stop the timer. The elapsed time between these two calls is displayed in the console.
+你可以使用 [`console.time()`](console-api#consoletimelabel) 和 [`console.timeEnd()`](console-api#consoletimeendlabel) 这两个方法来测量你代码里某个函数或者运算的完成所需时间。在你代码需要计时的地方调用 `console.time()` 方法，然后使用 `console.timeEnd()` 结束这个计时钟（timer）。console 中将会输出调用这两个方法之间经过的时间。
 
     console.time("Array initialize");
     var array= new Array(1000000);
@@ -273,17 +234,19 @@ You can use the [`console.time()`](console-api#consoletimelabel) and [`console.t
     console.timeEnd("Array initialize");
 
 
-![Example of using console.time() and timeEnd()](console-files/time-duration.png)
+![ console.time() 和 timeEnd() 的实例](https://developer.chrome.com/devtools/docs/console-files/time-duration.png)
 
->**Note:** You must pass the same string to `console.time()` and `timeEnd()` for the timer to finish as expected.
+>**注意：** 你必须向 `console.time()` 和 `timeEnd()` 中传递相同的字符串，这样计时钟才能按照预期的工作。
 
-### Marking the Timeline
+### 生成时间线（Timeline）
 
-The [Timeline panel](timeline) gives you a complete overview of where time is spent when loading and using your web app or page. The [`console.timeStamp()`](console-api#consoletimestamplabel) method marks the Timeline at the moment it was executed. This provides an easy way to correlate events in your application with other browser-related events, such as layout or paints.
+[时间线](https://developer.chrome.com/devtools/docs/timeline.md) 展示了你的 web app 或者网页加载时在哪里花费了时间。[`console.timeStamp()`](console-api#consoletimestamplabel) 方法会在执行它的时候，在时间线上做一个标记。它提供了一种简单的方法来关联与其他浏览器相关的事件，如布局（layout）或者描绘（paints）。
 
->**Note:** The `console.timeStamp()` method only functions while a Timeline recording is in progress.
 
-In the following example the Timeline is marked when the application enters the `AddResult()` function's implementation.
+>**注意** `console.timeStamp()` 方法只有在时间线录制的时候起作用。
+
+下面的例子中，当应用执行 `AddResult()` 函数时会在时间线上标记一下。
+
 
     function AddResult(name, result) {
       console.timeStamp("Adding result");
@@ -292,16 +255,16 @@ In the following example the Timeline is marked when the application enters the 
       results.innerHTML += (text + "&lt;br&gt;");
     }
 
-As shown in the following screenshot, the `timeStamp()` command annotates the Timeline in the following places:
+正如下面截图所示，`timeStamp()` 命令在下面几个地方为时间线标注；
 
-*   A yellow vertical line in the Timeline's summary and detail views.
-*   A record is added to the list of recorded events.
+* 在时间线摘要和细节区域（detail views）中的那一条黄色的垂直线
+* 在左边事件记录列表中的一条记录
 
-    ![Timeline showing custom timestamp](https://developers.google.com/chrome-developer-tools/docs/console-files/timestamp2.png)
+![时间线中显示时间戳](https://developer.chrome.com/devtools/docs/console-files/timestamp2.png)
 
-### Setting breakpoints in JavaScript
+### 在 JavaScript 中设置断点
 
-You can start a debugging session from your JavaScript code by calling the [`debugger`](console-api#debugger) command. For instance, in the following example the JavaScript debugger is opened when an object's `brightness()` function is invoked:
+你可以调用 [`debugger`](console-api#debugger) 命令来对你的 JavaScript 代码开启调试模式。例如下面的例子中，当 `brightness()` 函数执行的时候，javaScript 调试器（debugger）将会开启：
 
     brightness : function() {
         debugger;
@@ -311,30 +274,32 @@ You can start a debugging session from your JavaScript code by calling the [`deb
         return (r * 77 + g * 150 + b * 29) &gt;&gt; 8;
     }
 
-![Example of using debugger command](https://developers.google.com/chrome-developer-tools/docs/console-files/debugger.png)
+![使用 debugger 命令的示例](https://developer.chrome.com/devtools/docs/console-files/debugger.png)
+
+在 [Breakpoint Actions in JavaScript](http://www.randomthink.net/blog/2012/11/breakpoint-actions-in-javascript/) 中， Brian Arnold 发现了一种根据条件断点的有趣的用法。
 
 
->An interesting technique of using conditional breakpoints was explored by Brian Arnold in [Breakpoint Actions in JavaScript](http://www.randomthink.net/blog/2012/11/breakpoint-actions-in-javascript/).
+
+## 使用命令行 API
+
+为了方便让你的应用输出信息到 console 中，console 同时也可以作为一个实时的 shell 来执行表达式或者 [Command Line API](commandline-api) 提供的一堆命令。这些 API 提供了下面这些特性：
+
+* 一些方便选择 DOM 元素的函数
+* 控制 CPU 分析器的函数
+* 一些 Console API  方法也可以执行
+* 监测事件
+* 查看注册在对象上的事件监听器
 
 
-## Using the Command Line API
+### 执行表达式
 
-In addition to being a place where you can log information from your application, the Console is also a shell prompt where you can directly evaluate expressions or issue commands provided by the [Command Line API](commandline-api). This API provides the following features:
+在实时 shell 中，当你摁下 Retun 或者 Enter 键时，会试图执行计算你输入的 JavaScript 表达式。Console 提供了自动完成和 tab 键完成。当你输入表达式的时候，建议属性名会自动弹出来。如果这些属性有相同的前缀，摁下 Tab 键会补全它们。摁下右方向键接受当前推荐选项。如果建议选项只有一条匹配属性时，摁下 Tab 键就会自动接受补全该选项。
 
-*   Convenience functions for selecting DOM elements
-*   Methods for controlling the CPU profiler
-*   Aliases for a number of Console API methods
-*   Monitoring events
-*   View event listeners registered on objects
-### Evaluating expressions
+![](https://developer.chrome.com/devtools/docs/console-files/evaluate-expressions.png)
 
-The Console attempts to evaluate any JavaScript expression you enter at the shell prompt, upon pressing the Return or Enter key. The Console provides auto-completion and tab-completion. As you type expressions, property names are automatically suggested. If there are multiple properties with the same prefix, pressing the Tab key cycles through them. Pressing the right arrow key accepts the current suggestion. The current suggestion is also accepted by pressing the Tab key if there is only one matched property.
+如果想要在实时 shell 中一次输入多行表达式（例如一个 function 函数定义），你需要摁下 Shift＋Enter 来换行。
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/evaluate-expressions.png)
-
-To enter a multi-line expression at the shell prompt (such as a function definition) press Shift+Enter between lines.
-
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/multiline-expression.png)
+![](https://developer.chrome.com/devtools/docs/console-files/multiline-expression.png)
 
 ### Selecting elements
 
