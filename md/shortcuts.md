@@ -1,6 +1,5 @@
-Keyboard Shortcuts
+快捷键
 
-The DevTools has several built-in shortcut keys that developers can use to save time in their day to day workflow. Outlined below is each shortcut and the corresponding key for each on Windows/Linux and Mac. While some shortcuts are globally available across all of the DevTools, others are specific to a single panel, and are broken up based on where it can be used.
 
 DevTools具有一些内建的快捷键，开发者可以在日常的开发过程中使用它们以节约时间。以下列举的是每个快捷方式在Windows / Linux和Mac下相应的快捷键。有些快捷键是在全局有效的，而有些只是在某一个标签栏生效，and are broken up based on where it can be used.
 
@@ -44,7 +43,7 @@ DevTools具有一些内建的快捷键，开发者可以在日常的开发过程
 缩小   |    Ctrl + -     |  Shift + -
 
 
-Elements 标签栏
+元素(Elements) 标签栏
 ---
 
 功能       | Windows / Linux | Mac
@@ -55,32 +54,30 @@ Elements 标签栏
 伸缩展开元素  | Right, Left | Right, Left
 展开元素 | 单击某个html标签 | 单击某个html标签
 编辑元素属性|   Enter, 双击属性 |   Enter, 双击属性
-Hide element   |  H |   H
-Toggle edit as HTML|  F2|
+隐藏元素   |  H |   H
+切换编辑为HTML|  F2|
 
-Right-clicking an element you can:
+右键单击某个元素时你可以做：
+*   强制元素在某个伪类状态: (:active, :hover, :focus, :visited)
+*	为元素设置断点（子元素修改，属性更改，元素删除）
+*	清除 console
 
-*	Force element psuedo states: (:active, :hover, :focus, :visited)
-*	Set breakpoints on the elements: (Subtree modifications, Attribute modification, Node removal)
-*	Clear console
-
-Styles Sidebar
+样式(Styles) 侧边栏
 ---
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Edit rule   | Single-click  |   Single-click
-Insert new property|  Single-click on whitespace  | Single-click on whitespace
-Go to line of style rule property declaration in source|  Ctrl + Click on property  |   Cmd + Click on property
-Go to line of property value declaration in source |  Ctrl + Click on property value |  Cmd + Click on property value
-Go to line of style rule property declaration in source|  Ctrl + Click on property  |   Cmd + Click on property
-Go to line of property value declaration in source  | Ctrl + Click on property value  | Cmd + Click on property value
-View auto-complete suggestions |  Ctrl + Space  |   Cmd + Space
-Edit next / previous property  |  Tab, Shift + Tab  |   Tab, Shift + Tab
-Increment / decrement value | Up, Down   |  Up, Down
-Increment / decrement value by 10  |  Shift + Up, Shift + Down  |   Shift + Up, Shift + Down
-Increment / decrement value by 10  |  PgUp, PgDown  |   PgUp, PgDown
-Increment / decrement value by 100  | Shift + PgUp, Shift + PgDown    | Shift + PgUp, Shift + PgDown
-Increment / decrement value by 0.1  | Alt + Up, Alt + Down  |   Opt + Up, Opt + Down
+编辑规则   | 单击  |   单击
+添加新属性|  空白处单击   | 空白处单击
+跳转到样式规则属性在样式表的行数|  Ctrl + 单击某个CSS属性 |   Cmd + 单击某个CSS属性
+跳转到属性值在样式表的行数 |  Ctrl + 单击某个CSS属性值 |  Cmd + 单击某个CSS属性值
+循环颜色定义值|  Shift + 单击颜色选择器  | Shift + 单击颜色选择器
+查看自动填充建议 |  Ctrl + 空格 |   Cmd + 空格
+编辑下一个 / 上一个属性  |  Tab, Shift + Tab  |   Tab, Shift + Tab
+增大 / 减小属性值 | Up, Down   |  Up, Down
+增大 / 减小属性值 （最小单位 10 ） |  Shift + Up, Shift + Down  |   Shift + Up, Shift + Down
+增大 / 减小属性值 （最小单位 10 ） |  PgUp, PgDown  |   PgUp, PgDown
+增大 / 减小属性值 （最小单位 100）  | Shift + PgUp, Shift + PgDown    | Shift + PgUp, Shift + PgDown
+增大 / 减小属性值 （最小单位 0.1）  | Alt + Up, Alt + Down  |   Opt + Up, Opt + Down
 
 Element Pseudostates Emulate an element's pseudo state (:active, :hover, :focus, :visited)
 
