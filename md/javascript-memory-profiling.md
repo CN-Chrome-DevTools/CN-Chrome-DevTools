@@ -195,7 +195,7 @@
 
 首先要做的事情是找出你认为可能导致内存泄漏的一些动作。可以是发生在页面上的任何事件，鼠标移入，点击，或其它可能会导致页面性能下降的交互。
 
-在时间轴面版上开始记录(Ctrl+E 或 Cmd+E)然后做你想要测试的动作。想要强制进行垃圾回收点面版上的垃圾筒图标(![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_8.png))。
+在时间轴面版上开始记录(Ctrl+E 或 Cmd+E)然后做你想要测试的动作。想要强制进行垃圾回收点面版上的垃圾筒图标(![](https://developer.chrome.com/devtools/images/collect-garbage.png))。
 
 下面是一个内存泄漏的例子，有些点没有被垃圾回收：
 
@@ -235,13 +235,13 @@
 
 ### 清除快照
 
-点击Clear all按钮图标(![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_14.png))，就能清除掉所有快照：
+点击Clear all按钮图标(![](https://developer.chrome.com/devtools/images/clear.png))，就能清除掉所有快照：
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_15.png)
 
 **注意：**关闭DevTools窗口并不能从渲染内存中删除掉收集的快照。当重新打开DevTools后，之前的快照列表还在。
 
-记住我们之前提到的，当你生成快照时你可以强制执行在DevTools中GC。当我们拍快照时，GC是自动执行的。在时间轴(Timeline)中点击垃圾桶(垃圾回收)按钮(![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_8.png))就可以轻松的执行垃圾回收了。
+记住我们之前提到的，当你生成快照时你可以强制执行在DevTools中GC。当我们拍快照时，GC是自动执行的。在时间轴(Timeline)中点击垃圾桶(垃圾回收)按钮(![](https://developer.chrome.com/devtools/images/collect-garbage.png))就可以轻松的执行垃圾回收了。
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/force.png)
 
@@ -254,9 +254,9 @@
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_17.png)
 
 下面是三个默认视图：
-* **Summary(概要) - **通过构造函数名分类显示对象；
-* **Comparison(对照) - **显示两个快照间对象的差异；
-* **Containment(控制) - **可用来探测堆内容；
+* **Summary(概要) -** 通过构造函数名分类显示对象；
+* **Comparison(对照) -** 显示两个快照间对象的差异；
+* **Containment(控制) -** 可用来探测堆内容；
 
 **Dominators(支配者)**视图可以在Settings面板中开启 **- **显示[dominators tree.](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#dominators) 可以用来找到内存增长点。
 
@@ -264,13 +264,13 @@
 
 对象的属性和属性值有不同的类型并自动的通过颜么进行了区分。每个属性都是以下四种之一：
 
-* **a:property —**通过名称索引的普通属性，由.(点)操作符，或\[\](中括号)引用，如\["foo bar"\]；
+* **a:property -** 通过名称索引的普通属性，由.(点)操作符，或\[\](中括号)引用，如\["foo bar"\]；
 
-* **0:element -**通过数字索引的普通属性，由\[\](中括号)引用；
+* **0:element -** 通过数字索引的普通属性，由\[\](中括号)引用；
 
-* **a:****context var - **函数内的属性，在函数上下文内，通过名称引用；
+* **a:context var -** 函数内的属性，在函数上下文内，通过名称引用；
 
-* **a:****system prop - **由JavaScript VM 添加的属性，JavaScript代码不能访问。
+* **a:system prop -** 由JavaScript VM 添加的属性，JavaScript代码不能访问。
 
 
 命名为`System `的对象没有对应的JavaScript类型。它们是JavaScript VM对象系统内置的。V8将大多数内置对象和用户JS对象放在同一个堆中。但它们只是V8的内部对象。
@@ -538,8 +538,7 @@ Timeline面版，是在你第一次使用你的页面发现速度变慢了时用
 
 * Containment(控制)视图对对象结构有更好的展示，帮助我们分析全局作用域(如 window)中对象引用情况来找到是什么保留了这些对象。它能让你分析闭包并深入到对象更深层去查看。
 
-* Dominators(支配者)视图能用来帮助我们确认没有出乎意料的对象引用还挂在某个位置(如那些很好的包含了的)，和确认对象的删除/垃圾回收真正发挥了作用。
-* Dominators view helps confirm that no unexpected references to objects are still hanging around (i.e that they are well contained) and that deletion/garbage collection is actually working.
+* Dominators(支配者)视图能用来帮助我们确认没有多余的对象还挂在某个位置(如那些被引用了的)，和确认对象的删除/垃圾回收真正起了作用。
 
 ** 问：堆分析仪中的constructor(一组)内容代表什么？**
 
