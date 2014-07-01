@@ -341,64 +341,59 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 **
 **注意：**你也可以在 Console 中的任意元素上右击或者摁住 Control 键点击并且选择 **Reveal in Elements Panel** 从而通过 Elements 面板查看。
 
 
-### Monitoring events
+### 监听事件
 
-The [`monitorEvents()`](commandline-api#monitoreventsobject_events) command monitors an object for one or more specified events. When an event occurs on the monitored object, the corresponding Event object is logged to the Console. You specify the object and the events you want to monitor on that object. For example, the following code enables event monitoring for every "resize" event on the global window object.
+[`monitorEvents()`](commandline-api#monitoreventsobject_events) 命令可以监控某对象的一个或多个指定的事件。当事件在被监控的对象上触发时，相应的事件对象将会被打印到 Console 上。 你指定的对象和你想要监听的事件。例如，下面代码会监听触发在全局 window 对象的每一个“resize”事件。
 
     monitorEvents(window, "resize");
 
-![Monitoring window resize events](https://developers.google.com/chrome-developer-tools/docs/console-files/monitor-resize.png)
+![监听 window resize 事件](https://developer.chrome.com/devtools/docs/console-files/monitor-resize.png)
 
-To monitor several events, you can pass an array of event names as the second parameter. The code below monitors both "mousedown" and "mouseup" events on the body of the document.
+想要监控多个事件，你可以把事件名数组作为第二个参数传递。下面代码会监控触发在 `document.body` 上的 “mousedown” 和 “mouseup” 事件。
 
     monitorEvents(document.body, ["mousedown", "mouseup"]);
 
-You can also pass one of the supported "event types" that DevTools maps to a set of actual event names. For example, the "touch" event type cause DevTools to monitor "touchstart", "touchend", "touchmove", and "touchcancel" events on the target object.
+你也可以传递一个被支持的“事件类型（event types）”作为第二参数，DevTools 会将其映射为一系列实际的事件名。例如，“touch”事件类型会让 DevTools 去监控目标对象上的 “thouchstart”，“thouchend”，“touchmove” 以及 “touchcancel” 事件。
 
     monitorEvents($('#scrollBar'), "touch");
 
+查看Console API 参考 [`monitorEvents()`](commandline-api#monitoreventsobject_events) 文档，你可以找到被支持的事件类型列表。
 
-See [`monitorEvents()`](commandline-api#monitoreventsobject_events) in the Console API Reference for a list of supported event types.
-
-To stop monitoring events call `unmonitorEvents()`, passing the object to stop monitoring.
+停止监控事件可以使用 `unmonitorEvents()`，需要把想要停止监控的对象传递进去。
 
     unmonitorEvents(window);
 
-### Controlling the CPU profiler
+### 控制 CPU 分析器
 
-You can create JavaScript CPU profiles from the command line with the [`profile()`](commandline-api#profilename) and [`profileEnd()`](commandline-api#profileendname) commands. You can optionally specify a name that's applied to the profile you create.
+你可以使用命令行命令 [`profile()`](commandline-api#profilename) 和 [`profileEnd()`](commandline-api#profileendname) 来创建一个 JavaScript CPU 分析器（profiler）。你可以为你创建的分析器自定义一个特定的名字。
 
-For example, the following shows an example of creating a new profile with the default name:
+例如，下面展示了如何用默认名字创建一个分析器：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-console.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-console.png)
 
-The new profile appears in the Profiles panel under the name "Profile 1":
+在 Profiles 面板中，这个新创建的分析器会以 “Profile 1” 的名字出现：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-panel.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-panel.png)
 
-If you specify a label for the new profile, it is used as the new profile's heading. If you create multiple profiles with the same name, they are grouped as individual runs under the same heading:
+如果你为新创建的分析器指定了一个标签，它通常用作分析器的标题。如果你创建了多个同名的分析器，they are grouped as individual runs under the same heading：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-console-2.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-console-2.png)
 
-The result in the Profiles panel:
+Profiles 面板的结果如下：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-panel-2.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-panel-2.png)
 
-CPU profiles can be nested, for example:
+CPU 分析器可以被嵌套，例如：
 
     profile("A");
     profile("B");
     profileEnd("B")
     profileEnd("A")
 
-
-The calls to stop and start profiling do not need be properly nested. For example, the following works the same as the previous example:
+调用停止或者开启分析命令的时候并不需要严格按照嵌套的顺序闭合。例如，下面代码跟上面代码功能一样：
 
     profile("A");
     profile("B");
     profileEnd("A");
     profileEnd("B");
 
-Except as otherwise noted, the content of this page is licensed under the [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/), and code samples are licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0). For details, see our [Site Policies](https://developers.google.com/site-policies).
-
-Last updated February 12, 2014.
