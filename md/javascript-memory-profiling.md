@@ -223,7 +223,7 @@
 
 ### 拍一个快照
 
-在Profiles面板中，选择** *Take Heap Snapshot* **，然后点击**Start**或者按Cmd + E或者Ctrl + E：
+在Profiles面板中，选择*Take Heap Snapshot*，然后点击**Start**或者按Cmd + E或者Ctrl + E：
 
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_11.png)
 
@@ -254,23 +254,26 @@
 ![](https://developers.google.com/chrome-developer-tools/docs/memory-profiling-files/image_17.png)
 
 下面是三个默认视图：
-* **Summary(概要) -** 通过构造函数名分类显示对象；
-* **Comparison(对照) -** 显示两个快照间对象的差异；
-* **Containment(控制) -** 可用来探测堆内容；
 
-**Dominators(支配者)**视图可以在Settings面板中开启 **- **显示[dominators tree.](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#dominators) 可以用来找到内存增长点。
+* **Summary(概要)** - 通过构造函数名分类显示对象；
+
+* **Comparison(对照)** - 显示两个快照间对象的差异；
+
+* **Containment(控制)** - 可用来探测堆内容；
+
+**Dominators(支配者)**视图可以在Settings面板中开启 - 显示[dominators tree.](https://developers.google.com/chrome-developer-tools/docs/memory-analysis-101.html#dominators) 可以用来找到内存增长点。
 
 ### 通过不同颜色区分对象
 
 对象的属性和属性值有不同的类型并自动的通过颜么进行了区分。每个属性都是以下四种之一：
 
-* **a:property -** 通过名称索引的普通属性，由.(点)操作符，或\[\](中括号)引用，如\["foo bar"\]；
+* **a:property** - 通过名称索引的普通属性，由.(点)操作符，或\[\](中括号)引用，如\["foo bar"\]；
 
-* **0:element -** 通过数字索引的普通属性，由\[\](中括号)引用；
+* **0:element** - 通过数字索引的普通属性，由\[\](中括号)引用；
 
-* **a:context var -** 函数内的属性，在函数上下文内，通过名称引用；
+* **a:context var** - 函数内的属性，在函数上下文内，通过名称引用；
 
-* **a:system prop -** 由JavaScript VM 添加的属性，JavaScript代码不能访问。
+* **a:system prop** - 由JavaScript VM 添加的属性，JavaScript代码不能访问。
 
 
 命名为`System `的对象没有对应的JavaScript类型。它们是JavaScript VM对象系统内置的。V8将大多数内置对象和用户JS对象放在同一个堆中。但它们只是V8的内部对象。
@@ -325,7 +328,7 @@ Initially, a snapshot opens in the Summary view, displaying object totals, which
 
 该视图提供了几个进入点：
 
-* **DOMWindow**** 对象** - 这些对象是JavaScript代码的"全局"对象；
+* **DOMWindow 对象** - 这些对象是JavaScript代码的"全局"对象；
 
 * **GC根** - VM的垃圾回收器真正的GC根；
 
@@ -452,7 +455,7 @@ DOM内存泄漏可能会超出你的想象。看下下面的例子 - #tree对象
 
 并非所有属性都完整的保存在JavaScript堆中。其中有些是通过执行原生代码的getters方法来获取的。这些属性没有在堆快照中捕获，是为了防止对getters方法的调用和避免程序状态的改变，如果这些getters方法不是"纯(pure)"的functions。同样，非字符串的值，如数字，没有被捕获是为了减少快照的大小。
 
-**问：****@****符号后面的数字是什么意思 - 是地址还是ID呢？这个ID值真的是唯一的么？**
+**问：**@**符号后面的数字是什么意思 - 是地址还是ID呢？这个ID值真的是唯一的么？**
 
 这是对象ID。显示对象的地址没有意义，因为一个对象会在垃圾回收的时候被移除。这些对象IDs是真正的IDs - 就是说，它们在不同的快照间是唯一表示的。这样就可以的堆状态间进行精确的对比。维持这些IDs会给GC流程增加额外的开支，但这仅在记录第一次堆快照时分配 - 如果堆分析仪没有用到，就不会有额外的开支。
 
@@ -540,7 +543,7 @@ Timeline面版，是在你第一次使用你的页面发现速度变慢了时用
 
 * Dominators(支配者)视图能用来帮助我们确认没有多余的对象还挂在某个位置(如那些被引用了的)，和确认对象的删除/垃圾回收真正起了作用。
 
-** 问：堆分析仪中的constructor(一组)内容代表什么？**
+**问：堆分析仪中的constructor(一组)内容代表什么？**
 
 ![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_39.jpg)
 
@@ -562,7 +565,7 @@ Timeline面版，是在你第一次使用你的页面发现速度变慢了时用
 
 ![](https://developer.chrome.com/devtools/docs/memory-profiling-files/image_40.jpg)
 
-** 问：我在做内存分析时需要关闭Chrome里可能会产生影响的什么功能么？**
+**问：我在做内存分析时需要关闭Chrome里可能会产生影响的什么功能么？**
 
 我们建议在用Chrome DevTools做内存分析时，你可以使用所有扩展功能都关闭了的隐身模式，或[设置](http://www.chromium.org/developers/how-tos/run-chromium-with-flags)用户文件夹为(`--user-data-dir=""`)后再打开Chrome。
 
