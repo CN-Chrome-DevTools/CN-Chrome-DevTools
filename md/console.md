@@ -98,7 +98,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 [console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数的结果为 false 的时候会显示一段错误信息（第二个参数是错误信息）。比如下面的这个例子就是只有当 `list` 元素的子结点数目大于 500 的时候输出这段错误信息。
 
 
-    console.assert(list.childNodes.length &lt; 500, "Node count is &gt; 500");
+    console.assert(list.childNodes.length < 500, "Node count is > 500");
 
 ![console.assert() 的例子](https://developer.chrome.com/devtools/docs/console-files/assert-failed.png)
 
@@ -169,7 +169,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 ### 字符串替换和格式化
 
-你传递到 console 的输出信息方法（例如 `log()` 或者 `error()`）的第一个参数里面，可能会包含一个或者多个 _格式声明符（format specifier）_ 。格式声明符通常以 **`%`** 符号为开头然后紧跟一个表示将要插入值的类型的字母（例如 `%s` 表示这里要输出一个字符串）。格式声明符表示在当前位置将会被替换成某个传递进去的值。
+你传递到 console 的输出信息方法（例如 `log()` 或者 `error()`）的第一个参数里面，可能会包含一个或者多个 _格式声明符（format specifier）_ 。格式声明符通常以 `%` 符号为开头然后紧跟一个表示将要插入值的类型的字母（例如 `%s` 表示这里要输出一个字符串）。格式声明符表示在当前位置将会被替换成某个传递进去的值。
 
 下面的这个例子将会把值以 `%s`（字符串）和 `%d` （数字）格式插入并输出。
 
@@ -236,7 +236,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 ![ console.time() 和 timeEnd() 的实例](https://developer.chrome.com/devtools/docs/console-files/time-duration.png)
 
->**注意：** 你必须向 `console.time()` 和 `timeEnd()` 中传递相同的字符串，这样计时钟才能按照预期的工作。
+**注意：** 你必须向 `console.time()` 和 `timeEnd()` 中传递相同的字符串，这样计时钟才能按照预期的工作。
 
 ### 生成时间线（Timeline）
 
@@ -316,7 +316,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 ![](https://developer.chrome.com/devtools/docs/console-files/select-multiple-login.png)
 
-最后，[`x()`](commandline-api#xpath) 方法使用 XPath 路径作为参数然后返回所有匹配这个特定路径元素组成的数组。下面代码返回所有 `&lt;body&gt;` 标签下面的 &lt;script&gt; 元素：
+最后，[`x()`](commandline-api#xpath) 方法使用 XPath 路径作为参数然后返回所有匹配这个特定路径元素组成的数组。下面代码返回所有 `<body>` 标签下面的 &lt;script&gt; 元素：
 
     $x('/html/body/script');
 
@@ -332,7 +332,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 通常的当要测试你要选择的 DOM 元素可以－直接在 Elements 面板选择或者使用 Selection 工具（放大镜图标）－这样你才可以详细的审查这个元素。同样的，当要在 Profiles 面板中统计内存使用简况，你也需要先获取需要审查的 JavaScript 对象。
 
-Console 会记住最后五个元素（或者堆对象）你可以通过使用 **`$0`**, **`$1`**, **`$2`**, **`$3`** 和 **`$4`** 来选择它们并且让它们像属性一样使用。最近选择的元素或者对象可以通过 **`$0`** 调用，倒数第二个最近的是 **`$1`**，以此类推。
+Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$0`, `$1`, `$2`, `$3` 和 `$4` 来选择它们并且让它们像属性一样使用。最近选择的元素或者对象可以通过 `$0` 调用，倒数第二个最近的是 `$1`，以此类推。
 
 下面这个截图展示了在选择三个不同元素之后，这些属性在 Elements 面板中返回的值：
 
@@ -357,7 +357,7 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 **
 
     monitorEvents($('#scrollBar'), "touch");
 
-查看Console API 参考 [`monitorEvents()`](commandline-api#monitoreventsobject_events) 文档，你可以找到被支持的事件类型列表。
+查看 Console API 参考 [`monitorEvents()`](commandline-api#monitoreventsobject_events) 文档，你可以找到被支持的事件类型列表。
 
 停止监控事件可以使用 `unmonitorEvents()`，需要把想要停止监控的对象传递进去。
 
