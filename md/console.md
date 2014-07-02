@@ -243,7 +243,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 [时间线](https://developer.chrome.com/devtools/docs/timeline.md) 展示了你的 web app 或者网页加载时在哪里花费了时间。[`console.timeStamp()`](console-api#consoletimestamplabel) 方法会在执行它的时候，在时间线上做一个标记。它提供了一种简单的方法来关联与其他浏览器相关的事件，如布局（layout）或者描绘（paints）。
 
 
->**注意** `console.timeStamp()` 方法只有在时间线录制的时候起作用。
+**注意** `console.timeStamp()` 方法只有在时间线录制的时候起作用。
 
 下面的例子中，当应用执行 `AddResult()` 函数时会在时间线上标记一下。
 
@@ -324,7 +324,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 [`inspect()`](commandline-api#inspectobject) 方法以 DOM 元素引用（或者 JavaScript 引用）作为参数然后把对应元素或者对象显示在相应的面板中－DOM 元素显示在 Elements 面板中，JavaScript 对象显示在 Profiles 面板中。
 
-例如，下面截图中 `$()` 用来获得一个 `&lt;li&gt;` 元素的引用。然后将 the last evaluated expression property ([`$_`](commandline-api#_)) 传递给 `inspect()` 从而打开 Elements 面板看到那个元素。
+例如，下面截图中 `$()` 用来获得一个 `<li>` 元素的引用。然后将 the last evaluated expression property ([`$_`](commandline-api#_)) 传递给 `inspect()` 从而打开 Elements 面板看到那个元素。
 
 ![](https://developer.chrome.com/devtools/docs/console-files/inspect2.png)
 
@@ -375,7 +375,7 @@ Console 会记住最后五个元素（或者堆对象）你可以通过使用 **
 
 ![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-panel.png)
 
-如果你为新创建的分析器指定了一个标签，它通常用作分析器的标题。如果你创建了多个同名的分析器，they are grouped as individual runs under the same heading：
+如果你为新创建的分析器指定了一个标签，它通常用作分析器的标题。如果你创建了多个同名的分析器，他们会被归在同一标题的的不同子标题下：
 
 ![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-console-2.png)
 
