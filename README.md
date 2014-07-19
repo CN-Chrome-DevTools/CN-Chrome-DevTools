@@ -10,7 +10,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 ###第一阶段
 
-先将 [Chrome DevTools](https://developers.google.com/chrome-developer-tools/) 的内容按现有的目录结构翻译成中文，其中：
+先将 [Chrome DevTools](https://developer.chrome.com/devtools/index) 的内容按现有的目录结构翻译成中文，其中：
 
 - 文章正文内容均放在 `md` 目录下，采用 `md` 格式。
 - 文章中所用到的图片资源暂时先用现有英文手册的原始链接，后续图片资源会统一托管到[七牛云存储](http://www.qiniu.com/)
@@ -59,6 +59,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 	* Console API Reference
 	* Command Line API Reference
 * Keyboard Shortcuts
+* Authoring and Development Workflow
 
 ## 项目翻译目录
 
@@ -110,6 +111,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 - [SunLn](https://github.com/SunLn)
 - [JiangShui Yu](https://github.com/yujiangshui)
 - [DestinyXie](https://github.com/DestinyXie)
+- [He--He](https://github.com/He--He)
 - 你
 
 （Fork 之后自行添加到最后）
