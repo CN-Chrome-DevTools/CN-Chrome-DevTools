@@ -78,9 +78,9 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 		* Uncovering DOM Leaks
 		* Finding Accumulation Points
 * Mobile Emulation
-* Using the Console
-	* Console API Reference
-	* Command Line API Reference
+* ~~Using the Console~~
+	* ~~Console API Reference~~
+	* ~~Command Line API Reference~~
 * Keyboard Shortcuts
 * Tips and Tricks
 * Settings
