@@ -28,11 +28,11 @@
 2. ####Development Workflow	 (開發流程)  
 <https://developer.chrome.com/devtools/docs/authoring-development-workflow>  
 
-	 * `#dock-to-right` : Dock-To-Right For Vertical-Split Editing （將 devtool 界面區分割在瀏覽器右方，與網頁畫面呈左右對照狀態編輯）  
+	* `#dock-to-right` : Dock-To-Right For Vertical-Split Editing （將 devtool 界面區分割在瀏覽器右方，與網頁畫面呈左右對照狀態編輯）  
 	 *“dock” 為碼頭，即 devtool 界面區要靠（分割）在瀏覽器的哪個邊界（下部或是右半部）。*
-	 * `#dock-to-right` : Drag-To-Right For Quicker Dock-Positioning （快速拖拉定位 devtools 界面區位置）
+	* `#dock-to-right` : Drag-To-Right For Quicker Dock-Positioning （快速拖拉定位 devtools 界面區位置）
 	 
-	 * `#search-navigate-filter` : Search, Navigate And Filter + （搜索，導覽和過濾 +）
+	* `#search-navigate-filter` : Search, Navigate And Filter + （搜索，導覽和過濾 +）
 		* `#filter-by-filename` : Filter For A Script, Stylesheet Or Snippet By Filename (藉檔案名稱來過濾 Script，樣式表 或片段)
 		* `#textsearch-current-file` : Text Search Within The Current File (在當前檔案中搜尋文字)
 		* `#replacetext-current-file` : Replace Text Within The Current File (在當前檔案中取代文字)
@@ -41,7 +41,7 @@
 		* `#filter-function-within-file` : Filter For A Function Or Selector Within A File (在一個檔案中過濾一個 function 或 selector)
 		* `#search-line-number` : Jump To Line Number (跳到特定行號)
 		
-	 * `#live-editing` : Live Editing Scripts Styles + （在線編輯腳本和樣式 +）
+	* `#live-editing` : Live Editing Scripts Styles + （在線編輯腳本和樣式 +）
 		* `#scripts` : Scripts (腳本)
 		* `#styles` : Styles (樣式)
 	* `#save-as` : Save As (另存為) 
