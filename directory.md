@@ -1,21 +1,22 @@
 #Chrome DevTools   
-<https://developer.chrome.com/devtools>  
-*此頁文章內容即 **“Learn Basics 了解基礎知識”** 中的 **“Overview (概述) :** <https://developer.chrome.com/devtools/index>"*
+*此頁 <https://developer.chrome.com/devtools> 文章內容（Chrome DevTools Overview） 
+即 **“Learn Basics 了解基礎知識”** 中的 **“Overview (概述) :** <https://developer.chrome.com/devtools/index>"*
   
 ---
   
 ##Learn Basics 了解基礎知識 
 1. ####Overview (概述)  
-<https://developer.chrome.com/devtools/index>
+<https://developer.chrome.com/devtools/index>  
+本頁章節標題：  
 	* `#access` : How to access the DevTools （如何存取 DevTools）
-	* `#devtools-window` : The DevTools window	（該 DevTools 窗口）
-	* `#dom-and-styles` : Inspecting the DOM and style （檢查DOM和樣式）
+	* `#devtools-window` : The DevTools window	（ DevTools 視窗）
+	* `#dom-and-styles` : Inspecting the DOM and style （檢查 DOM 和樣式）
 	* `#console` : Working with the console（使用控制台工作）
 	* `#debugging-javascript` : Debugging JavaScript（JavaScript 的偵錯）
 	* `#improving-network-performance` : Improving network performance （提升網路效能）
 	* `#audits` : Audits（審核）
-	* `#timeline` : Improving rendering performance（提高渲染性能）
-	* `#javascript-performance` : JavaScript CSS performance（CSS JavaScript的性能）
+	* `#timeline` : Improving rendering performance（提升渲染的性能）
+	* `#javascript-performance` : JavaScript CSS performance（CSS JavaScript 的性能）
 	* `#inspecting-storage` : Inspecting storage（檢測存儲器）
 	* `#further-reading` : Further reading	（進一步閱讀）
 	* `#further-resources` : Further resources +（進一步的資源 +）
@@ -26,31 +27,33 @@
     
 2. ####Development Workflow	 (開發流程)  
 <https://developer.chrome.com/devtools/docs/authoring-development-workflow>  
-	 * Dock-To-Right For Vertical-Split Editing	碼頭向右對於垂直拆分編輯 
-	 * Drag-To-Right For Quicker Dock-Positioning	拖動到右更快碼頭定位 
-	 * Search, Navigate And Filter +	搜索，瀏覽和過濾+
-		 * Filter For A Script, Stylesheet Or Snippet By Filename (藉文件名稱來過濾 Script，樣式表 或片段)
-		 * Text Search Within The Current File (在當前文件中搜尋文字)
-		 * Replace Text Within The Current File (在當前文件中取代文字)
-		 * Text Search Across All Files	 (在所有文件中搜尋文字)
-		 * Search Using A Regular Expression (使用正則表達式搜尋)
-		 * Filter For A Function Or Selector Within A File (過濾一個 function 或 selector 在文件中)
-		* Jump To Line Number	(跳到行號)
-	* Live Editing Scripts Styles +	在線編輯腳本風格+ 
-		* Scripts	(Scripts)
-		* Styles (樣式)
-	* Save As	(另存為) 
-	* Local Modifications	(本地修改) 
-	* Custom JavaScript Snippets +	 (自定義JavaScript代碼片段 +)
-		* Getting Started	(入門) 
-		* Creating Snippets	(創建片段) 
-		* Snippet Filenames	(摘錄文件名) 
-		* Editing And Executing Snippets	(編輯和執行片段) 
-		* Local Modifications	(本地修改)
-		* Breakpoints, Watch Expressions And More (斷點，觀察表情和更多)
-		* Saving Snippets	(節能片段)
-		* Navigating Snippets	(導航片段)
-	* 資源
+
+	 * `#dock-to-right` : Dock-To-Right For Vertical-Split Editing （將 devtool 界面區分割在瀏覽器右方，與網頁畫面呈左右對照狀態編輯）  
+	 *“dock” 為碼頭，即 devtool 界面區要靠（分割）在瀏覽器的哪個邊界（下部或是右半部）。*
+	 * `#dock-to-right` : Drag-To-Right For Quicker Dock-Positioning （快速拖拉定位 devtools 界面區位置）
+	 * `#search-navigate-filter` : Search, Navigate And Filter + （搜索，導覽和過濾 +）
+		 * `#filter-by-filename` : Filter For A Script, Stylesheet Or Snippet By Filename (藉檔案名稱來過濾 Script，樣式表 或片段)
+		 * `#textsearch-current-file` : Text Search Within The Current File (在當前檔案中搜尋文字)
+		 * `#replacetext-current-file` : Replace Text Within The Current File (在當前檔案中取代文字)
+		 * `#textsearch-across-files` : Text Search Across All Files	 (在所有檔案中搜尋文字)
+		 * `#search-regular-expression` : Search Using A Regular Expression (使用正則表達式搜尋)
+		 * `#filter-function-within-file` : Filter For A Function Or Selector Within A File (在一個檔案中過濾一個 function 或 selector)
+		* `#search-line-number` : Jump To Line Number (跳到特定行號)
+	* `#live-editing` : Live Editing Scripts Styles + （在線編輯腳本和樣式 +）
+		* `#scripts` : Scripts (腳本)
+		* `#styles` : Styles (樣式)
+	* `#save-as` : Save As (另存為) 
+	* `#local-modifications` : Local Modifications (本機修改) 
+	* `#snippets` : Custom JavaScript Snippets + (自定義 JavaScript 代碼片段 +)
+		* `#snippets-getting-started` : Getting Started (入門) 
+		* `#snippets-create` : Creating Snippets (創建片段) 
+		* `#snippets-filenames` : Snippet Filenames (片段檔名) 
+		* `#snippets-editing` : Editing And Executing Snippets (編輯和執行片段) 
+		* `#snippets-local-modifications` : Local Modifications (本機修改)
+		* `#snippets-more` : Breakpoints, Watch Expressions And More (斷點，觀看表達式和更多)
+		* `#snippets-saving` : Saving Snippets (保存片段)
+		* `#snippets-navigation` : Navigating Snippets (片段導引)
+	* `#resources` : Resources （資源）
 	 
   
 3. ####Using the Console (使用控制台)   
