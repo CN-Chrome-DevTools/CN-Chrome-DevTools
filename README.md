@@ -61,12 +61,12 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 ## 项目翻译目录
 
-* Authoring and Development Workflow
-* Editing Styles And The DOM
+* Authoring and Development Workflow <https://developer.chrome.com/devtools/docs/authoring-development-workflow>  
+* Editing Styles And The DOM <https://developer.chrome.com/devtools/docs/dom-and-styles>
 	* Working with CSS Preprocessors
 * Managing Application Storage
 * Evaluating Network Performance
-* Debugging JavaScript
+* Debugging JavaScript <https://developer.chrome.com/devtools/docs/javascript-debugging>
 * Performance Profiling with the Timeline
 	* Timeline demo: Diagnosing forced synchronous layouts
 * Profiling JavaScript
