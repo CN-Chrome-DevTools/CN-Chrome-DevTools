@@ -1,0 +1,317 @@
+form { 
+	margin: 0 0 5px 0;
+	fieldset { 
+		margin-bottom: 5px; 
+		padding: 0; 
+		border-width: 0; 
+	}
+	legend { 
+		display: block;
+		width: 100%;
+		margin-bottom: 5px * 2;
+		*margin-left: -7px; 
+		padding: 0;
+		color: $text-color;
+		border: 0;
+		border-bottom: 1px solid lighten($black, 80);
+		white-space: normal; 
+	}
+	p {
+		margin-bottom: 5px / 2; 
+	}
+	ul {
+		list-style-type: none; 
+		margin: 0 0 5px 0;
+		padding: 0; 
+	}
+	br {
+		display: none; 
+	}
+}
+label,
+input,
+button,
+select,
+textarea {
+	vertical-align: baseline; 
+	*vertical-align: middle; 
+}
+input,
+button,
+select,
+textarea {
+	font-family: $base-font; 
+	@include box-sizing(border-box); 
+}
+label {
+	display: block;
+	margin-bottom: 10px / 8;
+	font-weight: bold;
+	color: $text-color;
+	cursor: pointer; 
+	input,
+	textarea,
+	select {
+		display: block; 
+	}
+}
+input,
+textarea,
+select {
+	display: inline-block;
+	width: 100%;
+	padding: 4px;
+	margin-bottom: 5px / 4;
+	background-color: $white;
+	border: 1px solid lighten($black, 80);
+	color: $text-color; 
+	&:hover {
+		border-color: lighten($accent-color, 50); 
+	}
+}
+.input-mini { 
+	width: 60px; 
+}
+.input-small { 
+	width: 90px; 
+}
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 3px 0;
+	*margin-top: 0;
+	line-height: normal;
+	cursor: pointer;
+	@include rounded(0);
+	border: 0 \9; 
+}
+input[type="checkbox"], 
+input[type="radio"] {  
+	@include box-sizing(border-box);
+	padding: 0; 
+	*width: 13px; 
+	*height: 13px; 
+}
+input[type="image"] {
+	border: 0; 
+	@include box-shadow(none); 
+}
+input[type="file"] {
+	width: auto;
+	padding: initial;
+	line-height: initial;
+	border: initial;
+	background-color: transparent;
+	background-color: initial;
+	@include box-shadow(none); 
+}
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	width : auto;
+	height : auto;
+	cursor : pointer;
+	*overflow : visible; 
+}
+select,
+input[type="file"] {
+	*margin-top : 4px;  
+}
+select {
+	width : auto;
+	background-color : $white;
+}
+select[multiple],
+select[size] {
+	height : auto; 
+}
+textarea {
+	@include resize(vertical);
+	height : auto;
+	overflow : auto; 
+	vertical-align : top; 
+}
+input[type="hidden"] {
+	display : none; 
+}
+.radio,
+.checkbox {
+	padding-left : 18px; 
+	font-weight : normal; 
+}
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+	float : left;
+	margin-left : -18px; 
+}
+.radio.inline,
+.checkbox.inline {
+	display : inline-block;
+	padding-top : 5px;
+	margin-bottom : 0;
+	vertical-align : middle; 
+}
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+	margin-left : 10px; 
+}
+
+// disabled
+// --------------------------------------------------
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	@include opacity(.5);
+	cursor : not-allowed; 
+}
+
+// focus and active
+// --------------------------------------------------
+
+input:focus,
+textarea:focus {
+	border-color : $accent-color;
+	outline : 0;
+	outline : thin dotted \9; 
+}
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+select:focus {
+	@include box-shadow(none); 
+}
+
+// help text
+// --------------------------------------------------
+
+.help-block,
+.help-inline {
+	color : lighten($black, 50); 
+}
+.help-block {
+	display : block; 
+	margin-bottom : 1em; 
+	line-height : 1em;
+}
+.help-inline {
+	display : inline-block;
+	vertical-align : middle;
+	padding-left : 5px; 
+}
+
+// .form-inline
+// --------------------------------------------------
+
+.form-inline input,
+.form-inline textarea,
+.form-inline select {
+	display : inline-block;
+	margin-bottom : 0; 
+}
+.form-inline label {
+	display : inline-block; 
+}
+.form-inline .radio,
+.form-inline .checkbox,
+.form-inline .radio {
+	padding-left : 0;
+	margin-bottom : 0;
+	vertical-align : middle; 
+}
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+	float : left;
+	margin-left : 0;
+	margin-right : 3px; }
+
+// Jekyll Simple Search
+// -------------------------------------------------
+.dosearch {
+  padding: 6px 10px;
+  cursor: pointer;
+  display: block;
+  color: $white;
+  @include rounded(4px);
+  &:hover {
+	@include box-shadow($shadow: inset 0 0 1px $white);
+  	background-color: lighten($black, 10);
+  }
+}
+.search-form {
+	width: 100%;
+	position: relative;
+	opacity: 0;
+	transition: all 200ms 100ms cubic-bezier(0, 0.6, 0.4, 1);
+	top: 0;
+	left: -200px;
+	z-index: 9002;
+	.search-field {
+		-webkit-appearance: none;
+		border: none;
+		width: 100%;
+		color: $white;
+		border: none;
+		border-bottom: 1px solid lighten($white, 20);
+		background-color: transparent;
+		box-shadow: none;
+		border-radius: 0;
+		background-clip: padding-box;
+		@include font-rem(32);
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+	&.active {
+		opacity: 1;
+		top: 0;
+		left: 0;
+	}
+	&.hidden {
+		display: none;
+	}
+	::-webkit-input-placeholder {
+		@include font-rem(32);
+	}
+	.search-field::-webkit-search-decoration,
+	.search-field::-webkit-search-cancel-button,
+	.search-field::-webkit-search-results-button,
+	.search-field::-webkit-search-results-decoration {
+		display: none;
+	}
+	.post-list {
+		position: absolute;
+		width: 100%;
+		h4, li, p, a {
+			color: $white;
+		}
+		li {
+			border-bottom: 1px solid lighten($white,20);
+		}
+	}
+}
+body.search-overlay {
+	overflow: hidden;
+}
+body.search-overlay:after {
+	content: '';
+	background-color: lighten($black,5);
+	background-color: rgba($black,.95);
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9001;
+}
+.no-js .dosearch {
+	display: none;
+}

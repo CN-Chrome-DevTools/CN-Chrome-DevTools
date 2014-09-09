@@ -1,0 +1,53 @@
+# Site wide configuration
+
+title: Chrome 开发者工具手册使用手册
+locale: cn_zh
+description: 使用手册是大家业余翻译的repo，欢迎参与.
+logo: site-logo.png
+search: true
+url:
+
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+
+
+# Site owner
+owner:
+  name: cn-chrome-devtools
+  avatar: bio-photo.jpg
+  email: dengchenhua@gmail.com
+  disqus-shortname:
+  twitter: #username
+  facebook: #username
+  github: #username
+  stackexchange: #http://stackoverflow.com/users/123456/username
+  linkedin: #username
+  instagram: #username
+  flickr: #username
+  tumblr: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
