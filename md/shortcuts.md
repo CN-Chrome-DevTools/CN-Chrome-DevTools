@@ -1,8 +1,7 @@
-Keyboard Shortcuts
+快捷键
 
-The DevTools has several built-in shortcut keys that developers can use to save time in their day to day workflow. Outlined below is each shortcut and the corresponding key for each on Windows/Linux and Mac. While some shortcuts are globally available across all of the DevTools, others are specific to a single panel, and are broken up based on where it can be used.
 
-DevTools具有一些内建的快捷键，开发者可以在日常的开发过程中使用它们以节约时间。以下列举的是每个快捷方式在Windows / Linux和Mac下相应的快捷键。有些快捷键是在全局有效的，而有些只是在某一个标签栏生效，and are broken up based on where it can be used.
+DevTools具有一些内建的快捷键，开发者可以在日常的开发过程中使用它们以节约时间。以下列举的是每个快捷方式在Windows / Linux和Mac下相应的快捷键。有些快捷键是在全局有效的，而有些只是在某一个面板生效，and are broken up based on where it can be used.
 
 打开DevTools
 ---
@@ -22,29 +21,29 @@ DevTools具有一些内建的快捷键，开发者可以在日常的开发过程
 
 在Chrome DevTools 窗口是打开时，按下“?”或者“F1”键可以打开设置对话（General Settings）框。按下“Esc”可以关闭设置对话框。
 
-全部标签栏
+全部面板
 ---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
 打开 General Settings 对话框   |  ?, F1  |  ?
-下一个 panel |  Ctrl + ]  |   Cmd + ]
-上一个 panel |  Ctrl + [  |   Cmd + [
-标签栏历史中后退    |  Ctrl + Alt + [    | Cmd + Alt + [
-标签栏历史中前进    |   Ctrl + Alt + ]    | Cmd + Alt + ]
-跳转至panel 1-9 (需要在设置对话框中开启服务)    |   Ctrl + 1-9    | Cmd + 1-9
+下一个面板 |  Ctrl + ]  |   Cmd + ]
+上一个面板 |  Ctrl + [  |   Cmd + [
+标签历史中后退    |  Ctrl + Alt + [    | Cmd + Alt + [
+标签历史中前进    |   Ctrl + Alt + ]    | Cmd + Alt + ]
+跳转至标签页 1-9 (需要在设置对话框中开启服务)    |   Ctrl + 1-9    | Cmd + 1-9
 打开/关闭 Console 或  关闭设置对话框   |   Esc  |  Esc
 刷新页面     |  F5, Ctrl + R     |  Cmd + R
 强制刷新页面，清除缓存内容    |   Ctrl + F5, Ctrl + Shift + R   | Cmd + Shift + R
-当前文件或 panel 搜索文字   |   Ctrl + F  |     Cmd + F
+当前文件或标签页搜索文字   |   Ctrl + F  |     Cmd + F
 所有资源中搜索文字 |  Ctrl + Shift + F    |   Cmd + Alt + F
-搜索文件(除了 Timeline标签栏)  |  Ctrl + O, Ctrl + O  |   Cmd + O, Cmd + O
+搜索文件(除了 Timeline面板)  |  Ctrl + O, Ctrl + O  |   Cmd + O, Cmd + O
 恢复默认字体大小  |    Ctrl + 0   |    Shift + 0
 放大  |  Ctrl + +     |  Shift + +
 缩小   |    Ctrl + -     |  Shift + -
 
 
-Elements 标签栏
+元素(Elements) 面板
 ---
 
 功能       | Windows / Linux | Mac
@@ -55,66 +54,67 @@ Elements 标签栏
 伸缩展开元素  | Right, Left | Right, Left
 展开元素 | 单击某个html标签 | 单击某个html标签
 编辑元素属性|   Enter, 双击属性 |   Enter, 双击属性
-Hide element   |  H |   H
-Toggle edit as HTML|  F2|
+隐藏元素   |  H |   H
+切换编辑为HTML|  F2|
 
-Right-clicking an element you can:
+右键单击某个元素时你可以做：
+*   强制元素在某个伪类状态: (:active, :hover, :focus, :visited)
+*	为元素设置断点（子元素修改，属性更改，元素删除）
+*	清除 console
 
-*	Force element psuedo states: (:active, :hover, :focus, :visited)
-*	Set breakpoints on the elements: (Subtree modifications, Attribute modification, Node removal)
-*	Clear console
-
-Styles Sidebar
+样式(Styles) 侧边栏
 ---
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Edit rule   | Single-click  |   Single-click
-Insert new property|  Single-click on whitespace  | Single-click on whitespace
-Go to line of style rule property declaration in source|  Ctrl + Click on property  |   Cmd + Click on property
-Go to line of property value declaration in source |  Ctrl + Click on property value |  Cmd + Click on property value
-Go to line of style rule property declaration in source|  Ctrl + Click on property  |   Cmd + Click on property
-Go to line of property value declaration in source  | Ctrl + Click on property value  | Cmd + Click on property value
-View auto-complete suggestions |  Ctrl + Space  |   Cmd + Space
-Edit next / previous property  |  Tab, Shift + Tab  |   Tab, Shift + Tab
-Increment / decrement value | Up, Down   |  Up, Down
-Increment / decrement value by 10  |  Shift + Up, Shift + Down  |   Shift + Up, Shift + Down
-Increment / decrement value by 10  |  PgUp, PgDown  |   PgUp, PgDown
-Increment / decrement value by 100  | Shift + PgUp, Shift + PgDown    | Shift + PgUp, Shift + PgDown
-Increment / decrement value by 0.1  | Alt + Up, Alt + Down  |   Opt + Up, Opt + Down
+编辑规则   | 单击  |   单击
+添加新属性|  空白处单击   | 空白处单击
+跳转到样式规则属性在样式表的行数|  Ctrl + 单击某个CSS属性 |   Cmd + 单击某个CSS属性
+跳转到属性值在样式表的行数 |  Ctrl + 单击某个CSS属性值 |  Cmd + 单击某个CSS属性值
+循环颜色定义值|  Shift + 单击颜色选择器  | Shift + 单击颜色选择器
+查看自动填充建议 |  Ctrl + 空格 |   Cmd + 空格
+编辑下一个 / 上一个属性  |  Tab, Shift + Tab  |   Tab, Shift + Tab
+增大 / 减小属性值 | Up, Down   |  Up, Down
+增大 / 减小属性值 （最小单位 10 ） |  Shift + Up, Shift + Down  |   Shift + Up, Shift + Down
+增大 / 减小属性值 （最小单位 10 ） |  PgUp, PgDown  |   PgUp, PgDown
+增大 / 减小属性值 （最小单位 100）  | Shift + PgUp, Shift + PgDown    | Shift + PgUp, Shift + PgDown
+增大 / 减小属性值 （最小单位 0.1）  | Alt + Up, Alt + Down  |   Opt + Up, Opt + Down
 
-Element Pseudostates Emulate an element's pseudo state (:active, :hover, :focus, :visited)
+(img)[img]仿真元素伪类 (:active, :hover, :focus, :visited)
 
-Adding style selectors Add new style selectors
+(img)[img]添加新的CSS样式规则
 
-Sources Panel
+资源(Sources)面板
 ---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Pause / resume script execution | F8, Ctrl + \    | F8, Cmd + \
-Step over next function call    | F10, Ctrl + '   | F10, Cmd + '
-Step into next function call    | F11, Ctrl + ;   | F11, Cmd + ;
-Step out of current function    | Shift + F11, Ctrl + Shift + ; |   Shift + F11, Cmd + Shift + ;
+中断/恢复脚本执行 | F8, Ctrl + \    | F8, Cmd + \
+跳过下一个函数   | F10, Ctrl + '   | F10, Cmd + '
+跳入下一个函数    | F11, Ctrl + ;   | F11, Cmd + ;
+跳出当前函数    | Shift + F11, Ctrl + Shift + ; |   Shift + F11, Cmd + Shift + ;
 Select next call frame |  Ctrl + .  |   Opt + .
 Select previous call frame |  Ctrl + ,  |   Opt + ,
-Toggle breakpoint condition | Click on line number, Ctrl + B |  Click on line number, Cmd + B
-Edit breakpoint condition  |  Right-click on line number |  Right-click on line number
+切换断点状态 | 单击行数, Ctrl + B |  单击行数, Cmd + B
+编辑断点调节  |  右键单击行数 |  右键单击行数
 Delete individual words | Alt + Delete  |   Opt + Delete
-Delete individual words | Alt + Delete  |   Opt + Delete
-Save changes to local modifications | Ctrl + S  |   Cmd + S
-Go to line |  Ctrl + G  |   Ctrl + G
-Search by filename |  Ctrl + O  |   Cmd + O
-Jump to line number | Ctrl + P + :<number>   |  Cmd + P + :<number>
-Go to member  |   Ctrl + Shift + O  |   Cmd + Shift + O
-Toggle console and evaluate code selected in Sources panel |  Ctrl + Shift + E   |  Cmd + Shift + E
-Run snippet | Ctrl + Enter   |  Cmd + Enter
-Toggle comment  | Ctrl + /   |  Cmd + /
+注释某行或选择文字  | Ctrl + /   |  Cmd + /
+保存本地的更改| Ctrl + S  |   Cmd + S
+保存所有的更改| Ctrl + Shift + S  |   Cmd + Shift +  S
+跳转到某行 |  Ctrl + G  |   Ctrl + G
+按文件名搜索文件|  Ctrl + O  |   Cmd + O
+跳转到某行（Jump to line number） | Ctrl + P + :<number>   |  Cmd + P + :<number>
+跳转到某列 | Ctrl + O + :<number> + :<number>   |  Cmd + O + :<number> + :<number>
+打开 member  |   Ctrl + Shift + O  |   Cmd + Shift + O
+切换 console 并评估（ evaluate？） Sources 面板中选中的代码|  Ctrl + Shift + E   |  Cmd + Shift + E
+关闭当前激活的标签 | Alt + W   |  Opt + W
+运行代码片段 | Ctrl + Enter   |  Cmd + Enter
+切换注释  | Ctrl + /   |  Cmd + /
 
-Pause on Exception Button Don't pause on exceptions
+(img)[IMG] Don't 暂停 on exceptions
 
-Pause on All Exceptions Pause on All exceptions (including those caught within try/catch blocks)
+(img)[IMG] 暂停 on All Exceptions  (包括那些在try/catch块中被捕获的)
 
-Pause on Uncaught Exceptions Pause on uncaught exceptions (usually the one you want)
+(img)[IMG] 暂停 on Uncaught Exceptions  (正常情况下是你想要的那个)
 
 Timeline Panel
 ---
@@ -146,27 +146,27 @@ Console
 多行输入   |  Shift + Enter  |  Ctrl + Return
 执行|  Enter  |  Return
 
-Right-clicking on console:
+console 中右键单击:
 
-*	XMLHTTPRequest logging: Turn on to view the XHR log
+*	XMLHTTPRequest 记录: 打开后可查看 XHR 记录
 *	Preserve log upon navigation
-*	Filter: Hide and unhide messages from script files
-*	Clear console: Clear all console messages
+*	过滤: 隐藏或显示所有来自脚本文件的消息
+*	清除 console: 清除所有的 console 消息
 
 
 Screencasting
 ---
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Pinch zoom in and out | Alt + Scroll,Ctrl + Cick and drag with two fingers  |Opt + Scroll, Cmd + Cick and drag with two fingers
-Inspect element tool  |  Ctrl + Shift + C   | Cmd + Shift + C
+视图微调 放大或缩小 | Alt + Scroll,Ctrl + Cick and drag with two fingers  |Opt + Scroll, Cmd + Cick and drag with two fingers
+审查元素工具 |  Ctrl + Shift + C   | Cmd + Shift + C
 
-Emulation
+模拟
 ---
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
-Pinch zoom in and out  | Shift + Scroll | Shift + Scroll
+视图微调 放大或缩小  | Shift + Scroll | Shift + Scroll
 
 其他 Chrome 快捷键
 ---
@@ -180,8 +180,8 @@ Pinch zoom in and out  | Shift + Scroll | Shift + Scroll
 开启或关闭书签栏|Ctrl + Shift + B  |  Cmd + Shift + B
 查看历史记录   |Ctrl + H   | Cmd + Y
 查看下载记录 |Ctrl + J  |  Cmd + Shift + J
-View the Task Manager   |Shift + ESC |Shift + ESC
-Next page in a tabs browsing history  |  Alt + Right |Alt + Right
-Previous page in a tabs browsing history  |  Backspace, Alt + Left   |Backspace, Alt + Left
-Highlight content in the web address area  | F6, Ctrl + L, Alt + D  | Cmd + L, Alt + D
-Places a ? in the address bar for performing a keyword search using your default search engine |Ctrl + K, Ctrl + E  |Cmd + K, Cmd + E
+查看任务管理器   |Shift + ESC |Shift + ESC
+标签浏览历史中的下一个页面  |  Alt + Right |Alt + Right
+标签浏览历史中的上一个页面 |  Backspace, Alt + Left   |Backspace, Alt + Left
+高亮地址栏内容 | F6, Ctrl + L, Alt + D  | Cmd + L, Alt + D
+在地址栏输入一个 ? 后可以将它作为你的默认搜索引擎使用 |Ctrl + K, Ctrl + E  |Cmd + K, Cmd + E

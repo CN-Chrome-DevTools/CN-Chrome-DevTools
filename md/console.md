@@ -98,7 +98,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 [console.assert()](console-api#consoleassertexpression_object) 方法会根据条件判断，只有在它第一个参数的结果为 false 的时候会显示一段错误信息（第二个参数是错误信息）。比如下面的这个例子就是只有当 `list` 元素的子结点数目大于 500 的时候输出这段错误信息。
 
 
-    console.assert(list.childNodes.length &lt; 500, "Node count is &gt; 500");
+    console.assert(list.childNodes.length < 500, "Node count is > 500");
 
 ![console.assert() 的例子](https://developer.chrome.com/devtools/docs/console-files/assert-failed.png)
 
@@ -169,7 +169,7 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 ### 字符串替换和格式化
 
-你传递到 console 的输出信息方法（例如 `log()` 或者 `error()`）的第一个参数里面，可能会包含一个或者多个 _格式声明符（format specifier）_ 。格式声明符通常以 **`%`** 符号为开头然后紧跟一个表示将要插入值的类型的字母（例如 `%s` 表示这里要输出一个字符串）。格式声明符表示在当前位置将会被替换成某个传递进去的值。
+你传递到 console 的输出信息方法（例如 `log()` 或者 `error()`）的第一个参数里面，可能会包含一个或者多个 _格式声明符（format specifier）_ 。格式声明符通常以 `%` 符号为开头然后紧跟一个表示将要插入值的类型的字母（例如 `%s` 表示这里要输出一个字符串）。格式声明符表示在当前位置将会被替换成某个传递进去的值。
 
 下面的这个例子将会把值以 `%s`（字符串）和 `%d` （数字）格式插入并输出。
 
@@ -236,14 +236,14 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 ![ console.time() 和 timeEnd() 的实例](https://developer.chrome.com/devtools/docs/console-files/time-duration.png)
 
->**注意：** 你必须向 `console.time()` 和 `timeEnd()` 中传递相同的字符串，这样计时钟才能按照预期的工作。
+**注意：** 你必须向 `console.time()` 和 `timeEnd()` 中传递相同的字符串，这样计时钟才能按照预期的工作。
 
 ### 生成时间线（Timeline）
 
 [时间线](https://developer.chrome.com/devtools/docs/timeline.md) 展示了你的 web app 或者网页加载时在哪里花费了时间。[`console.timeStamp()`](console-api#consoletimestamplabel) 方法会在执行它的时候，在时间线上做一个标记。它提供了一种简单的方法来关联与其他浏览器相关的事件，如布局（layout）或者描绘（paints）。
 
 
->**注意** `console.timeStamp()` 方法只有在时间线录制的时候起作用。
+**注意** `console.timeStamp()` 方法只有在时间线录制的时候起作用。
 
 下面的例子中，当应用执行 `AddResult()` 函数时会在时间线上标记一下。
 
@@ -301,102 +301,99 @@ Console API 是 DevTools 定义的全局对象 console 的方法集合。API 的
 
 ![](https://developer.chrome.com/devtools/docs/console-files/multiline-expression.png)
 
-### Selecting elements
+### 选取对象
 
-The Command Line API provides several methods to access DOM elements in your application. For example, the [**`$()`**](commandline-api#selector) method returns the first element that matches the specified CSS selector, just like [`document.querySelector()`](http://docs.webplatform.org/wiki/css/selectors_api/querySelector). For instance, the following code returns the element with the ID "loginBtn".
+命令行 API 提供几个方法可以访问你应用中的 DOM 元素。例如 `$()` 方法返回匹配传递进去的 CSS 选择器的第一个元素，功能类似 [`document.querySelector()`](http://docs.webplatform.org/wiki/css/selectors_api/querySelector)。举个例子，下面代码返回 ID 为 “loginBtn” 的元素。
 
     $('#loginBtn');
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/select-login-btn.png)
 
-The [**`$$()`**](commandline-api#selector_1) command returns an array of all the elements that match the specified CSS selector, just like [`document.querySelectorAll()`](http://docs.webplatform.org/wiki/css/selectors_api/querySelectorAll). For instance, the following displays selects all `&lt;button&gt;` elements with the CSS class "loginBtn":
+![](https://developer.chrome.com/devtools/docs/console-files/select-login-btn.png)
+
+`$$()` 命令返回匹配传递进去 CSS 选择器的所有元素组成的数组，功能类似 [`document.querySelectorAll()`](http://docs.webplatform.org/wiki/css/selectors_api/querySelectorAll)。举个例子，下面代码选择了所有带有 "loginBtn" 类的  `&lt;button&gt;` 元素。
 
     $$('button.loginBtn');
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/select-multiple-login.png)
+![](https://developer.chrome.com/devtools/docs/console-files/select-multiple-login.png)
 
-Lastly, the [`x()`](commandline-api#xpath) method takes an XPath path as a parameter and returns an array of all elements that match the specified path. The following returns all the &lt;script&gt; elements that are children of the `&lt;body&gt;` tag:
+最后，[`x()`](commandline-api#xpath) 方法使用 XPath 路径作为参数然后返回所有匹配这个特定路径元素组成的数组。下面代码返回所有 `<body>` 标签下面的 &lt;script&gt; 元素：
 
     $x('/html/body/script');
 
-### Inspecting DOM elements and JavaScript heap objects
+### 审查 DOM 元素和 JavaScript 堆对象
 
-The [`inspect()`](commandline-api#inspectobject) method takes a DOM element reference (or JavaScript reference) as a parameter and displays the element or object in the appropriate panel&mdash;the Elements panel for DOM elements, or the Profile panel for a JavaScript object.
+[`inspect()`](commandline-api#inspectobject) 方法以 DOM 元素引用（或者 JavaScript 引用）作为参数然后把对应元素或者对象显示在相应的面板中－DOM 元素显示在 Elements 面板中，JavaScript 对象显示在 Profiles 面板中。
 
-For example, in the following screenshot the `$()` function is used to get a reference to an `&lt;li&gt;` element. Then the last evaluated expression property ([`$_`](commandline-api#_)) is passed to `inspect()` to open that element in the Elements panel.
+例如，下面截图中 `$()` 用来获得一个 `<li>` 元素的引用。然后将 the last evaluated expression property ([`$_`](commandline-api#_)) 传递给 `inspect()` 从而打开 Elements 面板看到那个元素。
 
-![](https://developers.google.com/chrome-developer-tools/docs/console-files/inspect2.png)
+![](https://developer.chrome.com/devtools/docs/console-files/inspect2.png)
 
-### Accessing recently selected elements and objects
+### 获得最近选择的元素或者对象
 
-Often when testing you'll select DOM elements&mdash;either directly in the Elements panel or using the Selection tool (magnifying glass)&mdash;so that you can further inspect the element. Or, when analyzing a memory snapshot in the Profiles panel, you might select a JavaScript object to further inspect it.
+通常测试时，你要么直接在 Elements 面板，要么使用 Selection 工具（放大镜图标）选择DOM元素，这样你才可以详细的审查这个元素。同样的，当要在 Profiles 面板中统计内存使用简况，你也需要先获取需要审查的 JavaScript 对象。
 
-The Console remembers the last five elements (or heap objects) you've selected and makes them available as properties named [**`$0`**, **`$1`**, **`$2`**, **`$3`**](commandline-api#0_-_4) and [**`$4`**](commandline-api#0_-_4). The most recently selected element or object is available as **`$0`**, the second most as **`$1`**, and so forth.
+Console 会记住最后五个元素（或者堆对象）你可以通过使用 `$0`, `$1`, `$2`, `$3` 和 `$4` 来选择它们并且让它们像属性一样使用。最近选择的元素或者对象可以通过 `$0` 调用，倒数第二个最近的是 `$1`，以此类推。
 
-The following screenshot shows the values of these properties after selecting three different elements in turn from the Elements panel:
+下面这个截图展示了在选择三个不同元素之后，这些属性在 Elements 面板中返回的值：
 
-![Recently selected elements](https://developers.google.com/chrome-developer-tools/docs/console-files/recent-selection.png)
+![最近选择的元素](https://developer.chrome.com/devtools/docs/console-files/recent-selection.png)
 
->**Note:** You can also Right-click or Control-click on any element in the Console and select **Reveal in Elements Panel**.
+**注意：**你也可以在 Console 中的任意元素上右击或者摁住 Control 键点击并且选择 **Reveal in Elements Panel** 从而通过 Elements 面板查看。
 
-### Monitoring events
 
-The [`monitorEvents()`](commandline-api#monitoreventsobject_events) command monitors an object for one or more specified events. When an event occurs on the monitored object, the corresponding Event object is logged to the Console. You specify the object and the events you want to monitor on that object. For example, the following code enables event monitoring for every "resize" event on the global window object.
+### 监听事件
+
+[`monitorEvents()`](commandline-api#monitoreventsobject_events) 命令可以监控某对象的一个或多个指定的事件。当事件在被监控的对象上触发时，相应的事件对象将会被打印到 Console 上。 你指定的对象和你想要监听的事件。例如，下面代码会监听触发在全局 window 对象的每一个“resize”事件。
 
     monitorEvents(window, "resize");
 
-![Monitoring window resize events](https://developers.google.com/chrome-developer-tools/docs/console-files/monitor-resize.png)
+![监听 window resize 事件](https://developer.chrome.com/devtools/docs/console-files/monitor-resize.png)
 
-To monitor several events, you can pass an array of event names as the second parameter. The code below monitors both "mousedown" and "mouseup" events on the body of the document.
+想要监控多个事件，你可以把事件名数组作为第二个参数传递。下面代码会监控触发在 `document.body` 上的 “mousedown” 和 “mouseup” 事件。
 
     monitorEvents(document.body, ["mousedown", "mouseup"]);
 
-You can also pass one of the supported "event types" that DevTools maps to a set of actual event names. For example, the "touch" event type cause DevTools to monitor "touchstart", "touchend", "touchmove", and "touchcancel" events on the target object.
+你也可以传递一个被支持的“事件类型（event types）”作为第二参数，DevTools 会将其映射为一系列实际的事件名。例如，“touch”事件类型会让 DevTools 去监控目标对象上的 “thouchstart”，“thouchend”，“touchmove” 以及 “touchcancel” 事件。
 
     monitorEvents($('#scrollBar'), "touch");
 
+查看 Console API 参考 [`monitorEvents()`](commandline-api#monitoreventsobject_events) 文档，你可以找到被支持的事件类型列表。
 
-See [`monitorEvents()`](commandline-api#monitoreventsobject_events) in the Console API Reference for a list of supported event types.
-
-To stop monitoring events call `unmonitorEvents()`, passing the object to stop monitoring.
+停止监控事件可以使用 `unmonitorEvents()`，需要把想要停止监控的对象传递进去。
 
     unmonitorEvents(window);
 
-### Controlling the CPU profiler
+### 控制 CPU 分析器
 
-You can create JavaScript CPU profiles from the command line with the [`profile()`](commandline-api#profilename) and [`profileEnd()`](commandline-api#profileendname) commands. You can optionally specify a name that's applied to the profile you create.
+你可以使用命令行命令 [`profile()`](commandline-api#profilename) 和 [`profileEnd()`](commandline-api#profileendname) 来创建一个 JavaScript CPU 分析器（profiler）。你可以为你创建的分析器自定义一个特定的名字。
 
-For example, the following shows an example of creating a new profile with the default name:
+例如，下面展示了如何用默认名字创建一个分析器：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-console.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-console.png)
 
-The new profile appears in the Profiles panel under the name "Profile 1":
+在 Profiles 面板中，这个新创建的分析器会以 “Profile 1” 的名字出现：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-panel.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-panel.png)
 
-If you specify a label for the new profile, it is used as the new profile's heading. If you create multiple profiles with the same name, they are grouped as individual runs under the same heading:
+如果你为新创建的分析器指定了一个标签，它通常用作分析器的标题。如果你创建了多个同名的分析器，他们会被归在同一标题的的不同子标题下：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-console-2.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-console-2.png)
 
-The result in the Profiles panel:
+Profiles 面板的结果如下：
 
-![](https://developers.google.com/chrome-developer-tools/docs/commandline-api-files/profile-panel-2.png)
+![](https://developer.chrome.com/devtools/docs/commandline-api-files/profile-panel-2.png)
 
-CPU profiles can be nested, for example:
+CPU 分析器可以被嵌套，例如：
 
     profile("A");
     profile("B");
     profileEnd("B")
     profileEnd("A")
 
-
-The calls to stop and start profiling do not need be properly nested. For example, the following works the same as the previous example:
+调用停止或者开启分析命令的时候并不需要严格按照嵌套的顺序闭合。例如，下面代码跟上面代码功能一样：
 
     profile("A");
     profile("B");
     profileEnd("A");
     profileEnd("B");
 
-Except as otherwise noted, the content of this page is licensed under the [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/), and code samples are licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0). For details, see our [Site Policies](https://developers.google.com/site-policies).
-
-Last updated February 12, 2014.
