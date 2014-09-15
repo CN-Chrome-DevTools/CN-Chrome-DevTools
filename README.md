@@ -62,8 +62,8 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 * Learn Basics
 	* [Overview](https://developer.chrome.com/devtools/index)
-	* [Development Workflow](https://developer.chrome.com/devtools/docs/authoring-development-workflow)
-	* [Using the Console](https://developer.chrome.com/devtools/docs/console)
+	* ~~[Development Workflow](https://developer.chrome.com/devtools/docs/authoring-development-workflow)~~
+	* ~~[Using the Console](https://developer.chrome.com/devtools/docs/console)~~
 	* [Tips & Tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks)
 	* [Additional Resources](https://developer.chrome.com/devtools/docs/videos)
 * Use Tools
@@ -80,7 +80,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 	* [Using the Timeline](https://developer.chrome.com/devtools/docs/timeline)
 	* [Timeline Demo: Layout Thrashing](https://developer.chrome.com/devtools/docs/demos/too-much-layout/index)
 	* [Profiling JavaScript Performance](https://developer.chrome.com/devtools/docs/cpu-profiling)
-	* [JavaScript Memory Profiling](https://developer.chrome.com/devtools/docs/javascript-memory-profiling)
+	* ~~[JavaScript Memory Profiling](https://developer.chrome.com/devtools/docs/javascript-memory-profiling)~~
 * Reference
 	* [Console API Reference](https://developer.chrome.com/devtools/docs/console-api)
 	* [Command Line API Reference](https://developer.chrome.com/devtools/docs/commandline-api)
@@ -88,7 +88,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 		* [Integrating with DevTools](https://developer.chrome.com/devtools/docs/integrating)
 		* [Sample DevTools Extensions](https://developer.chrome.com/devtools/docs/sample-extensions)
 		* [Sample DevTools Protocol Clients](https://developer.chrome.com/devtools/docs/debugging-clients)
-	* [Keyboard Shortcuts](https://developer.chrome.com/devtools/docs/shortcuts)
+	* ~~[Keyboard Shortcuts](https://developer.chrome.com/devtools/docs/shortcuts)~~
 	* [Settings](https://developer.chrome.com/devtools/docs/settings)
 	* Remote Debugging Protocol
 		* [Remote debugging protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
@@ -96,6 +96,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 		* [Version 1.0](https://developer.chrome.com/devtools/docs/protocol/1.0/index)
 		* [Version .1](https://developer.chrome.com/devtools/docs/protocol/0.1/index)
 		* [Tip-of-tree](https://developer.chrome.com/devtools/docs/protocol/tot/index)
+		
 （翻译完成的，请使用删除线将对应划去）
 
 ## 贡献者（按参与时间排序）
