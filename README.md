@@ -96,6 +96,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 		* [Version 1.0](https://developer.chrome.com/devtools/docs/protocol/1.0/index)
 		* [Version .1](https://developer.chrome.com/devtools/docs/protocol/0.1/index)
 		* [Tip-of-tree](https://developer.chrome.com/devtools/docs/protocol/tot/index)
+
 （翻译完成的，请使用删除线将对应划去）
 
 ## 贡献者（按参与时间排序）
