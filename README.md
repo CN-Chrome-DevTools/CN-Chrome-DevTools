@@ -17,7 +17,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 ####文件命名规则
 
-文件名为 [Chrome DevTools](https://developers.google.com/chrome-developer-tools/) 对应文章超链接中 `/docs/` 后的部分。
+文件名为 [Chrome DevTools](https://developers.google.com/chrome-developer-tools/) 对应文章超链接中 `/docs/` 后的部分。所有的空格和 `&` 用 `-` 代替。
 
 例如：`https://developers.google.com/chrome-developer-tools/docs/authoring-development-workflow` 这篇文档，对应 `authoring-development-workflow.md` 这个文件。
 
@@ -84,11 +84,18 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 * Reference
 	* [Console API Reference](https://developer.chrome.com/devtools/docs/console-api)
 	* [Command Line API Reference](https://developer.chrome.com/devtools/docs/commandline-api)
-	* [DevTools Extensions API](https://developer.chrome.com/devtools/docs/integrating)
+	* DevTools Extensions API
+		* [Integrating with DevTools](https://developer.chrome.com/devtools/docs/integrating)
+		* [Sample DevTools Extensions](https://developer.chrome.com/devtools/docs/sample-extensions)
+		* [Sample DevTools Protocol Clients](https://developer.chrome.com/devtools/docs/debugging-clients)
 	* [Keyboard Shortcuts](https://developer.chrome.com/devtools/docs/shortcuts)
 	* [Settings](https://developer.chrome.com/devtools/docs/settings)
-	* [Remote Debugging Protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
-
+	* Remote Debugging Protocol
+		* [Remote debugging protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
+		* [Version 1.1](https://developer.chrome.com/devtools/docs/protocol/1.1/index)
+		* [Version 1.0](https://developer.chrome.com/devtools/docs/protocol/1.0/index)
+		* [Version .1](https://developer.chrome.com/devtools/docs/protocol/0.1/index)
+		* [Tip-of-tree](https://developer.chrome.com/devtools/docs/protocol/tot/index)
 （翻译完成的，请使用删除线将对应划去）
 
 ## 贡献者（按参与时间排序）
