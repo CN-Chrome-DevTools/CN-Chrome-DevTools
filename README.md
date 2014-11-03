@@ -15,16 +15,15 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 - 文章正文内容均放在 `md` 目录下，采用 `md` 格式。
 - 文章中所用到的图片资源暂时先用现有英文手册的原始链接，后续图片资源会统一托管到[七牛云存储](http://www.qiniu.com/)
 
-
 ####文件命名规则
-文件名为 [Chrome DevTools](https://developers.google.com/chrome-developer-tools/) 对应文章超链接中 `/docs/` 后的部分。
+
+文件名为 [Chrome DevTools](https://developers.google.com/chrome-developer-tools/) 对应文章超链接中 `/docs/` 后的部分。所有的空格和 `&` 用 `-` 代替。
 
 例如：`https://developers.google.com/chrome-developer-tools/docs/authoring-development-workflow` 这篇文档，对应 `authoring-development-workflow.md` 这个文件。
 
-对于带有二级子页面的文档，在文档前面会带有父级的名字使用 `--` 分割。
+对于下级子页面文档，将其放在以父级文档名称命名的文件夹下面。
 
-例如：`https://developers.google.com/chrome-developer-tools/docs/css-preprocessors` 属于 `https://developers.google.com/chrome-developer-tools/docs/dom-and-styles` 那么将其命名为 `dom-and-styles--css-preprocessors`。
-
+例如：`https://developers.google.com/chrome-developer-tools/docs/css-preprocessors` 属于 `https://developers.google.com/chrome-developer-tools/docs/dom-and-styles` 那么将放置在 `dom-and-styles/css-preprocessors.md`。
 
 ###第二阶段
 
@@ -61,46 +60,42 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 
 ## 项目翻译目录
 
-* Authoring and Development Workflow <https://developer.chrome.com/devtools/docs/authoring-development-workflow>  
-* Editing Styles And The DOM <https://developer.chrome.com/devtools/docs/dom-and-styles>
-	* Working with CSS Preprocessors
-* Managing Application Storage
-* Evaluating Network Performance
-* Debugging JavaScript <https://developer.chrome.com/devtools/docs/javascript-debugging>
-* Performance Profiling with the Timeline
-	* Timeline demo: Diagnosing forced synchronous layouts
-* Profiling JavaScript
-* JavaScript Memory Profiling
-	* Heap Profiler Demos
-		* Gathering Scattered Objects
-		* Verifying Action Cleanness
-		* Exploring the Heap Contents
-		* Uncovering DOM Leaks
-		* Finding Accumulation Points
-* Mobile Emulation
-* ~~Using the Console~~
-	* ~~Console API Reference~~
-	* ~~Command Line API Reference~~
-* Keyboard Shortcuts
-* Tips and Tricks
-* Settings
-* Rendering Settings
-* Remote Debugging Chrome on Android
-	* Debugging Protocol
-		* 1.1
-		* 1.0
-		* 0.1
-		* tip-of-tree
-* Integrating with DevTools
-	* Sample DeveTools Extensions
-	* Sample Debugging Protocol Clients
-	* DevTools Extensions Gallery
-* Additional Resources
-	* Creating A Clean Testing Environment
-	* Videos
-	* Blog posts
-	* Mailing list
-* Contributing
+* Learn Basics
+	* [Overview](https://developer.chrome.com/devtools/index)
+	* ~~[Development Workflow](https://developer.chrome.com/devtools/docs/authoring-development-workflow)~~
+	* ~~[Using the Console](https://developer.chrome.com/devtools/docs/console)~~
+	* [Tips & Tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks)
+	* [Additional Resources](https://developer.chrome.com/devtools/docs/videos)
+* Use Tools
+	* Inspecting & Tweaking
+		* [Editing Styles And The DOM](https://developer.chrome.com/devtools/docs/dom-and-styles)
+		* [Working with CSS Preprocessors](https://developer.chrome.com/devtools/docs/css-preprocessors)
+		* [Managing Application Storage](https://developer.chrome.com/devtools/docs/resource-panel)
+	* [Debugging JavaScript](https://developer.chrome.com/devtools/docs/javascript-debugging)
+	* [Device Mode & Mobile Emulation](https://developer.chrome.com/devtools/docs/device-mode)
+	* [Remote Debugging on Android](https://developer.chrome.com/devtools/docs/remote-debugging)
+	* [Saving Changes with Workspaces](https://developer.chrome.com/devtools/docs/workspaces)
+* Performance & Profiling
+	* [Evaluating Network Performance](https://developer.chrome.com/devtools/docs/network)
+	* [Using the Timeline](https://developer.chrome.com/devtools/docs/timeline)
+	* [Timeline Demo: Layout Thrashing](https://developer.chrome.com/devtools/docs/demos/too-much-layout/index)
+	* [Profiling JavaScript Performance](https://developer.chrome.com/devtools/docs/cpu-profiling)
+	* ~~[JavaScript Memory Profiling](https://developer.chrome.com/devtools/docs/javascript-memory-profiling)~~
+* Reference
+	* [Console API Reference](https://developer.chrome.com/devtools/docs/console-api)
+	* [Command Line API Reference](https://developer.chrome.com/devtools/docs/commandline-api)
+	* DevTools Extensions API
+		* [Integrating with DevTools](https://developer.chrome.com/devtools/docs/integrating)
+		* [Sample DevTools Extensions](https://developer.chrome.com/devtools/docs/sample-extensions)
+		* [Sample DevTools Protocol Clients](https://developer.chrome.com/devtools/docs/debugging-clients)
+	* ~~[Keyboard Shortcuts](https://developer.chrome.com/devtools/docs/shortcuts)~~
+	* [Settings](https://developer.chrome.com/devtools/docs/settings)
+	* Remote Debugging Protocol
+		* [Remote debugging protocol](https://developer.chrome.com/devtools/docs/debugger-protocol)
+		* [Version 1.1](https://developer.chrome.com/devtools/docs/protocol/1.1/index)
+		* [Version 1.0](https://developer.chrome.com/devtools/docs/protocol/1.0/index)
+		* [Version .1](https://developer.chrome.com/devtools/docs/protocol/0.1/index)
+		* [Tip-of-tree](https://developer.chrome.com/devtools/docs/protocol/tot/index)
 
 （翻译完成的，请使用删除线将对应划去）
 
