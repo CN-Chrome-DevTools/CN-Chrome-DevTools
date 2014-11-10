@@ -2,9 +2,9 @@
 
 https://developer.chrome.com/devtools/docs/device-mode
 
-As your mobile audience grows, responsive mobile-friendly web design becomes all the more important. Web content needs to look and feel great across a wide variety of devices and network conditions. But testing the quality of your mobile experiences takes longer and makes debugging more complex.
+随着你移动端用户的增加，移动端优化的响应式设计越来越重要。网页需要在各种各样的设备和网络环境下表现良好。因此，你测试移动端用户体验就需要很多时间而且非常复杂。
 
-Device mode brings the insights of mobile testing to your browser tab through the power of mobile emulation.
+Device 模块使用 Mobile 模拟器为你提供强大的移动端测试功能。 
 
   <figure>
       <video id="gfyVid1" class="gfyVid" controls autoplay loop muted poster="//thumbs.gfycat.com/LeadingBlackandwhiteBorzoi-poster.jpg">
@@ -14,12 +14,12 @@ Device mode brings the insights of mobile testing to your browser tab through th
       </video>
   </figure>
   
-You can use device mode to:
+从上面你可以看到 Device 模块可以：
 
-* Test your responsive designs by emulating different screen sizes and resolutions, including Retina displays.
-* Evaluate your site's performance using the network emulator, without affecting traffic to other tabs.
-* Visualize and inspect CSS media queries.
-* Accurately simulate device input for touch events, geolocation, and device orientation.
-* Enhance your current debugging workflow by combining device mode with the existing DevTools.
+* 通过模拟不同的屏幕尺寸和分辨率来测试你的响应式设计，包括 Retina 测试。
+* 通过 Network Emulator 来测试你站点的性能（低速网络），而不会影响其他标签。
+* 很方便的查看 CSS Media Queries 代码。
+* 准确模拟设备触摸事件、地理位置以及设备翻转。
+* 与之前 DevTools 整合在一起，保留你的调试习惯，增强功能。
 
-**Note**: Some of this documentation might be ahead of the stable version of Chrome. If you are unable to locate a feature, try using [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html), which contains the latest version of the DevTools.
+**注意**: 文档中的一些技术可能并不存在于当前稳定版本的 Chrome 中。如果你无法使用某个特性，请尝试 [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)，这个版本总是包含最新的 DevTools。
