@@ -23,3 +23,12 @@ Device 模块使用 Mobile 模拟器为你提供强大的移动端测试功能�
 * 与之前 DevTools 整合在一起，保留你的调试习惯，增强功能。
 
 **注意**: 文档中的一些技术可能并不存在于当前稳定版本的 Chrome 中。如果你无法使用某个特性，请尝试 [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)，这个版本总是包含最新的 DevTools。
+
+## 启用 Device 模块
+
+点击 **Toggle device mode** ![image](https://developer.chrome.com/devtools/docs/device-mode-files/icon-device-mode-off.png) 图标，即可打开 Device 模块。当 Device 模块启用后，这个图标会变成蓝色同时页面会放进一个 Device 模拟器里面。
+
+你也可以用下面快捷键来开关 Device 模块：`Ctrl + Shift + M`（Mac 上 `Cmd + Shift + M` ）。
+
+![启用 Device 模块](https://developer.chrome.com/devtools/docs/device-mode-files/device-mode-initial-view.png)
+
