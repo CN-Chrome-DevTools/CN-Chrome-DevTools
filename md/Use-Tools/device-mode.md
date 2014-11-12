@@ -52,5 +52,23 @@ Device 模块的屏幕仿真器可以帮助你做响应式测试，而不需要�
 
 **提示：**开关屏幕分辨率模拟器使用 **Emulate screen resolution** ![](https://developer.chrome.com/devtools/docs/device-mode-files/icon-emulate-resolution.png) 复选框。切换横屏还是竖屏可以点击 **Swap dimensions** ![](https://developer.chrome.com/devtools/docs/device-mode-files/icon-swap-dimensions.png) 图标。勾选 **Fit** 复选框可以使整个模拟器都出现在你浏览器窗口中，会等比缩放以适应窗口大小。（这个功能只是为了方便，效果跟之前一样。）
 
+### 自定义屏幕设置
+
+需要更详细的屏幕模拟，你可以自行修改 Device 预设下拉列表下面的分辨率设置。
+
+![分辨率设置](https://developer.chrome.com/devtools/docs/device-mode-files/screen-controls.png)
+
+在 width 和 height 表单中手动填写 CSS 像素数值来自定义屏幕尺寸。
+
+如果你还想在非 Retina 设备测试 Retina 设备或者反过来测试，可以修改 **Device pixel ratio** ![](https://developer.chrome.com/devtools/docs/device-mode-files/icon-DPR.png) 表单。这个设像素比（DPR）就是逻辑像素和物理像素的比例。像 iPhone5 这样的 Retina 屏幕设备，有比普通设备更高的像素密度，因此会影响内容的尺寸和锐利度。
+
+网络上一些与 DPR 有关的例子：
+
+* CSS media queries 例如 `@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { ... }`
+* CSS [image-set](http://dev.w3.org/csswg/css-images/#image-set-notation) 规范。
+* 图片上的 [srcset](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-srcset) 属性。
+* BOM 属性 `window.devicePixelRatio`。
+
+**注意：**如果你有一个本身带有 Retina 屏幕的设备，你会看到低 dpi 时看起来有像素颗粒感高 dpi 时看起来锐利。在标准显示器上模拟这个效果，勾选 **Fit** 复选框并且设置 DPR 为 2。
 
 
