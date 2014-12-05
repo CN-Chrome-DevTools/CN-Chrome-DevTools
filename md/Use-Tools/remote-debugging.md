@@ -1,14 +1,13 @@
-# Remote Debugging on Android with Chrome
+# 使用 Chrome 远程调试 Android 设备
 
-https://developer.chrome.com/devtools/docs/remote-debugging
 
-手机上浏览你的 Web 网页的感觉跟你在桌面版的体验可能完全不同。Chrome DevTools 的远程调试功能可以让你用电脑连接你的安卓设备实时调试。
+手机上浏览你的 Web 网页的感觉跟你在桌面版的体验可能完全不同。Chrome DevTools 的远程调试功能可以让你用电脑连接你的安卓设备进行实时调试。
 
 ![](https://developer.chrome.com/devtools/docs/remote-debugging/remote-debug-banner.png)
 
 安卓远程调试支持：
 
-* 在[浏览器标签](#debugging-tabs)里面调试网站。
+* 调试在[浏览器标签](#debugging-tabs)里面网站。
 * 在原生安卓应用里面调试[WebView](#debugging-webviews)。
 * 可以实时[截取](#screencasting)安卓设备屏幕显示在你电脑上。
 * 可以通过[端口连接](#port-forwarding)和[虚拟 host 映射](#virtual-host-mapping)来连接你的电脑和安卓设备。
@@ -20,18 +19,18 @@ https://developer.chrome.com/devtools/docs/remote-debugging
 
 * Chrome 32 或者更新版。
 * 一根 USB 线，用来连接你的安卓设备。
-* **测试浏览器时：** 安卓 4.0+ 和 [Chrome for Android](https://play.google.com/store/apps/details?id=com.android.chrome&hl=en)。
-* **测试 APP 时：**安卓 4.0+ 和[配置 WebView 应用](#debugging-webviews)。
+* **测试浏览器时：** 安卓 4.0+ 和 [Chrome 安卓版](https://play.google.com/store/apps/details?id=com.android.chrome&hl=en)。
+* **测试 APP 时：**安卓 4.0+ 和[经过配置启用调试的 WebView](#debugging-webviews)。
 
-**注意：**远程调试要求你桌面版的 Chrome 版本比你安卓设备上的 Chrome 更新。所以最好的选择是使用 [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html) （Mac、Windows）或者 Chrome [Dev channel](http://www.chromium.org/getting-involved/dev-channel) 发行版（linux）。
+**注意：**远程调试要求你桌面版的 Chrome 版本比你安卓设备上的 Chrome 更新。所以最好的选择是使用 [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html) （Mac/Windows）或者 Chrome [Dev channel](http://www.chromium.org/getting-involved/dev-channel) 发行版（linux）。
 
-无论何时你在使用远程调试的时候遇到问题，可以参考[疑问答疑](#troubleshooting)部分。
+如果你在使用远程调试的时候遇到问题，可以参考[疑问答疑](#troubleshooting)部分。
 
 ## 设置你的安卓设备
 
 想要使用远程调试，先按照下面说明来设置你的安卓设备。
 
-1. 启用 USB 调试
+1， 启用 USB 调试
 
 在你的安卓设备上，打开 **设置 > 开发者选项**。
 
@@ -49,7 +48,7 @@ https://developer.chrome.com/devtools/docs/remote-debugging
 
 ![](https://developer.chrome.com/devtools/docs/remote-debugging/allow-usb-debugging.png)
 
-2. 连接你的设备
+2， 连接你的设备
 
 使用 USB 连接线把你的安卓设备连接到你的电脑上。
 
@@ -57,7 +56,7 @@ https://developer.chrome.com/devtools/docs/remote-debugging
 
 ## 在 Chrome 里面寻找你的设备
 
-在安卓设备上设置好远程调试之后，在你的 Chrome 里面寻找设备。
+在安卓设备上设置好启用远程调试之后，在你的 Chrome 里面寻找设备。
 
 打开你的桌面版 Chrome，在网址栏输入 **chrome://inspect**。确认 **Discover USB devices** 已经被选中：
 
@@ -85,7 +84,7 @@ https://developer.chrome.com/devtools/docs/remote-debugging
 
 在 **chrome://inspect** 中，你可以启用 DevTools 来调试你远程浏览器标签下的内容。
 
-点击你想调试标签下面得 **inspect** 按钮来开始调试。
+点击你想调试标签下面的 **inspect** 按钮来开始调试。
 
 ![](https://developer.chrome.com/devtools/docs/remote-debugging/chrome-inspect-tabs.png)
 
@@ -105,13 +104,13 @@ https://developer.chrome.com/devtools/docs/remote-debugging
 下面试一下调试过程中的小技巧：
 
 * 在 DevTools 窗口中使用 `F5` （在 Mac 上是 `Cmd+r`）来刷新远程页面。
-* 让设备在蜂窝网络上，使用 [Network panel](https://developer.chrome.com/devtools/docs/network) 来查看在实际移动网络的网络情况。
-* 使用 [Timeline panel](https://developer.chrome.com/devtools/docs/timeline) 来查看页面渲染和 CPU 使用情况。由于硬件差异，移动端设备通常你比电脑运行慢很多。
+* 让设备在蜂窝网络上，使用 [Network 面板](https://developer.chrome.com/devtools/docs/network) 来查看在实际移动网络的网络情况。
+* 使用 [Timeline 面板](https://developer.chrome.com/devtools/docs/timeline) 来查看页面渲染和 CPU 使用情况。由于硬件差异，移动端设备通常你比电脑运行慢很多。
 * 如果你运行了一个本地的 web 服务器，使用 [端口转接](#port-forwarding) 或者 [虚拟 host 映射](#virtual-host-mapping) 让你的设备可以访问本地网站。
 
 ## 调试 WebViews
 
-在 Android 4.4（KitKat）或者更新版，你可以使用 DevTools 来调试原生安卓应用中得 WebVies 内容。
+在 Android 4.4（KitKat）或者更新版，你可以使用 DevTools 来调试原生安卓应用中的 WebVies 内容。
 
 ### 配置 WebViews 来启用调试
 
@@ -125,7 +124,7 @@ https://developer.chrome.com/devtools/docs/remote-debugging
 ```
 这样就在应用里面所有的 WebViews 中启用调试。
 
-**提示：**WebView 调试并不会被应用 manifest 中 debuggable 标志符状态的影响。如果你仅仅在 debuggable 为 true 时启用 WebView 调试，需要判断一下。
+**提示：**WebView 调试并不会被应用 manifest 中 debuggable 标志符状态的影响。如果你想仅仅在 debuggable 为 true 时启用 WebView 调试，需要判断一下。
 
 ```
   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -140,7 +139,7 @@ https://developer.chrome.com/devtools/docs/remote-debugging
 
 点击下面的 **inspect** 来启用调试。就可以像调试[远程浏览器标签下内容](#debugging-tabs)一样调试了。
 
-![使用 Chrome DevTols 调试安卓应用中得 WebView](https://developer.chrome.com/devtools/docs/remote-debugging/webview-debugging.png)
+![使用 Chrome DevTols 调试安卓应用中的 WebView](https://developer.chrome.com/devtools/docs/remote-debugging/webview-debugging.png)
 
 上图中 WebView 旁边的灰色图表示相对于它相对于设备屏幕的尺寸和位置。如果你的 WebView 设置了 title，title 的内容也会列出来。
 
@@ -200,9 +199,9 @@ Chrome 的端口转移功能可以非常简单的让你手机测试你开发的�
 
 ## 虚拟 host 映射
 
-当你在 localhost 本地开发的时候，端口转接工作起来很好。但是当你使用自定义本地域名的时候，可能就会遇到一些问题。
+当你在 localhost 本地开发的时候，端口转接正常工作。但是当你使用自定义本地域名的时候，可能就会遇到一些问题。
 
-举个例子，你需要的第三方 JavaScript SKD 只能工作在某个白名单域名列表里面，这样你需要添加绑定一条类似 127.0.0.1 production.com 这样的域名到你的 [hosts 文件](http://en.wikipedia.org/wiki/Hosts_(file)) 里面。或者是你在你的 Web 服务器（[MAMP](http://www.mamp.info/en/)）使用虚拟 hosts 功能设置了一个自定义域名。
+举个例子，你需要的第三方 JavaScript SDK 只能工作在某个白名单域名列表里面，这样你需要添加绑定一条类似 `127.0.0.1 production.com` 这样的域名到你的 [hosts 文件](http://en.wikipedia.org/wiki/Hosts_(file)) 里面。或者是你在你的 Web 服务器（[MAMP](http://www.mamp.info/en/)）使用虚拟 hosts 功能设置了一个自定义域名。
 
 如果你需要让你的手机能访问自定义域名的内容，你可以使用域名转接和代理服务器实现。这个代理服务器将你设备的请求映射到你正确的 Host 主机上面。
 
@@ -224,7 +223,7 @@ Chrome 的端口转移功能可以非常简单的让你手机测试你开发的�
 
 ![端口转接到一个代理服务器](https://developer.chrome.com/devtools/docs/remote-debugging/port-forward-to-proxy.png)
 
-The proxy on the host machine is set up to make requests on behalf of your Android device.
+Host 机器上的代理服务器会代替你的安卓设备发起请求。
 
 ### 在你设备上配置代理选项
 
@@ -242,7 +241,7 @@ The proxy on the host machine is set up to make requests on behalf of your Andro
 7. 在 **Porxy port** 表单，输入 9000.
 8. 敲击 **Save**。
 
-设置完之后，你的设所有得请求都会被转移到 host 机器的代理服务器上。这个代理服务器代表了你的设备，所以对你自定义域名的请求就被正确的返回了。
+设置完之后，你的设所有的请求都会被转移到 host 机器的代理服务器上。这个代理服务器代表了你的设备，所以对你自定义域名的请求就被正确的返回了。
 
 现在你就可以像在本地打开一样，在安卓的 chrome 上面打开一个本地的域名。
 
@@ -272,7 +271,7 @@ The proxy on the host machine is set up to make requests on behalf of your Andro
 * 查看你的 app 是否启用了 [WebView 调试](#debugging-webviews)。
 * 在你设备上，打开你想要调试 WebView 的 app。然后刷新 **chrome://inspect** 页面。
 
-**在我的安卓设备上无法访问我得 Web 服务器**
+**在我的安卓设备上无法访问我的 Web 服务器**
 
 * 如果网络限制了你的移动端设备访问你开发服务器，试一下[端口转接](#port-forwarding)或者设置[虚拟 host 映射](#virtual-host-mapping);
 
