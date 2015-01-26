@@ -32,7 +32,7 @@ Device 模块使用 Mobile 模拟器为你提供强大的移动端测试功能�
 
 ## 使用屏幕仿真器
 
-Device 模块的屏幕仿真器可以帮助你做响应式测试，而不需要拿着各种设备测试。
+Device 模块的屏幕仿真器可以帮助你做响应式测试，而不再需要在各种设备间进行繁琐测试。
 
 ### 使用 Device 预设快速测试
 
@@ -99,7 +99,7 @@ Device 模块的网络模拟功能可以让你测试你站点在复杂多变网�
 
 ## 查看 media queries
 
-Media queries 是响应式设计中必不可少的一部分。Device 模块让你可以轻松的查看 media queries 代码。
+Media Queries 是响应式设计中必不可少的一部分。Device 模块让你可以轻松的查看 media queries 代码。
 
 <video class="gfyVid" controls autoplay loop muted style="display: block;" poster="//thumbs.gfycat.com/OilyHarmlessAffenpinscher-poster.jpg">
             <source id="webmsource" src="//zippy.gfycat.com/OilyHarmlessAffenpinscher.webm" type="video/webm">
@@ -107,9 +107,9 @@ Media queries 是响应式设计中必不可少的一部分。Device 模块让�
             <img src="http://zippy.gfycat.com/OilyHarmlessAffenpinscher.gif" alt="Inspecting media queries.">
         </video>
 
-启用 media queries 查看器，你可以点击视图左上角的 Media queries ![Media query 查看器](https://developer.chrome.com/devtools/docs/device-mode-files/media-query-inspector-ruler.png) 图标。DevTools 会检测你样式表里面的 media queries 代码并且在上面标尺中用不同颜色条显示出来。
+启用 Media Queries 查看器，你可以点击视图左上角的 Media Queries ![Media Query 查看器](https://developer.chrome.com/devtools/docs/device-mode-files/media-query-inspector-ruler.png) 图标。DevTools 会检测你样式表里面的 Media Queries 代码并且在上面标尺中用不同颜色条显示出来。
 
-Media queries 的颜色定义遵循下面规则：
+Media Queries 的颜色定义遵循下载面规则：
 
 * （蓝色）查询一个最大宽度
 * （绿色）查询某一个范围内的宽度
@@ -117,19 +117,19 @@ Media queries 的颜色定义遵循下面规则：
 
 ### 预览屏幕效果
 
-点击 media query 工具栏来调整模拟器的分辨率就可以预览到目标屏幕尺寸下的样式效果。
+点击 Media Query 工具栏来调整模拟器的分辨率就可以预览到目标屏幕尺寸下的样式效果。
 
 ### 查看CSS
 
-右击工具栏可以查看这条 media query 是在哪里定义的，并且可以跳转到对应源代码位置。
+右击工具栏可以查看这条 Media Query 是在哪里定义的，并且可以跳转到对应源代码位置。
 
 ![使用 media query 查看器来预览有关源 CSS 代码](https://developer.chrome.com/devtools/docs/device-mode-files/reveal-source-code.png)
 
-提示：当你使用 media query 查看器的时候，你可能并不需要每次都使用手机模拟器。不退出 device 模块而关掉手机模拟器，你可以点击 Reset all overrides ![](https://developer.chrome.com/devtools/docs/device-mode-files/icon-reset-overrides.png) 图标然后刷新页面。
+提示：当你使用 Media Query 查看器的时候，你可能并不需要每次都使用手机模拟器。不退出 device 模块而关掉手机模拟器，你可以点击 Reset all overrides ![](https://developer.chrome.com/devtools/docs/device-mode-files/icon-reset-overrides.png) 图标然后刷新页面。
 
 ### 预览其他 media 类型的效果
 
-Media query 查看器查看的目标是应用在屏幕上的 CSS。如果你想预览其他 media 类型的样式效果，例如 print，你可以在 Emulation 面板中的 media 设置。
+Media Query 查看器查看的目标是应用在屏幕上的 CSS。如果你想预览其他 media 类型的样式效果，例如 print，你可以在 Emulation 面板中的 media 设置。
 
 通过点击浏览器视图右上角 More overrides ![](https://developer.chrome.com/devtools/docs/device-mode-files/icon-open-emulator-drawer.png) 图标打开 DevTools Emulation 面板。然后选择 Media 选项。
 
@@ -149,7 +149,7 @@ Media query 查看器查看的目标是应用在屏幕上的 CSS。如果你想�
 
 ### 触发触摸（touch）事件
 
-触摸屏模拟可以让你测试触摸时间和一系列你想用触摸设备测试的东西。
+触摸屏模拟可以让你测试触摸事件和一系列你想用触摸设备测试的东西。
 
 在传感器面板勾选 Emulate touch screen 复选框即可启用。
 
@@ -181,13 +181,14 @@ Media query 查看器查看的目标是应用在屏幕上的 CSS。如果你想�
 
 ![启用地理模拟器](https://developer.chrome.com/devtools/docs/device-mode-files/emulation-drawer-geolocation.png)
 
-你可以使用这个模拟器为 navigator.geolocation 设置一个位置参数，这样当地理位置数据获取不到的时候，就可以使用这个模拟数据。
+你可以使用这个模拟器为 navigator.geolocation 设置一个位置参数，这样即便是地理位置数据无法获取到的情况下也可以像之前一样测试。
+
 
 提示：使用这个 [maps demo](http://html5demos.com/geo) 来测试地理模拟器。
 
 ### 模拟设备倾斜
 
-如果你需要测试 [Orientation API](http://www.w3.org/TR/screen-orientation/) ，需要使用加速计数据，你可以使用加速计模拟器来模拟这个数据。
+如果你需要测试 [Orientation API](http://www.w3.org/TR/screen-orientation/) ，需要使用倾斜的数据，你可以使用倾斜模拟器来模拟这个数据。
 
 勾选 Accelerometer 复选框可以启用加速计模拟器。
 
@@ -212,7 +213,7 @@ Media query 查看器查看的目标是应用在屏幕上的 CSS。如果你想�
 * 浏览器 UI
 	* 设备系统自带的元素，例如地址栏等，没有被模拟。
 	* 系统原生效果，例如 `<select>` 标签，并没有被模拟成在设备上的效果。
-	* 一些其他效果，例如在设备上输入数字的时候会弹出一个键盘等。这些效果在不同设备上可能会有不同的交互和行为，所以没法模拟。
+	* 一些其他效果功能，例如在设备上输入数字的时候会弹出一个键盘等，它们的模拟效果可能与真实设备的交互差距较大。
 * 浏览器功能
 	* WebGL 可以在模拟器里模拟，但是在 iOS7 设备上它不再被支持。
 	* MathML 在 Chrome 里不支持，但是在 iOS7 设备上支持。
