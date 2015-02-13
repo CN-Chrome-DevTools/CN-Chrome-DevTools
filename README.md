@@ -57,7 +57,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 * Keyboard Shortcuts
 * Authoring and Development Workflow
 * Mobile Emulation
-
+* Editing Styles And The DOM
 ## 项目翻译目录
 
 * Learn Basics
@@ -68,7 +68,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 	* [Additional Resources](https://developer.chrome.com/devtools/docs/videos)
 * Use Tools
 	* Inspecting & Tweaking
-		* ~~[Editing Styles And The DOM](https://developer.chrome.com/devtools/docs/dom-and-styles)
+		* [Editing Styles And The DOM](https://developer.chrome.com/devtools/docs/dom-and-styles)
 		* [Working with CSS Preprocessors](https://developer.chrome.com/devtools/docs/css-preprocessors)
 		* [Managing Application Storage](https://developer.chrome.com/devtools/docs/resource-panel)
 	* [Debugging JavaScript](https://developer.chrome.com/devtools/docs/javascript-debugging)
