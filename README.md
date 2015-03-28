@@ -76,7 +76,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 	* [Remote Debugging on Android](https://developer.chrome.com/devtools/docs/remote-debugging)
 	* [Saving Changes with Workspaces](https://developer.chrome.com/devtools/docs/workspaces)
 * Performance & Profiling
-	* [Evaluating Network Performance](https://developer.chrome.com/devtools/docs/network)
+	* ~~[Evaluating Network Performance](https://developer.chrome.com/devtools/docs/network)
 	* [Using the Timeline](https://developer.chrome.com/devtools/docs/timeline)
 	* [Timeline Demo: Layout Thrashing](https://developer.chrome.com/devtools/docs/demos/too-much-layout/index)
 	* [Profiling JavaScript Performance](https://developer.chrome.com/devtools/docs/cpu-profiling)
