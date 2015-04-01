@@ -57,7 +57,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 * Keyboard Shortcuts
 * Authoring and Development Workflow
 * Mobile Emulation
-
+* Editing Styles And The DOM
 ## 项目翻译目录
 
 * Learn Basics
