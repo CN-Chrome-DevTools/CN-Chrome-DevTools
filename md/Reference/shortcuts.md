@@ -1,10 +1,9 @@
 快捷键
-----
+===========
 
 DevTools具有一些内建的快捷键，开发者可以在日常的开发过程中使用它们以节约时间。以下列举的是每个快捷方式在Windows / Linux和Mac下相应的快捷键。有些快捷键是在全局有效的，而有些只是在某一个面板生效，and are broken up based on where it can be used.
 
-打开DevTools
----
+####打开DevTools
 
 
 在Google Chrome的任何页面或者应用中，你可以通过以下的方式打开 DevTools:
@@ -21,8 +20,7 @@ DevTools具有一些内建的快捷键，开发者可以在日常的开发过程
 
 在Chrome DevTools 窗口是打开时，按下“?”或者“F1”键可以打开设置对话（General Settings）框。按下“Esc”可以关闭设置对话框。
 
-全部面板
----
+####全部面板
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
@@ -43,8 +41,7 @@ DevTools具有一些内建的快捷键，开发者可以在日常的开发过程
 缩小   |    Ctrl + -     |  Shift + -
 
 
-元素(Elements) 面板
----
+####元素(Elements) 面板
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
@@ -62,8 +59,8 @@ DevTools具有一些内建的快捷键，开发者可以在日常的开发过程
 *	为元素设置断点（子元素修改，属性更改，元素删除）
 *	清除 console
 
-样式(Styles) 侧边栏
----
+####样式(Styles) 侧边栏
+
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
 编辑规则   | 单击  |   单击
@@ -83,8 +80,8 @@ DevTools具有一些内建的快捷键，开发者可以在日常的开发过程
 
 (img)[img]添加新的CSS样式规则
 
-资源(Sources)面板
----
+####资源(Sources)面板
+
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
@@ -116,8 +113,8 @@ Delete individual words | Alt + Delete  |   Opt + Delete
 
 (img)[IMG] 暂停 on Uncaught Exceptions  (正常情况下是你想要的那个)
 
-Timeline Panel
----
+####Timeline Panel
+
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
@@ -125,15 +122,15 @@ Timeline Panel
 保存时间轴数据 |  Ctrl + S  |   Cmd + S
 加载时间轴数据 | Ctrl + O   |  Cmd + O
 
-Profiles Panel
----
+####Profiles Panel
+
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
 开启/停止   记录 |  Ctrl + E  |   Cmd + E
 
-Console
----
+####Console
+
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
@@ -154,22 +151,22 @@ console 中右键单击:
 *	清除 console: 清除所有的 console 消息
 
 
-Screencasting
----
+####Screencasting
+
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
 视图微调 放大或缩小 | Alt + Scroll,Ctrl + Cick and drag with two fingers  |Opt + Scroll, Cmd + Cick and drag with two fingers
 审查元素工具 |  Ctrl + Shift + C   | Cmd + Shift + C
 
-模拟
----
+####模拟
+
 
 功能       | Windows / Linux | Mac
 :------------- | :--- | :-------------------------------------
 视图微调 放大或缩小  | Shift + Scroll | Shift + Scroll
 
-其他 Chrome 快捷键
----
+####其他 Chrome 快捷键
+
 以下的 Chrome 快捷键在日常使用中非常有用，它并不是特意为 DevTools开发的，[查看所有的 Chrome 快捷键](https://support.google.com/chrome/answer/157179?hl=en&topic=25799&rd=1).
 
 功能       | Windows / Linux | Mac
