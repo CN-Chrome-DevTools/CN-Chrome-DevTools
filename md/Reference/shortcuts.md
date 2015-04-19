@@ -1,5 +1,5 @@
 快捷键
-
+----
 
 DevTools具有一些内建的快捷键，开发者可以在日常的开发过程中使用它们以节约时间。以下列举的是每个快捷方式在Windows / Linux和Mac下相应的快捷键。有些快捷键是在全局有效的，而有些只是在某一个面板生效，and are broken up based on where it can be used.
 
