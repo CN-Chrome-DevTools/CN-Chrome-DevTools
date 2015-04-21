@@ -53,21 +53,21 @@
 
 ![](javascript-debugging/sources-select-todoCtrl-js.png)
 
-Click the **line gutter** to set a breakpoint for that line of code. A blue tag will indicate if a breakpoint has been set:
+点击**边栏(line gutter)**为当前行设置一个断点。在已经设置的断点处会有一个蓝色的标签：
 
 ![](javascript-debugging/sources-view-region.jpg)
 
-You can add multiple breakpoints. Click the **line gutter** of another line to set another breakpoint. All the breakpoints you have set appear under **Breakpoints** in the right-hand sidebar.
+你可以添加很多个断点，点击**边栏(line gutter)**的其他行来设置其他的断点。所有的断点可以在右侧栏的**Breakpoints**标签下找到。
 
-Breakpoints can be enabled 或 disabled using the checkboxes in this sidebar. If a breakpoint is disabled, the blue tag will appear faded out.
+断点可以通过侧栏中的勾选项来启用/禁用。如果断点被禁用，蓝色标签则会淡出。
 
-Click on a breakpoint entry to jump to that particular line in the source file:
+在右侧栏点击断点，可以跳转到源代码中断点的所在行：
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/multiple-breakpoints-region.jpg)&amp;lt;/div&amp;gt;
+![](javascript-debugging/multiple-breakpoints-region.jpg)
 
-Remove a breakpoint by clicking the **blue tag** breakpoint indicator.
+点击**蓝色标签**来移除断点。.
 
-Right-click on the **blue tag** to access a menu with several options including: **Continue to Here**, **Remove Breakpoint**, **Edit Breakpoint**, and **Disable Breakpoint**.
+右键点击**蓝色标签**打开 to access a menu with several options including: **Continue to Here**, **Remove Breakpoint**, **Edit Breakpoint**, and **Disable Breakpoint**.
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/continue-to-here-region.jpg)&amp;lt;/div&amp;gt;
 
