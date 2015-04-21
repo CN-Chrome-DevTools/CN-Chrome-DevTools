@@ -4,67 +4,62 @@
 
 在这一章节，我们将学习如何使用这些工具，来调试此页面上[Google Closure hovercard demo](https://rawgit.com/google/closure-library/master/closure/goog/demos/hovercard.html)和其他例子。
 
-> **注意**：如果你是一个Web开发人员，并希望得到DevTools的最新版本，您应该使用[Chrome Canary](https://tools.google.com/dlpage/chromesxs)。
+> **注意：** 如果你是一个Web开发人员，并希望得到DevTools的最新版本，您应该使用[Chrome Canary](https://tools.google.com/dlpage/chromesxs)。
 
-## 源文件面板[#](#sources-panel "Permalink")
+## Sources面板[#](#sources-panel "Permalink")
 
-**源文件面板**提供了调试JavaScript代码的功能。它提供了图形化的[V8](https://code.google.com/p/v8/) 调试器。你可以按照下面的步骤来学习**源文件面板**：
+**Sources**面板提供了调试JavaScript代码的功能。它提供了图形化的[V8](https://code.google.com/p/v8/) 调试器。你可以按照下面的步骤来学习**Sources**面板：
 
 *   打开一个网站如 [Google Closure hovercard demo page](http://closure-library.googlecode.com/svn/trunk/closure/goog/demos/hovercard.html) 或 [TodoMVC](http://todomvc.com/examples/angularjs/) Angular应用。
 *   打开DevTools窗口。
-*   如果**源文件面板**没有被选择，就选中它。
+*   选中**Sources**面板。
 
 ![](javascript-debugging/javascript-debugging-overview.jpg)
 
-可以让你看到所有是检查网页的一部分脚本。标准控件暂停，恢复，并通过代码步骤提供下面的面板选择图标。 A键强制暂停在例外位于窗口的底部。来源是在单独的标签并点击可见！[]（../图像/显示文件-navigator.png）打开文件导航仪会显示所有打开的脚本。
+**Sources**面板可以让你看到你所要检查的页面的所有脚本代码，并在面板选择栏下方提供了一组标准控件，提供了暂停，恢复，步进等功能。在窗口的最下方的按钮可以在exception时强制暂停。源码显示在单独的标签页，通过点击 ![](../images/show-file-navigator.png)打开文件导航栏，导航栏中会显示所有已打开的脚本文件。
 
-**源文件面板**可以让你看到你所要检查的页面的所有脚本代码，并在面板选择栏下方提供了一组标准控件，提供了暂停，恢复，step through code等功能。 A button to force a pause at exceptions is located at the bottom of the window. Sources are visible in separate tabs and clicking ![](../images/show-file-navigator.png)opens the file navigator which will display all open scripts.
+### 执行控制[#](#execution-control "Permalink")
 
-### Execution control[#](#execution-control "Permalink")
+**执行控制**按钮在侧板顶部，让你可以按步执行代码，可用的按钮有：
 
-The **execution control** buttons are located at the top of the side panels and allow you to step through code. The buttons available are:
+**![](../images/continue.jpg)继续(Continue):** 继续执行代码直到遇到下一个断点。
 
-**![](../images/continue.jpg)Continue:** continues code execution until we encounter another breakpoint.
+**![](../images/step_over.jpg)跳过(Step over):** 步进代码以查看每一行代码对变量作出的操作，当代码调用另一个函数时不会进入这个函数，使你可以专注于当前的函数。
 
-**![](../images/step_over.jpg)Step over:** step through code line-by-line to get insights into how each line affects the variables being updated. Should your code call another function, the debugger won't jump into its code, instead stepping over so that the focus remains on the current function.
+**![](../images/step_into.jpg)跳入(Step into):** 与 Step over 类似，但是当代码调用函数时，调试器会进去这个函数并跳转到函数的第一行。
 
-**![](../images/step_into.jpg)Step into:** like Step over, however clicking Step into at the function call will cause the debugger to move its execution to the first line in the functions definition.
+**![](../images/step_out.jpg)跳出(Step out):** 当你进入一个函数后，你可以点击 Step out 执行函数余下的代码并跳出该函数。
 
-**![](../images/step_out.jpg)Step out:** having stepped into a function, clicking this will cause the remainder of the function definition to be run and the debugger will move its execution to the parent function.
+**![](../images/disable-breakpoints.png)断点切换(Toggle breakpoints):** 控制断点的开启和关闭，同时保持断点完好。
 
-**![](../images/disable-breakpoints.png)Toggle breakpoints:** toggles breakpoints on/off while leaving their enabled states intact.
+你还可以在**Sources**面板使用以下快捷键：
 
-There are also several related keyboard shortcuts available in the **Sources** panel:
+*   **继续(Continue)**: Mac上按下 `F8` 或 `Command` + `/` 或在其他平台按下 `Ctrl` + `/`
+*   **跳过(Step over)**: Mac上按下 `F10` 或 `Command` + `'` 或在其他平台按下 `Ctrl` + `'`
+*   **跳入(Step into)**: Mac上按下 `F11` 或 `Command` + `;` 或在其他平台按下 `Ctrl` + `;`
+*   **跳出(Step out)**: Mac上按下 `Shift` + `F11` 或 `Shift` + `Command` + `;` 或在其他平台按下 `Shift` + `Ctrl` + `;`
+*   **Next call frame**: 在所有平台按下 `Ctrl` + `.`
+*   **Previous call frame**: 在所有平台按下 `Ctrl` + `,`
 
-*   **Continue**: &amp;lt;kbd class="kbd"&amp;gt;F8&amp;lt;/kbd&amp;gt; or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Command&amp;lt;/kbd&amp;gt; + &amp;lt;kbd class="kbd"&amp;gt;/&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on Mac or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd class="kbd"&amp;gt;/&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on other platforms.
-*   **Step over**: &amp;lt;kbd class="kbd"&amp;gt;F10&amp;lt;/kbd&amp;gt; or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Command&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;'&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on Mac or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Ctrl&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;'&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on other platforms.
-*   **Step into**: &amp;lt;kbd class="kbd"&amp;gt;F11&amp;lt;/kbd&amp;gt; or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Command&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;;&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on Mac or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Ctrl&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;;&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on other platforms.
-*   **Step out**: &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Shift&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;F11&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Shift&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;Command&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;;&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on Mac or &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Shift&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;Ctrl&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;;&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on other platforms.
-*   **Next call frame**: &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Ctrl&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;.&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on all platforms.
-*   **Previous call frame**: &amp;lt;kbd&amp;gt;&amp;lt;kbd class="kbd"&amp;gt;Ctrl&amp;lt;/kbd&amp;gt;+&amp;lt;kbd class="kbd"&amp;gt;,&amp;lt;/kbd&amp;gt;&amp;lt;/kbd&amp;gt; on all platforms.
+如果你要了解其他快捷键，参照 _[Shortcuts](shortcuts.html)_.
 
-For a walkthrough of other keyboard shortcuts supported, see _[Shortcuts](shortcuts.html)_.
+## 使用断点进行调试[#](#breakpoints "Permalink")
 
-&lt;/div&gt;
+**断点(breakpoint)** 是在脚本中设置好的暂停处。在DevTools中使用断点可以调试JavaScript代码，DOM更新和 network calls。
 
-&lt;div class="collapsible"&gt;
-## Debugging with breakpoints[#](#breakpoints "Permalink")
+### 添加和移除断点[#](#add-remove-breakpoints "Permalink")
 
-A **breakpoint** is an _intentional_ stopping or pausing place in a script. Use breakpoints in DevTools to debug JavaScript code, DOM updates, and network calls.
+在**Sources**面板打开一个JavaScript文件来调试。在下面的例子中，我们打开了 [TodoMVC](http://todomvc.com/architecture-examples/angularjs/)的**todoCtrl.js**文件来进行调试。
 
-### Add and remove breakpoints[#](#add-remove-breakpoints "Permalink")
-
-In the **Sources** panel, open a JavaScript file for debugging. In the example below, we are debugging the **todoCtrl.js** file from the [AngularJS version of TodoMVC](http://todomvc.com/architecture-examples/angularjs/).
-
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/sources-select-todoCtrl-js.png)&amp;lt;/div&amp;gt;
+![](javascript-debugging/sources-select-todoCtrl-js.png)
 
 Click the **line gutter** to set a breakpoint for that line of code. A blue tag will indicate if a breakpoint has been set:
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/sources-view-region.jpg)&amp;lt;/div&amp;gt;
+![](javascript-debugging/sources-view-region.jpg)
 
 You can add multiple breakpoints. Click the **line gutter** of another line to set another breakpoint. All the breakpoints you have set appear under **Breakpoints** in the right-hand sidebar.
 
-Breakpoints can be enabled or disabled using the checkboxes in this sidebar. If a breakpoint is disabled, the blue tag will appear faded out.
+Breakpoints can be enabled 或 disabled using the checkboxes in this sidebar. If a breakpoint is disabled, the blue tag will appear faded out.
 
 Click on a breakpoint entry to jump to that particular line in the source file:
 
@@ -76,21 +71,21 @@ Right-click on the **blue tag** to access a menu with several options including:
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/continue-to-here-region.jpg)&amp;lt;/div&amp;gt;
 
-To set a **conditional breakpoint**, choose **Edit Breakpoint**. Alternatively, right-click on the **gutter line** and choose **Add Conditional Breakpoint**. In the input field, type any expression that could resolve to true or false. The breakpoint will pause code execution only if the condition is true.
+To set a **conditional breakpoint**, choose **Edit Breakpoint**. Alternatively, right-click on the **gutter line** and choose **Add Conditional Breakpoint**. In the input field, type any expression that could resolve to true 或 false. The breakpoint will pause code execution only if the condition is true.
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/conditional-breakpoint-region.jpg)&amp;lt;/div&amp;gt;
 
-Conditional breakpoints are especially useful when you're looking to analyze code in a loop or an event callback that fires often.
+Conditional breakpoints are especially useful when you're looking to analyze code in a loop 或 an event callback that fires often.
 
 **Note:** It may not be desirable to set breakpoints from the DevTools interface. Should you wish to launch the debugger from your code, you may use [the `debugger` keyword](console.md#setting-breakpoints-in-javascript) to achieve this.
 
 ### Interact with paused breakpoints[#](#breakpoints-paused "Permalink")
 
-Once you have one or more breakpoints set, return to the browser window and interact with your page. In the example below, a breakpoint was added within `removeTodo()`. Now any attempts to delete a todo item in the TodoMVC app will trigger a breakpoint pause:
+Once you have one 或 more breakpoints set, return to the browser window and interact with your page. In the example below, a breakpoint was added within `removeTodo()`. Now any attempts to delete a todo item in the TodoMVC app will trigger a breakpoint pause:
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/breakpoint-paused-app.png)&amp;lt;/div&amp;gt;
 
-To resume code execution, click the **Continue** ![](../images/continue.jpg)button or use the &amp;lt;span class="kbd"&amp;gt;F8&amp;lt;/span&amp;gt; keyboard shortcut in the DevTools window.
+To resume code execution, click the **Continue** ![](../images/continue.jpg)button 或 use the &amp;lt;span class="kbd"&amp;gt;F8&amp;lt;/span&amp;gt; keyboard shortcut in the DevTools window.
 
 While a script is paused, you can interact with the **Watch Expressions**, **Call Stack**, and **Scope Variables** panels in the right-hand side bar.
 
@@ -112,7 +107,7 @@ When you blackbox a JavaScript source file, you will not jump into that file whe
 
 &amp;lt;div class="screenshot"&amp;gt;![](blackboxing-files/blackboxing-expanded.png)&amp;lt;/div&amp;gt;
 
-You can use the Settings panel to blackbox scripts, or right-click in the sources panel on a file and choose Blackbox Script from the context menu.
+You can use the Settings panel to blackbox scripts, 或 right-click in the sources panel on a file and choose Blackbox Script from the context menu.
 
 &amp;lt;div class="screenshot"&amp;gt;![](blackboxing-files/blackboxing-dialog.png)&amp;lt;/div&amp;gt;
 
@@ -131,7 +126,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   In the **Sources** panel select "dynamicScript.js" from scripts drop-down and set breakpoint on line 2
 *   &amp;lt;button id="dynamicScriptFunctionButton" onclick="dynamicScriptFunction()" disabled=""&amp;gt;Call function from dynamic script&amp;lt;/button&amp;gt;
 *   You should stop on the breakpoint
-*   Click the **Continue** ![](../images/continue.jpg)button or hit **F8** in DevTools window to resume
+*   Click the **Continue** ![](../images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/dynamic-script.jpg)&amp;lt;/div&amp;gt;
 
@@ -143,7 +138,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   Click the **Pause** ![](../images/pause-icon.png)button
 *   Move your mouse over this section
 *   You should stop in `onMouseOver` function
-*   Click the **Continue** ![](../images/continue.jpg)button or hit **F8** in DevTools window to resume
+*   Click the **Continue** ![](../images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/continue-to-resume.jpg)&amp;lt;/div&amp;gt;
 
@@ -153,7 +148,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   Click the **Pause on exceptions** ![](../images/pause-gray.png)button at the bottom of the window to switch to **Pause on all exceptions** mode
 *   &amp;lt;button onclick="raiseAndCatchException()"&amp;gt;Raise exception!&amp;lt;/button&amp;gt;
 *   You should stop in &amp;lt;span class="source-code"&amp;gt;raiseAndCatchException&amp;lt;/span&amp;gt; function
-*   Click the **Continue** ![](../images/continue.jpg)button or hit **F8** in DevTools window to resume
+*   Click the **Continue** ![](../images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/append-child.jpg)&amp;lt;/div&amp;gt;
 
@@ -165,7 +160,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   You should not stop in raiseAndCatchException function since exception is caught
 *   &amp;lt;button onclick="raiseException()"&amp;gt;Raise uncaught exception!&amp;lt;/button&amp;gt;
 *   You should stop in `raiseException` function
-*   Click the **Continue** ![](../images/continue.jpg)button or hit **F8** in DevTools window to resume
+*   Click the **Continue** ![](../images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/raise-exception.jpg)&amp;lt;/div&amp;gt;
 
@@ -183,7 +178,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 
 *   &amp;lt;button onclick="appendChildButtonClicked()"&amp;gt;Append child!&amp;lt;/button&amp;gt;
 *   You should stop on `appendChild` function call
-*   Click the **Continue** ![](../images/continue.jpg)button or hit **F8** in DevTools window to resume
+*   Click the **Continue** ![](../images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/append-child-element.jpg)&amp;lt;/div&amp;gt;
 
@@ -198,7 +193,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   &amp;lt;button onclick="retrieveData()"&amp;gt;Retrieve data.txt by XHR&amp;lt;/button&amp;gt;
 *   You should stop on `send` function call
 *   Right-click on the newly created breakpoint and select **Remove Breakpoint** context menu item
-*   Click the **Continue** ![](../images/continue.jpg)button or hit **F8** in DevTools window to resume
+*   Click the **Continue** ![](../images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/request-send.jpg)&amp;lt;/div&amp;gt;
 
@@ -220,7 +215,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   &amp;lt;div id="hoverme" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 100px"&amp;gt;Hover me!&amp;lt;/div&amp;gt;
 
 *   You should stop on `mouseout` event handler
-*   Click the **Continue** ![](../images/continue.jpg)button or hit **F8** in DevTools window to resume
+*   Click the **Continue** ![](../images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/continue-to-resume.jpg)&amp;lt;/div&amp;gt;
 
@@ -257,7 +252,7 @@ In **Authoring And Workflow**, we discussed how to make changes to scripts in th
 
 *   Click the **pause** button to pause debugging
 *   Modify the function, adding a console.log('Moused out') to the end
-*   Using the Cmd +S or Ctrl + S shortcuts will save these modifications. Make sure to Save As.
+*   Using the Cmd +S 或 Ctrl + S shortcuts will save these modifications. Make sure to Save As.
 *   Click the **pause/resume** button to resume execution
 *   When you now hover out, the new message will be logged to the console
 
@@ -292,7 +287,7 @@ There might be several execution paths that lead to the error and it's not alway
 
 ### Pause on JavaScript exceptions[#](#pause-on-exceptions "Permalink")
 
-You may also want to pause JavaScript execution next time exception is thrown and inspect its call stack, scope variables and state of your app. A tri-state stop button ( ![](../images/pause-gray.png)) at the bottom of the Scripts panel enables you to switch between different exception handling modes: you can choose to either pause on all exception or only on the uncaught ones or you can ignore exceptions altogether.
+You may also want to pause JavaScript execution next time exception is thrown and inspect its call stack, scope variables and state of your app. A tri-state stop button ( ![](../images/pause-gray.png)) at the bottom of the Scripts panel enables you to switch between different exception handling modes: you can choose to either pause on all exception 或 only on the uncaught ones 或 you can ignore exceptions altogether.
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/pause-execution.jpg)&amp;lt;/div&amp;gt;
 
@@ -372,7 +367,7 @@ You need to use a minifier that's capable of creating source maps. Closure Compi
 
 **Configure DevTools**
 
-Sourcemaps are enabled by default (as of Chrome 39), but if you'd like to double-check or enable them, first open DevTools and click the settings cog ![gear](../images/gear.png). Under **Sources**, check **Enable JavaScript source maps**. You might also check **Enable CSS source maps** but you do not need to for this example.
+Sourcemaps are enabled by default (as of Chrome 39), but if you'd like to double-check 或 enable them, first open DevTools and click the settings cog ![gear](../images/gear.png). Under **Sources**, check **Enable JavaScript source maps**. You might also check **Enable CSS source maps** but you do not need to for this example.
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/source-maps.png)&amp;lt;/div&amp;gt;
 
@@ -384,7 +379,7 @@ To tell DevTools that a source map is available, verify the following line is at
 
 This line, usually added by whatever tool generated the map, is what enables DevTools to associate minified with unminified files. In CSS, the line would look like `/*# sourceMappingURL=style.css.map */`.
 
-If you don't want an extra comment in your file you can use an HTTP header field on the minified JavaScript file to tell DevTools where to find the source map. This requires configuration or customization of your web server and is beyond the scope of this document.
+If you don't want an extra comment in your file you can use an HTTP header field on the minified JavaScript file to tell DevTools where to find the source map. This requires configuration 或 customization of your web server and is beyond the scope of this document.
 
 `X-SourceMap: /path/to/file.js.map`
 
