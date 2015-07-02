@@ -155,7 +155,7 @@ DOM断点是一个类似`Sources`面板中的断点。它被用来暂停在一�
 
 当你不知道哪个部分的Javascript更新一个给定的元素，你可以使用DOM断点来调试复杂的Javascript应用。
 
-举个栗子，如果你的Javascript改变一个DOM元素的样式，你可以在元素的属性被修改的时候设置一个DOM断点。
+举个例子，如果你的Javascript改变一个DOM元素的样式，你可以在元素的属性被修改的时候设置一个DOM断点。
 
 ![break on](../../images/Breakon.png)
 
