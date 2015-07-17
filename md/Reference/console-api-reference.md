@@ -3,7 +3,7 @@
 
 The Console API provides web applications with methods for writing information to the console, creating JavaScript profiles, and initiating a debugging session.
 
-控制台API提供了一些方法给web应用，以便打印信息到控制台、创建Javascript分析以及开始调试会话。
+控制台API给web应用提供了一些方法来打印信息到控制台、创建Javascript分析以及开始调试会话。
 
 目录：
 
@@ -13,7 +13,7 @@ The Console API provides web applications with methods for writing information t
 
 If the specified expression is false, the message is written to the console along with a stack trace. In the following example, the assert message is written to the console only when the document contains fewer than ten child nodes:
 
-如果参数表达式`expression`的值为`false`，那么信息`object`会和堆栈轨迹一同显示在控制台。在下面的例子中，只有在`myList`元素的子节点少于10个时，断言信息才会显示在控制台。
+如果参数表达式`expression`的值为`false`，那么参数`object`的信息会和堆栈轨迹一同显示在控制台。在下面的例子中，只有在`myList`元素的子节点少于10个时，断言信息才会显示在控制台。
 
 ``` javascript
 var list = document.querySelector('#myList');
@@ -38,14 +38,14 @@ Also see Clearing the console.
 
 However, if Preserve Logs is on, console.clear() will not do anything in case there's some iframe which calls console.clear() and can make your debugging process harder. "Clear console" in the context menu will still work, and actually clear the console.
 
-注意，当Preserve Logs（保留日志）被勾选时，使用console.clear()不会做任何事，以防止有些页面调用console.clear()使调试过程变得困难。菜单的"Clear console"按钮仍然可以工作并且清空控制台。
+注意，当 Preserve Logs（保留日志）被勾选时，使用`console.clear()`是无效的，以防止有些页面调用`console.clear()`使调试过程变得困难。菜单的"Clear console"按钮仍然可以工作并且清空控制台。
 
 
 ### console.count(label)
 
 Writes the the number of times that count() has been invoked at the same line and with the same label.
 
-相同的标签，在每行后写下`count()`被调用的次数。
+在每行相同的标签后写下`count()`被调用的次数。
 
 In the following example count() is invoked each time the login() function is invoked.
 
@@ -61,6 +61,7 @@ function login(user) {
 ![console.count(label)示例](https://developer.chrome.com/devtools/docs/console-files/count.png)
 
 In this example, count() is invoked with different labels, each of which is incremented separately.
+
 在下面这个例子，`count()`被调用时使用了不同的标签，每一个标签是独立计算次数的。
 
 ``` javascript
@@ -82,7 +83,7 @@ This method is identical to console.log().
 
 Prints a JavaScript representation of the specified object. If the object being logged is an HTML element, then the properties of its DOM representation are displayed, as shown below:
 
-打印参数`object`的javascript描述。如果打印的`object`是一个HTML元素，它的DOM属性会被显示，如下所示：
+打印参数`object`的JavaScript描述。如果打印的`object`是一个HTML元素，它的DOM属性会被显示，如下所示：
 
 ``` javascript
 console.dir(document.body);
@@ -92,7 +93,7 @@ console.dir(document.body);
 
 You can also use the object formatter (%O) in a console.log() statement to print out an element's JavaScript properties:
 
-你也可以在`console.log()`方法中使用对象格式符（%O）来打印一个元素的javascript属性：
+也可以在`console.log()`方法中使用对象格式符（%O）来打印一个元素的JavaScript属性：
 
 ``` javascript
 console.log("document body: %O", document.body);
@@ -102,11 +103,11 @@ console.log("document body: %O", document.body);
 
 Calling console.dir() on a JavaScript object is equivalent to calling console.log() on the same object—they both print out the object's JavaScript properties in a tree format.
 
-对一个javascript对象调用`console.dir()`等同于对它调用`console.log()`——他们都在一个树形格式里打印对象的javascript属性。
+对一个JavaScript对象调用`console.dir()`等同于对它调用`console.log()`——他们都是使用树形格式打印对象的JavaScript属性。
 
 Compare this with the behavior of console.log(), which displays the element in an XML format as it would appear in the Elements panel:
 
-对比`console.log()`，它展示的是元素在Elements面板里相同的xml格式。
+对比`console.log()`，它和Elements面板里一样，使用xml格式显示元素。
 
 ``` javascript
 console.log(document.body);
