@@ -58,6 +58,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 * Authoring and Development Workflow
 * Mobile Emulation
 * Editing Styles And The DOM
+* Performance profiling with the Timeline
 ## 项目翻译目录
 
 * Learn Basics
