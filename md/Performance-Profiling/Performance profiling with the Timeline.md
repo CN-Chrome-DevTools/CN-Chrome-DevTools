@@ -12,4 +12,6 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 在记录期间，每个事件以“瀑布”的形式记录在记录视图中。记录被分为四个基本组之一：加载、脚本执行、渲染和绘图。这些记录以颜色区分，如下：  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image01.png)
 
-以chrome加载一个html页面的记录为例，
+以chrome加载一个html页面的记录为例。第一条记录（发送请求）是来自chrome的获取页面的HTTP请求，紧接着是一条接收响应的记录（获取响应的HTTP响应）、一些接收数据的记录（来自页面的数据），然后是完成加载的记录。Timeline的一个完整的时间记录和描述参考[Timeline事件参考](https://developer.chrome.com/devtools/docs/timeline#timeline-event-reference)。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/image06.png)  
+
