@@ -33,3 +33,53 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 
 #####内存模式
 
+#####Making a recording
+
+######Recording a page load
+
+######Tips for making recordings
+
+
+####Analyzing Timeline recordings
+
+#####Viewing details about a record
+
+#####DOMContentLoaded and Load event markers
+
+#####Locating forced synchronous layouts
+
+#####About nested events
+
+#####Filtering and searching records
+
+#####Zooming in on a Timeline section
+
+#####Saving and loading recordings
+
+#####User-produced Timeline events
+
+#####View CPU time in recordings
+
+
+####Timeline event reference
+
+#####Common event properties
+
+#####Loading events
+
+#####Loading event properties
+
+#####Scripting events
+
+#####Scripting event properties
+
+#####Rendering events
+
+#####Rendering event properties
+
+#####Painting events
+
+#####Painting event properties
+
+***
+Content available under the [CC-By 3.0 license](http://creativecommons.org/licenses/by/3.0/)
