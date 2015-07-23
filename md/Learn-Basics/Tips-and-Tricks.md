@@ -12,3 +12,38 @@
 
 `Ctrl` + `Shift` + `C` 或 `Cmd` + `Shift` + `C` 将快速启动 `DevTools` 检查元素的模式。
 
+![快速启动审查元素的模式](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_10.png)
+
+[更多关于Console|Devtools Doc](https://developer.chrome.com/devtools/docs/console.md)
+
+###支持 console.table 命令
+使用如下：
+``` javascript
+console.table([{a:1, b:2, c:3}, {a:"foo", b:false, c:undefined}]);
+console.table([[1,2,3], [2,3,4]]);
+```
+![console.table 命令](https://developer.chrome.com/devtools/docs/tips-and-tricks/consoleg1.png)
+
+还有一个可选的 `columns` 参数来选择。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
