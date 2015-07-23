@@ -14,4 +14,22 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 
 以chrome加载一个html页面的记录为例。第一条记录（发送请求）是来自chrome的获取页面的HTTP请求，紧接着是一条接收响应的记录（获取响应的HTTP响应）、一些接收数据的记录（来自页面的数据），然后是完成加载的记录。Timeline的一个完整的时间记录和描述参考[Timeline事件参考](https://developer.chrome.com/devtools/docs/timeline#timeline-event-reference)。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image06.png)  
+当你把鼠标悬停在Timeline的一条记录上时，弹出框显示关联时间的详细信息。比如下面的截图展示加载一张图片资源的细节。[Timeline事件参考](https://developer.chrome.com/devtools/docs/timeline#timeline-event-reference)解释了适用于每一个记录类型的详细情况。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/image12.png)  
+
+在记录试图除了详情，你可以在以下三种模式下检查记录：  
+* 事件模式 以事件分类展示所有事件记录
+* 帧模式 展示页面的渲染性能
+* 内存模式 展示随着时间的推移内存使用情况
+
+#####事件模式
+######About clear or light-gray frames
+
+######About the green bars
+
+######Viewing frame rate statistics
+
+#####帧模式
+
+#####内存模式
 
