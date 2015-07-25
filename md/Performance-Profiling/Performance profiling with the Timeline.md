@@ -45,9 +45,15 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 ######关于绿色条
 绘图是一个两步的过程，包括：绘制调用和光栅扫描。  
 * 绘制调用。 这是你想要绘制的东西的列表，它来自于你的元素的CSS应用。最后还有一些绘制调用和画布上的元素不同：moveTo, lineTo, and fillRect。尽管在[Skia](https://code.google.com/p/skia/)和Chrome绘制后端，他们有着不同的名字，但它们是类似的概念。
-* 栅格化。
+* 栅格化。The process of stepping through those draw calls and filling out actual pixels into buffers that can be uploaded to the GPU for compositing.
 
-######Viewing frame rate statistics
+在此背景下，实体绿色条和空绿色条之间有什么不同？  
+![](https://developer.chrome.com/devtools/docs/timeline-images/hollow-green-bars.png)  
+* 实体绿色条的绘制调用被Chrome记录。这些发生在JavaScript执行、样式计算和布局旁的主线程里。组合线程从绘制调用获取数据结构组。
+* 空绿色条被栅格化。合成器产生一个工作线程处理这些。
+
+两者都被绘制，它们只是代表工作的不同子任务。如果你有性能问题你看查找你正在改变什么属性。然后，查看是否有一个合成器，只有这样才能达到同样的目的。CSS触发器可以帮助明确一个解决方案。
+######查看帧率统计
 
 #####内存模式
 
