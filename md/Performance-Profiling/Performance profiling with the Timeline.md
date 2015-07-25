@@ -28,6 +28,9 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 当你在事件视图选择一个时间段（参考[放大时间轴](https://developer.chrome.com/devtools/docs/timeline#zooming-in-on-a-timeline-section)），记录视图只展示对应时间段的记录。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/timeline_records.png)
 #####帧模式
+帧模式提供洞察你的应用的渲染性能的能力。“帧”代表浏览器渲染一帧要显示的内容必须要做的工作--运行JavaScript、处理事件、更新DOM、改变样式布局和绘制页面。你的应用的目标是运行在每秒60帧下，对应于大多数（但不是全部）视频显示器的60Hz的刷新速率。因此，你的应用程序有大约16.6毫秒（1000毫秒/60）对每一帧做准备。  
+
+贯穿帧视图的水平线呈现60FPS和30FPS的帧速率目标。
 ######About clear or light-gray frames
 
 ######About the green bars
