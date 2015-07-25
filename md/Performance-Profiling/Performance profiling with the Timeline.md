@@ -30,7 +30,11 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 #####帧模式
 帧模式提供洞察你的应用的渲染性能的能力。“帧”代表浏览器渲染一帧要显示的内容必须要做的工作--运行JavaScript、处理事件、更新DOM、改变样式布局和绘制页面。你的应用的目标是运行在每秒60帧下，对应于大多数（但不是全部）视频显示器的60Hz的刷新速率。因此，你的应用程序有大约16.6毫秒（1000毫秒/60）对每一帧做准备。  
 
-贯穿帧视图的水平线呈现60FPS和30FPS的帧速率目标。
+贯穿帧视图的水平线呈现60FPS和30FPS的帧速率目标。帧的高度对应于该帧渲染所花费的时间。每帧填充的颜色表明了每种类型的任务所花费的时间百分比。
+
+渲染每帧花费的时间显示在记录试图的顶部。如果你把鼠标悬停在显示时间上，会显示帧的附属信息，包括每种类型的任务的时间、CPU时间、计算FPS的时间。
+![](https://developer.chrome.com/devtools/docs/timeline-images/frames_mode.png)  
+参考[使用帧模式诊断和修复强制同步布局](https://developer.chrome.com/devtools/docs/demos/too-much-layout/)的示例。
 ######About clear or light-gray frames
 
 ######About the green bars
