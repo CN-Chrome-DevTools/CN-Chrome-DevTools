@@ -23,13 +23,16 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 * 内存模式 展示随着时间的推移内存使用情况
 
 #####事件模式
+事件模式提供以类型组织的记录期间捕获的所有事件的概览。大致能看出你的应用在什么类型的任务上的主要的时间消耗。这个视图中的水平条的长度对应于事件完成花费的时间长度。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/events_mode.png)  
+当你在事件视图选择一个时间段（参考[放大时间轴](https://developer.chrome.com/devtools/docs/timeline#zooming-in-on-a-timeline-section)），记录视图只展示对应时间段的记录。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/timeline_records.png)
+#####帧模式
 ######About clear or light-gray frames
 
 ######About the green bars
 
 ######Viewing frame rate statistics
-
-#####帧模式
 
 #####内存模式
 
