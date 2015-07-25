@@ -35,9 +35,17 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 渲染每帧花费的时间显示在记录试图的顶部。如果你把鼠标悬停在显示时间上，会显示帧的附属信息，包括每种类型的任务的时间、CPU时间、计算FPS的时间。
 ![](https://developer.chrome.com/devtools/docs/timeline-images/frames_mode.png)  
 参考[使用帧模式诊断和修复强制同步布局](https://developer.chrome.com/devtools/docs/demos/too-much-layout/)的示例。
-######About clear or light-gray frames
+######关于透明或浅灰色的帧
+也许你已经注意到有些区域的帧是浅灰色的或者透明的（空的）。这些区域分别表明：
+* DevTools不仪表化的活动
+* 显示刷新周期之间的空闲时间
 
-######About the green bars
+下面的帧中展示了不仪表化的活动和空闲时间。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/clear-frames.png)  
+######关于绿色条
+绘图是一个两步的过程，包括：绘制调用和光栅扫描。  
+* 绘制调用。 这是你想要绘制的东西的列表，它来自于你的元素的CSS应用。最后还有一些绘制调用和画布上的元素不同：moveTo, lineTo, and fillRect。尽管在[Skia](https://code.google.com/p/skia/)和Chrome绘制后端，他们有着不同的名字，但它们是类似的概念。
+* 栅格化。
 
 ######Viewing frame rate statistics
 
