@@ -54,7 +54,15 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 
 两者都被绘制，它们只是代表工作的不同子任务。如果你有性能问题你看查找你正在改变什么属性。然后，查看是否有一个合成器，只有这样才能达到同样的目的。[CSS触发器](http://csstriggers.com/)可以帮助明确一个解决方案。
 ######查看帧率统计
+被选中的帧范围的平均帧率和标准偏差显示在Timeline面板的底部。如果你把鼠标悬停在平均帧速率上，弹窗框会显示该帧的以下信息：  
+* Selected range -- 选中的时间段内的帧数
+* Minimum Time -- 选中的帧内的最小耗时，括号内是相应的帧速率。
+* Average Time -- 选中的帧内的平均耗时，括号内是相应的帧速率。
+* Maximum Time -- 选中的帧内的最大耗时，括号内是相应的帧速率。
+* Standard Deviation -- 计算平均耗时的数量变化。
+* Time by category -- 以颜色区分的处理每种类型事件的耗时。
 
+![](https://developer.chrome.com/devtools/docs/timeline-images/average.png)  
 #####内存模式
 
 #####Making a recording
