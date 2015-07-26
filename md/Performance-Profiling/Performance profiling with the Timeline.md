@@ -70,13 +70,13 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 #####作些记录
 启动记录会话，访问你的应用，再停止记录，以此来获取一段记录。 It helps to know in advance the kind of activity you want to record — for example, page loading, scrolling performance of a list of images, and so forth, and then stick to that script.  
 为了更好的记录：
-1.打开你要记录的页面。
-2.打开Timeline面板，使用下面的按钮来开始记录:
-  点击Timeline面板的这个圆形按钮：![](https://developer.chrome.com/devtools/images/recording-off.png)
-  使用快捷键Ctrl+E, Mac上是Cmd+E。
-  在记录期间，记录按钮会变成：![](https://developer.chrome.com/devtools/images/recording-on.png)
-3.在页面上执行你期望记录的活动。
-4.按下页面上当前是红色的记录按钮或使用快捷键来停止记录。
+1.打开你要记录的页面。  
+2.打开Timeline面板，使用下面的按钮来开始记录:  
+  点击Timeline面板的这个圆形按钮：![](https://developer.chrome.com/devtools/images/recording-off.png)  
+  使用快捷键Ctrl+E, Mac上是Cmd+E。  
+  在记录期间，记录按钮会变成：![](https://developer.chrome.com/devtools/images/recording-on.png)  
+3.在页面上执行你期望记录的活动。  
+4.按下页面上当前是红色的记录按钮或使用快捷键来停止记录。  
 ######记录页面加载
 一个常见的任务是来自网络初始化的页面加载，键盘快捷键在这种场景下很有用，让你能快速的启动记录、重新加载页面、停止记录。  
 记录一个页面加载：
