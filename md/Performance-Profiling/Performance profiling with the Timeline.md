@@ -67,13 +67,34 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 内存视图展示你的应用的随着时间内存使用情况，包括文档数、DOM节点数，以及在内存内的事件监听（未被GC的）。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image20.png)  
 内存视图无法直接告诉你哪里引起了内存泄露，但可以帮助你识别你的应用里的 什么事件可能导致内存泄露。你可以接着使用[Heap Profiler](https://developer.chrome.com/devtools/docs/heap-profiling.html)来识别出导致内存泄露的代码。
-#####Making a recording
-
-######Recording a page load
-
-######Tips for making recordings
-
-
+#####作些记录
+启动记录会话，访问你的应用，再停止记录，以此来获取一段记录。 It helps to know in advance the kind of activity you want to record — for example, page loading, scrolling performance of a list of images, and so forth, and then stick to that script.  
+为了更好的记录：
+1.打开你要记录的页面。
+2.打开Timeline面板，使用下面的按钮来开始记录:
+  点击Timeline面板的这个圆形按钮：![](https://developer.chrome.com/devtools/images/recording-off.png)
+  使用快捷键Ctrl+E, Mac上是Cmd+E。
+  在记录期间，记录按钮会变成：![](https://developer.chrome.com/devtools/images/recording-on.png)
+3.在页面上执行你期望记录的活动。
+4.按下页面上当前是红色的记录按钮或使用快捷键来停止记录。
+######记录页面加载
+一个常见的任务是来自网络初始化的页面加载，键盘快捷键在这种场景下很有用，让你能快速的启动记录、重新加载页面、停止记录。  
+记录一个页面加载：
+1.在一个新的tab页或者窗口中打开web页面。
+2.打开Timeline面板按下Cmd+E(Mac)或者Ctrl+E(Windows/Linux)来开始记录。
+3.快速按下Cmd+R或者Ctrl+R来重新加载页面。
+4.页面加载完停止记录。（参考[ event marker)](https://developer.chrome.com/devtools/docs/timeline#domcontentloaded-and-load-event-markers)）  
+你会得到类似以下的页面，第一条记录（发送HTTP请求）是chrome为获取页面的HTTP请求，紧接着是获取HTTP相应相关的记录，接着是一条或者多条接收数据的记录、完成加载的记录、解析HTML的记录。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/image06.png)  
+参考[Timeline event reference](https://developer.chrome.com/devtools/docs/timeline#timeline-event-reference)了解详细的记录类型。  
+######更好获取记录的小技巧
+这是一些更好获取记录的小技巧  
+*  尽可能的缩短记录时间。短的记录更好分析。
+*  避免不必要的动作。避免这些和你要记录和分析不相关的动作（鼠标点击、网络请求等）.比如你要记录点击“登录”以后的事件，不要滚动页面或者加载图片等。
+*  禁用浏览器缓存。当记录网络操作时，在DevTools设置面板上禁用浏览器缓存是个不错的主意。
+*  禁用扩展程序。Chrome的应用扩展会在Timeline里对你的应用产生一些干扰。你可以做以下操作：  
+  以隐身模式打开Chrome窗口
+  创建一个新的Chrome用户用来测试  
 ###Analyzing Timeline recordings
 
 #####Viewing details about a record
