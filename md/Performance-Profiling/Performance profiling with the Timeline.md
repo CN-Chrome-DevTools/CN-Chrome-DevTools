@@ -64,7 +64,9 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 
 ![](https://developer.chrome.com/devtools/docs/timeline-images/average.png)  
 #####内存模式
-
+内存视图展示你的应用的随着时间内存使用情况，包括文档数、DOM节点数，以及在内存内的事件监听（未被GC的）。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/image20.png)  
+内存视图无法直接告诉你哪里引起了内存泄露，但可以帮助你识别你的应用里的 什么事件可能导致内存泄露。你可以接着使用[Heap Profiler](https://developer.chrome.com/devtools/docs/heap-profiling.html)来识别出导致内存泄露的代码。
 #####Making a recording
 
 ######Recording a page load
