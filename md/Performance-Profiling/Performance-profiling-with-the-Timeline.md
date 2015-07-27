@@ -173,22 +173,22 @@ Timeline条按照以下着色：
 ###Timeline事件参考
 本节列出并说明了各个类型的记录类型，和它们的属性。
 #####Common event properties
-Certain details are present in events of all types, while some only apply to certain event types. This section lists properties common to different event types. Properties specific to certain event types are listed in the references for those event types that follow.
+某些详情存在于所有类型的事件，而有些只适用于某些事件类型。本节列出了常见的不同事件类型的属性。下面的参考中将列出特定于某些事件类型的属性。  
 
-Aggregated time
-    For events with nested events, the time taken by each category of events.
-Call Stack
-    For events with child events, the time taken by each category of events.
-CPU time
-    How much CPU time the recorded event took.
-Details
-    Other details about the event.
-Duration (at time-stamp)
-    How long it took the event with all of its children to complete; timestamp is the time at which the event occurred, relative to when the recording started.
-Self time
-    How long the event took without any of its children.
-Used Heap Size
-    Amount of memory being used by the application when the event was recorded, and the delta (+/-) change in used heap size since the last sampling.
+事件汇总  
+    对于有嵌套事件的事件，每一层目录所花费的时间。  
+调用堆栈  
+    对于有子事件的事件，每一层目录所花费的时间。  
+CPU计算时间  
+    事件记录所消耗的CPU计算时间。  
+详情  
+    事件的其他详情。  
+持续时间(时间戳)  
+    事件和它的子事件完成所消耗的时间；时间戳是相对于记录开始事件发生的时间。  
+自身时间  
+    不包括任何子事件的事件自身消耗的时间。  
+堆空间使用大小  
+    事件记录期间应用占用的内存大小，和取样期间堆空间使用的变化。  
 #####Loading事件
 
 框架/库 | 大小 
