@@ -177,6 +177,7 @@ Timeline条按照以下着色：
 #####Common event properties
 
 框架/库 | 大小 
+:--: | :--:
 解析HTML | Chrome执行HTML解析算法
 完成加载 | 一个网络请求完成
 接收数据 | 请求的数据被接收，这会是一个或多个的接收数据事件
