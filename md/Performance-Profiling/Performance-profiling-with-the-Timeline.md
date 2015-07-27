@@ -172,20 +172,32 @@ Timeline条按照以下着色：
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image24.png)  
 ###Timeline事件参考
 本节列出并说明了各个类型的记录类型，和它们的属性。
-
-
 #####Common event properties
+Certain details are present in events of all types, while some only apply to certain event types. This section lists properties common to different event types. Properties specific to certain event types are listed in the references for those event types that follow.
+
+Aggregated time
+    For events with nested events, the time taken by each category of events.
+Call Stack
+    For events with child events, the time taken by each category of events.
+CPU time
+    How much CPU time the recorded event took.
+Details
+    Other details about the event.
+Duration (at time-stamp)
+    How long it took the event with all of its children to complete; timestamp is the time at which the event occurred, relative to when the recording started.
+Self time
+    How long the event took without any of its children.
+Used Heap Size
+    Amount of memory being used by the application when the event was recorded, and the delta (+/-) change in used heap size since the last sampling.
+#####Loading事件
 
 框架/库 | 大小 
-:--: | :--:
+:-- | :--
 解析HTML | Chrome执行HTML解析算法
 完成加载 | 一个网络请求完成
 接收数据 | 请求的数据被接收，这会是一个或多个的接收数据事件
 接收响应 | 来自请求的最初的HTTP响应
 发送请求 | 一个已发送的网络请求
-
-#####Loading events
-
 #####Loading event properties
 
 #####Scripting events
