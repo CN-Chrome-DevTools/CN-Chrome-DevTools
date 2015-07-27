@@ -162,12 +162,16 @@ Timeline条按照以下着色：
 2.定位到json文件，选中并打开。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image14.png)  
 #####用户产生的Timeline事件
+应用可以添加它们的事件到Timeline记录中。你可以使用console.timeStamp()方法添加一个原子事件到记录中，或者使用console.time()和console.timeEnd()来标记处代码执行的时间范围。比如下图中console.timeStamp()被用来显示"Adding result"事件。参考在[Using the Console](https://developer.chrome.com/devtools/docs/console.md)中使用[Marking the Timeline](https://developer.chrome.com/devtools/docs/console.md#marking-the-timeline)来获取更多信息。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/adding-result.png)  
+#####记录中的CPU计算时间
+你会看到上面出现在Timeline记录的浅灰色条，表示CPU忙。鼠标悬停在在一个CPU条会高亮处Timeline部分在此期间，CPU是活动的（如下图所示）。一个CPU条的长度通常是Timeline中的它下面所有的（高亮）事件的总和。如果两者不匹配，这可能是由于以下之一：  
+* 页面被检查期间其他页面运行在同一个线程里（比如两个标签页打开同一个网站，有一边在setTimeout()里执行一些代码）。
+* 不感知的活动。
 
-
-#####View CPU time in recordings
-
-
-###Timeline event reference
+![](https://developer.chrome.com/devtools/docs/timeline-images/image24.png)  
+###Timeline事件参考
+本节列出并说明了各个类型的记录类型，和它们的属性。
 
 #####Common event properties
 
