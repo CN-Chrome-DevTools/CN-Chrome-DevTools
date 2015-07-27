@@ -153,8 +153,16 @@ Timeline条按照以下着色：
   * 向上或向下滑动用两个手指扩大或减小当前时间轴选择。
 * 悬停在一个时间段上向上或向下滚动鼠标滚轮来扩大或减小当前选择的时间段。
 #####保存和加载记录
+你可以以json文件保存Timeline记录，后面可以在Timeline中再打开。  
+######保存Timeline记录
+1.在Timeline中右键或者按住Ctrl再单击鼠标左键(Mac中)，选择保存Timeline数据菜单或者在键盘上使用Ctrl+S。  
+2.选择一段时间段来点击保存。 
+######打开Timeline记录
+1.右键或者按住Ctrl再单击鼠标左键选择加载要加载的Timeline数据，或者使用Ctrl+O键盘快捷键。  
+2.定位到json文件，选中并打开。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/image14.png)  
+#####用户产生的Timeline事件
 
-#####User-produced Timeline events
 
 #####View CPU time in recordings
 
