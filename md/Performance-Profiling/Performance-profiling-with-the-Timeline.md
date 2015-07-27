@@ -122,7 +122,17 @@ Timeline里的事件有时是嵌套在父事件的下方的。你可以展开父
 ![](https://developer.chrome.com/devtools/docs/timeline-images/sync_events.png)  
 #####给Timeline里的嵌套事件着色
 Timeline条按照以下着色：  
+* 最前面的、颜色最深的条代表事件和它的所有的同步子事件花费的时间
+* 接着稍微淡一点的颜色代表时间和它的所有异步子事件的CPU计算时间
+* 最淡的条代表从第一个异步事件开始到最后一个异步事件结束所花费的时间。
 
+![](https://developer.chrome.com/devtools/docs/timeline-images/image16.png)  
+选中一条父记录将在详情面板上展示以下内容：  
+* 以文本和饼图的形式的时间类型概览。
+* 此时这条记录使用的JS堆大小，和这个操作对堆大小的影响
+* 这个事件响应的其他详细信息。
+
+![](https://developer.chrome.com/devtools/docs/timeline-images/parent_record.png)  
 #####Filtering and searching records
 
 #####Zooming in on a Timeline section
