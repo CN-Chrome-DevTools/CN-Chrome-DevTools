@@ -95,14 +95,25 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 *  禁用扩展程序。Chrome的应用扩展会在Timeline里对你的应用产生一些干扰。你可以做以下操作：  
   以隐身模式打开Chrome窗口
   创建一个新的Chrome用户用来测试  
-###Analyzing Timeline recordings
+###分析Tineline面板里的记录
+这部分是分析Timeline面板里的记录的一些小贴士。  
+#####查看记录详情
+当你选中Timeline面板里的一条记录，详情面板里会展示该事件相关的详细信息。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/frames_mode_event_selected.png)  
+有些细节在所有类型的事件中多呈现，比如持续时间和CPU计算时间。关于每种类型事件的详细信息，参考[Timeline event reference](https://developer.chrome.com/devtools/docs/timeline#timeline-event-reference)。  
 
-#####Viewing details about a record
-
+当你选择一条绘制记录，DevTools高亮了蓝色半透明的矩形更新，如下图所示画面的区域。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/paint-hover.png)  
 #####DOMContentLoaded and Load event markers
+The Timeline annotates each recording with a blue and a red line that indicate, respectively, when the DOMContentLoaded and load events were dispatched by the browser. Timeline面板以蓝线和红线标注浏览器发出DOMContentLoaded事件和load事件。DOMContentLoaded事件在页面的元素加载和解析完被触发，load事件在文档的所有资源（图片、CSS文件等）全部加载好时触发一次。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/event_markers.png)  
+#####定位强制同步布局
+布局是Chrome计算页面上所有元素的位置、大小的处理过程。通常Chrome在响应中“懒”处理你的应用中的CSS应用或者DOM更新。Chrome在攒一批样式和布局修改而不是每当有变化时就去处理。当然应用程序可以通过查询特定布局相关的元素属性，如element.offsetWidth的值强制Chrome去立即执行布局。所以这被称为“强制同步布局”，并在频繁执行或者在一棵大的DOM树上执行时有可能带来大的性能瓶颈。  
 
-#####Locating forced synchronous layouts
-
+Timeline面板会以一个黄色叹号(![](https://developer.chrome.com/devtools/docs/timeline-images/image25.png))标识出应用中的强制同步布局，选中这条记录，详情面板包含响应的调用堆栈。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/forced_layout.png)  
+如果一条记录中包含的子记录中有强制布局，父记录会被标识稍微暗一点的黄色叹号。展开父记录能定位到引起强制布局的子记录。  
+参考[Forced Synchronous Layout](https://developer.chrome.com/devtools/docs/demos/too-much-layout/index.html)样例来参考检测和修复这类性能问题。  
 #####About nested events
 
 #####Filtering and searching records
