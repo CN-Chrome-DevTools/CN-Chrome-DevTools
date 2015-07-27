@@ -180,6 +180,7 @@ DevTools打开时,调用 `console.profile()` JavaScript CPU的分析。`console.
 
 ![dom and styles](https://developer.chrome.com/devtools/docs/tips-and-tricks/preview_elements.png)
 
+##Timeline
 
 
 
