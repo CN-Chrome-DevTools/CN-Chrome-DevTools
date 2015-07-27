@@ -114,7 +114,14 @@ Timeline面板会以一个黄色叹号(![](https://developer.chrome.com/devtools
 ![](https://developer.chrome.com/devtools/docs/timeline-images/forced_layout.png)  
 如果一条记录中包含的子记录中有强制布局，父记录会被标识稍微暗一点的黄色叹号。展开父记录能定位到引起强制布局的子记录。  
 参考[Forced Synchronous Layout](https://developer.chrome.com/devtools/docs/demos/too-much-layout/index.html)样例来参考检测和修复这类性能问题。  
-#####About nested events
+#####关于嵌套事件
+Timeline里的事件有时是嵌套在父事件的下方的。你可以展开父事件查看嵌套的子事件。有两个原因导致Timeline里有嵌套事件：  
+* 在处理一个事件时先发生了同步事件。每个事件内部产生两个原子事件，一个用来启动一个用来结束时，被转换为一个单一的“连续”事件。任何其他发生在这两个原子事件之间的事件成为外部子事件。
+
+下面的截图是一个嵌套同步事件的示例。在这个例子中，Chrome正在解析一些HTML时发现需要一些外部资源被加载。这些请求在解析完成前发出来，所以发送请求时间作为解析HTML的子事件被显示出来。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/sync_events.png)  
+#####给Timeline里的嵌套事件着色
+Timeline条按照以下着色：  
 
 #####Filtering and searching records
 
