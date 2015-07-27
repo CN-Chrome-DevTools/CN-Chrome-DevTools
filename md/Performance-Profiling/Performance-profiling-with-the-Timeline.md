@@ -133,11 +133,26 @@ Timeline条按照以下着色：
 * 这个事件响应的其他详细信息。
 
 ![](https://developer.chrome.com/devtools/docs/timeline-images/parent_record.png)  
-#####Filtering and searching records
+#####过滤和搜索记录
+你可以按照事件类型去过滤展示哪些记录（比如只展示加载事件），货值只展示大于等于1毫秒或者15毫秒的记录。你也可以过滤匹配某个字符串的记录。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/filters.png)  
+当查看所有事件时，你可能想找某一条记录，但是它被淹没在众多记录中。这种情况你可以不使用过滤功能。按下Ctr+F(Window/Linux)或者Cmd+F(Mac)，此时Timeline中已经对角到包含搜索项的记录。
+#####在Timeline上放大某个事件段
+为了更好的分析记录，你可以放大Timeline的某一段概览，以减少记录试图中相应的时间刻度。  
+![](https://developer.chrome.com/devtools/docs/timeline-images/image03.png)  
+放大时间段，可以按照以下做法：  
+* 在概览区域，用鼠标拖动一个时间段。
+* 规则区域调整灰色条。
 
-#####Zooming in on a Timeline section
+这是更过的关于Timeline时间段的小贴士：  
+* 通过拖动两个滑动条来"Scrub"当前时间段内的记录。
 
-#####Saving and loading recordings
+![](https://developer.chrome.com/devtools/docs/timeline-images/image26.png)  
+* 触控板用户：
+  * 向左或向右滑动两个手指移动当前时间轴选择。
+  * 向上或向下滑动用两个手指扩大或减小当前时间轴选择。
+* 悬停在一个时间段上向上或向下滚动鼠标滚轮来扩大或减小当前选择的时间段。
+#####保存和加载记录
 
 #####User-produced Timeline events
 
