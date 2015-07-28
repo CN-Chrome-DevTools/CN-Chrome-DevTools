@@ -191,7 +191,7 @@ CPU计算时间
 	事件记录期间应用占用的内存大小，和取样期间堆空间使用的变化。  
 #####Loading事件
 
-框架/库 | 大小 
+事件 | 描述 
 :-- | :--
 解析HTML | Chrome执行HTML解析算法
 完成加载 | 一个网络请求完成
@@ -214,7 +214,7 @@ MIME类型
 #####Scripting事件
 这一节介绍Scripting类别的事件和它们的属性。  
 
-Event | Description
+事件 | 描述
 :-- | :--
 动画帧触发 | 一个预定的动画帧被触发，它的回调处理程序被调用。
 取消动画帧 | 一个动画帧被取消。
@@ -233,19 +233,26 @@ XHR状态改变 | XMLHTTPRequest状态改变。
 XHR加载| XMLHTTPRequest完成加载。
 
 #####Scripting事件属性
-Timer ID
-	定时器ID.
-Timeout
-	定时器指定的超时时间。
-Repeats
-	定时器是否循环的标识。
-Function Call
-	被调用的函数。
+Timer ID  
+	定时器ID.  
+Timeout  
+	定时器指定的超时时间。  
+Repeats  
+	定时器是否循环的标识。  
+Function Call  
+	被调用的函数。  
 #####Rendering事件
 这一节列出渲染时间和它们的属性。
 
+事件 | 描述
+:-- | :--
+无效布局 | 变化的DOM的布局无效
+布局 | 页面执行布局
+重新计算样式 | Chrome重新计算元素样式
+滚动 | 嵌套视图的内容被滚动
 
-#####Rendering event properties
+#####Rendering事件属性
+
 
 #####Painting events
 
