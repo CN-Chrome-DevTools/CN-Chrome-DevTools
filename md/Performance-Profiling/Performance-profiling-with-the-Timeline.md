@@ -212,7 +212,25 @@ MIME类型
 数据大小  
 	请求的资源的字节数。  
 #####Scripting事件
+这一节介绍Scripting类别的事件和它们的属性。  
 
+Event | Description
+:-- | :--
+动画帧触发 | 一个预定的动画帧被触发，它的回调处理程序被调用。
+取消动画帧 | 一个动画帧被取消。
+GC事件 | 垃圾回收发生。
+DOM内容加载 | DOM内容加载被浏览器触发。这个事件在所有的页面DOM元素加载和解析完被触发。
+脚本执行 | 一段脚本被执行。
+事件 | 一个JavaScript事件("鼠标按下",或按键事件等)。
+函数调用 | 调用一个顶层的JavaScript函数（仅出现在当浏览器进入JavaScript引擎）。
+设置定时器 | 一个定时器以setInterval()或者setTimeout()创建。
+请求动画帧 | 调用requestAnimationFrame()函数来
+Remove Timer	A previously created timer was cleared.
+Time	A script called console.time()
+Time End	A script calledconsole.timeEnd()
+Timer Fired	A timer fired that was scheduled with setInterval() or setTimeout().
+XHR Ready State Change	The ready state of an XMLHTTPRequest changed.
+XHR Load	An XMLHTTPRequest finished loading.
 #####Scripting event properties
 
 #####Rendering events
