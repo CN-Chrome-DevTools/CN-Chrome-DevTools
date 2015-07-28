@@ -199,8 +199,19 @@ CPU计算时间
 接收响应 | 来自请求的最初的HTTP响应
 发送请求 | 一个已发送的网络请求
 #####Loading事件属性
-
-#####Scripting events
+资源  
+	请求资源的URL。  
+预览  
+	请求资源的预览（仅支持图片）。  
+请求方法  
+	请求的HTTP方法(GET或POST等等)。  
+状态码  
+	HTTP响应状态码。  
+MIME类型  
+	请求的资源的MIME类型。  
+数据大小  
+	请求的资源的字节数。  
+#####Scripting事件
 
 #####Scripting event properties
 
