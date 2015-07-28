@@ -252,15 +252,33 @@ Function Call
 滚动 | 嵌套视图的内容被滚动
 
 #####Rendering事件属性
+Layout invalidated  
+	导致无效布局的代码堆栈。  
+Nodes that need layout  
+	重新布局前需要布局的节点数。这通常是由开发者的代码无效导致的。  
+Layout tree size  
+	根布局（Chrome开始布局的节点）下节点总数。  
+Layout scope  
+	可能的值是“部分”（重新布局的边界是DOM的一部分）或者整个文档。  
+Elements affected
+	重新计算样式，受影响的元素数量。   recalculation.
+Styles invalidated
+	重新计算样式时，导致无效样式的代码堆栈。  
+#####Painting事件
+这一节介绍Painting事件和它们的属性。 
 
+事件 | 描述
+:-- | :--
+Composite Layers | Chrome的渲染引擎合成图像层。
+Image Decode | 图像解码。
+Image Resize | 图像还原为原始大小。
+Paint | 复合层绘制到显示器的一个区域。鼠标悬停在在一条Paint纪录页面上会高亮显示更新的区域。
 
-#####Painting events
-
-#####Painting event properties
-
-
-
-
+#####Painting事件属性
+Location  
+	绘制的矩形的x和y坐标。  
+Dimensions  
+	绘制区域的高度和宽度。  
 
 ***
 Content available under the [CC-By 3.0 license](http://creativecommons.org/licenses/by/3.0/)
