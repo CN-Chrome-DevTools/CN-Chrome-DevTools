@@ -224,16 +224,26 @@ DOM内容加载 | DOM内容加载被浏览器触发。这个事件在所有的�
 事件 | 一个JavaScript事件("鼠标按下",或按键事件等)。
 函数调用 | 调用一个顶层的JavaScript函数（仅出现在当浏览器进入JavaScript引擎）。
 设置定时器 | 一个定时器以setInterval()或者setTimeout()创建。
-请求动画帧 | 调用requestAnimationFrame()函数来
-Remove Timer	A previously created timer was cleared.
-Time	A script called console.time()
-Time End	A script calledconsole.timeEnd()
-Timer Fired	A timer fired that was scheduled with setInterval() or setTimeout().
-XHR Ready State Change	The ready state of an XMLHTTPRequest changed.
-XHR Load	An XMLHTTPRequest finished loading.
-#####Scripting event properties
+请求动画帧 | 调用requestAnimationFrame()函数来调度新的帧。
+移除定时器 | 将之前创建的定时器清除。
+开始计时 | 调用console.time()函数。
+计时结束 | 调用console.timeEnd()函数。
+定时任务触发 | 一个以setInterval()或者setTimeout()调度的定时器被触发。
+XHR状态改变 | XMLHTTPRequest状态改变。
+XHR加载| XMLHTTPRequest完成加载。
 
-#####Rendering events
+#####Scripting事件属性
+Timer ID
+	定时器ID.
+Timeout
+	定时器指定的超时时间。
+Repeats
+	定时器是否循环的标识。
+Function Call
+	被调用的函数。
+#####Rendering事件
+这一节列出渲染时间和它们的属性。
+
 
 #####Rendering event properties
 
