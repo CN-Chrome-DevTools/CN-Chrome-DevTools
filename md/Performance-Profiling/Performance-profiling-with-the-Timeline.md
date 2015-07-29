@@ -73,7 +73,7 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 
 #####记录
 启动记录会话，访问你的应用，再停止记录，以此来获取一段记录。 It helps to know in advance the kind of activity you want to record — for example, page loading, scrolling performance of a list of images, and so forth, and then stick to that script.  
-为了更好的记录：
+为了更好的记录：  
 1.打开你要记录的页面。  
 2.打开Timeline面板，使用下面的按钮来开始记录:  
   点击Timeline面板的这个圆形按钮：![](https://developer.chrome.com/devtools/images/recording-off.png)  
@@ -84,14 +84,14 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 
 ######记录页面加载
 一个常见的任务是来自网络初始化的页面加载，键盘快捷键在这种场景下很有用，让你能快速的启动记录、重新加载页面、停止记录。  
-记录一个页面加载：
-1.在一个新的tab页或者窗口中打开web页面。
-2.打开Timeline面板按下Cmd+E(Mac)或者Ctrl+E(Windows/Linux)来开始记录。
-3.快速按下Cmd+R或者Ctrl+R来重新加载页面。
+记录一个页面加载：  
+1.在一个新的tab页或者窗口中打开web页面。  
+2.打开Timeline面板按下Cmd+E(Mac)或者Ctrl+E(Windows/Linux)来开始记录。  
+3.快速按下Cmd+R或者Ctrl+R来重新加载页面。  
 4.页面加载完停止记录。（参考[记录](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#记录)）  
 你会得到类似以下的页面，第一条记录（发送HTTP请求）是chrome为获取页面的HTTP请求，紧接着是获取HTTP相应相关的记录，接着是一条或者多条接收数据的记录、完成加载的记录、解析HTML的记录。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image06.png)  
-参考[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#Timeline事件参考)了解详细的记录类型。  
+参考[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#timeline事件参考)了解详细的记录类型。  
 
 ######更好获取记录的小技巧
 这是一些更好获取记录的小技巧  
@@ -108,7 +108,7 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 #####查看记录详情
 当你选中Timeline面板里的一条记录，详情面板里会展示该事件相关的详细信息。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/frames_mode_event_selected.png)  
-有些细节在所有类型的事件中多呈现，比如持续时间和CPU计算时间。关于每种类型事件的详细信息，参考[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#Timeline事件参考)。  
+有些细节在所有类型的事件中多呈现，比如持续时间和CPU计算时间。关于每种类型事件的详细信息，参考[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#timeline事件参考)。  
 
 当你选择一条绘制记录，DevTools高亮了蓝色半透明的矩形更新，如下图所示画面的区域。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/paint-hover.png)  
