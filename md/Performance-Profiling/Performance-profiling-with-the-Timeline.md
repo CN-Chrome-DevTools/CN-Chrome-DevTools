@@ -11,9 +11,9 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 
 在记录期间，每个事件以“瀑布”的形式记录在记录视图中。记录类型有以下四种：加载、脚本执行、渲染和绘制。这些记录以颜色区分，如下：  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image01.png)  
-以chrome加载一个html页面的记录为例。第一条记录（发送请求）是来自chrome的获取页面的HTTP请求，紧接着是一条接收响应的记录（获取响应的HTTP响应）、一些接收数据的记录（来自页面的数据），然后是完成加载的记录。Timeline的一个完整的时间记录和描述参考[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#Timeline事件参考)。  
+以chrome加载一个html页面的记录为例。第一条记录（发送请求）是来自chrome的获取页面的HTTP请求，紧接着是一条接收响应的记录（获取响应的HTTP响应）、一些接收数据的记录（来自页面的数据），然后是完成加载的记录。Timeline的一个完整的时间记录和描述参考[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#timeline事件参考)。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image06.png)  
-当你把鼠标悬停在Timeline的一条记录上时，弹出框显示关联事件的详细信息。比如下面的截图展示加载一张图片资源的细节。[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#Timeline事件参考)解释了适用于每一个记录类型的详细情况。  
+当你把鼠标悬停在Timeline的一条记录上时，弹出框显示关联事件的详细信息。比如下面的截图展示加载一张图片资源的细节。[Timeline事件参考](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#timeline事件参考)解释了适用于每一个记录类型的详细情况。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/image12.png)  
 在记录试图除了详情，你可以在以下三种模式下检查记录：  
 * 事件模式 以事件分类展示所有事件记录
