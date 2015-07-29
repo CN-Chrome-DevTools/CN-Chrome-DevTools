@@ -6,7 +6,7 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 ![](https://developer.chrome.com/devtools/docs/timeline-images/timeline_ui_annotated.png)
 * 点击开始/停止切换按钮，开始或停止记录（参考[记录](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#记录)）
 * 点击清理按钮来从Timeline中清除已有的记录
-* 关联异步事件模式让你更容易的关联异步事件和这些异步事件的调用（参考[嵌套事件](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#嵌套事件)）
+* 关联异步事件模式让你更容易的关联异步事件和这些异步事件的调用（参考[关于嵌套事件](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#关于嵌套事件)）
 * 你可以根据记录中的类型、执行时长去过滤Timeline中的记录（参考[过滤和搜索记录](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#过滤和搜索记录)）
 
 在记录期间，每个事件以“瀑布”的形式记录在记录视图中。记录类型有以下四种：加载、脚本执行、渲染和绘制。这些记录以颜色区分，如下：  
@@ -23,7 +23,7 @@ Timeline面板主要有三个部分构成：顶部的概述部分、记录视图
 #####事件模式
 事件模式提供以类型组织的记录期间捕获的所有事件的概览。大致能看出你的应用在什么类型的任务上的主要的时间消耗。这个视图中的水平条的长度对应于事件完成花费的时间长度。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/events_mode.png)  
-当你在事件视图选择一个时间段（参考[放大时间轴](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#放大时间轴)），记录视图只展示对应时间段的记录。  
+当你在事件视图选择一个时间段（参考[在Timeline上放大某个事件段](https://github.com/zhangyaowu/CN-Chrome-DevTools/blob/master/md/Performance-Profiling/Performance-profiling-with-the-Timeline.md#在Timeline上放大某个事件段)），记录视图只展示对应时间段的记录。  
 ![](https://developer.chrome.com/devtools/docs/timeline-images/timeline_records.png)
 
 #####帧模式
