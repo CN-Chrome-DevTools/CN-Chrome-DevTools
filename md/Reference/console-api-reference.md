@@ -3,7 +3,7 @@
 
 The Console API provides web applications with methods for writing information to the console, creating JavaScript profiles, and initiating a debugging session.
 
-控制台API给web应用提供了一些方法来打印信息到控制台、创建Javascript分析以及开始调试会话。
+控制台API给web应用提供了一些方法来打印信息到控制台、进行 Javascript 性能分析以及开启调试模式。
 
 目录：
 
