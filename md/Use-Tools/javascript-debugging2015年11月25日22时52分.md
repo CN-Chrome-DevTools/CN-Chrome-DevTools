@@ -71,13 +71,15 @@
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-here-region.jpg)
 
-To set a **conditional breakpoint**, choose **Edit Breakpoint**. Alternatively, right-click on the **gutter line** and choose **Add Conditional Breakpoint**. In the input field, type any expression that could resolve to true 或 false. The breakpoint will pause code execution only if the condition is true.
+如果要设置一个 **条件断点(conditional breakpoint)** ，选择 **编辑断点(Edit Breakpoint)** 。
+或者，也可以在 **边栏(gutter line)** 右键并选择 **添加条件断点(Add Conditional Breakpoint)** 。在输入框中，输入一个可解析为真或假的表达式。仅当条件为真时，执行会在此暂停。
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/conditional-breakpoint-region.jpg)&amp;lt;/div&amp;gt;
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/conditional-breakpoint-region.jpg)
 
-Conditional breakpoints are especially useful when you're looking to analyze code in a loop 或 an event callback that fires often.
+当你在试图分析循环中的代码或者一个常被触发的事件回调函数(event callback)时，条件断点会尤其有用。
 
-**Note:** It may not be desirable to set breakpoints from the DevTools interface. Should you wish to launch the debugger from your code, you may use [the `debugger` keyword](console.md#setting-breakpoints-in-javascript) to achieve this.
+**注意：** 在 DevTools 接口中设置断点可能不合你的心意，你也许希望从你的代码中启动调试器，你可以使用关键字 [`debugger`](console.md#setting-breakpoints-in-javascript) 来实现这一目标。
+
 
 ### Interact with paused breakpoints[#](#breakpoints-paused "Permalink")
 
@@ -232,15 +234,12 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 &lt;div class="collapsible"&gt;
 ## The Long Resume[#](#long-resume "Permalink")
 
-When paused, click and hold the resume button to "Resume with all pauses blocked for 500 ms". This makes all breakpoints disabled for half a second, naturally. Use this to get to the next event loop, so you can avoid hitting breakpoints continually exiting a loop, for example.
+暂停时，单击并按住恢复键，在恢复的同时避免 500 ms 内的所有暂停。这使半秒内的所有断点无效。使用这个功能来得到下一个事件循环，例如你可以通过这个功能避免在退出循环时不停的命中断点。
 
-Quick protip: When "refresh" is initiated from DevTools (Ctrl+R while focused in DevTools), all pauses are disabled until the new page load is commenced (or as a plan B, until the user presses the "Pause" button). However, if you initiate refresh from the browser button (or Ctrl+R while focus is outside the DevTools), any remaining breakpoints will actually be hit. This fact could be used for those who are interested in page unloading process.
+提示：当你在 DevTools 内刷新（当焦点在 DevTools 内时按下 Ctrl + R ）时，所有的暂停被禁止，直到新页面加载时开始（或直到用户按下“暂停”按钮）。但是，如果通过浏览器刷新（当焦点在 DevTools 外时按下 Ctrl + R ），任何剩余的断点将被击中。 感兴趣于页面卸载过程(unloading process)的人可以使用这个技巧。
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/long-resume.png)&amp;lt;/div&amp;gt;
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/long-resume.png)
 
-&lt;/div&gt;
-
-&lt;div class="collapsible"&gt;
 ## Live Editing[#](#liveedit "Permalink")
 
 In **Authoring And Workflow**, we discussed how to make changes to scripts in the **Sources** panel. While at a breakpoint, it's also possible to live edit scripts by clicking into the main editor panel and making modifications.
