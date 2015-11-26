@@ -16,7 +16,7 @@
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/javascript-debugging-overview.jpg)
 
- **Sources** 面板可以让你看到你所要检查的页面的所有脚本代码，并在面板选择栏下方提供了一组标准控件，提供了暂停，恢复，步进等功能。在窗口的最下方的按钮可以在 exception 时强制暂停。源码显示在单独的标签页，通过点击 ![](https://developer.chrome.com/devtools/images/show-file-navigator.png) 打开文件导航栏，导航栏中会显示所有已打开的脚本文件。
+ **Sources** 面板可以让你看到你所要检查的页面的所有脚本代码，并在面板选择栏下方提供了一组标准控件，提供了暂停，恢复，步进等功能。在窗口的最下方的按钮可以在遇到异常(exception)时强制暂停。源码显示在单独的标签页，通过点击 ![](https://developer.chrome.com/devtools/images/show-file-navigator.png) 打开文件导航栏，导航栏中会显示所有已打开的脚本文件。
 
 ### 执行控制[#](#execution-control "Permalink")
 
@@ -81,19 +81,19 @@
 **注意：** 在 DevTools 接口中设置断点可能不合你的心意，你也许希望从你的代码中启动调试器，你可以使用关键字 [`debugger`](console.md#setting-breakpoints-in-javascript) 来实现这一目标。
 
 
-### Interact with paused breakpoints[#](#breakpoints-paused "Permalink")
+### 与断点交互(interact)[#](#breakpoints-paused "Permalink")
 
-Once you have one 或 more breakpoints set, return to the browser window and interact with your page. In the example below, a breakpoint was added within `removeTodo()`. Now any attempts to delete a todo item in the TodoMVC app will trigger a breakpoint pause:
+在你设置了一个或多个断点之后，你可以返回浏览器与你的页面交互。在下图的例子里，`removeTodo()`中有一个断点，现在任何一个在 TodoMVC app 中删除待办事项的尝试都会触发断点而暂停。
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/breakpoint-paused-app.png)&amp;lt;/div&amp;gt;
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/breakpoint-paused-app.png)
 
-To resume code execution, click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 use the &amp;lt;span class="kbd"&amp;gt;F8&amp;lt;/span&amp;gt; keyboard shortcut in the DevTools window.
+要想恢复代码的执行，你可以点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键。
 
-While a script is paused, you can interact with the **Watch Expressions**, **Call Stack**, and **Scope Variables** panels in the right-hand side bar.
+当脚本暂停时，你可以用右侧栏目中的 **查看表达式(Watch Expressions)**， **调用栈(Call Stack)**，和 **查看变量(Scope Variables)** 三个面板来进行交互。
 
-#### Call Stack panel[#](#call-stack-panel "Permalink")
+#### Call Stack 面板[#](#call-stack-panel "Permalink")
 
-The **Call Stack** panel displays the complete execution path that led to the point where code was paused, giving us insights into the code flaws that caused the error.
+The **Call Stack** 面板 displays the complete execution path that led to the point where code was paused, giving us insights into the code flaws that caused the error.
 
 &amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/callstack-region.png)&amp;lt;/div&amp;gt;
 
@@ -407,11 +407,11 @@ This helper looks very similar to the `//# sourceMappingURL` property and is act
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/coffeescript.jpg)&amp;lt;/div&amp;gt;
 
-#### Read more[#](#read-more "Permalink")
+#### 了解更多[#](#read-more "Permalink")
 
-*   Conditional breakpoints
+*   条件断点(Conditional breakpoints)
 *   [Breakpoint actions in JavaScript](http://www.randomthink.net/blog/2012/11/breakpoint-actions-in-javascript/)
-*   Working With Source Maps
+*   使用 Source Maps
 *   [The Breakpoint: Source maps spectacular](https://www.youtube.com/watch?feature=player_embedded&amp;amp;v=HijZNR6kc9A)
 *   [HTML5 Rocks: An Introduction To JavaScript Source maps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
 *   [NetTuts: Source Maps 101](http://net.tutsplus.com/tutorials/tools-and-tips/source-maps-101/)
@@ -419,11 +419,6 @@ This helper looks very similar to the `//# sourceMappingURL` property and is act
 *   [CSS Ninja: Multi-level Source maps](http://www.thecssninja.com/javascript/multi-level-sourcemaps)
 *   [Source maps for CoffeeScript](http://www.coffeescriptlove.com/2012/04/source-maps-for-coffeescript.html)
 
-&lt;/div&gt;
 
-&lt;footer id="cc-info"&gt;
 Content available under the [CC-By 3.0 license](http://creativecommons.org/licenses/by/3.0/)
 
-&lt;/footer&gt;
-
-</div>
