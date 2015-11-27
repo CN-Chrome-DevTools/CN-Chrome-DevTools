@@ -97,11 +97,11 @@
 
 The **Call Stack** 面板 displays the complete execution path that led to the point where code was paused, giving us insights into the code flaws that caused the error.
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/callstack-region.png)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/callstack-region.png)
 
 To view the execution path including asynchronous JavaScript callbacks such as timer and XHR events, check the **Async** checkbox.
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/enable-async-toggle.png)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/enable-async-toggle.png)
 
 Further information and examples using async call stacks can be found in [Debugging Asynchronous JavaScript with Chrome DevTools](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/) on HTML5Rocks.com.
 
@@ -109,11 +109,11 @@ Further information and examples using async call stacks can be found in [Debugg
 
 When you blackbox a JavaScript source file, you will not jump into that file when stepping through code you're debugging. You are able to debug just the code you are interested in.
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-expanded.png)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-expanded.png)
 
 You can use the Settings panel to blackbox scripts, 或 right-click in the sources panel on a file and choose Blackbox Script from the context menu.
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-dialog.png)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-dialog.png)
 
 More information on blackboxing and how to use it can be found in the [Blackboxing JavaScript files](https://developer.chrome.com/devtools/docs/blackboxing).
 
@@ -133,7 +133,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   你将会在断点处暂停
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)
 
 **Note:** Notice the `"//# sourceURL=dynamicScript.js"` line at the end of dynamicScript.js file. This technique gives a name to a script created with eval, and will be discussed in more detail in the [Source Maps](#source-maps) section. Breakpoints can be set in dynamic JavaScript only if it has a user supplied name.
 
@@ -145,17 +145,19 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   You should stop in `onMouseOver` function
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)
 
 ### Pause on Exceptions[#](#pause-on exceptions "Permalink")
 
 <script>function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } }</script>
-*   Click the **Pause on exceptions** ![](https://developer.chrome.com/devtools/images/pause-gray.png)button at the bottom of the window to switch to **Pause on all exceptions** mode
-*   &amp;<button onclick="raiseAndCatchException()"&amp;>Raise exception!&amp;</button&amp;>
-*   You should stop in &amp;<span class="source-code"&amp;>raiseAndCatchException&amp;</span&amp;> function
-*   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child.jpg)&amp;</div&amp;>
+*   Click the **Pause on exceptions** ![](../images/pause-gray.png)button at the bottom of the window to switch to **Pause on exceptions** mode
+*   Check the **Pause On Caught Exceptions** checkbox
+*   <button onclick="raiseAndCatchException()">Raise exception!</button>
+*   You should stop in <span class="source-code">raiseAndCatchException</span> function
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
+
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child.jpg)&amp;</div&amp;> 
 
 ### Pause on Uncaught Exceptions[#](#pause-on-uncaught-exceptions "Permalink")
 
