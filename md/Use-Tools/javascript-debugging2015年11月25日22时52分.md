@@ -49,11 +49,13 @@
 
 ### 添加和移除断点[#](#add-remove-breakpoints "Permalink")
 
-在**Sources**面板打开一个JavaScript文件来调试。在下面的例子中，我们打开了 [TodoMVC](http://todomvc.com/architecture-examples/angularjs/)的**todoCtrl.js**文件来进行调试。
+在 **Sources** 面板打开一个JavaScript文件来调试。在下面的例子中，我们打开了 [TodoMVC](http://todomvc.com/architecture-examples/angularjs/) 的 **todoCtrl.js** 文件来进行调试。
+
+（译者注：下图左栏中的 Sources 面板，下文有类似情况）
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/sources-select-todoCtrl-js.png)
 
-点击**边栏(line gutter)**为当前行设置一个断点。在已经设置的断点处会有一个蓝色的标签：
+点击 **边栏(line gutter)** 为当前行设置一个断点。在已经设置的断点处会有一个蓝色的标签：
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/sources-view-region.jpg)
 
@@ -126,7 +128,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 [This is used to mark dynamicScript.js as used.](javascript-debugging/dynamicScript.js) <script>function loadDynamicScript() { var request = new XMLHttpRequest(); request.open('GET','https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js', true); request.send(); request.onreadystatechange = function() { if (request.readyState != 4) return; eval(request.responseText); document.getElementById("dynamicScriptFunctionButton").disabled = false; document.getElementById("loadDynamicScriptButton").disabled = true; } }</script>
 
 *   <button id="loadDynamicScriptButton" onclick="loadDynamicScript()">Load dynamic script</button>
-*   In the **Sources** panel select "dynamicScript.js" from scripts drop-down and set breakpoint on line 2
+*   在 **Sources** 面板下拉菜单中，从脚本中选择 "dynamicScript.js" ，并在line 2设置断点
 *   <button id="dynamicScriptFunctionButton" onclick="dynamicScriptFunction()" disabled="">Call function from dynamic script</button>
 *   You should stop on the breakpoint
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
