@@ -202,13 +202,10 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   Right-click on the newly created breakpoint and select **Remove Breakpoint** context menu item
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](javascript-debugging/request-send.jpg)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/request-send.jpg)
 
-**Note:** To edit URL filter, double click on the XHR breakpoint entry in **XHR Breakpoints** sidebar pane. XHR breakpoint with empty URL filter will match any XHR.
+> **Note:** To edit URL filter, double click on the XHR breakpoint entry in **XHR Breakpoints** sidebar pane. XHR breakpoint with empty URL filter will match any XHR.
 
-</div>
-
-<div class="collapsible">
 ## Breakpoints on JavaScript Event Listeners[#](#breakpoints-on-javascript-event-listeners "Permalink")
 
 <script>window.addEventListener("load", onLoad, true); function onLoad() { var hovermeElement = document.getElementById("hoverme"); hovermeElement.addEventListener("mouseover", hovermeMouseOver, true); hovermeElement.addEventListener("mouseout", hovermeMouseOut, true); } function hovermeMouseOver(event) { event.target.style.backgroundColor = "grey"; } function hovermeMouseOut(event) { event.target.style.backgroundColor = "white"; }</script>
@@ -216,16 +213,14 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   Expand **Mouse** entry
 *   Set a mouseout Event Listener breakpoint by clicking on the checkbox near the **mouseout** entry
 
-&amp;<div class="screenshot"&amp;>![](javascript-debugging/resumed.jpg)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/resumed.jpg)
 
 *   Move your mouse across the box below:
-*   &amp;<div id="hoverme" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 100px"&amp;>Hover me!&amp;</div&amp;>
-
+*   <div id="hoverme" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 100px">Hover me!</div>
 *   You should stop on `mouseout` event handler
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](javascript-debugging/continue-to-resume.jpg)&amp;
-
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)
 
 > **注意：支持以下事件**  
 > **键盘:** 按下(keydown)， 按键(keypress)， 松开(keyup)， 输入文字(textInput)  
