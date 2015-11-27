@@ -80,7 +80,7 @@
 
 当你在试图分析循环中的代码或者一个常被触发的事件回调函数(event callback)时，条件断点会尤其有用。
 
-**注意：** 在 DevTools 接口中设置断点可能不合你的心意，你也许希望从你的代码中启动调试器，你可以使用关键字 [`debugger`](console.md#setting-breakpoints-in-javascript) 来实现这一目标。
+> **注意：** 在 DevTools 接口中设置断点可能不合你的心意，你也许希望从你的代码中启动调试器，你可以使用关键字 [`debugger`](console.md#setting-breakpoints-in-javascript) 来实现这一目标。
 
 
 ### 与断点交互(interact)[#](#breakpoints-paused "Permalink")
@@ -135,7 +135,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)
 
-**注意：** 注意到在文件 dynamicScript.js 最后一行的 `"//# sourceURL=dynamicScript.js"` 。 This technique gives a name to a script created with eval, 我们将在 [Source Maps](#source-maps) 章节仔细的讨论此问题。在动态 JavaScript 中，只有在用户提供了名称后，断点才可以被设定。
+> **注意：** 注意到在文件 dynamicScript.js 最后一行的 `"//# sourceURL=dynamicScript.js"` 。 This technique gives a name to a script created with eval, 我们将在 [Source Maps](#source-maps) 章节仔细的讨论此问题。在动态 JavaScript 中，只有在用户提供了名称后，断点才可以被设定。
 
 ### 在下一个 JavaScript 声明(Statement)处暂停[#](#pause-on-next-statement "Permalink")
 
@@ -229,15 +229,17 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   You should stop on `mouseout` event handler
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](javascript-debugging/continue-to-resume.jpg)&amp;</div&amp;>
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/continue-to-resume.jpg)&amp;
 
-**Note: Following events are supported** &amp;nbsp;&amp;nbsp;**Keyboard:** keydown, keypress, keyup, textInput  
- &amp;nbsp;&amp;nbsp;**Mouse:** click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout, mousewheel  
- &amp;nbsp;&amp;nbsp;**Control:** resize, scroll, zoom, focus, blur, select, change, submit, reset  
- &amp;nbsp;&amp;nbsp;**Clipboard:** copy, cut, paste, beforecopy, beforecut, beforepaste  
- &amp;nbsp;&amp;nbsp;**Load:** load, unload, abort, error  
- &amp;nbsp;&amp;nbsp;**DOM Mutation:** DOMActivate, DOMFocusIn, DOMFocusOut, DOMAttrModified, DOMCharacterDataModified, DOMNodeInserted, DOMNodeInsertedIntoDocument, DOMNodeRemoved, DOMNodeRemovedFromDocument, DOMSubtreeModified, DOMContentLoaded  
- &amp;nbsp;&amp;nbsp;**Device:** deviceorientation, devicemotion
+
+> **Note: Following events are supported**  
+> **Keyboard:** keydown, keypress, keyup, textInput  
+> **Mouse:** click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout, mousewheel  
+> **Control:** resize, scroll, zoom, focus, blur, select, change, submit, reset  
+> **Clipboard:** copy, cut, paste, beforecopy, beforecut, beforepaste  
+> **Load:** load, unload, abort, error  
+> **DOM Mutation:** DOMActivate, DOMFocusIn, DOMFocusOut, DOMAttrModified, DOMCharacterDataModified, DOMNodeInserted, DOMNodeInsertedIntoDocument, DOMNodeRemoved, DOMNodeRemovedFromDocument, DOMSubtreeModified, DOMContentLoaded  
+> **Device:** deviceorientation, devicemotion
 
 </div>
 
