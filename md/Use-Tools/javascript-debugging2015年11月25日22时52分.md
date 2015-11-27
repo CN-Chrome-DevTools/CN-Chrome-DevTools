@@ -130,8 +130,8 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   <button id="loadDynamicScriptButton" onclick="loadDynamicScript()">Load dynamic script</button>
 *   在 **Sources** 面板下拉菜单中，从脚本中选择 "dynamicScript.js" ，并在line 2设置断点
 *   <button id="dynamicScriptFunctionButton" onclick="dynamicScriptFunction()" disabled="">Call function from dynamic script</button>
-*   You should stop on the breakpoint
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
+*   你将会在断点处暂停
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 &amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)&amp;lt;/div&amp;gt;
 
@@ -143,7 +143,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   Click the **Pause** ![](https://developer.chrome.com/devtools/images/pause-icon.png)button
 *   Move your mouse over this section
 *   You should stop in `onMouseOver` function
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 &amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)&amp;lt;/div&amp;gt;
 
@@ -165,7 +165,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   You should not stop in raiseAndCatchException function since exception is caught
 *   &amp;lt;button onclick="raiseException()"&amp;gt;Raise uncaught exception!&amp;lt;/button&amp;gt;
 *   You should stop in `raiseException` function
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 &amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/raise-exception.jpg)&amp;lt;/div&amp;gt;
 
@@ -193,12 +193,12 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 ## Breakpoints on XHR[#](#breakpoints-on-xhr "Permalink")
 
 [This is used to mark data.txt as used.](javascript-debugging/data.txt) &lt;script&gt;function retrieveData() { var request = new XMLHttpRequest(); request.open('GET','javascript-debugging/data.txt', true); request.send(); }&lt;/script&gt;
-*   Click the **Add** ![](https://developer.chrome.com/devtools/images/plus.png)button on **XHR Breakpoints** sidebar pane on the right side of **Sources** panel
+*   Click the **Add** ![](https://developer.chrome.com/devtools/images/plus.png) button on **XHR Breakpoints** sidebar pane on the right side of **Sources** panel
 *   Type "data.txt" in text input and hit **enter**
 *   &amp;lt;button onclick="retrieveData()"&amp;gt;Retrieve data.txt by XHR&amp;lt;/button&amp;gt;
 *   You should stop on `send` function call
 *   Right-click on the newly created breakpoint and select **Remove Breakpoint** context menu item
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/request-send.jpg)&amp;lt;/div&amp;gt;
 
