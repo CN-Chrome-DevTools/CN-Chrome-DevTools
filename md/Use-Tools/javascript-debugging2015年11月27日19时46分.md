@@ -140,9 +140,10 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 ### Pause on Next JavaScript Statement[#](#pause-on-next-statement "Permalink")
 
 <script>document.addEventListener("mouseover", onMouseOver, true); function onMouseOver(event) { var target = event.target; return "onMouseOver: " + target; }</script>
-*   Click the **Pause** ![](https://developer.chrome.com/devtools/images/pause-icon.png)button
-*   Move your mouse over this section
-*   You should stop in `onMouseOver` function
+
+*   单击 **暂停(Pause)** ![](https://developer.chrome.com/devtools/images/pause-icon.png) 键
+*   把鼠标移动到这里
+*   你会在函数 `onMouseOver` 处暂停
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)
@@ -163,7 +164,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 <script>function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } } function raiseException() { throw 0; }</script>
 
-*   Click the **Pause on exceptions** ![](../images/pause-blue.png)button
+*   Click the **Pause on exceptions** ![](https://developer.chrome.com/devtools/images/pause-blue.png)button
 *   Disable the **Pause On Caught Exceptions** checkbox
 *   <button onclick="raiseAndCatchException()">Raise exception!</button>
 *   You should not stop in raiseAndCatchException function since exception is caught
