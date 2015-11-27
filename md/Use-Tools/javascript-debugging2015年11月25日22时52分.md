@@ -123,12 +123,13 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 
 ### Breakpoints in Dynamic JavaScript[#](#breakpoints-dynamic-javascript "Permalink")
 
-[This is used to mark dynamicScript.js as used.](javascript-debugging/dynamicScript.js) &lt;script&gt;function loadDynamicScript() { var request = new XMLHttpRequest(); request.open('GET','https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js', true); request.send(); request.onreadystatechange = function() { if (request.readyState != 4) return; eval(request.responseText); document.getElementById("dynamicScriptFunctionButton").disabled = false; document.getElementById("loadDynamicScriptButton").disabled = true; } }&lt;/script&gt;
-*   &amp;lt;button id="loadDynamicScriptButton" onclick="loadDynamicScript()"&amp;gt;Load dynamic script&amp;lt;/button&amp;gt;
+[This is used to mark dynamicScript.js as used.](javascript-debugging/dynamicScript.js) <script>function loadDynamicScript() { var request = new XMLHttpRequest(); request.open('GET','https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js', true); request.send(); request.onreadystatechange = function() { if (request.readyState != 4) return; eval(request.responseText); document.getElementById("dynamicScriptFunctionButton").disabled = false; document.getElementById("loadDynamicScriptButton").disabled = true; } }</script>
+
+*   <button id="loadDynamicScriptButton" onclick="loadDynamicScript()">Load dynamic script</button>
 *   In the **Sources** panel select "dynamicScript.js" from scripts drop-down and set breakpoint on line 2
-*   &amp;lt;button id="dynamicScriptFunctionButton" onclick="dynamicScriptFunction()" disabled=""&amp;gt;Call function from dynamic script&amp;lt;/button&amp;gt;
+*   <button id="dynamicScriptFunctionButton" onclick="dynamicScriptFunction()" disabled="">Call function from dynamic script</button>
 *   You should stop on the breakpoint
-*   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
 
 &amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)&amp;lt;/div&amp;gt;
 
@@ -140,7 +141,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   Click the **Pause** ![](https://developer.chrome.com/devtools/images/pause-icon.png)button
 *   Move your mouse over this section
 *   You should stop in `onMouseOver` function
-*   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
 
 &amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)&amp;lt;/div&amp;gt;
 
@@ -162,7 +163,7 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 *   You should not stop in raiseAndCatchException function since exception is caught
 *   &amp;lt;button onclick="raiseException()"&amp;gt;Raise uncaught exception!&amp;lt;/button&amp;gt;
 *   You should stop in `raiseException` function
-*   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
 
 &amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/raise-exception.jpg)&amp;lt;/div&amp;gt;
 
@@ -190,12 +191,12 @@ The DevTools **console drawer** will allow you to experiment within the scope of
 ## Breakpoints on XHR[#](#breakpoints-on-xhr "Permalink")
 
 [This is used to mark data.txt as used.](javascript-debugging/data.txt) &lt;script&gt;function retrieveData() { var request = new XMLHttpRequest(); request.open('GET','javascript-debugging/data.txt', true); request.send(); }&lt;/script&gt;
-*   Click the **Add** ![](../images/plus.png)button on **XHR Breakpoints** sidebar pane on the right side of **Sources** panel
+*   Click the **Add** ![](https://developer.chrome.com/devtools/images/plus.png)button on **XHR Breakpoints** sidebar pane on the right side of **Sources** panel
 *   Type "data.txt" in text input and hit **enter**
 *   &amp;lt;button onclick="retrieveData()"&amp;gt;Retrieve data.txt by XHR&amp;lt;/button&amp;gt;
 *   You should stop on `send` function call
 *   Right-click on the newly created breakpoint and select **Remove Breakpoint** context menu item
-*   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行。
 
 &amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/request-send.jpg)&amp;lt;/div&amp;gt;
 
