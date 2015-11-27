@@ -174,29 +174,24 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/raise-exception.jpg)
 
-</div>
-
-<div class="collapsible">
-
 ## Breakpoints on DOM Mutation Events[#](#breakpoints-mutation-events "Permalink")
 
 <script>function appendChildButtonClicked() { var parentElement = document.getElementById("parent"); var childElement = document.createElement("div"); childElement.setAttribute("style", "border: 2px solid; padding: 5px; margin: 5px; text-align: center; width: 120px"); childElement.textContent = "Child Element"; parentElement.appendChild(childElement); }</script>
 
 *   Right click on the "Parent Element" below and select **Inspect Element** from context menu
-    &amp;<div id="parent" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 140px"&amp;>Parent Element&amp;</div&amp;>
+
+    <div id="parent" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 140px">Parent Element</div>
 
 *   Right click on the **Elements**' panel
-    &amp;<div id="parent" ...=""&amp;>element and select **Break on Subtree Modifications**&amp;</div&amp;>
 
-*   &amp;<button onclick="appendChildButtonClicked()"&amp;>Append child!&amp;</button&amp;>
+    <div id="parent" ...="">element and select **Break on Subtree Modifications**</div>
+
+*   <button onclick="appendChildButtonClicked()">Append child!</button>
 *   You should stop on `appendChild` function call
-*   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](javascript-debugging/append-child-element.jpg)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child-element.jpg)
 
-</div>
-
-<div class="collapsible">
 ## Breakpoints on XHR[#](#breakpoints-on-xhr "Permalink")
 
 [This is used to mark data.txt as used.](javascript-debugging/data.txt) <script>function retrieveData() { var request = new XMLHttpRequest(); request.open('GET','javascript-debugging/data.txt', true); request.send(); }</script>
