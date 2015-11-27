@@ -89,7 +89,7 @@
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/breakpoint-paused-app.png)
 
-要想恢复代码的执行，你可以点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键。
+要想恢复代码的执行，你可以点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键。
 
 当脚本暂停时，你可以用右侧栏目中的 **查看表达式(Watch Expressions)**， **调用栈(Call Stack)**，和 **查看变量(Scope Variables)** 三个面板来进行交互。
 
@@ -131,7 +131,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   在 **Sources** 面板下拉菜单中，从脚本中选择 "dynamicScript.js" ，并在line 2设置断点
 *   <button id="dynamicScriptFunctionButton" onclick="dynamicScriptFunction()" disabled="">Call function from dynamic script</button>
 *   你将会在断点处暂停
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)
 
@@ -141,10 +141,10 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 <script>document.addEventListener("mouseover", onMouseOver, true); function onMouseOver(event) { var target = event.target; return "onMouseOver: " + target; }</script>
 
-*   单击 **暂停(Pause)** ![](https://developer.chrome.com/devtools/images/pause-icon.png) 键
+*   单击 **暂停(Pause)** ![](https://developer.chrome.com/devtools/images/pause-icon.png) 按钮
 *   把鼠标移动到这里
 *   你会在函数 `onMouseOver` 处暂停
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)
 
@@ -152,11 +152,11 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 <script>function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } }</script>
 
-*   Click the **Pause on exceptions** ![](../images/pause-gray.png)button at the bottom of the window to switch to **Pause on exceptions** mode
+*   点击窗口底部的 **在异常暂停(Pause on exceptions)** ![](https://developer.chrome.com/devtools/images/pause-gray.png) 按钮button at the bottom of the window to switch to **Pause on exceptions** mode
 *   Check the **Pause On Caught Exceptions** checkbox
 *   <button onclick="raiseAndCatchException()">Raise exception!</button>
 *   You should stop in `raiseAndCatchException` function
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child.jpg)
 
@@ -205,7 +205,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   &amp;<button onclick="retrieveData()"&amp;>Retrieve data.txt by XHR&amp;</button&amp;>
 *   You should stop on `send` function call
 *   Right-click on the newly created breakpoint and select **Remove Breakpoint** context menu item
-*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 &amp;<div class="screenshot"&amp;>![](javascript-debugging/request-send.jpg)&amp;</div&amp;>
 
@@ -227,7 +227,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   &amp;<div id="hoverme" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 100px"&amp;>Hover me!&amp;</div&amp;>
 
 *   You should stop on `mouseout` event handler
-*   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
+*   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 按钮或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
 &amp;<div class="screenshot"&amp;>![](javascript-debugging/continue-to-resume.jpg)&amp;</div&amp;>
 
