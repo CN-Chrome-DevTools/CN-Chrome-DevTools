@@ -125,7 +125,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 ### Breakpoints in Dynamic JavaScript[#](#breakpoints-dynamic-javascript "Permalink")
 
-[This is used to mark dynamicScript.js as used.](javascript-debugging/dynamicScript.js) <script>function loadDynamicScript() { var request = new XMLHttpRequest(); request.open('GET','https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js', true); request.send(); request.onreadystatechange = function() { if (request.readyState != 4) return; eval(request.responseText); document.getElementById("dynamicScriptFunctionButton").disabled = false; document.getElementById("loadDynamicScriptButton").disabled = true; } }</script>
+[This is used to mark dynamicScript.js as used.](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js) <script>function loadDynamicScript() { var request = new XMLHttpRequest(); request.open('GET','https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js', true); request.send(); request.onreadystatechange = function() { if (request.readyState != 4) return; eval(request.responseText); document.getElementById("dynamicScriptFunctionButton").disabled = false; document.getElementById("loadDynamicScriptButton").disabled = true; } }</script>
 
 *   <button id="loadDynamicScriptButton" onclick="loadDynamicScript()">Load dynamic script</button>
 *   在 **Sources** 面板下拉菜单中，从脚本中选择 "dynamicScript.js" ，并在line 2设置断点
@@ -177,6 +177,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 </div>
 
 <div class="collapsible">
+
 ## Breakpoints on DOM Mutation Events[#](#breakpoints-mutation-events "Permalink")
 
 <script>function appendChildButtonClicked() { var parentElement = document.getElementById("parent"); var childElement = document.createElement("div"); childElement.setAttribute("style", "border: 2px solid; padding: 5px; margin: 5px; text-align: center; width: 120px"); childElement.textContent = "Child Element"; parentElement.appendChild(childElement); }</script>
