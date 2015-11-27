@@ -117,9 +117,9 @@ More information on blackboxing and how to use it can be found in the [Blackboxi
 
 #### Console drawer[#](#mini-console-panel "Permalink")
 
-The DevTools **console drawer** will allow you to experiment within the scope of where the debugger is currently paused. Hit the &amp;lt;span class="kbd"&amp;gt;Esc&amp;lt;/span&amp;gt; key to bring the console into view. The &amp;lt;span class="kbd"&amp;gt;Esc&amp;lt;/span&amp;gt; key also closes this drawer.
+DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停的状态下进行试验。按 `Esc` 键打开控制台。按 `Esc` 键也可以关闭抽屉。
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/console-scope-time-travel.gif)&amp;lt;/div&amp;gt;
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/console-scope-time-travel.gif)
 
 ### Breakpoints in Dynamic JavaScript[#](#breakpoints-dynamic-javascript "Permalink")
 
