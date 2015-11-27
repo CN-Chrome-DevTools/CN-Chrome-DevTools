@@ -117,13 +117,13 @@ You can use the Settings panel to blackbox scripts, 或 right-click in the sourc
 
 More information on blackboxing and how to use it can be found in the [Blackboxing JavaScript files](https://developer.chrome.com/devtools/docs/blackboxing).
 
-#### Console drawer[#](#mini-console-panel "Permalink")
+#### 控制台抽屉(Console drawer)[#](#mini-console-panel "Permalink")
 
 DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停的状态下进行试验。按 `Esc` 键打开控制台。按 `Esc` 键也可以关闭抽屉。
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/console-scope-time-travel.gif)
 
-### Breakpoints in Dynamic JavaScript[#](#breakpoints-dynamic-javascript "Permalink")
+### 动态 JavaScript 中的断点[#](#breakpoints-dynamic-javascript "Permalink")
 
 [This is used to mark dynamicScript.js as used.](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js) <script>function loadDynamicScript() { var request = new XMLHttpRequest(); request.open('GET','https://developer.chrome.com/devtools/docs/javascript-debugging/dynamicScript.js', true); request.send(); request.onreadystatechange = function() { if (request.readyState != 4) return; eval(request.responseText); document.getElementById("dynamicScriptFunctionButton").disabled = false; document.getElementById("loadDynamicScriptButton").disabled = true; } }</script>
 
@@ -135,9 +135,9 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)
 
-**注意：** 注意到在文件 dynamicScript.js 最后一行的 `"//# sourceURL=dynamicScript.js"` 。 This technique gives a name to a script created with eval, and will be discussed in more detail in the [Source Maps](#source-maps) section. Breakpoints can be set in dynamic JavaScript only if it has a user supplied name.
+**注意：** 注意到在文件 dynamicScript.js 最后一行的 `"//# sourceURL=dynamicScript.js"` 。 This technique gives a name to a script created with eval, 我们将在 [Source Maps](#source-maps) 章节仔细的讨论此问题。在动态 JavaScript 中，只有在用户提供了名称后，断点才可以被设定。
 
-### Pause on Next JavaScript Statement[#](#pause-on-next-statement "Permalink")
+### 在下一个 JavaScript 声明(Statement)处暂停[#](#pause-on-next-statement "Permalink")
 
 <script>document.addEventListener("mouseover", onMouseOver, true); function onMouseOver(event) { var target = event.target; return "onMouseOver: " + target; }</script>
 
@@ -148,7 +148,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)
 
-### Pause on Exceptions[#](#pause-on exceptions "Permalink")
+### 在异常(Exceptions)处暂停[#](#pause-on exceptions "Permalink")
 
 <script>function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } }</script>
 
