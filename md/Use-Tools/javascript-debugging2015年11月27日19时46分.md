@@ -135,7 +135,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 
 ![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)
 
-**Note:** Notice the `"//# sourceURL=dynamicScript.js"` line at the end of dynamicScript.js file. This technique gives a name to a script created with eval, and will be discussed in more detail in the [Source Maps](#source-maps) section. Breakpoints can be set in dynamic JavaScript only if it has a user supplied name.
+**注意：** 注意到在文件 dynamicScript.js 最后一行的 `"//# sourceURL=dynamicScript.js"` 。 This technique gives a name to a script created with eval, and will be discussed in more detail in the [Source Maps](#source-maps) section. Breakpoints can be set in dynamic JavaScript only if it has a user supplied name.
 
 ### Pause on Next JavaScript Statement[#](#pause-on-next-statement "Permalink")
 
@@ -172,7 +172,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   You should stop in `raiseException` function
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/raise-exception.jpg)&amp;</div&amp;>
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/raise-exception.jpg)
 
 </div>
 
