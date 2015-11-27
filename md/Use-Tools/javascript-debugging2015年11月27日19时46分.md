@@ -232,14 +232,14 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 &amp;<div class="screenshot"&amp;>![](javascript-debugging/continue-to-resume.jpg)&amp;
 
 
-> **Note: Following events are supported**  
-> **Keyboard:** keydown, keypress, keyup, textInput  
-> **Mouse:** click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout, mousewheel  
-> **Control:** resize, scroll, zoom, focus, blur, select, change, submit, reset  
-> **Clipboard:** copy, cut, paste, beforecopy, beforecut, beforepaste  
-> **Load:** load, unload, abort, error  
-> **DOM Mutation:** DOMActivate, DOMFocusIn, DOMFocusOut, DOMAttrModified, DOMCharacterDataModified, DOMNodeInserted, DOMNodeInsertedIntoDocument, DOMNodeRemoved, DOMNodeRemovedFromDocument, DOMSubtreeModified, DOMContentLoaded  
-> **Device:** deviceorientation, devicemotion
+> **注意：支持以下事件**  
+> **键盘:** 按下(keydown)， 按键(keypress)， 松开(keyup)， 输入文字(textInput)  
+> **鼠标:** 单击(click)， 双击(dblclick)， 按下(mousedown)， 松开(mouseup)， 悬停(mouseover)， 移动(mousemove)， 移开(mouseout)， 滚轮(mousewheel)  
+> **控制(Control):** 调整大小(resize)， 滚动(scroll)， 缩放(zoom， 焦点(focus， 失焦(blur， 选择(select)， 改变(change)， 提交(submit)， 重置(reset)  
+> **剪贴板(Clipboard):** 复制copy， 剪切(cut)， 粘贴(paste)， 复制前(beforecopy)， 剪切前(beforecut)， 粘贴前(beforepaste)  
+> **载入(Load):** 载入(load)， 卸载(unload)， 中止(abort)， 错误(error)  
+> **DOM 变动(DOM Mutation):** 激活(DOMActivate)， 焦点(DOMFocusIn)， 失焦(DOMFocusOut)， 属性修改(DOMAttrModified)， 字符数据修改(DOMCharacterDataModified)， 插入结点(DOMNodeInserted)， 插入结点至文档(DOMNodeInsertedIntoDocument)， 移除结点(DOMNodeRemoved)， 移除结点于文档(DOMNodeRemovedFromDocument)， 子树修改(DOMSubtreeModified， 上下文加载(DOMContentLoaded)  
+> **设备(Device):** 方向(deviceorientation)， 运动(devicemotion)
 
 </div>
 
