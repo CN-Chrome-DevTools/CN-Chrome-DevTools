@@ -154,18 +154,20 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   Click the **Pause on exceptions** ![](../images/pause-gray.png)button at the bottom of the window to switch to **Pause on exceptions** mode
 *   Check the **Pause On Caught Exceptions** checkbox
 *   <button onclick="raiseAndCatchException()">Raise exception!</button>
-*   You should stop in <span class="source-code">raiseAndCatchException</span> function
+*   You should stop in `raiseAndCatchException` function
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child.jpg)&amp;</div&amp;> 
+![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child.jpg)
 
 ### Pause on Uncaught Exceptions[#](#pause-on-uncaught-exceptions "Permalink")
 
 <script>function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } } function raiseException() { throw 0; }</script>
-*   Click the **Pause on exceptions** ![](https://developer.chrome.com/devtools/images/pause-blue.png)button again to switch to **Pause on uncaught exceptions** mode
-*   &amp;<button onclick="raiseAndCatchException()"&amp;>Raise exception!&amp;</button&amp;>
+
+*   Click the **Pause on exceptions** ![](../images/pause-blue.png)button
+*   Disable the **Pause On Caught Exceptions** checkbox
+*   <button onclick="raiseAndCatchException()">Raise exception!</button>
 *   You should not stop in raiseAndCatchException function since exception is caught
-*   &amp;<button onclick="raiseException()"&amp;>Raise uncaught exception!&amp;</button&amp;>
+*   <button onclick="raiseException()">Raise uncaught exception!</button>
 *   You should stop in `raiseException` function
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
@@ -177,6 +179,7 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 ## Breakpoints on DOM Mutation Events[#](#breakpoints-mutation-events "Permalink")
 
 <script>function appendChildButtonClicked() { var parentElement = document.getElementById("parent"); var childElement = document.createElement("div"); childElement.setAttribute("style", "border: 2px solid; padding: 5px; margin: 5px; text-align: center; width: 120px"); childElement.textContent = "Child Element"; parentElement.appendChild(childElement); }</script>
+
 *   Right click on the "Parent Element" below and select **Inspect Element** from context menu
     &amp;<div id="parent" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 140px"&amp;>Parent Element&amp;</div&amp;>
 
