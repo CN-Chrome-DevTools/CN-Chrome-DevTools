@@ -2,9 +2,9 @@
 
 随着JavaScript项目 **复杂性(complexity)** 的增加，开发者需要强大的调试工具，以帮助快速发现 bug 的原因，并有效地解决它。在 Chrome DevTools 中包含了许多有用的工具，以减轻开发者 **调试(debugging)** JavaScript 的痛苦。
 
-在这一章节，我们将学习如何使用这些工具，来调试此页面上[Google Closure hovercard demo](https://rawgit.com/google/closure-library/master/closure/goog/demos/hovercard.html)和其他例子。
+在这一章节，我们将学习如何使用这些工具，来调试此页面上 [Google Closure hovercard demo](https://rawgit.com/google/closure-library/master/closure/goog/demos/hovercard.html) 和其他例子。
 
-> **注意：** 如果你是一个Web开发人员，并希望得到DevTools的最新版本，您应该使用[Chrome Canary](https://tools.google.com/dlpage/chromesxs)。
+> **注意：** 如果你是一个Web开发人员，并希望得到DevTools的最新版本，您应该使用 [Chrome Canary](https://tools.google.com/dlpage/chromesxs) 。
 
 ## Sources面板[#](#sources-panel "Permalink")
 
@@ -97,11 +97,11 @@
 
 The **Call Stack** 面板 displays the complete execution path that led to the point where code was paused, giving us insights into the code flaws that caused the error.
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/callstack-region.png)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/callstack-region.png)&amp;</div&amp;>
 
 To view the execution path including asynchronous JavaScript callbacks such as timer and XHR events, check the **Async** checkbox.
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/enable-async-toggle.png)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/enable-async-toggle.png)&amp;</div&amp;>
 
 Further information and examples using async call stacks can be found in [Debugging Asynchronous JavaScript with Chrome DevTools](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/) on HTML5Rocks.com.
 
@@ -109,11 +109,11 @@ Further information and examples using async call stacks can be found in [Debugg
 
 When you blackbox a JavaScript source file, you will not jump into that file when stepping through code you're debugging. You are able to debug just the code you are interested in.
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-expanded.png)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-expanded.png)&amp;</div&amp;>
 
 You can use the Settings panel to blackbox scripts, 或 right-click in the sources panel on a file and choose Blackbox Script from the context menu.
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-dialog.png)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/blackboxing-files/blackboxing-dialog.png)&amp;</div&amp;>
 
 More information on blackboxing and how to use it can be found in the [Blackboxing JavaScript files](https://developer.chrome.com/devtools/docs/blackboxing).
 
@@ -133,96 +133,96 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
 *   你将会在断点处暂停
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/dynamic-script.jpg)&amp;</div&amp;>
 
 **Note:** Notice the `"//# sourceURL=dynamicScript.js"` line at the end of dynamicScript.js file. This technique gives a name to a script created with eval, and will be discussed in more detail in the [Source Maps](#source-maps) section. Breakpoints can be set in dynamic JavaScript only if it has a user supplied name.
 
 ### Pause on Next JavaScript Statement[#](#pause-on-next-statement "Permalink")
 
-&lt;script&gt;document.addEventListener("mouseover", onMouseOver, true); function onMouseOver(event) { var target = event.target; return "onMouseOver: " + target; }&lt;/script&gt;
+<script>document.addEventListener("mouseover", onMouseOver, true); function onMouseOver(event) { var target = event.target; return "onMouseOver: " + target; }</script>
 *   Click the **Pause** ![](https://developer.chrome.com/devtools/images/pause-icon.png)button
 *   Move your mouse over this section
 *   You should stop in `onMouseOver` function
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/continue-to-resume.jpg)&amp;</div&amp;>
 
 ### Pause on Exceptions[#](#pause-on exceptions "Permalink")
 
-&lt;script&gt;function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } }&lt;/script&gt;
+<script>function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } }</script>
 *   Click the **Pause on exceptions** ![](https://developer.chrome.com/devtools/images/pause-gray.png)button at the bottom of the window to switch to **Pause on all exceptions** mode
-*   &amp;lt;button onclick="raiseAndCatchException()"&amp;gt;Raise exception!&amp;lt;/button&amp;gt;
-*   You should stop in &amp;lt;span class="source-code"&amp;gt;raiseAndCatchException&amp;lt;/span&amp;gt; function
+*   &amp;<button onclick="raiseAndCatchException()"&amp;>Raise exception!&amp;</button&amp;>
+*   You should stop in &amp;<span class="source-code"&amp;>raiseAndCatchException&amp;</span&amp;> function
 *   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/append-child.jpg)&amp;</div&amp;>
 
 ### Pause on Uncaught Exceptions[#](#pause-on-uncaught-exceptions "Permalink")
 
-&lt;script&gt;function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } } function raiseException() { throw 0; }&lt;/script&gt;
+<script>function raiseAndCatchException() { var element = document.createElement("div"); try { document.body.appendChild(elemetn); } catch(e) { console.log(e); } } function raiseException() { throw 0; }</script>
 *   Click the **Pause on exceptions** ![](https://developer.chrome.com/devtools/images/pause-blue.png)button again to switch to **Pause on uncaught exceptions** mode
-*   &amp;lt;button onclick="raiseAndCatchException()"&amp;gt;Raise exception!&amp;lt;/button&amp;gt;
+*   &amp;<button onclick="raiseAndCatchException()"&amp;>Raise exception!&amp;</button&amp;>
 *   You should not stop in raiseAndCatchException function since exception is caught
-*   &amp;lt;button onclick="raiseException()"&amp;gt;Raise uncaught exception!&amp;lt;/button&amp;gt;
+*   &amp;<button onclick="raiseException()"&amp;>Raise uncaught exception!&amp;</button&amp;>
 *   You should stop in `raiseException` function
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;lt;div class="screenshot"&amp;gt;![](https://developer.chrome.com/devtools/docs/javascript-debugging/raise-exception.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](https://developer.chrome.com/devtools/docs/javascript-debugging/raise-exception.jpg)&amp;</div&amp;>
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Breakpoints on DOM Mutation Events[#](#breakpoints-mutation-events "Permalink")
 
-&lt;script&gt;function appendChildButtonClicked() { var parentElement = document.getElementById("parent"); var childElement = document.createElement("div"); childElement.setAttribute("style", "border: 2px solid; padding: 5px; margin: 5px; text-align: center; width: 120px"); childElement.textContent = "Child Element"; parentElement.appendChild(childElement); }&lt;/script&gt;
+<script>function appendChildButtonClicked() { var parentElement = document.getElementById("parent"); var childElement = document.createElement("div"); childElement.setAttribute("style", "border: 2px solid; padding: 5px; margin: 5px; text-align: center; width: 120px"); childElement.textContent = "Child Element"; parentElement.appendChild(childElement); }</script>
 *   Right click on the "Parent Element" below and select **Inspect Element** from context menu
-    &amp;lt;div id="parent" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 140px"&amp;gt;Parent Element&amp;lt;/div&amp;gt;
+    &amp;<div id="parent" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 140px"&amp;>Parent Element&amp;</div&amp;>
 
 *   Right click on the **Elements**' panel
-    &amp;lt;div id="parent" ...=""&amp;gt;element and select **Break on Subtree Modifications**&amp;lt;/div&amp;gt;
+    &amp;<div id="parent" ...=""&amp;>element and select **Break on Subtree Modifications**&amp;</div&amp;>
 
-*   &amp;lt;button onclick="appendChildButtonClicked()"&amp;gt;Append child!&amp;lt;/button&amp;gt;
+*   &amp;<button onclick="appendChildButtonClicked()"&amp;>Append child!&amp;</button&amp;>
 *   You should stop on `appendChild` function call
 *   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/append-child-element.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/append-child-element.jpg)&amp;</div&amp;>
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Breakpoints on XHR[#](#breakpoints-on-xhr "Permalink")
 
-[This is used to mark data.txt as used.](javascript-debugging/data.txt) &lt;script&gt;function retrieveData() { var request = new XMLHttpRequest(); request.open('GET','javascript-debugging/data.txt', true); request.send(); }&lt;/script&gt;
+[This is used to mark data.txt as used.](javascript-debugging/data.txt) <script>function retrieveData() { var request = new XMLHttpRequest(); request.open('GET','javascript-debugging/data.txt', true); request.send(); }</script>
 *   Click the **Add** ![](https://developer.chrome.com/devtools/images/plus.png) button on **XHR Breakpoints** sidebar pane on the right side of **Sources** panel
 *   Type "data.txt" in text input and hit **enter**
-*   &amp;lt;button onclick="retrieveData()"&amp;gt;Retrieve data.txt by XHR&amp;lt;/button&amp;gt;
+*   &amp;<button onclick="retrieveData()"&amp;>Retrieve data.txt by XHR&amp;</button&amp;>
 *   You should stop on `send` function call
 *   Right-click on the newly created breakpoint and select **Remove Breakpoint** context menu item
 *   点击 **继续(Continue)** ![](https://developer.chrome.com/devtools/images/continue.jpg) 键或在 DevTools 窗口按下 `F8` 快捷键，恢复代码的执行
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/request-send.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/request-send.jpg)&amp;</div&amp;>
 
 **Note:** To edit URL filter, double click on the XHR breakpoint entry in **XHR Breakpoints** sidebar pane. XHR breakpoint with empty URL filter will match any XHR.
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Breakpoints on JavaScript Event Listeners[#](#breakpoints-on-javascript-event-listeners "Permalink")
 
-&lt;script&gt;window.addEventListener("load", onLoad, true); function onLoad() { var hovermeElement = document.getElementById("hoverme"); hovermeElement.addEventListener("mouseover", hovermeMouseOver, true); hovermeElement.addEventListener("mouseout", hovermeMouseOut, true); } function hovermeMouseOver(event) { event.target.style.backgroundColor = "grey"; } function hovermeMouseOut(event) { event.target.style.backgroundColor = "white"; }&lt;/script&gt;
+<script>window.addEventListener("load", onLoad, true); function onLoad() { var hovermeElement = document.getElementById("hoverme"); hovermeElement.addEventListener("mouseover", hovermeMouseOver, true); hovermeElement.addEventListener("mouseout", hovermeMouseOut, true); } function hovermeMouseOver(event) { event.target.style.backgroundColor = "grey"; } function hovermeMouseOut(event) { event.target.style.backgroundColor = "white"; }</script>
 *   Expand **Event Listener Breakpoints** sidebar pane on the right side of **Scripts** panel
 *   Expand **Mouse** entry
 *   Set a mouseout Event Listener breakpoint by clicking on the checkbox near the **mouseout** entry
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/resumed.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/resumed.jpg)&amp;</div&amp;>
 
 *   Move your mouse across the box below:
-*   &amp;lt;div id="hoverme" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 100px"&amp;gt;Hover me!&amp;lt;/div&amp;gt;
+*   &amp;<div id="hoverme" style="border: solid 2px; padding: 5px; margin: 5px; text-align: center; width: 100px"&amp;>Hover me!&amp;</div&amp;>
 
 *   You should stop on `mouseout` event handler
 *   Click the **Continue** ![](https://developer.chrome.com/devtools/images/continue.jpg)button 或 hit **F8** in DevTools window to resume
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/continue-to-resume.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/continue-to-resume.jpg)&amp;</div&amp;>
 
 **Note: Following events are supported** &amp;nbsp;&amp;nbsp;**Keyboard:** keydown, keypress, keyup, textInput  
  &amp;nbsp;&amp;nbsp;**Mouse:** click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout, mousewheel  
@@ -232,9 +232,9 @@ DevTools **控制台抽屉（console drawer）** 可以让你在目前已暂停�
  &amp;nbsp;&amp;nbsp;**DOM Mutation:** DOMActivate, DOMFocusIn, DOMFocusOut, DOMAttrModified, DOMCharacterDataModified, DOMNodeInserted, DOMNodeInsertedIntoDocument, DOMNodeRemoved, DOMNodeRemovedFromDocument, DOMSubtreeModified, DOMContentLoaded  
  &amp;nbsp;&amp;nbsp;**Device:** deviceorientation, devicemotion
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## The Long Resume[#](#long-resume "Permalink")
 
 暂停时，单击并按住恢复键，在恢复的同时避免 500 ms 内的所有暂停。这使半秒内的所有断点无效。使用这个功能来得到下一个事件循环，例如你可以通过这个功能避免在退出循环时不停的命中断点。
@@ -250,7 +250,7 @@ In **Authoring And Workflow**, we discussed how to make changes to scripts in th
 *   Navigate to the Google Closure hovercard demo
 *   In the Sources panel, open up "mouse.js" and use the Ctrl/Cmd + Shift + O to navigate to the onMouseOut() function
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/houseMouseOut.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/houseMouseOut.jpg)&amp;</div&amp;>
 
 *   Click the **pause** button to pause debugging
 *   Modify the function, adding a console.log('Moused out') to the end
@@ -258,13 +258,13 @@ In **Authoring And Workflow**, we discussed how to make changes to scripts in th
 *   Click the **pause/resume** button to resume execution
 *   When you now hover out, the new message will be logged to the console
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/pause-resume-mouseout.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/pause-resume-mouseout.jpg)&amp;</div&amp;>
 
 This allows you to saved changes from within the DevTools without having to leave your browser.
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Exceptions[#](#exceptions "Permalink")
 
 Let's now look at how to deal with exceptions and stack traces using Chrome DevTools.  
@@ -272,30 +272,30 @@ Let's now look at how to deal with exceptions and stack traces using Chrome DevT
 
 **Note:** If you are a Web Developer and want to get the latest version of DevTools, you should use [Chrome Canary](https://tools.google.com/dlpage/chromesxs).
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Tracking exceptions[#](#tracking-exceptions "Permalink")
 
 When something goes wrong, you can open the DevTools console (Ctrl+Shift+J / Cmd+Option+J) and find a number of JavaScript error messages there. Each message has a link to the file name with the line number you can navigate to.
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/tracking-exceptions.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/tracking-exceptions.jpg)&amp;</div&amp;>
 
 ### Viewing exception stack trace[#](#viewing-exception-stack-trace "Permalink")
 
 There might be several execution paths that lead to the error and it's not always obvious which one of them has happened. **Once DevTools window is opened**, exceptions in the console are accompanied with the **complete JavaScript call stacks**. You can expand these console messages to see the stack frames and navigate to the corresponding locations in the code:
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/exception-stack-trace.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/exception-stack-trace.jpg)&amp;</div&amp;>
 
 ### Pause on JavaScript exceptions[#](#pause-on-exceptions "Permalink")
 
 You may also want to pause JavaScript execution next time exception is thrown and inspect its call stack, scope variables and state of your app. A tri-state stop button ( ![](../images/pause-gray.png)) at the bottom of the Scripts panel enables you to switch between different exception handling modes: you can choose to either pause on all exception 或 only on the uncaught ones 或 you can ignore exceptions altogether.
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/pause-execution.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/pause-execution.jpg)&amp;</div&amp;>
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Printing stack traces[#](#printing-stack-traces "Permalink")
 
 Printing log messages to the DevTools console may be very helpful in understanding how your application behaves. You can make the log entries even more informative by including associated stack traces. There are several ways of doing that.
@@ -304,45 +304,45 @@ Printing log messages to the DevTools console may be very helpful in understandi
 
 Each Error object has a string property named stack that contains the stack trace:
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/error-stack.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/error-stack.jpg)&amp;</div&amp;>
 
 ### console.trace()[#](#console-trace "Permalink")
 
 You can instrument your code with console.trace() calls that would print current JavaScript call stacks:
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/console-trace.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/console-trace.jpg)&amp;</div&amp;>
 
 ### console.assert()[#](#console-assert "Permalink")
 
 There is also a way to place assertion in your JavaScript code. Just call console.assert() with the error condition as the first parameter. Whenever this expression evaluates to false you will see a corresponding console record:
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/console-assert.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/console-assert.jpg)&amp;</div&amp;>
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Handling exceptions at runtime using window.onerror[#](#handling-exceptions-runtime "Permalink")
 
 Chrome supports setting a handler function to window.onerror. Whenever a JavaScript exception is thrown in the window context and is not caught by any try/catch block, the function will be invoked with the exception's message, the URL of the file where the exception was thrown and the line number in that file passed as three arguments in that order. You may find it convenient to set an error handler that would collect information about uncaught exceptions and report it back to your server.
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/window-onerror.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/window-onerror.jpg)&amp;</div&amp;>
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Pretty Print[#](#pretty-print "Permalink")
 
 If you have trouble trying to read and debug minified JavaScript in the DevTools, a pretty printing option is available to make life easier. Here is how a minified script displayed in the tools might look prior to being displayed in the DevTools:
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/pretty-print-off.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/pretty-print-off.jpg)&amp;</div&amp;>
 
 And by clicking on the curly brace ![](../images/prettyprint-icon.png)("Pretty Print") icon in the bottom left corner, the JavaScript is transformed into a more human readable form. This is also more easy for debugging and setting breakpoints.
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/pretty-print-on.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/pretty-print-on.jpg)&amp;</div&amp;>
 
-&lt;/div&gt;
+</div>
 
-&lt;div class="collapsible"&gt;
+<div class="collapsible">
 ## Source Maps[#](#source-maps "Permalink")
 
 Have you ever found yourself wishing you could keep your client-side code readable and more importantly debuggable even after you've combined and minified it? Well now you can through the magic of [source maps](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit?hl=en_US&amp;amp;pli=1&amp;amp;pli=1).
@@ -351,13 +351,13 @@ A source map is a JSON-based mapping format that creates a relationship between 
 
 Here's an example of a simple source map:
 
-&amp;lt;pre class="prettyprint"&amp;gt;&amp;lt;span class="pun"&amp;gt;{&amp;lt;/span&amp;gt;&amp;lt;span class="pln"&amp;gt;
-    version &amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class="lit"&amp;gt;3&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class="pln"&amp;gt;
-    file&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"out.min.js"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class="pln"&amp;gt;
-    sourceRoot &amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;""&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class="pln"&amp;gt;
-    sources&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"foo.js"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"bar.js"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;],&amp;lt;/span&amp;gt;&amp;lt;span class="pln"&amp;gt;
-    names&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"src"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"maps"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"are"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"fun"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;],&amp;lt;/span&amp;gt;&amp;lt;span class="pln"&amp;gt;
-    mappings&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class="str"&amp;gt;"AAgBC,SAAQ,CAAEA"&amp;lt;/span&amp;gt;&amp;lt;span class="pun"&amp;gt;}&amp;lt;/span&amp;gt;&amp;lt;/pre&amp;gt;
+&amp;<pre class="prettyprint"&amp;>&amp;<span class="pun"&amp;>{&amp;</span&amp;>&amp;<span class="pln"&amp;>
+    version &amp;</span&amp;>&amp;<span class="pun"&amp;>:&amp;</span&amp;>&amp;<span class="lit"&amp;>3&amp;</span&amp;>&amp;<span class="pun"&amp;>,&amp;</span&amp;>&amp;<span class="pln"&amp;>
+    file&amp;</span&amp;>&amp;<span class="pun"&amp;>:&amp;</span&amp;>&amp;<span class="str"&amp;>"out.min.js"&amp;</span&amp;>&amp;<span class="pun"&amp;>,&amp;</span&amp;>&amp;<span class="pln"&amp;>
+    sourceRoot &amp;</span&amp;>&amp;<span class="pun"&amp;>:&amp;</span&amp;>&amp;<span class="str"&amp;>""&amp;</span&amp;>&amp;<span class="pun"&amp;>,&amp;</span&amp;>&amp;<span class="pln"&amp;>
+    sources&amp;</span&amp;>&amp;<span class="pun"&amp;>:&amp;</span&amp;>&amp;<span class="pun"&amp;>[&amp;</span&amp;>&amp;<span class="str"&amp;>"foo.js"&amp;</span&amp;>&amp;<span class="pun"&amp;>,&amp;</span&amp;>&amp;<span class="str"&amp;>"bar.js"&amp;</span&amp;>&amp;<span class="pun"&amp;>],&amp;</span&amp;>&amp;<span class="pln"&amp;>
+    names&amp;</span&amp;>&amp;<span class="pun"&amp;>:&amp;</span&amp;>&amp;<span class="pun"&amp;>[&amp;</span&amp;>&amp;<span class="str"&amp;>"src"&amp;</span&amp;>&amp;<span class="pun"&amp;>,&amp;</span&amp;>&amp;<span class="str"&amp;>"maps"&amp;</span&amp;>&amp;<span class="pun"&amp;>,&amp;</span&amp;>&amp;<span class="str"&amp;>"are"&amp;</span&amp;>&amp;<span class="pun"&amp;>,&amp;</span&amp;>&amp;<span class="str"&amp;>"fun"&amp;</span&amp;>&amp;<span class="pun"&amp;>],&amp;</span&amp;>&amp;<span class="pln"&amp;>
+    mappings&amp;</span&amp;>&amp;<span class="pun"&amp;>:&amp;</span&amp;>&amp;<span class="str"&amp;>"AAgBC,SAAQ,CAAEA"&amp;</span&amp;>&amp;<span class="pun"&amp;>}&amp;</span&amp;>&amp;</pre&amp;>
 
 The idea is that when you build for production, along with minifying and combining your JavaScript files, you generate a source map that holds information about your original files. The source map causes DevTools to load your original files in addition to your minified ones. You then use the originals to set breakpoints and step through code. Meanwhile, Chrome is actually running your minified code. This gives you the illusion of running a development site in production.
 
@@ -371,7 +371,7 @@ You need to use a minifier that's capable of creating source maps. Closure Compi
 
 Sourcemaps are enabled by default (as of Chrome 39), but if you'd like to double-check 或 enable them, first open DevTools and click the settings cog ![gear](../images/gear.png). Under **Sources**, check **Enable JavaScript source maps**. You might also check **Enable CSS source maps** but you do not need to for this example.
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/source-maps.png)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/source-maps.png)&amp;</div&amp;>
 
 **Make the Source Map Accessible**
 
@@ -408,7 +408,7 @@ This helper looks very similar to the `//# sourceMappingURL` property and is act
 *   An alert will appear with the evaluated sum from the CoffeeScript source
 *   If you expand the _Sources_ sub-panel you will now see a new file with the custom filename you entered earlier. If you double-click to view this file it will contain the compiled JavaScript for our original source. On the last line however will be a `// @sourceURL` comment indicating what the original source file was. This can greatly help with debugging when working with language abstractions.
 
-&amp;lt;div class="screenshot"&amp;gt;![](javascript-debugging/coffeescript.jpg)&amp;lt;/div&amp;gt;
+&amp;<div class="screenshot"&amp;>![](javascript-debugging/coffeescript.jpg)&amp;</div&amp;>
 
 #### 了解更多[#](#read-more "Permalink")
 
