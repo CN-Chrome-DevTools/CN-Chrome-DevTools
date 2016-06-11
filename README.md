@@ -61,7 +61,7 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 ## 项目翻译目录
 
 * Learn Basics
-	* [Overview](https://developer.chrome.com/devtools/index)
+	* ~~[Overview](https://developer.chrome.com/devtools/index)~~
 	* ~~[Development Workflow](https://developer.chrome.com/devtools/docs/authoring-development-workflow)~~
 	* ~~[Using the Console](https://developer.chrome.com/devtools/docs/console)~~
 	* [Tips & Tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks)
