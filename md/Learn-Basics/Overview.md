@@ -88,8 +88,6 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 ##提升渲染性能
 
-##提升渲染性能
-
 **时间线**面板为你展示一个完整概览，告诉你当网页或应用进行加载并被使用的过程中时间都是怎么消耗的。从加载资源文件到解析JavaScript、计算样式、重绘，所有时间都展示在时间线面板。
 
 ![](https://developer.chrome.com/devtools/devtools/images/timeline-panel.png)
