@@ -83,7 +83,7 @@
 
 在开发者工具开启状态下，你可以仅仅通过“?”来打开通用设置，然后你可以找到快捷键面板来通览所有[支持的快捷键](https://developer.chrome.com/devtools/docs/shortcuts.html)。
 
-[](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_14.png)
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_14.png)
 
 ####在控制台中访问元素
 
