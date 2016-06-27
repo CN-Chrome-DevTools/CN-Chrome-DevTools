@@ -96,4 +96,32 @@
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_16.png)
 
 ####使用XPath表达式查询DOM
-(还没翻译完，待续……)
+
+xPath是一种查询语言，它被用来从文档中选择节点并返回一个节点集合、字符串、布尔值或数字。你可以在调试工具的JavaScript控制台中使用xPath表达式来查询DOM。
+
+$x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元素的例子：
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_17.png)
+
+这个函数还接收第二个可选的参数，该参数指定xpath的上下文。$x(xpath, context)。这可以允许我们在一个特定上下文(比如一个iframe)内运行XPath进行元素选择。
+
+    var frame = document.getElementsByTagName('iframe')[0].contentWindow.document.body;
+    $x('//'img, frame);
+
+这是一个在特定的上下文中查询图片元素的例子。
+
+####访问最近的控制台结果
+
+使用$_可以帮你快速查看最近一次控制台结果。我们使用另一个xpath示例来演示一下:
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_17a.png)
+
+####使用console.dir
+
+[console.dir(object)](https://developer.chrome.com/devtools/docs/console-api.md#consoledirobject)命令将以可展开的JavaScript对象的形式罗列出给定的对象的所有属性。下面是一个展示可展开的对象的例子，该对象代表document.body所有的属性。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_18.png)
+
+####在特定的iframe中运行JS控制台
+
+(尚未翻译完，待续……)
