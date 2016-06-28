@@ -173,11 +173,11 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_1.png)
 
-该记录按钮将从灰色变为红色，时间轴开始为你的网页捕获时间轴。在你的应用中完成几个动作然后几秒种后重新点击该按钮来停止记录。
+该记录按钮将从灰色变为红色，时间轴开始为你的网页捕获时间轴。在你的应用中做几个操作然后几秒种后重新点击该按钮来停止记录。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_2.png)
 
-框模式助你深入了解你的应用中生成单个框时谷歌浏览器做必须要做的工作。这个模式下，纵条相当于重新计算样式，混合等等。每个纵条的透明部分相当于空闲时间(至少就你的页面而言是空闲的)。
+框模式助你深入了解你的应用中生成单个框时谷歌浏览器所必须要做的工作。这个模式下，纵条相当于重新计算样式，混合等等。每个纵条的透明部分相当于空闲时间(至少就你的页面而言是空闲的)。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_3.png)
 
