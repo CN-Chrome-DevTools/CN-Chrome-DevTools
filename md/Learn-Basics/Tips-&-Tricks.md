@@ -165,6 +165,22 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 ####使用时间轴框模式进行框性能分析
 
+当加载web应用时，时间轴面板告诉你时间花在什么地方。例如，处理DOM事件用了多久，渲染页面布局用了多久，绘制元素到屏幕用了多久等。它允许你从三个不同方面深入探究为什么你的应用会慢: 事件、框架和实际内存占用。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_0.png)
+
+默认状态时间轴不展示任何数据，你可以通过打开你的应用并点击时间轴面板底部的小圆点![](https://developer.chrome.com/devtools/images/recording-off.png)来开始记录。使用*Ctrl + E *或者*Cmd + E*也可以触发记录。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_1.png)
+
+该记录按钮将从灰色变为红色，时间轴开始为你的网页捕获时间轴。在你的应用中完成几个动作然后几秒种后重新点击该按钮来停止记录。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_2.png)
+
+框模式助你深入了解你的应用中生成单个框时谷歌浏览器做必须要做的工作。这个模式下，纵条相当于重新计算样式，混合等等。每个纵条的透明部分相当于空闲时间(至少就你的页面而言是空闲的)。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_3.png)
 
 
+For example, say your first frame takes 15ms to execute and the next takes 30ms.（留作标记，下次翻译时好在原文找位置）
 (尚未翻译完，待续……)
