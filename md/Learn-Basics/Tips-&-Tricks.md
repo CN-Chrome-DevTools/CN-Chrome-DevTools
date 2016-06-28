@@ -124,4 +124,18 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 ####在特定的iframe中运行JS控制台
 
+开发者工具底部的工具条是随当前标签的上下文变化的下拉选项。当你处于控制台面板时，会有一个下拉选项，该下拉允许你选择控制台将要运行于其中的frame上下文。在下拉中选择你的frame既可以立即切换到你想要的上下文中了。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_19.png)
+
+####打开新页面时保留控制台信息
+
+有时你想要在打开新页面时保留你的控制台历史打印信息。在控制台中点击鼠标右键然后选择“Preserve Log upon Navigation(即保留历史信息)”，就可以启用此功能了。当你打开另一个页面时，控制台历史信息将不会被清掉。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_20.png)
+
+####使用*console.time()*和*console.timeEnd()*进行闭环基准测试
+
+[console.time()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimelabel)使用特殊标记开启一个新的计时器。当使用同一标记的[console.timeEnd()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimeendlabel)被调用时，开始时间和结束时间之间的信息将被打印到控制台。这在进行闭环基准测试或没有函数调用的代码段而言尤其有用。
+
 (尚未翻译完，待续……)
