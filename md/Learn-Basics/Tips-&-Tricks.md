@@ -138,4 +138,33 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 [console.time()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimelabel)使用特殊标记开启一个新的计时器。当使用同一标记的[console.timeEnd()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimeendlabel)被调用时，开始时间和结束时间之间的信息将被打印到控制台。这在进行闭环基准测试或没有函数调用的代码段而言尤其有用。
 
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_21.png)
+
+####使用*console.profile()*和*console.profileEnd()*进行性能分析
+
+开发者工具打开状态下，使用[console.profile()](https://developer.chrome.com/devtools/docs/console-api.md#consoleprofilelabel)开始JavaScript CPU性能分析。可以像下面console.profile("Processing")这样为性能分析传一个可选的标记。使用onsole.profileEnd()来结束性能分析。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_22.png)
+
+每一个性能分析都被添加到[性能分析](https://developer.chrome.com/devtools/docs/profiles.html)面板:
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_23.png)
+
+该性能分析也会被添加到console.profiles数组，过后用来查看。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_24.png)
+
+更多关键的使用控制台的小技巧请参阅[使用控制台](https://developer.chrome.com/devtools/docs/console.md)
+
+- 一个通过[控制台API](https://developer.chrome.com/devtools/docs/console-api.md)提供的方法(例如console.log(), console.profile())打印调试信息的地方。
+- [命令行API](https://developer.chrome.com/devtools/docs/commandline-api.md)提供的方法，比如用于选取元素的*$()*命令或者用于CPU性能分析的*profile()*。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/preview_console.png)
+
+##时间轴
+
+####使用时间轴框模式进行框性能分析
+
+
+
 (尚未翻译完，待续……)
