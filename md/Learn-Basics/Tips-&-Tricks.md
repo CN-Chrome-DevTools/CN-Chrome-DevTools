@@ -124,4 +124,63 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 ####在特定的iframe中运行JS控制台
 
+开发者工具底部的工具条是随当前标签的上下文变化的下拉选项。当你处于控制台面板时，会有一个下拉选项，该下拉允许你选择控制台将要运行于其中的frame上下文。在下拉中选择你的frame既可以立即切换到你想要的上下文中了。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_19.png)
+
+####打开新页面时保留控制台信息
+
+有时你想要在打开新页面时保留你的控制台历史打印信息。在控制台中点击鼠标右键然后选择“Preserve Log upon Navigation(即保留历史信息)”，就可以启用此功能了。当你打开另一个页面时，控制台历史信息将不会被清掉。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_20.png)
+
+####使用*console.time()*和*console.timeEnd()*进行闭环基准测试
+
+[console.time()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimelabel)使用特殊标记开启一个新的计时器。当使用同一标记的[console.timeEnd()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimeendlabel)被调用时，开始时间和结束时间之间的信息将被打印到控制台。这在进行闭环基准测试或没有函数调用的代码段而言尤其有用。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_21.png)
+
+####使用*console.profile()*和*console.profileEnd()*进行性能分析
+
+开发者工具打开状态下，使用[console.profile()](https://developer.chrome.com/devtools/docs/console-api.md#consoleprofilelabel)开始JavaScript CPU性能分析。可以像下面console.profile("Processing")这样为性能分析传一个可选的标记。使用onsole.profileEnd()来结束性能分析。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_22.png)
+
+每一个性能分析都被添加到[性能分析](https://developer.chrome.com/devtools/docs/profiles.html)面板:
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_23.png)
+
+该性能分析也会被添加到console.profiles数组，过后用来查看。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_24.png)
+
+更多关键的使用控制台的小技巧请参阅[使用控制台](https://developer.chrome.com/devtools/docs/console.md)
+
+- 一个通过[控制台API](https://developer.chrome.com/devtools/docs/console-api.md)提供的方法(例如console.log(), console.profile())打印调试信息的地方。
+- [命令行API](https://developer.chrome.com/devtools/docs/commandline-api.md)提供的方法，比如用于选取元素的*$()*命令或者用于CPU性能分析的*profile()*。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/preview_console.png)
+
+##时间轴
+
+####使用时间轴框模式进行框性能分析
+
+当加载web应用时，时间轴面板告诉你时间花在什么地方。例如，处理DOM事件用了多久，渲染页面布局用了多久，绘制元素到屏幕用了多久等。它允许你从三个不同方面深入探究为什么你的应用会慢: 事件、框架和实际内存占用。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_0.png)
+
+默认状态时间轴不展示任何数据，你可以通过打开你的应用并点击时间轴面板底部的小圆点![](https://developer.chrome.com/devtools/images/recording-off.png)来开始记录。使用*Ctrl + E *或者*Cmd + E*也可以触发记录。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_1.png)
+
+该记录按钮将从灰色变为红色，时间轴开始为你的网页捕获时间轴。在你的应用中做几个操作然后几秒种后重新点击该按钮来停止记录。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_2.png)
+
+框模式助你深入了解你的应用中生成单个框时谷歌浏览器所必须要做的工作。这个模式下，纵条相当于重新计算样式，混合等等。每个纵条的透明部分相当于空闲时间(至少就你的页面而言是空闲的)。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_3.png)
+
+
+For example, say your first frame takes 15ms to execute and the next takes 30ms.（留作标记，下次翻译时好在原文找位置）
 (尚未翻译完，待续……)
