@@ -163,9 +163,9 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 ##时间轴
 
-####使用时间轴框模式进行框性能分析
+####使用时间轴帧模式进行帧性能分析
 
-当加载web应用时，时间轴面板告诉你时间花在什么地方。例如，处理DOM事件用了多久，渲染页面布局用了多久，绘制元素到屏幕用了多久等。它允许你从三个不同方面深入探究为什么你的应用会慢: 事件、框架和实际内存占用。
+当加载web应用时，时间轴面板告诉你时间花在什么地方。例如，处理DOM事件用了多久，渲染页面布局用了多久，绘制元素到屏幕用了多久等。它允许你从三个不同方面深入探究为什么你的应用会慢: 事件、帧和实际内存占用。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_0.png)
 
@@ -173,14 +173,50 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_1.png)
 
-该记录按钮将从灰色变为红色，时间轴开始为你的网页捕获时间轴。在你的应用中做几个操作然后几秒种后重新点击该按钮来停止记录。
+该记录按钮将从灰色变为红色，时间轴开始为你的网页捕获时间轴。在你的应用中完成几个动作然后几秒种后重新点击该按钮来停止记录。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_2.png)
 
-框模式助你深入了解你的应用中生成单个框时谷歌浏览器所必须要做的工作。这个模式下，纵条相当于重新计算样式，混合等等。每个纵条的透明部分相当于空闲时间(至少就你的页面而言是空闲的)。
+帧模式助你深入了解你的应用中生成单个帧时谷歌浏览器做必须要做的工作。这个模式下，纵条相当于重新计算样式，混合等等。每个纵条的透明部分相当于空闲时间(至少就你的页面而言是空闲的)。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_3.png)
 
+例如，假设你的第一帧的执行花了15毫秒，下一帧的执行花了30毫秒。一般情况是这样：帧之间是同步的帧刷新率，这种情况下第二帧将会花费多于15毫秒的时间来开始渲染。这里,第三帧错过了“真正”的硬件帧和并在下一个帧之前被渲染,因此,第四帧的耗时已经翻了一倍。
 
-For example, say your first frame takes 15ms to execute and the next takes 30ms.（留作标记，下次翻译时好在原文找位置）
+如果你的应用中没有很多动画，当浏览器因处理输入事件而必须重复执行一系列动作时，使用帧分析是很有用的。在一帧中当你有足够的时间处理上述事件时，你的应用将更具响应能力也就是更好的用户体验。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_4.png)
+
+当我们的目标帧率是60fps(60帧/秒)时，我们最多可以拥有16.66毫秒去处理任何事。那并不是一段很长的时间，所以尽可能地从动画时间中压榨出更多时间是十分重要的。
+
+[更多:使用开发者工具的时间轴提升性能 | 开发者工具文档](https://developer.chrome.com/devtools/docs/timeline.md)
+
+####使用警示标出强制layout事件
+
+在开发者工具的时间轴面板，如果你在记录视图中看到黄色的三角图标，它指示你你的代码正在触发强制/同步的layout事件。
+
+你想要理想地避免不必要的layout事件被触发，因为它们对你的网页性能有着显著的影响。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_5.png)
+
+[更多:时间轴警示是一种性能信号 | G+](https://plus.google.com/u/0/115133653231679625609/posts/A7rYqkMMmW8)
+
+####分享和分析由别人记录的时间轴
+
+你可以通过导入/导出功能与其他开发者查看和分享时间轴。使用快捷键*Ctrl + E*或者*Cmd + E*来开始和停止记录，然后在时间轴中点鼠标右键保存时间轴数据。在上述右键的菜单中还有一个加载时间轴数据的功能，使用它把曾经导出的时间轴数据导入进来进行查看。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_6.png)
+
+####标注时间轴记录
+
+你可以使用[console.timeStamp()](https://developer.chrome.com/devtools/docs/console.md#marking-the-timeline)来给你的时间轴记录添加标注。这有助于你将你的应用的代码关联到其他正在进行的活动或浏览器事件。在下面的例子中，时间轴被用字符串“Adding result”进行了标注。查看在“使用控制台”中“标记时间轴”的有关内容来获取例子代码。
+
+![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_7.png)
+
+[更多:开发者工具Console API - 标记时间轴 | 开发者工具](https://developer.chrome.com/devtools/docs/console.md#marking-the-timeline)
+
+####帧率计数器/HUD 展示
+
+A useful tool for visualizing frame rate and jank is the real-time FPS counter
+
 (尚未翻译完，待续……)
