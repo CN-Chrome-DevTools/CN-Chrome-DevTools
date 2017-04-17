@@ -1,9 +1,9 @@
-#概览
+# 概览
 
 Chrome开发者工具是一套内置于google chrome浏览器的开发、调试工具。开发人员可以通过开发者工具深入浏览器的内部机制及他们自己所开发的web应用。通过开发者工
 高效地追踪布局问题、设置javascript断点、探究代码优化。
 
-##打开开发者工具
+## 打开开发者工具
 
 打开一个网页或者web应用。然后通过以下任一种方式打开开发者工具：
 
@@ -18,7 +18,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 为了便于你的日常工作流，[学习使用快捷键](https://developer.chrome.com/devtools/docs/shortcuts)将节省你很多时间
 
-##开发者工具窗口
+## 开发者工具窗口
 
 开发者工具面向任务进行分组，排列在窗口顶部的工具条中。每个工具条项和其对应的面板允许你以特定的方式处理网页或应用的信息(包括DOM元素，资源，源码等)
 
@@ -38,7 +38,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 你可以用快捷键 **Ctrl+[** 和 **Ctrl+]** 来切换面板
 
-##检查DOM和样式
+## 检查DOM和样式
 
 [元素](https://developer.chrome.com/devtools/docs/dom-and-styles)面板允许你看到一个DOM树的全部细节，并且允许你查看和实时编辑DOM元素。如果你需要确认哪个HTML片段对应当前网页的某一部分，你会经常使用元素面板。例如：你可能想知道一个图片是否有id属性并弄清楚id属性值是什么
 
@@ -47,7 +47,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 [了解更多查看DOM结构和样式](https://developer.chrome.com/devtools/docs/dom-and-styles)
 
-##使用控制台
+## 使用控制台
 
 [JavaScript控制台](https://developer.chrome.com/devtools/docs/console)为测试网页和应用程序的开发人员提供两个重要功能。分别是：
 
@@ -63,14 +63,14 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 [了解更多关于如何使用控制台](https://developer.chrome.com/devtools/docs/console)
 
-##调试JavaScript
+## 调试JavaScript
 
 随着JavaScript应用程序变得越来越复杂，开发者需要强大的调试工具以高效地快速定位BUG的产生的原因并进行BUG修复。chrome开发者工具包括很多有用的工具，它减少了调试JavaScript的痛苦。
 
 ![](https://developer.chrome.com/devtools/images/js-debugging.png)
 [了解更多关于如何使用开发者工具调试JavaScript](https://developer.chrome.com/devtools/docs/javascript-debugging)
 
-##提升网络性能
+## 提升网络性能
 
 **网络**面板允许你实时查看通过网络请求和下载的资源文件。搞清楚对这些请求进行识别、寻址为什么花费时间比预期要长是网页优化中重要的一步。
 
@@ -79,14 +79,14 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 [了解更多关于如何提升网络性能](https://developer.chrome.com/devtools/docs/network)
 
-##审计
+## 审计
 
 审计面板可以在一个网页加载时对该网页进行分析。然后提供可以减少网页加载时间提升该网页响应能力的优化建议。我们推荐使用[网页速度查看](https://developers.google.com/speed/pagespeed/insights/)以进行更深入的探究。
 
 ![](https://developer.chrome.com/devtools/images/audits-panel.png)
 *来自审计的建议*
 
-##提升渲染性能
+## 提升渲染性能
 
 **时间线**面板为你展示一个完整概览，告诉你当网页或应用进行加载并被使用的过程中时间都是怎么消耗的。从加载资源文件到解析JavaScript、计算样式、重绘，所有时间都展示在时间线面板。
 
@@ -95,7 +95,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 [了解更多关于如何提升渲染性能](https://developer.chrome.com/devtools/devtools/docs/timeline)
 
-##JavaScript和CSS性能
+## JavaScript和CSS性能
 
 **分析面板**允许你分析某个web应用或网页执行时间和内存占用。这些信息可以帮助你弄清楚资源被消耗在了哪里，然后帮助你优化你的代码。有以下三种类型的分析：
 
@@ -108,7 +108,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 [了解更多股阿奴与偶如何提升JavaScript和CSS性能](https://developer.chrome.com/devtools/devtools/docs/profiles)
 
-##查看存储
+## 查看存储
 
 **资源面板**允许你查看正在被查看的网页已经加载的资源。它允许你与HTML5 数据库(Local Storage， Cookies， 应用缓存等)进行交互
 
@@ -117,7 +117,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 
 [了解更多关于查看资源存储的信息](https://developer.chrome.com/devtools/devtools/docs/resource-panel)
 
-##更多资料
+## 更多资料
 
 开发者工具文档还有其他一些信息对你非常有用，它们包括：
 
@@ -127,7 +127,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 - [远程调试](https://developer.chrome.com/devtools/devtools/docs/remote-debugging)
 - [开发者工具视频](https://developer.chrome.com/devtools/devtools/docs/videos)
 
-##更多资料
+## 更多资料
 
 你在[@ChromiumDev](http://twitter.com/ChromiumDev)可以关注我们，或者通过[论坛](https://groups.google.com/forum/?fromgroups#!forum/google-chrome-developer-tools)提问
 

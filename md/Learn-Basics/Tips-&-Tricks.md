@@ -1,8 +1,8 @@
-#小窍门
+# 小窍门
 
-##控制台
+## 控制台
 
-####写跨行命令
+#### 写跨行命令
 
 处于控制台的多行编辑模式时，你可以像在一个标准文本编辑器中那样进行文本块的处理。在控制台中你可以通过**Shift + Enter**可进入跨行模式。
 
@@ -14,7 +14,7 @@
 
 关于支持持久化的多行控制台，阅读[Snippets](https://developer.chrome.com/devtools/docs/authoring-development-workflow.html#snippets)-一个可以保存和执行客户端JavaScript代码片段的功能(该功能可以在开发者工具中找到)。
 
-####开启元素查看模式的快捷键
+#### 开启元素查看模式的快捷键
 
 **Ctrl + Shift + C**或者**Cmd + Shift + C**将在元素查看模式中打开开发者工具(开发者工具已经打开的情况下将切换到元素查看模式)，以便你可以马上查看当前网页的元素。再次按快捷键将把焦点移到网页上(如果你使用的事Mac，快捷键为Cmd + Shift + C)。
 
@@ -22,7 +22,7 @@
 
 [更多:使用控制台 | 开发者工具文档](https://developer.chrome.com/devtools/docs/console.md)
 
-####支持console.table命令
+#### 支持console.table命令
 
 该命令以表格形式打印任何数据。有几个如何使用它的例子:
 
@@ -55,13 +55,13 @@
 
 [更多:关于console.table命令 | G+](https://plus.google.com/u/0/115133653231679625609/posts/PmTC5wwJVEc)
 
-####预览在控制台打印出来的对象
+#### 预览在控制台打印出来的对象
 
 在开发者工具中可以直接查看使用console.log()打印出来的对象，不用做额外的工作。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_12.png)
 
-####传入多个参数来格式化控制台输出
+#### 传入多个参数来格式化控制台输出
 
 正如我们已经用文档说明过的，你可以通过**%c**给你的控制台输出添加样式，就像在firebug中所能做的那样。
 
@@ -75,17 +75,17 @@
 
 [更多:开发者工具中的样式化的控制台打印 | G+](https://plus.google.com/115133653231679625609/posts/TanDFKEN9Kn)
 
-####清除控制台历史记录的快捷键
+#### 清除控制台历史记录的快捷键
 
 控制台打开状态下，你可以使用[快捷键](https://developer.chrome.com/devtools/docs/shortcuts.html)**Ctrl + L**或者**Cmd + L**轻易地清除历史记录。在提示符中使用clear()命令，就像通过控制台API使用[ console.clear()](https://developer.chrome.com/devtools/docs/console.md#clearing-the-console-history)一样。
 
-####成为一个键盘忍者
+#### 成为一个键盘忍者
 
 在开发者工具开启状态下，你可以仅仅通过“?”来打开通用设置，然后你可以找到快捷键面板来通览所有[支持的快捷键](https://developer.chrome.com/devtools/docs/shortcuts.html)。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_14.png)
 
-####在控制台中访问元素
+#### 在控制台中访问元素
 
 选择一个元素，然后在控制台中输入$0，它就可以被用于写脚本了。如果你在网页中引入了jQuery，你可以使用$($0)来重选网页中该元素。
 
@@ -95,7 +95,7 @@
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_16.png)
 
-####使用XPath表达式查询DOM
+#### 使用XPath表达式查询DOM
 
 xPath是一种查询语言，它被用来从文档中选择节点并返回一个节点集合、字符串、布尔值或数字。你可以在调试工具的JavaScript控制台中使用xPath表达式来查询DOM。
 
@@ -110,37 +110,37 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 这是一个在特定的上下文中查询图片元素的例子。
 
-####访问最近的控制台结果
+#### 访问最近的控制台结果
 
 使用$_可以帮你快速查看最近一次控制台结果。我们使用另一个xpath示例来演示一下:
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_17a.png)
 
-####使用console.dir
+#### 使用console.dir
 
 [console.dir(object)](https://developer.chrome.com/devtools/docs/console-api.md#consoledirobject)命令将以可展开的JavaScript对象的形式罗列出给定的对象的所有属性。下面是一个展示可展开的对象的例子，该对象代表document.body所有的属性。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_18.png)
 
-####在特定的iframe中运行JS控制台
+#### 在特定的iframe中运行JS控制台
 
 开发者工具底部的工具条是随当前标签的上下文变化的下拉选项。当你处于控制台面板时，会有一个下拉选项，该下拉允许你选择控制台将要运行于其中的frame上下文。在下拉中选择你的frame既可以立即切换到你想要的上下文中了。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_19.png)
 
-####打开新页面时保留控制台信息
+#### 打开新页面时保留控制台信息
 
 有时你想要在打开新页面时保留你的控制台历史打印信息。在控制台中点击鼠标右键然后选择“Preserve Log upon Navigation(即保留历史信息)”，就可以启用此功能了。当你打开另一个页面时，控制台历史信息将不会被清掉。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_20.png)
 
-####使用*console.time()*和*console.timeEnd()*进行闭环基准测试
+#### 使用*console.time()*和*console.timeEnd()*进行闭环基准测试
 
 [console.time()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimelabel)使用特殊标记开启一个新的计时器。当使用同一标记的[console.timeEnd()](https://developer.chrome.com/devtools/docs/console-api.md#consoletimeendlabel)被调用时，开始时间和结束时间之间的信息将被打印到控制台。这在进行闭环基准测试或没有函数调用的代码段而言尤其有用。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_21.png)
 
-####使用*console.profile()*和*console.profileEnd()*进行性能分析
+#### 使用*console.profile()*和*console.profileEnd()*进行性能分析
 
 开发者工具打开状态下，使用[console.profile()](https://developer.chrome.com/devtools/docs/console-api.md#consoleprofilelabel)开始JavaScript CPU性能分析。可以像下面console.profile("Processing")这样为性能分析传一个可选的标记。使用onsole.profileEnd()来结束性能分析。
 
@@ -161,9 +161,9 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/preview_console.png)
 
-##时间轴
+## 时间轴
 
-####使用时间轴帧模式进行帧性能分析
+#### 使用时间轴帧模式进行帧性能分析
 
 当加载web应用时，时间轴面板告诉你时间花在什么地方。例如，处理DOM事件用了多久，渲染页面布局用了多久，绘制元素到屏幕用了多久等。它允许你从三个不同方面深入探究为什么你的应用会慢: 事件、帧和实际内存占用。
 
@@ -191,7 +191,7 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 [更多:使用开发者工具的时间轴提升性能 | 开发者工具文档](https://developer.chrome.com/devtools/docs/timeline.md)
 
-####使用警示标出强制layout事件
+#### 使用警示标出强制layout事件
 
 在开发者工具的时间轴面板，如果你在记录视图中看到黄色的三角图标，它指示你你的代码正在触发强制/同步的layout事件。
 
@@ -201,13 +201,13 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 [更多:时间轴警示是一种性能信号 | G+](https://plus.google.com/u/0/115133653231679625609/posts/A7rYqkMMmW8)
 
-####分享和分析由别人记录的时间轴
+#### 分享和分析由别人记录的时间轴
 
 你可以通过导入/导出功能与其他开发者查看和分享时间轴。使用快捷键*Ctrl + E*或者*Cmd + E*来开始和停止记录，然后在时间轴中点鼠标右键保存时间轴数据。在上述右键的菜单中还有一个加载时间轴数据的功能，使用它把曾经导出的时间轴数据导入进来进行查看。
 
 ![](https://developer.chrome.com/devtools/docs/tips-and-tricks/image_6.png)
 
-####标注时间轴记录
+#### 标注时间轴记录
 
 你可以使用[console.timeStamp()](https://developer.chrome.com/devtools/docs/console.md#marking-the-timeline)来给你的时间轴记录添加标注。这有助于你将你的应用的代码关联到其他正在进行的活动或浏览器事件。在下面的例子中，时间轴被用字符串“Adding result”进行了标注。查看在“使用控制台”中“标记时间轴”的有关内容来获取例子代码。
 
@@ -215,7 +215,7 @@ $x(xpath)命令允许你执行查询。看下面使用$x('//img')查询图片元
 
 [更多:开发者工具Console API - 标记时间轴 | 开发者工具](https://developer.chrome.com/devtools/docs/console.md#marking-the-timeline)
 
-####帧率计数器/HUD 展示
+#### 帧率计数器/HUD 展示
 
 A useful tool for visualizing frame rate and jank is the real-time FPS counter
 

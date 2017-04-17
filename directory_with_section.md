@@ -1,10 +1,10 @@
-#Chrome DevTools   
+# Chrome DevTools   
 *此頁 <https://developer.chrome.com/devtools> 文章內容（Chrome DevTools Overview） 
 即 **“Learn Basics 了解基礎知識”** 中的 **“Overview (概述) :** <https://developer.chrome.com/devtools/index>"*
   
 ---
   
-###1. Learn Basics 了解基礎知識 
+### 1. Learn Basics 了解基礎知識 
 1. #####Overview (概述)  
 <https://developer.chrome.com/devtools/index>  
   
@@ -198,7 +198,7 @@
 	5.4. **Contributing to DevTools (促進 DevTools)**  
 	<https://developer.chrome.com/devtools/docs/contributing>  
   
-###2. Use Tools	使用工具 
+### 2. Use Tools	使用工具 
 
 1. #####Inspecting & Tweaking (檢閱 ＆ 調整優化)  
 <https://developer.chrome.com/devtools/docs/dom-and-styles>
@@ -216,7 +216,7 @@
 5. #####Saving Changes with Workspaces (在工作區保存所做的更改) 
 <https://developer.chrome.com/devtools/docs/workspaces>  
 
-###3. Performance & Profiling	性能與剖析 
+### 3. Performance & Profiling	性能與剖析 
 1. #####Evaluating Network Performance (評估網絡性能)
 <https://developer.chrome.com/devtools/docs/network>
      
@@ -233,7 +233,7 @@
   
   
   
-###4. Reference	參考資料
+### 4. Reference	參考資料
 
 1. #####Console API Reference (控制台 API 參考)  
 <https://developer.chrome.com/devtools/docs/console-api>

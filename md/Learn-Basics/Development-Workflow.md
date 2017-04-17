@@ -1,10 +1,10 @@
-#开发工作流程
+# 开发工作流程
 
 开发者的工作流程中通常会涉及到一些步骤来完成某个任务。当使用“开发者工具”进行开发时，我们可以对其进行优化，以便更加快速地完成常见任务，例如定位文件或函数、即时编辑脚本与样式、保存常用的代码片段，或者为了使用方便而进行简单的布局调整。
 
 在这一章节里，我们将探索一些技巧，它们将使你更高效地使用“开发者工具”。
 
-##将工具栏垂直拆分至窗口右侧
+## 将工具栏垂直拆分至窗口右侧
 
 你也许感觉位于窗口底部的“开发者工具”区域足够宽，但不够高，则此时可以选择将工具栏对齐并固定至窗口右侧，以便在左侧审查当前页面，同时在右侧进行调试。
 
@@ -26,7 +26,7 @@
 
 > **注意**：每个标签页中的“开发者工具”可以有其各自的位置。这意味着一个标签页中的“开发者工具”可以在右侧，同时在另一个标签页中位于底部。
 
-##快速拖动至右侧
+## 快速拖动至右侧
 
 也可以按住并拖动“开发者工具”的工具栏来改变其位置，就像下面动画里所展示的那样。
 
@@ -34,9 +34,9 @@
 
 相对于前一种通过布局按钮进行切换的方法，这种方法可以作为一个有用的替代，因为它仅需一个步骤。
 
-##搜索、定位与过滤
+## 搜索、定位与过滤
 
-###通过文件名过滤查找一个脚本、样式或代码片段
+### 通过文件名过滤查找一个脚本、样式或代码片段
 
 快速定位文件对开发者来说是个基础的功能。“开发者工具”允许你在所有的脚本、样式以及代码片段中用下面的快捷键进行查找：
 
@@ -53,7 +53,7 @@
 
 > **注意**：我们在所有的对话框中都支持驼峰式匹配。例如需要打开`FooBarScript.js`，为节省时间只需输入`FBaSc`即可。
 
-###在当前文件中查找文本
+### 在当前文件中查找文本
 
 在当前文件中查找特定字符串可以用下面的快捷键完成：
 
@@ -64,13 +64,13 @@
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_findone.jpg)
 
-###在当前文件中替换文本
+### 在当前文件中替换文本
 
 除了支持在当前文件中查找文本，“开发者工具”也支持对单个匹配项或所有匹配项进行替换。选中“Replace”将会出现第二个文本框以便输入替换的内容。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_find.jpg)
 
-###在所有文件中查找文本
+### 在所有文件中查找文本
 
 如果希望在该页面已加载的所有文件中查找特定字符串，可以用下面的快捷键来打开搜索面板：
 
@@ -81,7 +81,7 @@
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_findall.jpg)
 
-###用正则表达式进行搜索
+### 用正则表达式进行搜索
 
 如需用正则表达式进行搜索，仅需在搜索框中输入表达式，并勾选“正则表达式(Regular expression)”然后回车。
 
@@ -89,7 +89,7 @@
 
 上图是一个查找所有匹配在`<div></div>`标签内容中的例子。
 
-###根据函数或选择器在文件内查找
+### 根据函数或选择器在文件内查找
 
 如果需要更细粒度的操作，也可以根据函数名或CSS规则在文件中定位或者查找。
 
@@ -102,7 +102,7 @@
 
 根据选择的文件类型，将会看到所有可用的JavaScript函数或者CSS声明。输入函数名或声明来过滤结果列表，或仅是选择一个结果来定位到其在文件中定义的位置。
 
-###跳至行号
+### 跳至行号
 
 工具同样支持在编辑器内跳到指定行号。打开一个文件至编辑状态， 然后用下面的快捷键显示行号跳转框。
 
@@ -112,11 +112,11 @@
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_line.jpg)
 
-##即时编辑脚本与样式
+## 即时编辑脚本与样式
 
 “开发者工具”支持即时编辑样式与脚本，并且不需要刷新整个页面。这在测试设计改变、调试脚本或代码片段时很有用。
 
-###脚本
+### 脚本
 
 JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。要打开一个脚本进行编辑可以：
 
@@ -136,7 +136,7 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 > 注意：Workspaces 功能允许持久地编辑（保存）本地文件，阅读[更多](https://developer.chrome.com/devtools/docs/workspaces.html)。
 
-###样式
+### 样式
 
 与编辑脚本类似，打开“开发者工具”并切换至Elements面板，在右边可以看到包括“Styles”在内的一些子面板。查看页面中元素的时候，将会在“Styles”子面板里显示由选择器分组的应用到当前节点的属性列表。
 
@@ -156,7 +156,7 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 在这里可以像在一个普通的文本编辑器中一样做出修改，但区别是修改会立即生效。
 
-##另存
+## 另存
 
 修改妥当后，可以将修改后的文件保存下来。
 
@@ -176,7 +176,7 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/saveas_save.jpg)
 
-##本地修改
+## 本地修改
 
 “开发者工具”也会保存本地文件的所有修改记录。如果你编辑了一个脚本或者样式并进行了保存，那么可以在Sources面板里的文件名上单击右键（或者在源代码区域），然后选择“本地修改(Local modifications)”来查看历史记录。
 
@@ -200,7 +200,7 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 最后，“应用修改的内容(apply revision content)”将会使在某个时间发生的修改生效。
 
-##自定义JavaScript片段
+## 自定义JavaScript片段
 
 有时候你可能想保存一些小脚本、书签和工具，以便在浏览器中调试的时候使用。代码片段(Snippets)是“开发者工具”中实现这些操作的一个新功能，它允许你在Sources标签页下创建、存储和运行脚本。目前在[Chrome Canary](https://tools.google.com/dlpage/chromesxs)中可用。
 
@@ -215,7 +215,7 @@ JavaScript可以在“开发者工具”的“Sources”面板里直接编辑。
 
 Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools-snippets)维护了一些有用的代码片段可供开发者使用。
 
-###开始使用
+### 开始使用
 
 定位到Sources标签以开始使用“代码片段”。如果此时还未在此标签页里做其它事情，你会看到如下所示的默认界面。
 
@@ -225,7 +225,7 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_expand.jpg)
 
-###创建代码片段
+### 创建代码片段
 
 代码片段有两部分面板，左边的（类似Sources面板）是文件列表，当选中文件的时候会在右侧的编辑器中打开。这与在Sources面板中选择样式表和脚本的操作十分类似。
 
@@ -235,7 +235,7 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_new.png)
 
-###代码片段的文件名
+### 代码片段的文件名
 
 代码片段的文件名是自动生成的，但当代码片段创建后你可以选择自定义文件名。
 
@@ -245,7 +245,7 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_remove.png)
 
-###编辑与执行代码片段
+### 编辑与执行代码片段
 
 在文件列表中选择一个文件在右侧内建的编辑器中打开。这里你可以输入或粘贴任何JavaScript代码（例如你的代码片段），包括函数与表达式。
 
@@ -271,7 +271,7 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_evaluated.png)
 
-###本地修改
+### 本地修改
 
 如源(Sources)一样，代码片段(Snippets)同样支持查看对文件做出的本地修改，也可以在历史记录里选择还原至某一次编辑。
 
@@ -279,7 +279,7 @@ Brian Grinstead在[bgrins.github.io/devtools-snippets](bgrins.github.io/devtools
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippets_local.png)
 
-###断点、监视表达式以及更多
+### 断点、监视表达式以及更多
 
 Sources面板中的一些功能同样也可以在代码片段(Snippets)中使用，比如添加表达式监视、断点、局部变量与保存文件。
 
@@ -287,7 +287,7 @@ Sources面板中的一些功能同样也可以在代码片段(Snippets)中使用
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/sources_breakpoints.jpg)
 
-###保存代码片段
+### 保存代码片段
 
 代码片段保存后可以通过“开发者工具”的代码片段(Snippets)标签来查看，或者导出为一个新的文件。如需显示保存选项，在文本编辑器内单击右键显示编辑菜单。
 
@@ -297,13 +297,13 @@ Sources面板中的一些功能同样也可以在代码片段(Snippets)中使用
 
 > 注意：代码片段保存在“开发者工具”的本地存储内。保存/另存后，可将代码片段绑定至其应被保存的位置，就像其它脚本一样。
 
-###定位代码片段
+### 定位代码片段
 
 与Sources面板中的脚本和样式类似，代码片段同样支持定位到某个特定的文件、函数或者行号，快捷键与之前提到的相同。
 
 ![](https://developer.chrome.com/devtools/docs/authoring-development-workflow/snippet_filter.png)
 
-##参考资料
+## 参考资料
 - [Chrome DevTools Revolutions 2013: Workspaces](http://www.html5rocks.com/en/tutorials/developertools/revolutions2013/#toc-workspaces)
 - [My workflow: Never having to leave the DevTools | remy sharp](http://remysharp.com/2012/12/21/my-workflow-never-having-to-leave-devtools/)
 - [The Breakpoint With Addy Osmani And Paul Lewis - Snippets | youtube](http://www.youtube.com/watch?feature=player_detailpage&v=ktwJ-EDiZoU#t=553s)
