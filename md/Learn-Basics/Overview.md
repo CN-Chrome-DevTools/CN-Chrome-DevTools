@@ -106,7 +106,7 @@ Chrome开发者工具是一套内置于google chrome浏览器的开发、调试�
 ![](https://developer.chrome.com/devtools/devtools/images/profiles-panel.png)
 *一个堆快照的例子*
 
-[了解更多股阿奴与偶如何提升JavaScript和CSS性能](https://developer.chrome.com/devtools/devtools/docs/profiles)
+[了解更多关于如何提升JavaScript和CSS性能](https://developer.chrome.com/devtools/devtools/docs/profiles)
 
 ## 查看存储
 
