@@ -123,5 +123,6 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 - [He--He](https://github.com/He--He)
 - [Goat](https://github.com/gzhjs)
 - [kxq-ttjq](https://github.com/kxq-ttjq)
+- 你
 
 （Fork 之后自行添加到最后）
