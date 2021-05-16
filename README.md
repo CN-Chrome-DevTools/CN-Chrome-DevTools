@@ -50,6 +50,22 @@ Chrome DevTools 是公认的优秀的前端调试工具，由于功能强大，�
 * 然后到 github 网站的该 git 远程仓库的 new-feature 分支下发起 Pull Request
 
 如果你有任何疑问或者建议、技巧，欢迎加入 Chrome DevTools QQ 讨论群：365161310
+## 翻译规则
+### 外部链接
+对于有质量较好的翻译的外部链接，将链接指向译文。
+例如：
+```md
+[window](https://developer.mozilla.org/en-US/docs/Web/API/Window)
+```
+将其改为
+```md
+[`window`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window) 
+```
+如果外部链接没有翻译的版本或质量很差，请不要修改该链接。
+### 专有名词
+翻译专有名词后，在其后方以括号和英文说明原词条，例如：同源政策（Same Origin Policy）
+若一篇文章出现两次以上相同专有名词，则在第一次之后补上原词条即可。
+对于无法找到对应的词条翻译，直接留下原文词条。
 
 ## 正在翻译文章
 
